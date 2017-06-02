@@ -1,0 +1,90 @@
+﻿.acquaintance-panel {
+     .panel-button {
+        line-height: 18px;
+        display: inline-block;
+        font-size: 0.9rem;
+        background: #ccc;
+        color: #000;
+        padding: 0.6em 1em;
+        cursor: pointer;
+        margin: 3px 3px 3px 0;            
+        word-wrap: break-word;
+        max-width: 100%;
+        vertical-align: middle;
+        width: 100%;
+     }
+
+     .side-panel-root {
+         position: fixed;
+         top: 0;
+         bottom: 0;
+         left: 0;
+         right: 0;
+         z-index: 200;
+         visibility: hidden;
+
+         &.opened {
+             visibility: visible;
+         }
+
+         .backdrop {
+             position: absolute;
+             top: 0;
+             bottom: 0;
+             left: 0;
+             right: 0;
+             background: black;
+             opacity: 0.4;
+         }
+
+         &.opened {
+             .side-panel {
+                transform: translate(0);
+                transition: all 0.5s ease;
+             }
+         }
+
+         .side-panel {
+             height: 100%;
+             width: 400px;
+             max-width: 100%;
+             position: absolute;
+             right: 0;
+             top: 0;
+             padding: 20px;
+             background: white;
+             box-shadow: -3px 0 10px rgba(0, 0, 0, 0.25);
+             transform: translate(400px);
+             transition: all 0.5s ease;
+             z-index: 1;
+
+             .header {
+                 font-size: 130%;
+                 padding: 10px 0;
+             }
+
+             .panel-buttons {
+                 display: flex;
+                 display: -ms-flexbox;
+                 padding-top: 30px;
+
+                 .panel-button {
+                     flex: 1 1 auto;
+                     -ms-flex: 1 1 auto;
+                     
+                     &.send {
+                         margin-right: 7px;
+                     }
+                 }
+             }
+         }
+     }
+}
+
+.no-touch {
+    .acquaintancee-panel {
+        .panel-button:hover  {
+            background: #adadad;
+        }
+    }
+}

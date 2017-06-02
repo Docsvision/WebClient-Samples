@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CardLibrary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="B9D1E89D-A52C-4472-869E-91F67792EC44" Alias="CustomCardLib">
+  <Definitions>
+    <RefCardDefinition>CustomDirectory.xml</RefCardDefinition>
+  </Definitions>
+  <Name>
+    <LocalizedString Language="en">Sample custom library</LocalizedString>
+    <LocalizedString Language="ru-RU">Sample custom library</LocalizedString>
+  </Name>
+
+</CardLibrary>

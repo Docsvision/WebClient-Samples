@@ -1,0 +1,48 @@
+﻿div.sample-image {
+    width: 100%;
+    -webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+
+    .nav-buttons {
+        position: relative;
+        height: 100%;
+
+        span {
+            color: #fff;
+	        cursor: pointer;
+	        font-family: Arial,"Helvetica Neue",Helvetica,sans-serif;
+	        font-size: 6em;
+	        line-height: 0;
+	        position: absolute;
+	        text-shadow: 0 2px 2px #222;
+	        top: 48%;
+	        transition: all .2s ease-out;
+	        z-index: 4;
+
+            &.left-nav {
+                left: 0;
+
+                &::before {
+                    content: '‹';
+                    padding: 50px 15px;
+                }
+            }
+
+            &.right-nav {
+                right: 0;
+
+                &::before {
+                    content: '›';
+                    padding: 50px 15px;
+                }
+           }
+        }
+    }
+
+    .description-container {
+        text-align: center;
+        margin-top: 10px;
+    }
+}

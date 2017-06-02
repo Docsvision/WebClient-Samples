@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- содержит описания контролов -->
+<Controls>
+  <!-- содержит описание контрола AcquaintancePanel, ResourceKey задает ключ файла ресурсов, в котором указано наименование контрола (либо задать атрибут DisplayName задает наименование контрола), которое будет отображаться в конструкторе разметок -->
+  <Control Name="AcquaintancePanel" ResourceKey="AcquaintancePanel" >
+    <!-- содержит перечисление свойств контрола -->
+    <Properties>
+      <Property Type="Name" />
+      <Property Type="StandardCssClass" DefaultValue="acquaintance-panel" />
+      <Property Type="CustomCssClasses" />
+      <Property Type="SendButtonText" />
+      <Property Type="EditOperation" />
+      <Property Type="Binding" />
+    </Properties>
+    <!-- содержит перечисление событий контрола -->
+    <Events>
+      <Event Name="Opening" ResourceKey="AcquaintancePanel_OpeningEvent" />
+      <Event Name="Opened" ResourceKey="AcquaintancePanel_OpenedEvent" />
+      <Event Name="Closing" ResourceKey="AcquaintancePanel_ClosingEvent" />
+      <Event Name="Closed" ResourceKey="AcquaintancePanel_ClosedEvent" />
+    </Events>
+  </Control>
+</Controls>
+

@@ -1,0 +1,51 @@
+﻿div.sample-textbox {
+    display: inline-block;
+    width: 100%;
+    padding: 5px;
+    margin-top: 1em;
+
+    label {
+        padding-right: 5px;
+        vertical-align: top;
+        line-height: 1.5em;
+        display: inline-block;   
+        position: relative;
+        top: 0.1em;
+        left: 0.08em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        font-size: 0.85em;
+    }
+
+    .image {
+        display: inline-block;
+        vertical-align: middle;
+	    margin-right: 5px;
+    }
+
+    .input {
+        display: inline-block;
+        width: 100%;
+        min-width: 40px;
+        padding: 0.1em 0;
+        border: none;
+        border-radius: 0;
+        border-top: 1px solid white;
+        border-right: 1px solid white;
+        border-left: 1px solid white;
+        border-bottom: 1px dotted #555;
+        outline: none;
+        margin: 0;
+        background: none;
+        font-size: 1.4em;
+        height: 1.5em;
+        font-family: "Helvetica Neue", "Helvetica", Helvetica, "Calibri", Calibri, "sans-serif";
+
+        &:focus {
+            box-shadow: 0 0 5px #51cbee;
+            border: 1px solid #51cbee;
+        }
+    }
+}

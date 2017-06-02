@@ -1,0 +1,19 @@
+﻿{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": false,
+    "removeComments": false,
+    "preserveConstEnums": true,
+    "sourceMap": false,
+    "target": "es5",
+    "rootDir": "Content/Extensions/ImageSample/Scripts",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "lib": [ "dom", "es6" ]
+  },
+  "include": [
+    "../../../Typings/**/*.d.ts",
+    "Content/Extensions/ImageSample/Scripts/**/*.ts*"
+  ]
+}

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CardDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="43AE1738-9767-46C4-A04D-C31DFE3F5FCC" Alias="CustomDirectory" Version="26" LibraryID="B9D1E89D-A52C-4472-869E-91F67792EC44" ProgID="" Dictionary="true" IconFile="" FetchMode="16" NonArchivable="true" DefaultSecurity="" TypeName="">
+  <Name>
+    <LocalizedString Language="en">Custom Directory</LocalizedString>
+    <LocalizedString Language="ru-RU">Custom Directory</LocalizedString>
+  </Name>
+  <Sections>
+    <Section Alias="MainInfo" RowAlias="" Type="struct" ID="CA89F57A-0024-483B-9309-3A54AC16CED3">
+      <Name>
+        <LocalizedString Language="en">General Information</LocalizedString>
+        <LocalizedString Language="ru">Основная информация</LocalizedString>
+      </Name>
+      <Field Alias="Counter" ID="461FB184-25D1-4281-8234-F52BDDC7EB3D" Type="int" DefaultValue="" CopyBehavior="Copy">
+        <Name>
+          <LocalizedString Language="en">Counter</LocalizedString>
+          <LocalizedString Language="ru">Счетчик</LocalizedString>
+        </Name>
+        <Description />
+      </Field>
+    </Section>
+  </Sections>
+</CardDefinition>
