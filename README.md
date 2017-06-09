@@ -10,8 +10,8 @@
 * [TypeScript](https://www.typescriptlang.org)
 * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
-* [Docsvision 5 Resource Kit](ftp://ftp.docsvision.com/downloadarea/docsvision/Docsvision5.4.2642/ResourceKit.zip)
-* [Docsvision 5 DVExplorer Update 9](ftp://ftp.docsvision.com/downloadarea/Docsvision/Docsvision5.4.2642/Update9/DVExplorer_Update9.zip)
+* [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
+* [Docsvision 5 DVExplorer Update 9](http://bit.ly/2sr5DKd)
 
 ### Структура разделов
 
