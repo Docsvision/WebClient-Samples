@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- содержит описания контролов -->
+<Controls>
+  <Control Name="LyncEmployee" DisplayName="Lync Employee">
+    <Properties>
+      <Property Type="Name" />
+      <Property Type="LabelText" />
+      <Property Type="ShowEmptyLabel" />
+      <Property Type="Visibility" />
+      <Property Type="StandardCssClass" DefaultValue="custom-lync-employee" />
+      <Property Type="CustomCssClasses" />
+      <Property Type="DataSource" Editor="StructSectionMetadataEditor" />
+      <Property Type="DataField" Editor="EmployeeFieldMetadataEditor" />
+      <Property Type="Binding" BindingConverter="ExtendedEmployee" BindingMode="ReadWrite" />
+    </Properties>
+    <Events>
+      <Event Name="Click" ResourceKey="ControlTypes_ClickEventProperty" />
+      <Event Name="MouseOver" ResourceKey="ControlTypes_MouseOverEventProperty" />
+      <Event Name="MouseOut" ResourceKey="ControlTypes_MouseOutEventProperty" />
+    </Events>
+  </Control>
+</Controls>
+
