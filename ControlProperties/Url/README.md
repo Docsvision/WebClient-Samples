@@ -5,7 +5,7 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio](https://www.visualstudio.com)
+* [Visual Studio 2017](https://www.visualstudio.com)
 
 ## Сборка и установка
 

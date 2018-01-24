@@ -4,14 +4,14 @@ using DocsVision.Platform.ObjectModel.Mapping;
 namespace CustomLibrary.ObjectModel.Mapping
 {
     /// <summary>
-    /// Custom library mapper factory
+    /// Кастомная библиотека для фабрики мапперов
     /// </summary>
     public sealed class CustomLibraryMapperFactory : ObjectMapperFactory
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomLibraryMapperFactory"/> class
+        /// Создаёт новый экземпляр <see cref="CustomLibraryMapperFactory"/>
         /// </summary>
-        /// <param name="context">Object context</param>
+        /// <param name="context">Контекст объекта</param>
         public CustomLibraryMapperFactory(ObjectContext context)
             : base(context)
         {

@@ -7,17 +7,17 @@ using System.Text;
 namespace ImageDesignerExtension.Editors
 {
     /// <summary>
-    /// Represents slider mode helper
+    /// Представляет собой вспомогательный класс для режима слайдера
     /// </summary>
     class SliderModeHelper
     {
         private const char splitSymbol = ';';
 
         /// <summary>
-        /// Converts the slider items list to a string
+        /// Конвертирует список элементов слайдера в строку
         /// </summary>
-        /// <param name="items">slider items list</param>
-        /// <returns>string</returns>
+        /// <param name="items">Список элементов слайдера</param>
+        /// <returns>Сконвертированная строка</returns>
         public static string ItemsToString(List<SliderItem> items)
         {
             if (items == null)
@@ -39,10 +39,10 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Converts the string to a slider items list
+        /// Конвертирует строку с информацией об элементах слайдера в список элементов слайдера
         /// </summary>
-        /// <param name="str">string</param>
-        /// <returns>slider items list</returns>
+        /// <param name="str">Исходная строка</param>
+        /// <returns>Список элементов слайдера</returns>
         public static List<SliderItem> StringToItems(string str)
         {
             List<SliderItem> result = new List<SliderItem>();

@@ -3,33 +3,32 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
-using System.Web.Optimization;
 using System.Resources;
-using Docsvision.Backoffice.Client.Cards.AdvancedLayouts.BindingConverters;
 using System.Web.Mvc;
 using System.Web.Http.Controllers;
-using Docsvision.Backoffice.Client.Cards.AdvancedLayouts.BindingResolvers;
-using Docsvision.Backoffice.Client.Cards.AdvancedLayouts.LayoutModel;
 using DocsVision.BackOffice.WebClient.Services;
+using DocsVision.WebClientLibrary.ObjectModel.Services.LayoutModel;
+using DocsVision.WebClientLibrary.ObjectModel.Services.BindingResolvers;
+using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;
 
 namespace TemplateServerExtension
 {
     /// <summary>
-    /// Defines description of the WebClient extension defined in current assembly
+    /// Задаёт описание расширения для WebClient, которое задано в текущей сборке
     /// </summary>
     public class TemplateServerExtension : WebClientExtension
     {
         /// <summary>
-        /// Creates new instance of <see cref="TemplateServerExtension" />
+        /// Создаёт новый экземпляр <see cref="TemplateServerExtension" />
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
         public TemplateServerExtension(IServiceProvider serviceProvider)
             : base(serviceProvider)
         {
         }
 
         /// <summary>
-        /// Get extenstion name
+        /// Получить название расширения
         /// </summary>
         public override string ExtensionName
         {
@@ -37,7 +36,7 @@ namespace TemplateServerExtension
         }
 
         /// <summary>
-        /// Get extension namespace
+        /// Получить пространство имён расширения
         /// </summary>
         public override string Namespace
         {
@@ -45,7 +44,7 @@ namespace TemplateServerExtension
         }
 
         /// <summary>
-        /// Get extension version
+        /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
         {

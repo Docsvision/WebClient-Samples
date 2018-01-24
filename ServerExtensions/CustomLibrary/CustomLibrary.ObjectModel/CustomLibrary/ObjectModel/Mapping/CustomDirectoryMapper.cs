@@ -5,7 +5,7 @@ using DocsVision.Platform.ObjectModel.Mapping;
 namespace CustomLibrary.ObjectModel.Mapping
 {
     /// <summary>
-    /// Represents settings directory mapper
+    /// Представляет собой маппер для настроек директории
     /// </summary>
     public class CustomDirectoryMapper : BaseCardMapper<CustomDirectory>
     {
@@ -17,8 +17,9 @@ namespace CustomLibrary.ObjectModel.Mapping
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomDirectoryMapper"/> class
+        /// Создаёт новый экземпляр <see cref="CustomDirectoryMapper"/>
         /// </summary>
+        /// <param name="context">Контекст объекта</param>
         public CustomDirectoryMapper(ObjectContext context)
             : base(context)
         {

@@ -6,21 +6,17 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio](https://www.visualstudio.com)
-* [TypeScript 2.2](https://www.typescriptlang.org)
+* [Visual Studio 2017](https://www.visualstudio.com)
+* [TypeScript 2.5](https://www.typescriptlang.org)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > TableControl > TableControlServerExtension
-3. Скопировать каталог SamplesOutput\Site\Content\Extensions\LayoutTableControl в каталог "Путь к установленному Web-клиент\Site\Content"
-4. Скопировать каталог SamplesOutput\Site\Bin\TableControlServerExtension в каталог "Путь к установленному Web-клиент\Site\Bin"
-5. В конфигурационном файле Web-клиент Web.config в секции Docsvision > Platform > Extensions добавить строку:
-```xml
-	 <Extension TypeName="TableControlServerExtension.LayoutWebClientExtension, TableControlServerExtension" Target="WebClient"/>
-```
-6. Перезапустить IIS
+3. Скопировать каталог SamplesOutput\Site\Content\Extensions\LayoutTableControl в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+4. Скопировать каталог SamplesOutput\Site\Extensions\TableControlServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+5. Перезапустить IIS
 
 ## Проверка примера
 

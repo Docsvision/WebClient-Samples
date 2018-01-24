@@ -14,9 +14,9 @@ namespace TableControlServerExtension.Controllers
         private readonly ServiceHelper serviceHelper;
 
         /// <summary>
-        /// Create new instance of <see cref="SamplePartnersController"/>
+        /// Создаёт новый экземпляр <see cref="SamplePartnersController"/>
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
         public SamplePartnersController(IServiceProvider serviceProvider)
         {
             this.serviceProvider = serviceProvider;
@@ -24,7 +24,7 @@ namespace TableControlServerExtension.Controllers
         }
 
         /// <summary>
-        /// Get departments info
+        /// Получить информацию о подразделениях
         /// </summary>
         /// <returns></returns>
         public ActionResult GetPartnersInfo(List<Guid> partnerIds)

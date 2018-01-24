@@ -1,0 +1,1 @@
+declare function shallowEqual(objA: any, objB: any, compare?: Function, compareContext?: any): boolean;

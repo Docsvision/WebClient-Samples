@@ -11,21 +11,21 @@ using System.Web.Optimization;
 namespace TableControlServerExtension
 {
     /// <summary>
-    /// Defines description of the WebClient extension defined in current assembly
+    /// Задаёт описание расширения для WebClient, которое задано в текущей сборке
     /// </summary>
     public class LayoutWebClientExtension : WebClientExtension
     {
         /// <summary>
-        /// Creates new instance of <see cref="LayoutWebClientExtension" />
+        /// Создаёт новый экземпляр <see cref="LayoutWebClientExtension" />
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
             : base(serviceProvider)
         {
         }
 
         /// <summary>
-        /// Get extenstion name
+        /// Получить название расширения
         /// </summary>
         public override string ExtensionName
         {
@@ -33,7 +33,7 @@ namespace TableControlServerExtension
         }
 
         /// <summary>
-        /// Get extension namespace
+        /// Получить пространство имён расширения
         /// </summary>
         public override string Namespace
         {
@@ -41,7 +41,7 @@ namespace TableControlServerExtension
         }
 
         /// <summary>
-        /// Get extension version
+        /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
         {
@@ -52,10 +52,10 @@ namespace TableControlServerExtension
 
 
         /// <summary>
-        /// Gets registered service activators
+        /// Получить зарегистрированные активаторы сервиса
         /// </summary>
-        /// <param name="serviceProvider">service provider</param>
-        /// <returns>service type/activator mappings</returns>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
+        /// <returns>Тип сервиса/Маппинги активатора</returns>
         protected override Dictionary<Type, Func<object>> GetServiceActivators(IServiceProvider serviceProvider)
         {
             return new Dictionary<Type, Func<object>>
@@ -65,10 +65,10 @@ namespace TableControlServerExtension
         }
 
         /// <summary>
-        /// Gets registered MVC controller activators
+        /// Получить зарегистрированные активаторы MVC-контроллера
         /// </summary>
-        /// <param name="serviceProvider">service provider</param>
-        /// <returns>MVC controller type/activator mappings</returns>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
+        /// <returns>Тип MVC-контроллера/Маппинги активатора</returns>
         protected override Dictionary<Type, Func<IController>> GetControllerActivators(IServiceProvider serviceProvider)
         {
             return new Dictionary<Type, Func<IController>>
@@ -78,9 +78,9 @@ namespace TableControlServerExtension
         }
 
         /// <summary>
-        /// Gets registered navigator extension
+        /// Получить зарегистрированное расширение навигатора
         /// </summary>
-        /// <returns>registered navigator extension</returns>
+        /// <returns>Зарегистрированное расширение навигатора</returns>
         protected override WebClientNavigatorExtension GetNavigatorExtension()
         {
             var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo

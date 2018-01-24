@@ -5,12 +5,12 @@ using System;
 namespace CustomLibrary.ObjectModel.Mapping
 {
     /// <summary>
-    /// Custom library service factory
+    /// Кастомная библиотека для фабрики сервисов
     /// </summary>
     public sealed class CustomLibraryServiceFactory : ServiceFactory
     {
         /// <summary>
-        /// Gets service of specified type
+        /// Получить сервис указанного типа
         /// </summary>      
         protected override object GetService(Type serviceType)
         {

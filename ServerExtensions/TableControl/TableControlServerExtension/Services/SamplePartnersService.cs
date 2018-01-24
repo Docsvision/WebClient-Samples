@@ -10,12 +10,12 @@ namespace TableControlServerExtension.Services
     {
         private readonly IServiceProvider serviceProvider;
         private readonly ServiceHelper serviceHelper;
-        
+
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LicenseCheckService"/> class
+        /// Создаёт новый экземпляр <see cref="LicenseCheckService"/>
         /// </summary>
-        /// <param name="provider">Service provider</param>
+        /// <param name="provider">Сервис-провайдер</param>
         public SamplePartnersService(IServiceProvider provider)
         {
             if (provider == null)

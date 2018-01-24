@@ -5,8 +5,8 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio](https://www.visualstudio.com)
-* [TypeScript 2.2](https://www.typescriptlang.org)
+* [Visual Studio 2017](https://www.visualstudio.com)
+* [TypeScript 2.5](https://www.typescriptlang.org)
 * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
@@ -16,15 +16,11 @@
 2. Собрать проект Controls > AcquaintancePanel > AcquaintancePanelDesignerExtension
 3. Собрать проект Controls > AcquaintancePanel > AcquaintancePanelServerExtension
 4. Скопировать каталог SamplesOutput\Plugins\AcquaintancePanelDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Bin\AcquaintancePanelServerExtension в каталог "Путь к установленному Web-клиент\Site\Bin"
-6. Скопировать файл SamplesOutput\Site\Bin\ru\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Bin\ru"
-7. Скопировать файл SamplesOutput\Site\Bin\uk\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Bin\uk"
-8. Скопировать каталог SamplesOutput\Site\Content\Extensions\AcquaintancePanel в каталог "Путь к установленному Web-клиент\Site\Content"
-9. В конфигурационном файле Web-клиент Web.config в секции Docsvision > Platform > Extensions добавить строку:
-```xml
-	 <Extension TypeName="AcquaintancePanelServerExtension.LayoutWebClientExtension, AcquaintancePanelServerExtension" Target="WebClient"/>
-```
-10. Перезапустить IIS
+5. Скопировать каталог SamplesOutput\Site\Extensions\AcquaintancePanelServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+6. Скопировать файл SamplesOutput\Site\Extensions\ru\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
+7. Скопировать файл SamplesOutput\Site\Extensions\uk\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
+8. Скопировать каталог SamplesOutput\Site\Content\Extensions\AcquaintancePanel в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+9. Перезапустить IIS
 
 ## Проверка примера
 

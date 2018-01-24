@@ -1,7 +1,6 @@
-﻿using Docsvision.Backoffice.Client.Cards.AdvancedLayouts;
-using Docsvision.Backoffice.Client.Cards.AdvancedLayouts.BindingConverters;
-using Docsvision.Backoffice.Client.Cards.AdvancedLayouts.LayoutModel;
-using Docsvision.Backoffice.Client.Cards.Entities;
+﻿using DocsVision.WebClientLibrary.ObjectModel;
+using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;
+using DocsVision.WebClientLibrary.ObjectModel.Services.LayoutModel;
 using ImageServerExtension.Models;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace ImageServerExtension.AdvancedLayouts.BindingConverters
         private const char splitSymbol = ';';
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SliderConverter"/> class
+        /// Создаёт новый экземпляр <see cref="SliderConverter"/>
         /// </summary>
         public SliderConverter(IServiceProvider serviceProvider)
             : base(serviceProvider, Slider)
@@ -22,7 +21,7 @@ namespace ImageServerExtension.AdvancedLayouts.BindingConverters
         }
 
         /// <summary>
-        /// Converts value for display
+        /// Конвертирует значение для его показа
         /// </summary>   
         public override BindingResult ConvertForDisplay(ControlContext controlContext, Binding binding, BindingResult bindingResult)
         {
@@ -40,10 +39,8 @@ namespace ImageServerExtension.AdvancedLayouts.BindingConverters
         private List<SliderItemDataModel> GetList(ControlContext controlContext, string str)
         {
             var layoutContext = controlContext.LayoutContext;
-            var session = layoutContext.Card.UserSession;
-            var advancedLayouts = session.GetEntityProvider<BackofficeEntityProvider>().GetAdvancedLayoutDirectory();
 
-            Guid cardTypeId = layoutContext.Card.System.TypeId;
+            Guid cardTypeId = layoutContext.CardTypeId;
 
             var list = new List<SliderItemDataModel>();
             if (!string.IsNullOrEmpty(str))
@@ -54,7 +51,7 @@ namespace ImageServerExtension.AdvancedLayouts.BindingConverters
                 {
                     var item = new SliderItemDataModel();
                     item.Url = parts[i++];
-                    item.Description = GetLocalization(advancedLayouts, layoutContext, cardTypeId, parts[i++]);
+                    item.Description = GetLocalization(layoutContext, cardTypeId, parts[i++]);
                     list.Add(item);
                 }
             }

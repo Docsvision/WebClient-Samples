@@ -1,0 +1,93 @@
+﻿.custom-theme-sample {
+    #content {
+        background-size: cover;
+        background-image: url("https://i.imgur.com/JlWxZAg.jpg");
+        background-position: 50% 0;
+    }
+
+    .zurb input[type="text"], .zurb input[type="password"], .zurb input[type="date"], .zurb input[type="datetime"], .zurb input[type="datetime-local"], .zurb input[type="month"], .zurb input[type="week"], .zurb input[type="email"], .zurb input[type="number"], .zurb input[type="search"], .zurb input[type="tel"], .zurb input[type="time"], .zurb input[type="url"], .zurb input[type="color"], .zurb textarea,
+    .zurb input[type="text"]:hover, .zurb input[type="password"]:hover, .zurb input[type="date"]:hover, .zurb input[type="datetime"]:hover, .zurb input[type="datetime-local"]:hover, .zurb input[type="month"]:hover, .zurb input[type="week"]:hover, .zurb input[type="email"]:hover, .zurb input[type="number"]:hover, .zurb input[type="search"]:hover, .zurb input[type="tel"]:hover, .zurb input[type="time"]:hover, .zurb input[type="url"]:hover, .zurb input[type="color"]:hover, .zurb textarea:hover,
+    .zurb input[type="text"]:focus, .zurb input[type="password"]:focus, .zurb input[type="date"]:focus, .zurb input[type="datetime"]:focus, .zurb input[type="datetime-local"]:focus, .zurb input[type="month"]:focus, .zurb input[type="week"]:focus, .zurb input[type="email"]:focus, .zurb input[type="number"]:focus, .zurb input[type="search"]:focus, .zurb input[type="tel"]:focus, .zurb input[type="time"]:focus, .zurb input[type="url"]:focus, .zurb input[type="color"]:focus, .zurb textarea:focus,
+    .zurb .tabs .tab-item.tab-item.tab-item,
+    .zurb .textarea-control,
+    .system-grid-table .system-grid-headers th,
+    .system-table .table-header .header-right-items.header-right-items,
+    .no-touch .no-hightlight-on-hover .table-helper-row:hover,
+    .no-touch .no-hightlight-on-hover .table-helper-row:focus,
+    .performers-table th,
+    .no-touch .zurb .performers-table tr:hover,
+    .dv-control.system-links .links-header .links-command-bar,
+    .dv-control.system-filelist.view-mode .title-container .file-list-command-bar {
+        background-color: transparent;
+    }
+
+    .system-grid-data-row {
+        background-color: transparent !important;
+    }
+
+    .system-table .table-header .disclosure-helper.disclosure-helper,
+    .system-table .table-header .disclosure-helper.disclosure-helper:hover,
+    .system-table .table-header .disclosure-helper.disclosure-helper:focus,
+    .zurb .group-border-class div.disclosure-helper,
+    .zurb .group-border-class div.disclosure-helper:hover,
+    .zurb .group-border-class div.disclosure-helper:focus,
+    div.disclosure-helper,
+    div.disclosure-helper.no-hover,
+    .no-touch div.disclosure-helper:hover {
+        background: rgba(210, 210, 210, 0.5);
+    }
+
+    .typeahead-helper .variants-dropdown,
+    .zurb .autocomplete-dropdown .ui-autocomplete {
+        background: rgba(255, 255, 255, 0.75);
+    }
+
+    .dv-control.system-tasks div.missing-tasks-placeholder,
+    .dv-control.system-links .links-missing,
+    .dv-control.system-filelist.view-mode .missing-files-placeholder,
+    .div.system-table .table-has-more, div.system-table .table-no-data,
+    .disclosure .arrow.arrow.arrow,
+    .disclosure-helper .arrow.arrow.arrow,
+    .empty-placeholder,
+    .history .date-who,
+    .zurb .group-border-class div.disclosure-helper .title,
+    .system-folder .dv-label,
+    .typeahead-helper .variants-dropdown .variant-text.variant-text.variant-text,
+    div.system-table .table-content .header-cell.table-control-cell.header-cell {
+        color: #333;
+    }
+
+    .system-input-based.input-based.input-ctrl.edit-mode .input-cell .placeholder.placeholder,
+    .textarea-control:focus + .label-control.label-control,
+    .employee-autocomplete .text-input:focus ~ .label-control.label-control,
+    .label-text-control .input-control:focus + .label-control.label-control {
+        color: #777;
+    }
+
+    .system-grid-table .system-grid-data-row td.system-grid-data-row-element {
+        border-bottom-color: #ccc;
+    }
+
+    .system-grid-table .system-grid-headers th,
+    .system-grid-table .system-grid-headers th:first-child,
+    .table-helper-row.usual-row .table-helper-cell {
+        border-color: transparent;
+    }
+
+    .system-input-based.input-based.input-ctrl.edit-mode .input-cell .input-and-placeholder .input,
+    .zurb .employee-autocomplete .text-input,
+    .zurb .textarea-control,
+    .zurb .label-text-control .input-control {
+        border-top-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+
+    .employee-autocomplete .text-input:focus,
+    .textarea-control.textarea-control:focus,
+    .employee-autocomplete.employee-autocomplete .text-input:focus,
+    .label-text-control.label-text-control .input-control:focus {
+        box-shadow: 0 0 5px #ccc;
+        border-color: #ccc;
+    }
+}

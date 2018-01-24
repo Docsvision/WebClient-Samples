@@ -7,8 +7,8 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio](https://www.visualstudio.com)
-* [TypeScript 2.2](https://www.typescriptlang.org)
+* [Visual Studio 2017](https://www.visualstudio.com)
+* [TypeScript 2.5](https://www.typescriptlang.org)
 * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
@@ -17,14 +17,12 @@
 1. Открыть /Samples.sln
 2. Собрать проект Controls > Image > ImageDesignerExtension
 3. Собрать проект Controls > Image > ImageServerExtension
-4. Скопировать каталог SamplesOutput\Plugins\ImageDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Bin\ImageServerExtension в каталог "Путь к установленному Web-клиент\Site\Bin"
-6. Скопировать каталог SamplesOutput\Site\Content\Extensions\ImageSample в каталог "Путь к установленному Web-клиент\Site\Content"
-7. В конфигурационном файле Web-клиент Web.config в секции Docsvision > Platform > Extensions добавить строку: 
-```xml
-	<Extension TypeName="ImageServerExtension.LayoutWebClientExtension, ImageServerExtension" Target="WebClient"/>
-```
-8. Перезапустить IIS
+4. Собрать проект ControlProperties > Url > UrlPropertyDesignerExtension
+5. Скопировать каталог SamplesOutput\Plugins\ImageDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
+6. Скопировать каталог SamplesOutput\Site\Extensions\ImageServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+7. Скопировать каталог SamplesOutput\Site\Content\Extensions\ImageSample в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+8. Скопировать каталог SamplesOutput\Plugins\UrlPropertyDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
+9. Перезапустить IIS
 
 ## Проверка примера
 

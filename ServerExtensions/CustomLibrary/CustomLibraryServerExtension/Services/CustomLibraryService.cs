@@ -6,7 +6,7 @@ using CustomLibrary.ObjectModel;
 namespace CustomLibraryServerExtension.Services
 {
     /// <summary>
-    /// Represents  sample service using custom library
+    /// Представляет собой пример сервиса, использующего кастомную библиотеку
     /// </summary>
     public class CustomLibraryService : ICustomLibraryService
     {
@@ -14,9 +14,9 @@ namespace CustomLibraryServerExtension.Services
         private readonly ServiceHelper serviceHelper;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomLibraryService"/> class
+        /// Создаёт новый экземпляр <see cref="CustomLibraryService"/>
         /// </summary>
-        /// <param name="provider">Service provider</param>
+        /// <param name="provider">Сервис-провайдер</param>
         public CustomLibraryService(IServiceProvider provider)
         {
             if (provider == null)
@@ -27,7 +27,7 @@ namespace CustomLibraryServerExtension.Services
         }
 
         /// <summary>
-        /// Gets custom data
+        /// Получить кастомные данные
         /// </summary>
         public int GetCustomData()
         {

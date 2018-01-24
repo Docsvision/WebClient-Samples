@@ -6,12 +6,12 @@ using System.Linq;
 namespace CustomLibrary.ObjectModel
 {
     /// <summary>
-    /// Represents custom directory
+    /// Представляет собой кастомную директорию
     /// </summary>
     public class CustomDirectory : BaseCard
     {
         /// <summary>
-        /// Represents database settings property
+        /// Настройки базы данных
         /// </summary>
         public static readonly ObjectProperty MainInfoProperty = ObjectProperty.Register("MainInfo", typeof(ObjectCollection<MainInfo>), typeof(CustomDirectory));
 
@@ -21,7 +21,7 @@ namespace CustomLibrary.ObjectModel
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomDirectory"/> class
+        /// Создаёт новый экземпляр <see cref="CustomDirectory"/>
         /// </summary>
         internal protected CustomDirectory()
             : base()
@@ -29,7 +29,7 @@ namespace CustomLibrary.ObjectModel
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="CustomDirectory"/> class
+        /// Создаёт новый экземпляр <see cref="CustomDirectory"/>
         /// </summary>
         internal protected CustomDirectory(ObjectInitializationData data)
             : base(data)
@@ -39,7 +39,7 @@ namespace CustomLibrary.ObjectModel
         #region Properties
 
         /// <summary>
-        /// Main information
+        /// Главная информация
         /// </summary>
         public MainInfo MainInfo
         {

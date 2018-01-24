@@ -8,7 +8,7 @@
             super(props);
             this.state.visibility = true;
 
-            // API Events            
+            // События API
             this.state.opening = CancelableEvent.Create<IEventArgs>(props.wrapper);
             this.state.closing = CancelableEvent.Create<IEventArgs>(props.wrapper);
             this.state.opened = SimpleEvent.Create<IEventArgs>(props.wrapper);

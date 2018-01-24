@@ -9,15 +9,16 @@ namespace CustomLibrary.ObjectModel.Mapping
         private static ObjectMap map;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainInfoMapper"/> class
+        /// Создаёт новый экземпляр <see cref="MainInfoMapper"/>
         /// </summary>
         static MainInfoMapper()
         {
             InitializeObjectMap();
         }
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainInfoMapper"/> class
+        /// Создаёт новый экземпляр <see cref="MainInfoMapper"/>
         /// </summary>
+        /// <param name="context">Контекст объекта</param>
 		public MainInfoMapper(ObjectContext context)
             : base(context)
         {
@@ -26,7 +27,7 @@ namespace CustomLibrary.ObjectModel.Mapping
         #region Overrides
 
         /// <summary>
-        /// Gets the object map
+        /// Получить карту объекта
         /// </summary>
         protected override ObjectMap GetObjectMap()
         {
@@ -34,7 +35,7 @@ namespace CustomLibrary.ObjectModel.Mapping
         }
 
         /// <summary>
-        /// Creates the object within the specified initialization data
+        /// Создаёт объект с указанными начальными данными
         /// </summary>
 		protected override MainInfo CreateObject(ObjectInitializationData data)
         {

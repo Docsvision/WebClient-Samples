@@ -16,17 +16,17 @@ namespace CustomLibrary.CustomLibrary.CardLib.CardDefs
 {
 
 	/// <summary>
-	/// CustomDirectory constants
+	/// Константы CustomDirectory
 	/// </summary>
 	public static class CustomDirectory
 	{
 		/// <summary>
-		/// CustomDirectory card identifier
+		/// Идентификатор карточки CustomDirectory
 		/// </summary>
 		public static readonly Guid ID = new Guid("43AE1738-9767-46C4-A04D-C31DFE3F5FCC");
 
 		/// <summary>
-		/// CustomDirectory card alias
+		/// Алиас карточки CustomDirectory
 		/// </summary>
 		public const string Alias = "CustomDirectory";
 
@@ -36,19 +36,19 @@ namespace CustomLibrary.CustomLibrary.CardLib.CardDefs
 		/// </summary>
 		public static class MainInfo
 		{
-			/// <summary>
-			/// MainInfo section identifier
-			/// </summary>
-			public static readonly Guid ID = new Guid("CA89F57A-0024-483B-9309-3A54AC16CED3");
+            /// <summary>
+            /// Идентификатор секции MainInfo
+            /// </summary>
+            public static readonly Guid ID = new Guid("CA89F57A-0024-483B-9309-3A54AC16CED3");
 
 			/// <summary>
-			/// MainInfo section identifier
+			/// Алиас MainInfo
 			/// </summary>
 			public const string Alias = "MainInfo";
 
 
 			/// <summary>
-			/// Counter field
+			/// Счётчик
 			/// </summary>
 			public const string Counter = "Counter";
 		

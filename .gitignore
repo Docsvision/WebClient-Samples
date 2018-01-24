@@ -86,3 +86,4 @@ UpgradeLog*.htm
 FakesAssemblies/
 JsDocs/Output/
 SamplesOutput/
+Controls/AngularControl/AngularApp/dist/

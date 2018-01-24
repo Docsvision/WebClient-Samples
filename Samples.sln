@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{B6225870-63EC-4E1A-8A34-D73891E1614E}"
 EndProject
@@ -177,6 +177,28 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TemplateWebExtension", "Tem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateWebExtension", "ProjectTemplates\TemplateWebExtension\TemplateWebExtension.csproj", "{43C8996E-C8A2-428F-A9CF-70B89CB3B643}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExchangeRates", "ExchangeRates", "{823576AC-7403-47AB-BB7D-D8B9690FA1E6}"
+	ProjectSection(SolutionItems) = preProject
+		Controls\ExchangeRates\README.md = Controls\ExchangeRates\README.md
+		Controls\ExchangeRates\SampleExchangeRatesControlDescription.xml = Controls\ExchangeRates\SampleExchangeRatesControlDescription.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesWebExtension", "Controls\ExchangeRates\ExchangeRatesWebExtension\ExchangeRatesWebExtension.csproj", "{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateCardDialog", "CreateCardDialog", "{CCA14EA6-E736-47E8-9442-4C41CB672BE5}"
+	ProjectSection(SolutionItems) = preProject
+		ServerExtensions\CreateCardDialog\README.md = ServerExtensions\CreateCardDialog\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateCardDialogServerExtension", "ServerExtensions\CreateCardDialog\CreateCardDialogServerExtension\CreateCardDialogServerExtension.csproj", "{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangeLogoAndBackground", "ChangeLogoAndBackground", "{1C49790D-C4FC-44A9-B289-924C5C11FF50}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\ChangeLogoAndBackground\README.md = ClientScripts\ChangeLogoAndBackground\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeLogoAndBackgroundWebExtension", "ClientScripts\ChangeLogoAndBackground\ChangeLogoAndBackgroundWebExtension\ChangeLogoAndBackgroundWebExtension.csproj", "{45F24C6F-D36B-44A5-9F53-45B9802CE17D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -283,6 +305,18 @@ Global
 		{43C8996E-C8A2-428F-A9CF-70B89CB3B643}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43C8996E-C8A2-428F-A9CF-70B89CB3B643}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43C8996E-C8A2-428F-A9CF-70B89CB3B643}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -335,5 +369,14 @@ Global
 		{356F71CE-C7E3-4206-9BEE-AEDA93F25C89} = {2D7DC9A7-4666-4051-8650-B8BADCAF0940}
 		{7032B127-5F1B-4166-BDC4-3DD787D85ECA} = {19CCC537-4EF5-4B53-9238-FF188F5E52FD}
 		{43C8996E-C8A2-428F-A9CF-70B89CB3B643} = {7032B127-5F1B-4166-BDC4-3DD787D85ECA}
+		{823576AC-7403-47AB-BB7D-D8B9690FA1E6} = {B6225870-63EC-4E1A-8A34-D73891E1614E}
+		{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8} = {823576AC-7403-47AB-BB7D-D8B9690FA1E6}
+		{CCA14EA6-E736-47E8-9442-4C41CB672BE5} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
+		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC} = {CCA14EA6-E736-47E8-9442-4C41CB672BE5}
+		{1C49790D-C4FC-44A9-B289-924C5C11FF50} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
+		{45F24C6F-D36B-44A5-9F53-45B9802CE17D} = {1C49790D-C4FC-44A9-B289-924C5C11FF50}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7CE59EC9-0DC4-47A2-BC2C-DA79B0CE327B}
 	EndGlobalSection
 EndGlobal

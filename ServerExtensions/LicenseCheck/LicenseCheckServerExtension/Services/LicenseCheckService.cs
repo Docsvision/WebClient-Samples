@@ -8,7 +8,7 @@ using DocsVision.Platform.StorageServer.Licensing;
 namespace LicenseCheckServerExtension.Services
 {
     /// <summary>
-    /// Represents license checking service
+    /// Представляет собой сервис для проверки лицензии
     /// </summary>
     public class LicenseCheckService : ILicenseCheckService
     {
@@ -17,9 +17,9 @@ namespace LicenseCheckServerExtension.Services
         private static readonly Guid CardBuilderFeature = new Guid("{604EA6A5-7988-4099-9539-C8EB82497199}");
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LicenseCheckService"/> class
+        /// Создаёт новый экземпляр <see cref="LicenseCheckService"/>
         /// </summary>
-        /// <param name="provider">Service provider</param>
+        /// <param name="provider">Сервис-провайдер</param>
         public LicenseCheckService(IServiceProvider provider)
         {
             if (provider == null)
@@ -30,7 +30,7 @@ namespace LicenseCheckServerExtension.Services
         }
 
         /// <summary>
-        /// Checks license feature
+        /// Проверить признак лицензии
         /// </summary>
         public bool CheckFeature()
         {
@@ -40,7 +40,7 @@ namespace LicenseCheckServerExtension.Services
         }
 
         /// <summary>
-        /// Checks license
+        /// Проверить лицензию
         /// </summary>
         private static bool CheckLicenseFeature(UserSession session, Guid featureId)
         {

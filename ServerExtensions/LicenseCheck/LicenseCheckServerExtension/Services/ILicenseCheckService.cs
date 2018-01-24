@@ -1,12 +1,12 @@
 ﻿namespace LicenseCheckServerExtension.Services
 {
     /// <summary>
-    /// Represents license checking service contract
+    /// Представляет собой интерфейс сервиса для проверки лицензии
     /// </summary>
     public interface ILicenseCheckService
     {
         /// <summary>
-        /// Checks license feature
+        /// Проверить признак лицензии
         /// </summary>
         bool CheckFeature();
     }

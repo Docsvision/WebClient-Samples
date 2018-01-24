@@ -13,8 +13,8 @@ function checkLicenseFeature() {
     var res = WebClient.licenceCheckController.CheckFeature();
     res.done((data) => {
         if (data)
-            alert('Feature exists in license');
+            alert('Характеристика существует в лицензии');
         else
-            alert('Feature not exists in license');
+            alert('Характеристика не существует в лицензии');
     });
 }

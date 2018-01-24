@@ -1,12 +1,12 @@
 ﻿namespace ImageServerExtension
 {
     /// <summary>
-    /// Represents a static class for layout extension web constants
+    /// Представляет собой статический класс для расширения разметки веб-констант
     /// </summary>
     public static class Constants
     {
         /// <summary>
-        /// Represents namespace
+        /// Пространство имён
         /// </summary>
         public const string Namespace = "ImageServerExtension";
     }

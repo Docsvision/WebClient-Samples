@@ -1,0 +1,17 @@
+﻿div.sample-exchange-rates {
+    border: 2px solid black;
+    width: 220px !important;
+    text-align: center;
+
+    .header {
+        font-weight: bold;
+    }
+
+    .USD {
+        color: green;
+    }
+
+    .EUR {
+        color: orangered;
+    }
+}

@@ -13,7 +13,7 @@ using System.Windows.Input;
 namespace ImageDesignerExtension.Editors
 {
     /// <summary>
-    /// Interaction logic for SliderDialog.xaml
+    /// Логика взаимодействия для SliderDialog.xaml
     /// </summary>
     internal partial class SliderDialog : Window, INotifyPropertyChanged
     {
@@ -33,7 +33,7 @@ namespace ImageDesignerExtension.Editors
         #endregion
 
         /// <summary>
-        /// Creates a new instance of <see cref="SliderDialog"/>
+        /// Создаёт новый экземпляр <see cref="SliderDialog"/>
         /// </summary>
         /// <param name="serviceProvider">service provider</param>
         public SliderDialog(IServiceProvider serviceProvider)
@@ -46,7 +46,7 @@ namespace ImageDesignerExtension.Editors
         #region Properties
 
         /// <summary>
-        /// Gets or sets selected item
+        /// Возвращает или устанавливает выбранный элемент
         /// </summary>
         public SliderItem SelectedItem
         {
@@ -61,7 +61,7 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Gets or serts SliderItems list
+        /// Возвращает или устанавливает список элементов SliderItem
         /// </summary>
         public ObservableCollection<SliderItem> Items
         {
@@ -76,7 +76,7 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Gets add item command
+        /// Возвращает команду добавления элемента
         /// </summary>
         public ICommand AddItemCommand
         {
@@ -87,7 +87,7 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Gets remove item command
+        /// Возвращает команду удаления элемента
         /// </summary>
         public ICommand RemoveItemCommand
         {
@@ -98,7 +98,7 @@ namespace ImageDesignerExtension.Editors
         }
         
         /// <summary>
-        /// Gets ok command
+        /// Возвращает команду успеха (ОК)
         /// </summary>
         public ICommand OkCommand
         {
@@ -109,7 +109,7 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Gets cancel command
+        /// Возвращает команду отмены
         /// </summary>
         public ICommand CancelCommand
         {
@@ -120,7 +120,7 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Gets show localization command
+        /// Возвращает команду отображения локализации
         /// </summary>
         public ICommand ShowLocalizationCommand
         {
@@ -135,7 +135,7 @@ namespace ImageDesignerExtension.Editors
         #region Public methods
 
         /// <summary>
-        /// Initializes a SliderDialog
+        /// Инициализирует SliderDialog
         /// </summary>
         /// <param name="items">SliderItems list</param>
         public void Initialize(List<SliderItem> items)

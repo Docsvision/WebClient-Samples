@@ -86,7 +86,7 @@
             return (
                 <div title={this.state.tip}>
                     <input id="switch" type="checkbox" checked={this.state.value} disabled={!this.state.canEdit} tabIndex={this.getTabIndex()} onChange={() => null} />
-                    <label for="switch" onClick={this.handleCheckBoxClick}>Toggle</label>
+                    <label htmlFor="switch" onClick={this.handleCheckBoxClick}>Toggle</label>
                     <label className="label-text">{this.state.labelText}</label>
                 </div>);
         }

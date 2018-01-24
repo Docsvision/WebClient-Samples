@@ -10,20 +10,22 @@ using Docsvision.Platform;
 namespace TemplateDesignerExtension.Extension
 {
     /// <summary>
-    /// Represents sample layout editor extension
+    /// Представляет собой пример расширения для редактора разметок
     /// </summary>
     class TemplateDesignerExtension : WebLayoutsDesignerExtension
     {
         /// <summary>
-        /// Creates a new instance of <see cref="TemplateDesignerExtension"/>
+        /// Создаёт новый экземпляр <see cref="TemplateDesignerExtension"/>
         /// </summary>
-        /// <param name="provider">service provider</param>
+        /// <param name="provider">Сервис-провайдер</param>
         public TemplateDesignerExtension(IServiceProvider provider)
             : base(provider)
         {
         }
 
-        // Возвращает словарь ключ/описание свойства, которые будут использоваться в пользовательских контролах
+        /// <summary>
+        /// Возвращает словарь ключ/описание свойства, которые будут использоваться в пользовательских контролах
+        /// </summary>
         protected override Dictionary<string, PropertyDescription> GetPropertyDescriptions()
         {
             return new Dictionary<string, PropertyDescription>
@@ -32,8 +34,10 @@ namespace TemplateDesignerExtension.Extension
             };
         }
 
-        // Возвращает описание пользовательских контролов
-        // описание контрола PartnerLink выполнено альтернативным способом и содержится в каталоге xml
+        /// <summary>
+        /// Возвращает описание пользовательских контролов
+        /// описание контрола PartnerLink выполнено альтернативным способом и содержится в каталоге xml
+        /// </summary>
         protected override List<ControlTypeDescription> GetControlTypeDescriptions()
         {
             return new List<ControlTypeDescription>
@@ -41,7 +45,9 @@ namespace TemplateDesignerExtension.Extension
             };
         }
 
-        // Возвращает ResourceManager этого расширения (расширяет словарь локализации конструктора разметок, не путать с окном Localization конструктора разметок)
+        /// <summary>
+        /// Возвращает ResourceManager этого расширения (расширяет словарь локализации конструктора разметок, не путать с окном Localization конструктора разметок)
+        /// </summary>
         protected override List<ResourceManager> GetResourceManagers()
         {
             return new List<ResourceManager>

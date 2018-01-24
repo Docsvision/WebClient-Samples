@@ -71,7 +71,7 @@
 
         // Вызывается при сохранении карточки, возвращает свойство Binding с обновленным значнием value
         protected getBindings(): IBindingResult<any>[] {
-            return [getBindingResult(this.state.binding, this.params.value)];
+            return [getBindingResult(this.state.binding, this.params.value, () => at(SampleCheckBoxParams).labelText)];
         }
 
         render() {

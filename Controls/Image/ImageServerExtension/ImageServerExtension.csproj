@@ -25,7 +25,7 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <UseGlobalApplicationHostFile />
-    <TypeScriptToolsVersion>2.2</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -50,22 +50,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Docsvision.Backoffice.Cards">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.Backoffice.Cards.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Docsvision.Platform.Client, Version=6.0.4089.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.Platform.Client.dll</HintPath>
+    <Reference Include="DocsVision.Platform.ObjectModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="Docsvision.Standard.Cards">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.Standard.Cards.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
+    <Reference Include="DocsVision.Platform.WebClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519" />
     <Reference Include="Docsvision.WebClient.Extensibility">
       <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.WebClient.Extensibility.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.WebClientLibrary.ObjectModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -187,8 +183,8 @@
   </PropertyGroup>
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)Content\*.*" "$(SolutionDir)SamplesOutput\Site\Content\" /Y /I /E
-xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)SamplesOutput\Site\Bin\$(TargetName)\" /Y /I
-xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SolutionDir)SamplesOutput\Site\Bin\" /Y /I /E</PostBuildEvent>
+xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)SamplesOutput\Site\Extensions\$(TargetName)\" /Y /I
+xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SolutionDir)SamplesOutput\Site\Extensions\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\..\..\packages\BuildWebCompiler.1.11.347\build\BuildWebCompiler.targets" Condition="Exists('..\..\..\packages\BuildWebCompiler.1.11.347\build\BuildWebCompiler.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

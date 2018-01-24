@@ -5,7 +5,7 @@
   </Definitions>
   <Name>
     <LocalizedString Language="en">Sample custom library</LocalizedString>
-    <LocalizedString Language="ru-RU">Sample custom library</LocalizedString>
+    <LocalizedString Language="ru-RU">Пример пользовательской библиотеки</LocalizedString>
   </Name>
 
 </CardLibrary>

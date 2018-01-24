@@ -6,7 +6,7 @@ using ServiceHelper = LicenseCheckServerExtension.Helpers.ServiceHelper;
 namespace LicenseCheckServerExtension.Controllers
 {
     /// <summary>
-    /// Represents license checking controller
+    /// Представляет собой контроллер для проверки лицензии
     /// </summary>
     public class LicenseCheckController : Controller
     {
@@ -14,9 +14,9 @@ namespace LicenseCheckServerExtension.Controllers
         private readonly ServiceHelper serviceHelper;
 
         /// <summary>
-        /// Create new instance of <see cref="LicenseCheckController"/> class
+        /// Создаёт новый экземпляр <see cref="LicenseCheckController"/>
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
         public LicenseCheckController(IServiceProvider serviceProvider)
         {
             this.serviceProvider = serviceProvider;
@@ -24,7 +24,7 @@ namespace LicenseCheckServerExtension.Controllers
         }
 
         /// <summary>
-        /// Checks license feature
+        /// Проверить признак лицензии
         /// </summary>
         public string CheckFeature()
         {

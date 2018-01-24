@@ -9,10 +9,10 @@ namespace ShiftTasksEndDateServerExtension.Services
     public class ShiftTasksEndDateService : IShiftTasksEndDateService
     {
         /// <summary>
-        /// Shifts tasks end date
+        /// Сдвигает дату окончания задач
         /// </summary>
-        /// <param name="sessionContext">Session context</param>
-        /// <param name="cardId">Card identifier</param>
+        /// <param name="sessionContext">Контекст сессии</param>
+        /// <param name="cardId">Идентификатор карточки</param>
         /// <returns><see cref="ExtendedCardModel"/></returns>
         public void ShiftTasksEndDate(SessionContext sessionContext, Guid cardId)
         {

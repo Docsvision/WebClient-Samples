@@ -40,7 +40,7 @@ namespace TableControlServerExtension.Models
         }
 
         /// <summary>
-        /// Initialize with base logic and receiving extra fields
+        /// Инициализирует с базовой логикой и принимает дополнительные поля
         /// </summary>
         public void Initialize(PartnersCompany unit)
         {

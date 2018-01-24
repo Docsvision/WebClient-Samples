@@ -16,9 +16,9 @@ namespace AcquaintancePanelServerExtension.Services
         private readonly ServiceHelper serviceHelper;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LayoutLinksService"/> class
+        /// Создаёт новый экземпляр <see cref="LayoutLinksService"/>
         /// </summary>
-        /// <param name="provider">Service provider</param>
+        /// <param name="provider">Сервис-провайдер</param>
         public LayoutBPService(IServiceProvider provider)
         {
             if (provider == null)
@@ -57,7 +57,7 @@ namespace AcquaintancePanelServerExtension.Services
                                     new object[]{sessionContext.AdvancedCardManager.GetFieldValue(cardId, CardDocument.AcquaintanceStaff.ID, CardDocument.AcquaintanceStaff.AcquaintancePersons) } }
                 };
 
-                //Attach current document as document for acquaitance
+                // Присоединяет текущий документ как документ для ознакомления
                 variables.Add("Document", cardId);
 
                 if (endDate.HasValue)
@@ -66,7 +66,7 @@ namespace AcquaintancePanelServerExtension.Services
                 }
 
                 var currentEmployee = staffService.GetCurrentEmployee();
-                variables.Add("Author", currentEmployee);
+                variables.Add("Author", currentEmployee.GetObjectId());
 
                 baseCardService.InitializeBusinessProcessVariables(processInstance, variables);
 
@@ -78,6 +78,7 @@ namespace AcquaintancePanelServerExtension.Services
             }
             catch (Exception ex)
             {
+                sessionContext.ObjectContext.RollbackChanges();
                 resultModel.Success = false;
                 resultModel.Message = ex.Message;
             }

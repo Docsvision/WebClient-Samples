@@ -12,14 +12,14 @@ using DocsVision.Platform.WebClient.Helpers;
 namespace CheckBoxDesignerExtension.Extension
 {
     /// <summary>
-    /// Represents sample layout editor extension
+    /// Представляет собой пример расширения для редактора разметок
     /// </summary>
     class SampleWebLayoutsDesignerExtension : WebLayoutsDesignerExtension
     {
         IAllowedOperationsStorage allowedOperationsStorage;
 
         /// <summary>
-        /// Creates a new instance of <see cref="SampleWebLayoutsDesignerExtension"/>
+        /// Создаёт новый экземпляр <see cref="SampleWebLayoutsDesignerExtension"/>
         /// </summary>
         /// <param name="provider">service provider</param>
         public SampleWebLayoutsDesignerExtension(IServiceProvider provider)
@@ -38,7 +38,9 @@ namespace CheckBoxDesignerExtension.Extension
             }
         }
 
-        // Возвращает словарь ключ/описание свойства, которые будут использоваться в пользовательских контролах
+        /// <summary>
+        /// Возвращает словарь ключ/описание свойства, которые будут использоваться в пользовательских контролах
+        /// </summary>
         protected override Dictionary<string, PropertyDescription> GetPropertyDescriptions()
         {
             return new Dictionary<string, PropertyDescription>
@@ -47,8 +49,10 @@ namespace CheckBoxDesignerExtension.Extension
             };
         }
 
-        // Возвращает описание пользовательских контролов
-        // описание контрола PartnerLink выполнено альтернативным способом и содержится в каталоге xml
+        /// <summary>
+        /// Возвращает описание пользовательских контролов
+        /// описание контрола PartnerLink выполнено альтернативным способом и содержится в каталоге xml
+        /// </summary>
         protected override List<ControlTypeDescription> GetControlTypeDescriptions()
         {
             return new List<ControlTypeDescription>
@@ -57,7 +61,9 @@ namespace CheckBoxDesignerExtension.Extension
             };
         }
 
-        // Возвращает ResourceManager этого расширения (расширяет словарь локализации конструктора разметок, не путать с окном Localization конструктора разметок)
+        /// <summary>
+        /// Возвращает ResourceManager этого расширения (расширяет словарь локализации конструктора разметок, не путать с окном Localization конструктора разметок)
+        /// </summary>
         protected override List<ResourceManager> GetResourceManagers()
         {
             return new List<ResourceManager>
@@ -66,7 +72,9 @@ namespace CheckBoxDesignerExtension.Extension
             };
         }
 
-        // Возвращает описание свойства 
+        /// <summary>
+        /// Возвращает описание свойства
+        /// </summary>
         private PropertyDescription GetDefaultValuePropertyDescription()
         {
             return new PropertyDescription
@@ -78,7 +86,9 @@ namespace CheckBoxDesignerExtension.Extension
             };
         }
 
-        // Возвращает описание контрола SampleCheckBox
+        /// <summary>
+        /// Возвращает описание контрола SampleCheckBox
+        /// </summary>
         private ControlTypeDescription GetSampleCheckBoxDescription()
         {
             var standardCssClass = PropertyFactory.GetStandardCssClassProperty(); // Получаем свойство StandardCssClass

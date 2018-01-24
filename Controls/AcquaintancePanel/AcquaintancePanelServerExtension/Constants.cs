@@ -1,12 +1,12 @@
 ﻿namespace AcquaintancePanelServerExtension
 {
     /// <summary>
-    /// Represents a static class for layout extension web constants
+    /// Представляет собой статический класс для расширения разметки веб-констант
     /// </summary>
     public class Constants
     {
         /// <summary>
-        /// Represents namespace
+        /// Представляет собой пространство имён
         /// </summary>
         public const string Namespace = "AcquaintancePanelServerExtension";
     }

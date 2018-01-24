@@ -2,6 +2,8 @@
 using DocsVision.BackOffice.CardLib.CardDefs;
 using DocsVision.BackOffice.ObjectModel;
 using DocsVision.BackOffice.ObjectModel.Services;
+using DocsVision.Platform.WebClient;
+using DocsVision.Platform.WebClient.Models;
 using System;
 
 namespace CreateCardServerExtension.Services
@@ -16,9 +18,9 @@ namespace CreateCardServerExtension.Services
         private const string NamePrefix = "В ответ на ";
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="LicenseCheckService"/> class
+        /// Создаёт новый экземпляр <see cref="LicenseCheckService"/>
         /// </summary>
-        /// <param name="provider">Service provider</param>
+        /// <param name="provider">Сервис-провайдер</param>
         public SampleDocumentService(IServiceProvider provider)
         {
             if (provider == null)
@@ -45,12 +47,22 @@ namespace CreateCardServerExtension.Services
                 document.MainInfo.Registrar = staffService.GetCurrentEmployee();
             }
 
+            var rowMain = GetRowData(sessionContext, documentId, CardDocument.MainInfo.ID, true);
+            if (rowMain != null)
+            {
+                rowMain.SetFieldValue(CardDocument.MainInfo.RegDate, DateTime.Now.ToLocalTime());
+            }
+
             document.MainInfo.Name = NamePrefix + sessionContext.AdvancedCardManager.GetFieldValue(parentDocId, CardDocument.MainInfo.ID, CardDocument.MainInfo.ExternalNumber);
 
             var senderOrganization = sessionContext.AdvancedCardManager.GetFieldValue(parentDocId, CardDocument.SenderPartner.ID, CardDocument.SenderPartner.SenderOrg);
             if (senderOrganization != null)
-            {                                
-                sessionContext.AdvancedCardManager.SetFieldValue(documentId, CardDocument.ReceiversPartners.ID, CardDocument.ReceiversPartners.ReceiverPartnerCo, senderOrganization);
+            {
+                var row = GetRowData(sessionContext, documentId, CardDocument.ReceiversPartners.ID, true);
+                if (row != null)
+                {
+                    row.SetFieldValue(CardDocument.ReceiversPartners.ReceiverPartnerCo, senderOrganization);
+                }               
             }
 
             var referenceListService = sessionContext.ObjectContext.GetService<IReferenceListService>();
@@ -67,12 +79,12 @@ namespace CreateCardServerExtension.Services
                 sessionContext.ObjectContext.SaveObject(document.MainInfo.Tasks);
             }
 
-            //Create direct link and attach it to new document
+            // Создаёт прямую ссылку и присоединяет её к новому документу
             var linkType = sessionContext.ObjectContext.GetObject<LinksLinkType>(AnswerLinkType);
             var reference = referenceListService.CreateReference(document.MainInfo.ReferenceList, linkType, parentDoc,
                    string.IsNullOrEmpty(parentDoc.Description) ? parentDoc.SystemInfo.CardKind.Name : parentDoc.Description, false);
-            
-            //Create opposite link and attach it to parent document
+
+            // Создаёт обратную ссылку и присоединяет её к родительскому документу
             var oppositeLinkType = sessionContext.ObjectContext.GetObject<LinksLinkType>(OppositeLinkType);
             referenceListService.CreateReference(parentDoc.MainInfo.ReferenceList, oppositeLinkType, document,
                 string.IsNullOrEmpty(document.Description) ? document.SystemInfo.CardKind.Name : document.Description, false);
@@ -81,6 +93,18 @@ namespace CreateCardServerExtension.Services
             var cardId = sessionContext.ObjectContext.GetObjectRef(document).Id;
 
             return cardId;            
+        }
+
+        private IRowData GetRowData(SessionContext sessionContext, Guid cardId, Guid sectionId, bool allowCreateFirstRow)
+        {
+            if (sectionId != Guid.Empty)
+            {
+                return sessionContext.AdvancedCardManager.GetSection(cardId, sectionId).GetFirstRow(allowCreateFirstRow);
+            }
+            else
+            {
+                return null;
+            }
         }
     }
 }

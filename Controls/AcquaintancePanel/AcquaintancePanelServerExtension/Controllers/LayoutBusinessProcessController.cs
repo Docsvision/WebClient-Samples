@@ -14,7 +14,7 @@ namespace AcquaintancePanelServerExtension.Controllers
         private readonly Guid acquaitanceBPID = new Guid("a490324e-3b99-e211-a503-001676e1723a");
 
         /// <summary>
-        /// Create new instance of <see cref="LayoutLinksController"/>
+        /// Создаёт новый экземпляр <see cref="LayoutLinksController"/>
         /// </summary>
         /// <param name="serviceProvider">Service provider</param>
         public LayoutBusinessProcessController(IServiceProvider serviceProvider)

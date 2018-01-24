@@ -17,7 +17,7 @@ using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 namespace ImageDesignerExtension.Editors
 {
     /// <summary>
-    /// Interaction logic for SliderModeEditor.xaml
+    /// Логика взаимодействия для SliderModeEditor.xaml
     /// </summary>
     internal partial class SliderEditor : UserControl, ITypeEditor, INotifyPropertyChanged
     {
@@ -29,7 +29,7 @@ namespace ImageDesignerExtension.Editors
         #endregion
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="SliderEditor"/> class
+        /// Создаёт новый экземпляр <see cref="SliderEditor"/>
         /// </summary>
         public SliderEditor()
         {
@@ -37,7 +37,7 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Gets DependencyProperty with name Value for <see cref="SliderEditor"/>
+        /// Возвращает Gets DependencyProperty with name Value for <see cref="SliderEditor"/>
         /// </summary>
         public static readonly DependencyProperty ValueProperty = DependencyProperty.Register("Value", typeof(string), typeof(SliderEditor),
             new FrameworkPropertyMetadata(string.Empty, FrameworkPropertyMetadataOptions.BindsTwoWayByDefault));
@@ -45,7 +45,7 @@ namespace ImageDesignerExtension.Editors
         #region Properties
 
         /// <summary>
-        /// Gets or sets value
+        /// Возвращает или устанавливает значение
         /// </summary>
         public string Value
         {
@@ -54,7 +54,7 @@ namespace ImageDesignerExtension.Editors
         }
 
         /// <summary>
-        /// Gets click command
+        /// Возвращает команду клика
         /// </summary>
         public ICommand ClickCommand
         {
@@ -114,9 +114,9 @@ namespace ImageDesignerExtension.Editors
         // Подробнее про ITypeEditor: https://xceed.com/wp-content/documentation/xceed-toolkit-plus-for-wpf/Xceed.Wpf.Toolkit~Xceed.Wpf.Toolkit.PropertyGrid.Editors.ITypeEditor.html
 
         /// <summary>
-        /// Returns property editor for <see cref="PropertyItem"/>
+        /// Возвращает редактор свойства для <see cref="PropertyItem"/>
         /// </summary>
-        /// <param name="propertyItem">property item</param>
+        /// <param name="propertyItem">Свойство</param>
         /// <returns>FrameworkElement</returns>
         public FrameworkElement ResolveEditor(PropertyItem propertyItem)
         {

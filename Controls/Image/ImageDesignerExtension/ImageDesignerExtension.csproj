@@ -43,14 +43,13 @@
     <AssemblyOriginatorKeyFile>..\..\..\StrongNameKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Docsvision.Backoffice.Cards, Version=6.0.4089.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.Backoffice.Cards.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Docsvision.LayoutEditor.ObjectModel">
       <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.LayoutEditor.ObjectModel.dll</HintPath>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.Platform.ObjectModel, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Platform.StorageServer, Version=5.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -61,6 +60,9 @@
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
       <SpecificVersion>False</SpecificVersion>
       <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.WebClientLibrary.ObjectModel">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

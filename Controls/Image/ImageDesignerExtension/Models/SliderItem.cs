@@ -7,7 +7,7 @@ using System.Windows.Input;
 namespace ImageDesignerExtension.Models
 {
     /// <summary>
-    /// Represents slider item class
+    /// Представляет собой класс для элемента слайдера
     /// </summary>
     class SliderItem : INotifyPropertyChanged
     {

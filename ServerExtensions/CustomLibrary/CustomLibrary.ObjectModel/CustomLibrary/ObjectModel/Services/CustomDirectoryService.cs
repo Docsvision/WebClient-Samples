@@ -5,7 +5,7 @@ namespace CustomLibrary.ObjectModel.Services
     internal class CustomDirectoryService : ContextService, ICustomDirectoryService
     {
         /// <summary>
-        /// Initializes a 
+        /// Создаёт новый экземпляр <see cref="CustomDirectoryService"/>
         /// </summary>
         public CustomDirectoryService()
         {

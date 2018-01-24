@@ -5,15 +5,15 @@ using System;
 namespace ExtendedCardInfoServerExtension.Services
 {
     /// <summary>
-    /// Extended card service
+    /// Сервис для расширенной карточки
     /// </summary>
     interface IExtendedCardService
     {
         /// <summary>
-        /// Gets extended card
+        /// Получить расширенную карточку
         /// </summary>
-        /// <param name="sessionContext">Session context</param>
-        /// <param name="cardId">Card identifier</param>
+        /// <param name="sessionContext">Контекст сессии</param>
+        /// <param name="cardId">Идентификатор карточки</param>
         /// <returns><see cref="ExtendedCardModel"/></returns>
         ExtendedCardModel GetExtendedCard(SessionContext sessionContext, Guid cardId);
     }

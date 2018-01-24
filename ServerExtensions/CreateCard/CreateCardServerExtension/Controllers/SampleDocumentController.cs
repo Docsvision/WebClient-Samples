@@ -14,7 +14,7 @@ namespace CreateCardServerExtension.Controllers
         private readonly ServiceHelper serviceHelper;
 
         /// <summary>
-        /// Create new instance of <see cref="SampleDocumentController"/>
+        /// Создаёт новый экземпляр <see cref="SampleDocumentController"/>
         /// </summary>
         /// <param name="serviceProvider">Service provider</param>
         public SampleDocumentController(IServiceProvider serviceProvider)

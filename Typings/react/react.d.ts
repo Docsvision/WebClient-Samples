@@ -158,11 +158,17 @@ declare namespace __React {
     type ReactInstance = Component<any, any> | Element;
 
     // Base component for plain JS classes
-    class Component<P, S> implements ComponentLifecycle<P, S> {
+    interface Component<P = {}, S = {}> extends ComponentLifecycle<P, S> { }
+    class Component<P, S> {
         constructor(props?: P, context?: any);
         setState(f: (prevState: S, props: P) => S, callback?: () => any): void;
-        setState(state: S, callback?: () => any): void;
         setState(state: any, callback?: () => any): void;
+
+        // tslint:disable:unified-signatures
+        //setState<K extends keyof S>(f: (prevState: S, props: P) => Pick<S, K>, callback?: () => any): void;
+        //setState<K extends keyof S>(state: Pick<S, K>, callback?: () => any): void;
+        // tslint:enable:unified-signatures
+
         forceUpdate(callBack?: () => any): void;
         render(): JSX.Element;
 

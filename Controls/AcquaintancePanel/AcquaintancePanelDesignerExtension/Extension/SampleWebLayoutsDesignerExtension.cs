@@ -8,14 +8,14 @@ using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
 namespace AcquaintancePanelDesignerExtension
 {
     /// <summary>
-    /// Represents sample layout editor extension
+    /// Представляет собой пример расширения для редактора разметок
     /// </summary>
     class SampleWebLayoutsDesignerExtension : WebLayoutsDesignerExtension
     {
         /// <summary>
-        /// Creates a new instance of <see cref="SampleWebLayoutsDesignerExtension"/>
+        /// Создаёт новый экземпляр <see cref="SampleWebLayoutsDesignerExtension"/>
         /// </summary>
-        /// <param name="provider">service provider</param>
+        /// <param name="provider">Сервис-провайдер</param>
         public SampleWebLayoutsDesignerExtension(IServiceProvider provider)
             : base(provider)
         {

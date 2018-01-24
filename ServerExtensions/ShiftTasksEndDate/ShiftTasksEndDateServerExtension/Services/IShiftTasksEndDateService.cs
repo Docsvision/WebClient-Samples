@@ -4,15 +4,15 @@ using System;
 namespace ShiftTasksEndDateServerExtension.Services
 {
     /// <summary>
-    /// Extended card service
+    /// Расширенный сервис для карточки
     /// </summary>
     interface IShiftTasksEndDateService
     {
         /// <summary>
-        /// Shifts tasks end date
+        /// Сдвигает дату окончания задач
         /// </summary>
-        /// <param name="sessionContext">Session context</param>
-        /// <param name="cardId">Card identifier</param>
+        /// <param name="sessionContext">Контекст сессии</param>
+        /// <param name="cardId">Идентификатор карточки</param>
         /// <returns><see cref="ExtendedCardModel"/></returns>
         void ShiftTasksEndDate(SessionContext sessionContext, Guid cardId);
     }

@@ -1,12 +1,12 @@
 ﻿namespace ExtendedCardInfoServerExtension
 {
     /// <summary>
-    /// Represents a static class for layout extension web constants
+    /// Представляет собой статический класс для расширения разметки веб-констант
     /// </summary>
     public static class Constants
     {
         /// <summary>
-        /// Represents layout namespace
+        /// Пространство имён
         /// </summary>
         public const string LayoutNamespace = "ExtendedCardInfoServerExtension";
     }

@@ -6,7 +6,7 @@ using ServiceHelper = CustomLibraryServerExtension.Helpers.ServiceHelper;
 namespace CustomLibraryServerExtension.Controllers
 {
     /// <summary>
-    /// Represents custom library controller
+    /// Представляет собой кастомную библиотеку контроллера
     /// </summary>
     public class CustomLibraryController : Controller
     {
@@ -14,9 +14,9 @@ namespace CustomLibraryServerExtension.Controllers
         private readonly ServiceHelper serviceHelper;
 
         /// <summary>
-        /// Create new instance of <see cref="CustomLibraryController"/>
+        /// Создаёт новый экземпляр <see cref="CustomLibraryController"/>
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
         public CustomLibraryController(IServiceProvider serviceProvider)
         {
             this.serviceProvider = serviceProvider;

@@ -1,12 +1,12 @@
 ﻿namespace LicenseCheckServerExtension
 {
     /// <summary>
-    /// Represents a static class for layout extension web constants
+    /// Представляет собой статический класс для расширения разметки веб-констант
     /// </summary>
     public class Constants
     {
         /// <summary>
-        /// Represents extension namespace
+        /// Пространство имён
         /// </summary>
         public const string Namespace = "LicenseCheckServerExtension";
     }

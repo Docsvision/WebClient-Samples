@@ -19,7 +19,8 @@
             return (
                 <div>
                     <a href={this.state.url} tabIndex={this.getTabIndex()} target="_blank">{this.getText()}</a>
-                </div>);
+                </div>
+            );
         }
     }   
 }

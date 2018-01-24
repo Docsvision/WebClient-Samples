@@ -3,29 +3,27 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
-using System.Web.Optimization;
-using System.Resources;
-using Docsvision.Backoffice.Client.Cards.AdvancedLayouts.BindingConverters;
 using ImageServerExtension.AdvancedLayouts.BindingConverters;
+using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;
 
 namespace ImageServerExtension
 {
     /// <summary>
-    /// Defines description of the WebClient extension defined in current assembly
+    /// Задаёт описание расширения для WebClient, которое задано в текущей сборке
     /// </summary>
     public class LayoutWebClientExtension : WebClientExtension
     {
         /// <summary>
-        /// Creates new instance of <see cref="LayoutWebClientExtension" />
+        /// Создаёт новый экземпляр <see cref="LayoutWebClientExtension" />
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
+        /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
             : base(serviceProvider)
         {
         }
 
         /// <summary>
-        /// Get extenstion name
+        /// Получить название расширения
         /// </summary>
         public override string ExtensionName
         {
@@ -33,7 +31,7 @@ namespace ImageServerExtension
         }
 
         /// <summary>
-        /// Get extension namespace
+        /// Получить пространство имён расширения
         /// </summary>
         public override string Namespace
         {
@@ -41,7 +39,7 @@ namespace ImageServerExtension
         }
 
         /// <summary>
-        /// Get extension version
+        /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
         {
@@ -51,9 +49,9 @@ namespace ImageServerExtension
         #region WebClientExtension Overrides
 
         /// <summary>
-        /// Gets registered navigator extension
+        /// Получить зарегистрированное расширение навигатора
         /// </summary>
-        /// <returns>registered navigator extension</returns>
+        /// <returns>Зарегистрированное расширение навигатора</returns>
         protected override WebClientNavigatorExtension GetNavigatorExtension()
         {
             var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
@@ -72,14 +70,14 @@ namespace ImageServerExtension
         }
 
         /// <summary>
-        /// Gets binding converters
+        /// Получить binding-конвертеры
         /// </summary>
-        /// <returns>a list of binding converters</returns>
+        /// <returns>Список binding-конвертеров</returns>
         protected override List<IBindingConverter> GetBindingConverters()
         {
             return new List<IBindingConverter>
             {
-                new SliderConverter(this.ServiceProvider),
+                new SliderConverter(this.ServiceProvider)
             };
         }
 

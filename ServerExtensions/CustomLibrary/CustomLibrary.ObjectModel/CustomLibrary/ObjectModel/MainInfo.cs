@@ -5,17 +5,17 @@ using System.Diagnostics;
 namespace CustomLibrary.ObjectModel
 {
     /// <summary>
-    /// Represents database settings section row
+    /// Представляет собой настройки строки секции базы данных
     /// </summary>
     public class MainInfo : BaseCardSectionRow
     {
         /// <summary>
-        /// Counter property
+        /// Счётчик
         /// </summary>
         public static readonly ObjectProperty CounterProperty = ObjectProperty.Register("Counter", typeof(int), typeof(MainInfo));
 
         /// <summary>
-		/// Initializes a new instance of the <see cref="MainInfo"/> class
+		/// Создаёт новый экземпляр <see cref="MainInfo"/>
 		/// </summary>
 		[DebuggerHidden]
         static MainInfo()
@@ -23,14 +23,14 @@ namespace CustomLibrary.ObjectModel
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainInfo"/> class
+        /// Создаёт новый экземпляр <see cref="MainInfo"/>
         /// </summary>
         internal MainInfo()
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="MainInfo"/> class within the specified data
+        /// Создаёт новый экземпляр <see cref="MainInfo"/> с указанными данными
         /// </summary>
         internal MainInfo(ObjectInitializationData data)
 			: base(data)
@@ -40,7 +40,7 @@ namespace CustomLibrary.ObjectModel
         #region Properties
 
         /// <summary>
-        /// Gets or sets counter
+        /// Устанавливает или получает значение счётчика
         /// </summary>
         public int Counter
         {
