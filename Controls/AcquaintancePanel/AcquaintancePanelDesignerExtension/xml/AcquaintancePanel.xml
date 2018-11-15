@@ -2,7 +2,7 @@
 <!-- содержит описания контролов -->
 <Controls>
   <!-- содержит описание контрола AcquaintancePanel, ResourceKey задает ключ файла ресурсов, в котором указано наименование контрола (либо задать атрибут DisplayName задает наименование контрола), которое будет отображаться в конструкторе разметок -->
-  <Control Name="AcquaintancePanel" ResourceKey="AcquaintancePanel" >
+  <Control Name="AcquaintancePanel" ControlGroupResourceKey="ControlGroup_Samples" ResourceKey="AcquaintancePanel" >
     <!-- содержит перечисление свойств контрола -->
     <Properties>
       <Property Type="Name" />

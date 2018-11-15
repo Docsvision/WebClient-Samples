@@ -1,7 +1,4 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Helpers;
-using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
-using Docsvision.Platform.Tools.LayoutEditor.PropertiesEditor;
-using ImageDesignerExtension.Models;
+﻿using ImageDesignerExtension.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,6 +8,9 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Input;
+using DocsVision.Platform.Tools.LayoutEditor.Helpers;
+using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
+using DocsVision.Platform.Tools.LayoutEditor.PropertiesEditor;
 using Xceed.Wpf.Toolkit.PropertyGrid;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 

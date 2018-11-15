@@ -11,7 +11,6 @@ interface JQuery {
 interface HTMLElement {
     grid: WebClient.Grid;
     employeeAutocomplete: WebClient.EmployeeAutoComplete;
-    baseUniversalAutocomplete: WebClient.UniversalAutoComplete;
     setText(text: string): void;
     getText(): string;
 }
@@ -54,8 +53,8 @@ interface TaskIntervalManager {
     set_endDate(date: Date): void;
     get_duration(): number;  
     set_duration(duration: number): void;
-    get_executionType(): WebClient.TaskExecutionType;
-    set_executionType(type: WebClient.TaskExecutionType): void;
+    get_executionType(): WebClient.GenModels.ExecutionType;
+    set_executionType(type: WebClient.GenModels.ExecutionType): void;
     get_taskIntervals(): Array<TaskInterval>;
     getDatesBounds(interval: TaskInterval): TaskIntervalDatesBounds;
     getChangeDurationInfo(interval: TaskInterval, duration: number): ChangeDateInfo;

@@ -2,9 +2,8 @@
 
     export class SampleExchangeRatesParams extends BaseControlParams {
         @r standardCssClass?: string = "sample-exchange-rates";
-    }
-
-    export interface SampleExchangeRatesState extends SampleExchangeRatesParams, BaseControlState {
+        /** ключ доступа к API */
+        @r apiToken: string;
     }
 
     export class SampleExchangeRates extends BaseControl<SampleExchangeRatesParams, SampleExchangeRatesState> {
@@ -16,13 +15,8 @@
             return this.controlImpl as SampleExchangeRatesImpl;
         }
 
-        componentWillMount() {
-            super.componentWillMount();
-            console.log(this.state);
-        }
-
-        render() {
-            return <SampleExchangeRatesImpl {...this.state} ref={this.attachControl} />;
+        protected createImpl() {
+            return new SampleExchangeRatesImpl(this.props, this.state);
         }
     }
 

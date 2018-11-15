@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Controls>
-  <Control Name="SampleExchangeRates" DisplayName="Sample exchange rates">
+  <Control Name="SampleExchangeRates" ControlGroupResourceKey="ControlGroup_Samples" DisplayName="Sample exchange rates">
     <!-- содержит перечисление свойств контрола -->
     <Properties>
       <Property Type="Name" />

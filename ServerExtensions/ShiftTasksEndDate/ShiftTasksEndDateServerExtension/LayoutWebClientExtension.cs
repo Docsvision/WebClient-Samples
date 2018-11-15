@@ -1,12 +1,12 @@
 ﻿using ShiftTasksEndDateServerExtension.Controllers;
 using ShiftTasksEndDateServerExtension.Services;
-using Docsvision.WebClient.Extensibility;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
 using System.Web.Mvc;
+using DocsVision.WebClient.Extensibility;
 
 namespace ShiftTasksEndDateServerExtension
 {

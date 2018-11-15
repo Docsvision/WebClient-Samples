@@ -17,12 +17,24 @@
             return new SampleLinkParams();
         }
 
-        private get SampleLinkImpl(): SampleLinkImpl {
-            return this.controlImpl as SampleLinkImpl;
+        // Пример, как создать контрол без impl-класса. Просто возвращаем экземпляр ControlImpl, передавая ему функцию отрисовки.
+        // Данный способ можно применять в случае если контрол достаточно простой
+        protected createImpl() {
+            return new ControlImpl(this.props, this.state, this.renderControl.bind(this));
         }
 
-        render() {
-            return <SampleLinkImpl {...this.state} ref={this.attachControl} />;
+        protected getText() {
+            return this.state.text ? this.state.text : this.state.url;
+        }
+
+        renderControl() {
+            return (
+                <div>
+                    <a href={this.state.url} tabIndex={this.controlImpl.getTabIndex()} target="_blank">
+                        { this.getText() }
+                    </a>
+                </div>
+            );
         }
     }
 

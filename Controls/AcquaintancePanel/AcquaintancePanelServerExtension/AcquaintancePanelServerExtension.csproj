@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AcquaintancePanelServerExtension</RootNamespace>
     <AssemblyName>AcquaintancePanelServerExtension</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -26,9 +26,10 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <TargetFrameworkProfile />
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -120,6 +121,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Content\Extensions\AcquaintancePanel\Scripts\Services\LayoutBusinessProcessController.ts" />
     <Content Include="tsconfig.json" />
     <Content Include="Content\Extensions\AcquaintancePanel\Styles\controls\acquaintance-panel.scss" />
     <None Include="compilerconfig.json" />
@@ -160,8 +162,7 @@
   <ItemGroup>
     <TypeScriptCompile Include="Content\Extensions\AcquaintancePanel\Scripts\Controls\AquaintancePanel\AcquaintancePanel.tsx" />
     <TypeScriptCompile Include="Content\Extensions\AcquaintancePanel\Scripts\Controls\AquaintancePanel\AcquaintancePanelImpl.tsx" />
-    <TypeScriptCompile Include="Content\Extensions\AcquaintancePanel\Scripts\Services\LayoutBusinessProcessController\LayoutBusinessProcessController.tsx" />
-    <TypeScriptCompile Include="Content\Extensions\AcquaintancePanel\Scripts\Services\LayoutBusinessProcessController\Models\IStartBPResultModel.ts" />
+    <TypeScriptCompile Include="Content\Extensions\AcquaintancePanel\Scripts\Controls\AquaintancePanel\Models\IStartBPResultModel.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

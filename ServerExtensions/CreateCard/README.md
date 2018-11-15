@@ -6,7 +6,7 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.5](https://www.typescriptlang.org)
+* [TypeScript 2.8](https://www.typescriptlang.org)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
 ## Сборка
@@ -43,5 +43,5 @@
 - Исходящий.Название = "В ответ на " + <Входящий.Исходящий номер>
 - В ссылки Исходящего и исходного Входящего добавить ссылку друг на друга (тип "ответ" - "в ответ на")
 
-При нажатии на кнопку с помощью объекта requestManager отправляется запрос на сервер. Пользователю отображается созданная карточка Исходящего в режиме просмотра.
+При нажатии на кнопку с помощью сервиса requestManager отправляется запрос на сервер. Пользователю отображается созданная карточка Исходящего в режиме просмотра.
 

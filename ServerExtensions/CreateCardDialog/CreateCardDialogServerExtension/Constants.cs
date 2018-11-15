@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace CreateCardDialogServerExtension
+﻿namespace CreateCardDialogServerExtension
 {
     /// <summary>
     /// Представляет собой статический класс для расширения разметки веб-констант

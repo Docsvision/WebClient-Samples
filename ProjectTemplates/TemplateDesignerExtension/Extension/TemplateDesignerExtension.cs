@@ -1,11 +1,8 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Docsvision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
-using Docsvision.Platform.Tools.LayoutEditor.Extensibility;
 using System.Resources;
-using Docsvision.Platform.Tools.LayoutEditor.Helpers;
-using Docsvision.Platform;
+using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
+using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
 
 namespace TemplateDesignerExtension.Extension
 {

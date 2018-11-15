@@ -7,9 +7,11 @@ namespace CreateCardDialogServerExtension
 {
     public class ApprovalStageCardFactory : ICardFactory
     {
-        public Guid Create(SessionContext sessionContext, Guid cardTypeId, Guid? cardKindId, Guid? parentCardId)
+        private readonly Guid ApprovalStageCardTypeId = new Guid("0DB13C90-21B6-49D8-9070-8144DF97552A");
+
+        public Guid Create(SessionContext sessionContext, Guid? cardKindId, Guid? parentCardId)
         {
-            var cardId = sessionContext.AdvancedCardManager.CreateCard(cardTypeId, cardKindId);
+            var cardId = sessionContext.AdvancedCardManager.CreateCard(ApprovalStageCardTypeId, cardKindId);
             this.FillCardInternal(sessionContext, cardId);
             return cardId;
         }

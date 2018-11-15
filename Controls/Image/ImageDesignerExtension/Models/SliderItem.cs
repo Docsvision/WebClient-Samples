@@ -1,8 +1,8 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Input;
+using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
 
 namespace ImageDesignerExtension.Models
 {

@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ExchangeRatesWebExtension</RootNamespace>
     <AssemblyName>ExchangeRatesWebExtension</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -24,7 +24,7 @@
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -67,7 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Content\Extensions\ExchangeRates\Scripts\Controls\SampleExchangeRates\SampleExchangeRates.tsx" />
-    <TypeScriptCompile Include="Content\Extensions\ExchangeRates\Scripts\Controls\SampleExchangeRates\SampleExchangeRatesImpl.tsx" />
+    <None Include="Content\Extensions\ExchangeRates\Scripts\Controls\SampleExchangeRates\SampleExchangeRatesImpl.tsx" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Extensions\ExchangeRates\Styles\controls\sample-exchange-rates.scss" />
@@ -108,9 +108,7 @@
     <Error Condition="!Exists('..\..\..\packages\BuildWebCompiler.1.11.347\build\BuildWebCompiler.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\..\packages\BuildWebCompiler.1.11.347\build\BuildWebCompiler.targets'))" />
   </Target>
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)Content\*.*" "$(SolutionDir)SamplesOutput\Site\Content\" /Y /I /E
-
-xcopy "$(ProjectDir)..\*.xml" "$(SolutionDir)SamplesOutput\Plugins\SampleExchangeRatesControl\" /Y /I</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(ProjectDir)Content\*.*" "$(SolutionDir)SamplesOutput\Site\Content\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <Import Project="..\..\..\packages\BuildWebCompiler.1.11.347\build\BuildWebCompiler.targets" Condition="Exists('..\..\..\packages\BuildWebCompiler.1.11.347\build\BuildWebCompiler.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

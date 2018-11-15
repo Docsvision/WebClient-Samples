@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using DocsVision.Platform.WebClient.Helpers;
 using ServiceHelper = CreateCardServerExtension.Helpers.ServiceHelper;

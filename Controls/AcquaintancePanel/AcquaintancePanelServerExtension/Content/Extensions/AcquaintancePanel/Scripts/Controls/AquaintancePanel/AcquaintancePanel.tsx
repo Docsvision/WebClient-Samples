@@ -8,15 +8,8 @@
         @apiEvent opened: BasicApiEvent<IEventArgs>;
         @apiEvent closing: CancelableApiEvent<IEventArgs>;
         @apiEvent closed: BasicApiEvent<IEventArgs>;
-    }
 
-    export interface AcquaintancePanelState extends AcquaintancePanelParams, PanelState {
-
-        children: ILayoutModel[];
-        lastLoading: JQueryDeferred<ILayoutModel[]>;
-        isOpened: boolean;
-        receivers: MultipleEmployees;
-        considerationDate: DateTimePicker;
+        @rw services?: $EditOperationStore & $LayoutBusinessProcessController;
     }
 
     export class AcquaintancePanel extends Panel<AcquaintancePanelParams, AcquaintancePanelState> {
@@ -26,11 +19,11 @@
 
         @handler("binding")
         set Binding(binding: IBindingResult<boolean>) {
-            this.state.canSend = !binding || this.layout.editOperations.available(binding.editOperation);
+            this.state.canSend = editOperationAvailable(this.state.services, binding);
         }
 
-        render() {
-            return <AcquaintancePanelImpl {...this.state} ref={this.attachControl} />;
+        protected createImpl() {
+            return new AcquaintancePanelImpl(this.props, this.state);
         }
     }
 

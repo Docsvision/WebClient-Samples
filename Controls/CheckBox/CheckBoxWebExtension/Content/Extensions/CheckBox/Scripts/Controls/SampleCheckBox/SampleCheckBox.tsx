@@ -11,13 +11,10 @@
         @r canEdit?: boolean = true;        
 
         @apiEvent dataChanged?: BasicApiEvent<IDataChangedEventArgs>;
-        @apiEvent checked: BasicApiEvent<IEventArgs>;
-        @apiEvent unchecked: BasicApiEvent<IEventArgs>;
-    }
+        @apiEvent checked?: BasicApiEvent<IEventArgs>;
+        @apiEvent unchecked?: BasicApiEvent<IEventArgs>;
 
-    export interface SampleCheckBoxState extends SampleCheckBoxParams, BaseControlState {
-        // Сохраненное значение binding, используется в getBindings
-        binding: IBindingResult<boolean>;
+        @rw services?: $EditOperationStore & $LayoutInfo;
     }
 
     export class SampleCheckBox extends BaseControl<SampleCheckBoxParams, SampleCheckBoxState> {
@@ -31,18 +28,18 @@
             return new SampleCheckBoxParams();
         }
 
-        private get myControlImpl(): SampleCheckBoxImpl {
+        private get checkBoxImpl(): SampleCheckBoxImpl {
             return this.controlImpl as any;
         }
 
         componentDidMount() {
             super.componentDidMount();
-            getEvent(this.params.dataChanged).subscribe(this.onDataChanged);
+            this.params.dataChanged.subscribe(this.onDataChanged);
         }
 
         protected onDataChanged() {
-            if (layoutManager.cardLayout.layoutInfo.type == LayoutType.View) {
-                this.myControlImpl.state.saveHelper.send(() => this.save(), () => { });
+            if (this.state.services.layoutInfo.type == GenModels.LayoutType.View) {
+                this.state.saveHelper.send(() => this.save(), () => { });
             }
         }
 
@@ -52,9 +49,9 @@
         protected set binding(binding: IBindingResult<boolean>) {
             // Если заполнено binding свойство, то берем значение из него
             if (binding && binding.value !== undefined && binding.value !== null) {
-                this.state.value = binding.value;
+                this.checkBoxImpl.setValue(binding.value);
             }
-            this.state.canEdit = !binding || this.layout.editOperations.available(binding.editOperation);
+            this.state.canEdit = editOperationAvailable(this.state.services, binding);
             this.state.binding = binding;
         }
 
@@ -64,8 +61,25 @@
             // Делаем то же, что произошло бы без обработчика автоматически
             this.state.defaultValue = value;
             // Если значение не задано, устанавливаем значение по умолчанию 
-            if (this.state.value == undefined) {
-                this.state.value = value;
+            if (this.checkBoxImpl.getValue() == undefined) {
+                this.checkBoxImpl.setValue(value);
+            }
+        }
+
+        // Вызывается при установлении нового значения SampleCheckBoxParams.value через интерфейсы класса SampleCheckBox
+        @handler(() => at(SampleCheckBoxParams).value)
+        set value(value: boolean) {
+            if (this.state.canEdit) {
+                this.checkBoxImpl.setValue(value);
+            } else {
+                // Значения будут равны если компонент инициализируется при создании,
+                // не равны - когда значение меняется уже после создания
+                // Если canEdit == false, то делаем так, чтобы задавать значение можно было только при создании.
+                if (this.checkBoxImpl.getValue() === value) {
+                    this.checkBoxImpl.setValue(value);
+                } else {
+                    console.warn(resources.OperationForbidden);
+                }
             }
         }
 
@@ -74,8 +88,8 @@
             return [getBindingResult(this.state.binding, this.params.value, () => at(SampleCheckBoxParams).labelText)];
         }
 
-        render() {
-            return <SampleCheckBoxImpl {...this.state} ref={this.attachControl} />;
+        protected createImpl() {
+            return new SampleCheckBoxImpl(this.props, this.state);
         }
     }
 

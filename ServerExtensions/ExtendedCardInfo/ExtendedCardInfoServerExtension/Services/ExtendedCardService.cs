@@ -15,9 +15,6 @@ namespace ExtendedCardInfoServerExtension.Services
         /// <returns><see cref="ExtendedCardModel"/></returns>
         public ExtendedCardModel GetExtendedCard(SessionContext sessionContext, Guid cardId)
         {
-            // Удаляет карточку из кеша. Этот метод будет обозначен как устаревший в следующих сборках!
-            sessionContext.AdvancedCardManager.RefreshCard(cardId);
-
             var card = sessionContext.ObjectContext.GetObject<BaseCard>(cardId);
             if (card == null)
             {

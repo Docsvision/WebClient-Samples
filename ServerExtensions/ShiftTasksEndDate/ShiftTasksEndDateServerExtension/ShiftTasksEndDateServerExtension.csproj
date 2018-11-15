@@ -14,18 +14,19 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ShiftTasksEndDateServerExtension</RootNamespace>
     <AssemblyName>ShiftTasksEndDateServerExtension</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -130,11 +131,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Content\Extensions\ShiftTasksEndDate\Scripts\ShiftTasksEndDate.ts" />
+    <TypeScriptCompile Include="Content\Extensions\ShiftTasksEndDate\Scripts\EventHandlers\ShiftTasksEndDate.ts" />
+    <TypeScriptCompile Include="Content\Extensions\ShiftTasksEndDate\Scripts\Services\Services.ts" />
+    <TypeScriptCompile Include="Content\Extensions\ShiftTasksEndDate\Scripts\Services\ShiftTasksEndDate.ts" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="tsconfig.json" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

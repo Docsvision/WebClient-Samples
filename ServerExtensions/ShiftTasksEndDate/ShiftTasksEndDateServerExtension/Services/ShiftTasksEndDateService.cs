@@ -16,7 +16,6 @@ namespace ShiftTasksEndDateServerExtension.Services
         /// <returns><see cref="ExtendedCardModel"/></returns>
         public void ShiftTasksEndDate(SessionContext sessionContext, Guid cardId)
         {
-            sessionContext.AdvancedCardManager.RefreshCard(cardId);
             var document = sessionContext.ObjectContext.GetObject<Document>(cardId);
             if (document != null)
             {

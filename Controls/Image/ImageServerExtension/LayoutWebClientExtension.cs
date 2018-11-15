@@ -1,8 +1,8 @@
-﻿using Docsvision.WebClient.Extensibility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
+using DocsVision.WebClient.Extensibility;
 using ImageServerExtension.AdvancedLayouts.BindingConverters;
 using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;
 

@@ -1,20 +1,41 @@
 ﻿namespace WebClient {
-    const exchangeRatesSourceUrl: string = 'http://api.fixer.io/latest?base=RUB&symbols=USD,EUR';
+    const exchangeRatesSourceUrl: string = 'http://data.fixer.io/api/latest?access_key={0}';
 
-    export interface SampleExchangeRatesImplState extends BaseControlImplState, SampleExchangeRatesState {
+    export interface SampleExchangeRatesState extends SampleExchangeRatesParams, BaseControlState {
         exchangeRatesData: any;
     }
 
-    export class SampleExchangeRatesImpl extends BaseControlImpl<SampleExchangeRatesParams, SampleExchangeRatesImplState> {
+    export class SampleExchangeRatesImpl extends BaseControlImpl<SampleExchangeRatesParams, SampleExchangeRatesState> {
+        constructor(props: SampleExchangeRatesParams, state: SampleExchangeRatesState) {
+            super(props, state);
+        }
 
         componentWillMount() {
             super.componentWillMount();
 
-            fetch(exchangeRatesSourceUrl)
+            const url = exchangeRatesSourceUrl.format(this.props.apiToken);
+            fetch(url)
                 .then(l => l.json())
-                .then(data => this.setState({
-                    exchangeRatesData: data
-                }));
+                .then(data => {
+                    let rates = [];
+                    rates.push(this.calcRates(data, 'RUB', 'USD'));
+                    rates.push(this.calcRates(data, 'RUB', 'EUR'));
+
+                    this.setState({
+                        exchangeRatesData: {
+                            date: data.date,
+                            rates: rates
+                        }
+                    })
+                });
+        }
+
+        calcRates(data: any, source: string, target: string) {
+            return {
+                source,
+                target,
+                value: (data.rates[source] / data.rates[target])
+            }
         }
 
         roundValue(value: number): number {
@@ -25,13 +46,20 @@
             if (!this.state.exchangeRatesData) {
                 return null;
             }
-            let data = this.state.exchangeRatesData;
-            let rows = Object.keys(data.rates).map(l => <div key={l} className={l}>{"1 {0} = {1} {2}".format(l, this.roundValue(1 / data.rates[l]), data.base)}</div>);
+
+            let rows = this.state.exchangeRatesData.rates.map((rate: any) => {
+                const text = "1 {0} = {1} {2}".format(rate.target, this.roundValue(rate.value), rate.source);
+                return (
+                    <div key={rate.target} className={rate.target}>{text}</div>
+                )
+            });
+
             return (
                 <div>
-                    <div className="header">{"Курсы валют на {0}:".format(data.date)}</div>
+                    <div className="header">{"Курсы валют на {0}:".format(this.state.exchangeRatesData.date)}</div>
                     {rows}
-                </div>);
+                </div>
+            );
         }
     }   
 }

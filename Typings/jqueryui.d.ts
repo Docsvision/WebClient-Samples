@@ -1771,9 +1771,7 @@ interface JQuery {
     toggle(effect: string, options?: any, duration?: string, complete?: Function): JQuery;
 
     position(options: JQueryUI.JQueryPositionOptions): JQuery;
-
-    enableSelection(): JQuery;
-    disableSelection(): JQuery;
+    
     focus(delay: number, callback?: Function): JQuery;
     uniqueId(): JQuery;
     removeUniqueId(): JQuery;

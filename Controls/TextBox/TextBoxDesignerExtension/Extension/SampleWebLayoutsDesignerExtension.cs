@@ -1,11 +1,10 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Docsvision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
-using Docsvision.Platform.Tools.LayoutEditor.Extensibility;
 using System.Resources;
-using Docsvision.Platform.Tools.LayoutEditor.Helpers;
-using Docsvision.Platform;
+using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
+using DocsVision.Platform.Tools.LayoutEditor.Helpers;
+using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
+using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
 using DocsVision.Platform.WebClient.Helpers;
 
 namespace TextBoxDesignerExtension.Extension
@@ -70,6 +69,7 @@ namespace TextBoxDesignerExtension.Extension
             var sampleTextBox = new ControlTypeDescription(Constants.SampleTextBox.ClassName)
             {
                 DisplayName = Resources.ControlTypes_SampleTextBox,
+                ControlGroupDisplayName = Resources.ControlGroup_Samples,
                 PropertyDescriptions =
                 {
                     standardCssClass,

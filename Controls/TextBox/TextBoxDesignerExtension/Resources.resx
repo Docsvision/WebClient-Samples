@@ -123,4 +123,7 @@
   <data name="ControlTypes_ImageClickEventProperty" xml:space="preserve">
     <value>On image click</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Samples</value>
+  </data>
 </root>

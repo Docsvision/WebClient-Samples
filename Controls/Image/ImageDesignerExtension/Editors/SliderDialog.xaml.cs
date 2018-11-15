@@ -1,6 +1,4 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Helpers;
-using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
-using ImageDesignerExtension.Models;
+﻿using ImageDesignerExtension.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,6 +7,8 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Windows;
 using System.Windows.Input;
+using DocsVision.Platform.Tools.LayoutEditor.Helpers;
+using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
 
 namespace ImageDesignerExtension.Editors
 {

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+  <Control Name="SampleExchangeRates" ControlGroupResourceKey="ControlGroup_Samples" DisplayName="Sample exchange rates">
+    <!-- содержит перечисление свойств контрола -->
+    <Properties>
+      <Property Type="Name" />
+      <Property Type="Visibility" />
+      <!-- DefaultValue задает значение поля по умолчанию -->
+      <Property Type="StandardCssClass" DefaultValue="sample-exchange-rates" />
+      <Property Type="CustomCssClasses" />
+      <Property Name="ApiToken" ResourceKey="SampleExchangeRates_ApiTokenProp"
+                Category="BehaviorCategory" DataType="System.String"/>
+    </Properties>
+  </Control>
+</Controls>
+

@@ -1,9 +1,10 @@
 ﻿<Window x:Class="ImageDesignerExtension.Editors.SliderDialog"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:editors="clr-namespace:Docsvision.Platform.Tools.LayoutEditor.Editors;assembly=WebLayoutsDesigner"
+        xmlns:editors="clr-namespace:DocsVision.Platform.Tools.LayoutEditor.Editors;assembly=WebLayoutsDesigner"
         xmlns:res="clr-namespace:ImageDesignerExtension"
         xmlns:le="http://docsvision.com/WebLayoutsDesigner"
+        xmlns:editors1="clr-namespace:DocsVision.Platform.Tools.LayoutEditor.Editors;assembly=WebLayoutsDesigner"
         x:ClassModifier="internal"
         Title="{x:Static res:Resources.SliderDialog_Title}"
         Height="350" Width="500"
@@ -41,7 +42,7 @@
                         <Label Content="{x:Static res:Resources.SliderDialog_Delete}" />
                     </StackPanel>
                 </Button>
-                <editors:UpDownCollectionControl SourceCollection="{Binding Items}" SourceItem="{Binding SelectedItem}" />
+                <editors1:UpDownCollectionControl SourceCollection="{Binding Items, Mode=OneWay}" SourceItem="{Binding SelectedItem}" />
             </ToolBar>
         </ToolBarTray>
         <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding Items}" SelectionMode="Single" SelectedItem="{Binding SelectedItem}" Grid.ColumnSpan="3" Grid.Row="1" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserAddRows="False" RowDetailsVisibilityMode="Collapsed">

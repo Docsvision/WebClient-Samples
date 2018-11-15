@@ -120,6 +120,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Отмена</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Сэмплы</value>
+  </data>
   <data name="ControlTypes_DescriptionProperty" xml:space="preserve">
     <value>Описание</value>
   </data>

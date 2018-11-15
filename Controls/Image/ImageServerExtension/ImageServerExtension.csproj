@@ -14,7 +14,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ImageServerExtension</RootNamespace>
     <AssemblyName>ImageServerExtension</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
@@ -25,9 +25,10 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <UseGlobalApplicationHostFile />
-    <TypeScriptToolsVersion>2.5</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>2.8</TypeScriptToolsVersion>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -126,9 +127,9 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Content\Extensions\ImageSample\Scripts\Controls\SampleImage\Data\ISliderItem.ts" />
-    <TypeScriptCompile Include="Content\Extensions\ImageSample\Scripts\Controls\SampleImage\SampleImage.tsx" />
-    <TypeScriptCompile Include="Content\Extensions\ImageSample\Scripts\Controls\SampleImage\SampleImageImpl.tsx" />
+    <TypeScriptCompile Include="Content\Extensions\ImageSample\Scripts\Controls\ImageSample\Data\ISliderItem.ts" />
+    <TypeScriptCompile Include="Content\Extensions\ImageSample\Scripts\Controls\ImageSample\SampleImage.tsx" />
+    <TypeScriptCompile Include="Content\Extensions\ImageSample\Scripts\Controls\ImageSample\SampleImageImpl.tsx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

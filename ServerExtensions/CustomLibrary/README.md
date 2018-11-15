@@ -8,7 +8,7 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.5](https://www.typescriptlang.org)
+* [TypeScript 2.8](https://www.typescriptlang.org)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 * [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
 * [Docsvision 5 DVExplorer Update 9](http://bit.ly/2sr5DKd)

@@ -1,13 +1,12 @@
-﻿using Docsvision.WebClient.Extensibility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
 using System.Web.Mvc;
-using System.Web.Optimization;
 using AcquaintancePanelServerExtension.Controllers;
 using AcquaintancePanelServerExtension.Services;
+using DocsVision.WebClient.Extensibility;
 
 namespace AcquaintancePanelServerExtension
 {

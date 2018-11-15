@@ -7,7 +7,7 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.5](https://www.typescriptlang.org)
+* [TypeScript 2.8](https://www.typescriptlang.org)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
 ## Сборка
@@ -41,4 +41,4 @@
  для получения информации о контрагентах:  Phone, Email, Name.
 
 В клиентском скрипте реализована функция sampleDocumentViewCardOpened, которая вызывается на событие On card opened.
-Она отправляет запрос на сервер WebClient.samplePartnersController.GetPartnersInfo и заполняет таблицу вернувшимися данными.
+Она отправляет запрос на сервер WebClient.getPartnersInfo и заполняет таблицу вернувшимися данными.

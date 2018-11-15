@@ -1,5 +1,4 @@
-﻿using Docsvision.WebClient.Extensibility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
@@ -7,6 +6,7 @@ using System.Resources;
 using System.Web.Mvc;
 using System.Web.Http.Controllers;
 using DocsVision.BackOffice.WebClient.Services;
+using DocsVision.WebClient.Extensibility;
 using DocsVision.WebClientLibrary.ObjectModel.Services.LayoutModel;
 using DocsVision.WebClientLibrary.ObjectModel.Services.BindingResolvers;
 using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;

@@ -1,12 +1,11 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Docsvision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
-using Docsvision.Platform.Tools.LayoutEditor.Extensibility;
 using System.Resources;
-using Docsvision.Platform.Tools.LayoutEditor.Helpers;
-using Docsvision.Platform;
 using CheckBoxDesignerExtension.Editors;
+using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
+using DocsVision.Platform.Tools.LayoutEditor.Helpers;
+using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
+using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
 using DocsVision.Platform.WebClient.Helpers;
 
 namespace CheckBoxDesignerExtension.Extension
@@ -101,6 +100,7 @@ namespace CheckBoxDesignerExtension.Extension
             var partnerCheckBox = new ControlTypeDescription(Constants.SampleCheckBox.ClassName)
             {
                 DisplayName = Resources.ControlTypes_SampleCheckBox, // Отображаемое наименование контрола в окне конструктора разметок
+                ControlGroupDisplayName = Resources.ControlGroup_Samples, // Название группы в конструкторе разметок
                 PropertyDescriptions =  // Содержит перечень свойств, которыми обладает контрол
                 {
                     PropertyFactory.GetNameProperty(), // Наименование экземпляра контрола

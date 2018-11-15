@@ -1,6 +1,6 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Editors;
-using DocsVision.Platform.Data.Metadata.CardModel;
+﻿using DocsVision.Platform.Data.Metadata.CardModel;
 using System.Windows;
+using DocsVision.Platform.Tools.LayoutEditor.Editors;
 using Xceed.Wpf.Toolkit.PropertyGrid;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
 

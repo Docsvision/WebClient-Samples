@@ -8,17 +8,18 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.5](https://www.typescriptlang.org)
+* [TypeScript 2.8](https://www.typescriptlang.org)
 * [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
-2. Собрать проект Controls > Link > LinkWebExtension
-3. Скопировать каталог SamplesOutput\Plugins\SampleLinkControl в каталог "Путь к установленному Web-клиент\Plugins"
-4. Скопировать каталог SamplesOutput\Site\Content\Extensions\Link в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-5. Перезапустить IIS
+2. Собрать проект Controls > Link > LinkDesignerExtension
+3. Собрать проект Controls > Link > LinkWebExtension
+4. Скопировать каталог SamplesOutput\Plugins\LinkDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
+5. Скопировать каталог SamplesOutput\Site\Content\Extensions\Link в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+6. Перезапустить IIS
 
 ## Проверка примера
 

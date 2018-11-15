@@ -1,12 +1,11 @@
 ﻿using TableControlServerExtension.Controllers;
 using TableControlServerExtension.Services;
-using Docsvision.WebClient.Extensibility;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Web.Mvc;
-using System.Web.Optimization;
+using DocsVision.WebClient.Extensibility;
 
 namespace TableControlServerExtension
 {

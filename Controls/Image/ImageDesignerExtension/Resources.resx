@@ -156,4 +156,7 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Samples</value>
+  </data>
 </root>

@@ -1,13 +1,15 @@
 ﻿namespace WebClient {
-    export interface SampleTextBoxImplState extends BaseControlState, SampleTextBoxState {        
+    export interface SampleTextBoxState extends SampleTextBoxParams, BaseControlState {
+        // Сохраненное значение binding, используется в getBindings
+        binding: IBindingResult<string>;
     }
 
-    export class SampleTextBoxImpl extends BaseControlImpl<SampleTextBoxParams, SampleTextBoxImplState> {
-        constructor(props: SampleTextBoxParams) {
-            super(props);
+    export class SampleTextBoxImpl extends BaseControlImpl<SampleTextBoxParams, SampleTextBoxState> {
+        constructor(props: SampleTextBoxParams, state: SampleTextBoxState) {
+            super(props, state);
 
-            this.state.dataChanged = SimpleEvent.Create<ISampleDataChangedEventArgs>(props.wrapper);
-            this.state.imageClick = SimpleEvent.Create<IEventArgs>(props.wrapper);
+            this.state.dataChanged = SimpleEvent.Create<ISampleDataChangedEventArgs>(this.state.wrapper);
+            this.state.imageClick = SimpleEvent.Create<IEventArgs>(this.state.wrapper);
 
             this.handleDataChanged = this.handleDataChanged.bind(this);
             this.handleImageClick = this.handleImageClick.bind(this);
@@ -21,24 +23,8 @@
             this.setValue(event.target.value);
         }
 
-        // Вызывается при получении нового значения SampleTextBoxParams.value через интерфейсы класса SampleTextBox
-        @handler(() => at(SampleTextBoxParams).value)
-        set value(value: string) {
-            if (this.state.canEdit) {
-                this.setValue(value);
-            } else {
-                // Значения будут равны если компонент инициализируется при создании,
-                // не равны - когда значение меняется уже после создания
-                // Если canEdit == false, то делаем так, чтобы задавать значение можно было только при создании.
-                if (this.props.value === value) {
-                    this.setValue(value);
-                } else {
-                    console.warn(resources.OperationForbidden);
-                }
-            }
-        }
-
-        protected setValue(value: string) {
+       
+        public setValue(value: string) {
             if (this.state.value != value) {
                 var eventArgs: IDataChangedEventArgs = {
                     oldValue: this.state.value,
@@ -48,6 +34,10 @@
                 this.forceUpdate();
                 SimpleEvent.cast(this.state.dataChanged).trigger(eventArgs);
             }
+        }
+
+        public getValue() {
+            return this.state.value;
         }
 
         protected getImageStyle() {

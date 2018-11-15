@@ -1,11 +1,11 @@
-﻿using Docsvision.WebClient.Extensibility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
 using DocsVision.BackOffice.WebClient.Services;
 using DocsVision.ApprovalDesigner.CardLib.CardDefs;
+using DocsVision.WebClient.Extensibility;
 
 namespace CreateCardDialogServerExtension
 {

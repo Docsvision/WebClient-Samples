@@ -1,9 +1,9 @@
-﻿using Docsvision.Platform.Tools.LayoutEditor.Infrostructure;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using Docsvision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
-using Docsvision.Platform.Tools.LayoutEditor.Extensibility;
 using System.Resources;
+using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
+using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
+using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
 
 namespace UrlPropertyDesignerExtension.Extension
 {

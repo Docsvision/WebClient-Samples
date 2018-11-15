@@ -14,13 +14,10 @@
         @r imageHeight: string = "1.5em";
         @r imageWidth: string = "1.5em";
         
-        @apiEvent dataChanged: BasicApiEvent<ISampleDataChangedEventArgs>;
-        @apiEvent imageClick: BasicApiEvent<IEventArgs>;
-    }
+        @apiEvent dataChanged?: BasicApiEvent<ISampleDataChangedEventArgs>;
+        @apiEvent imageClick?: BasicApiEvent<IEventArgs>;
 
-    export interface SampleTextBoxState extends SampleTextBoxParams, BaseControlState {
-        // Сохраненное значение binding, используется в getBindings
-        binding: IBindingResult<string>;
+        @rw services?: $EditOperationStore;
     }
 
     export class SampleTextBox extends BaseControl<SampleTextBoxParams, SampleTextBoxState> {
@@ -28,19 +25,15 @@
             return new SampleTextBoxParams();
         }
 
-        private get sampleTextBoxImpl(): SampleTextBoxImpl {
-            return this.controlImpl as SampleTextBoxImpl;
-        }
-
         // Обработчик значения свойства "binding", присылаемого сервером.
         // Данное свойство задается только сервером, поэтому в нет смысла объявлять его в SampleTextBoxParams
         @handler("binding")
         protected set binding(binding: IBindingResult<string>) {
             // Если заполнено binding свойство, то берем значение из него
-            if (binding && binding.value !== undefined && binding.value !== null) {
-                this.state.value = binding.value;
+            if (binding && definedNotNull(binding.value)) {
+                this.getImpl<SampleTextBoxImpl>().setValue(binding.value);
             }
-            this.state.canEdit = !binding || this.layout.editOperations.available(binding.editOperation);
+            this.state.canEdit = editOperationAvailable(this.state.services, binding);
             this.state.binding = binding;
         }
 
@@ -50,18 +43,36 @@
             // Делаем то же, что произошло бы без обработчика автоматически
             this.state.default = value;
             // Если значение не задано, устанавливаем значение по умолчанию 
-            if (this.state.value == undefined) {
-                this.state.value = value;
+            if (this.getImpl<SampleTextBoxImpl>().getValue() === undefined) {
+                this.getImpl<SampleTextBoxImpl>().setValue(value);
             }
         }
+
+        // Вызывается при получении нового значения SampleTextBoxParams.value через интерфейсы класса SampleTextBox
+        @handler(() => at(SampleTextBoxParams).value)
+        set value(value: string) {
+            if (this.state.canEdit) {
+                this.getImpl<SampleTextBoxImpl>().setValue(value);
+            } else {
+                // Значения будут равны если компонент инициализируется при создании,
+                // не равны - когда значение меняется уже после создания
+                // Если canEdit == false, то делаем так, чтобы задавать значение можно было только при создании.
+                if (this.getImpl<SampleTextBoxImpl>().getValue() === value) {
+                    this.getImpl<SampleTextBoxImpl>().setValue(value);
+                } else {
+                    console.warn(resources.OperationForbidden);
+                }
+            }
+        }
+
 
         // Вызывается при сохранении карточки, возвращает свойство Binding с обновленным значнием value
         protected getBindings(): IBindingResult<any>[] {
             return [getBindingResult(this.state.binding, this.params.value, () => at(DepartmentParams).labelText)];
         }
 
-        render() {
-            return <SampleTextBoxImpl {...this.state} ref={this.attachControl} />;
+        protected createImpl() {
+            return new SampleTextBoxImpl(this.props, this.state);
         }
     }
 

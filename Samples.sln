@@ -22,7 +22,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Link", "Link", "{C6E27973-906C-4348-95CA-86CF21C4A54E}"
 	ProjectSection(SolutionItems) = preProject
 		Controls\Link\README.md = Controls\Link\README.md
-		Controls\Link\SampleLinkControlDescription.xml = Controls\Link\SampleLinkControlDescription.xml
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TextBox", "TextBox", "{2D7DC9A7-4666-4051-8650-B8BADCAF0940}"
@@ -46,36 +45,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ServerExtensions", "ServerExtensions", "{CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClientScripts", "ClientScripts", "{205915BD-96EC-4C6D-AC27-247A3C42D5DF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangeStateByScript", "ChangeStateByScript", "{8654A36A-2D73-4B31-B5AD-E4F6DB2C630A}"
-	ProjectSection(SolutionItems) = preProject
-		ClientScripts\ChangeStateByScript\ChangeStateByScriptLayout.xml = ClientScripts\ChangeStateByScript\ChangeStateByScriptLayout.xml
-		ClientScripts\ChangeStateByScript\README.md = ClientScripts\ChangeStateByScript\README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlsRelation", "ControlsRelation", "{E912661E-5F53-4849-A0A4-D5C469B6163B}"
-	ProjectSection(SolutionItems) = preProject
-		ClientScripts\ControlsRelation\ControlsRelationLayout.xml = ClientScripts\ControlsRelation\ControlsRelationLayout.xml
-		ClientScripts\ControlsRelation\README.md = ClientScripts\ControlsRelation\README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlValidation", "ControlValidation", "{2FF16E57-A95D-4965-8C93-9A8A4C16074B}"
-	ProjectSection(SolutionItems) = preProject
-		ClientScripts\ControlValidation\ControlValidationLayout.xml = ClientScripts\ControlValidation\ControlValidationLayout.xml
-		ClientScripts\ControlValidation\README.md = ClientScripts\ControlValidation\README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopyValueToControl", "CopyValueToControl", "{CD496419-8023-44E5-A1F5-F8644EF0FB88}"
-	ProjectSection(SolutionItems) = preProject
-		ClientScripts\CopyValueToControl\CopyValueToControlLayout.xml = ClientScripts\CopyValueToControl\CopyValueToControlLayout.xml
-		ClientScripts\CopyValueToControl\README.md = ClientScripts\CopyValueToControl\README.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ValidateOnStateChanging", "ValidateOnStateChanging", "{54A7BECE-0806-4610-9F50-BBBDAEDF09D0}"
-	ProjectSection(SolutionItems) = preProject
-		ClientScripts\ValidateOnStateChanging\README.md = ClientScripts\ValidateOnStateChanging\README.md
-		ClientScripts\ValidateOnStateChanging\ValidateOnStateChangingLayout.xml = ClientScripts\ValidateOnStateChanging\ValidateOnStateChangingLayout.xml
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExtendedCardInfo", "ExtendedCardInfo", "{B9FA8B6E-1084-4D15-8CE4-A0A592509760}"
 	ProjectSection(SolutionItems) = preProject
@@ -157,16 +126,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateCard", "CreateCard", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateCardServerExtension", "ServerExtensions\CreateCard\CreateCardServerExtension\CreateCardServerExtension.csproj", "{BCAD8C42-2FDB-4F9A-A2CD-80B2FECCBBA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeStateByScriptWebExtension", "ClientScripts\ChangeStateByScript\ChangeStateByScriptWebExtension\ChangeStateByScriptWebExtension.csproj", "{811262F4-CB7C-4226-9CE2-C084D45C6098}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsRelationWebExtension", "ClientScripts\ControlsRelation\ControlsRelationWebExtension\ControlsRelationWebExtension.csproj", "{E83A816B-7AD4-41DE-823B-DDCBDD124391}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlValidationWebExtension", "ClientScripts\ControlValidation\ControlValidationWebExtension\ControlValidationWebExtension.csproj", "{A26C56C9-31F5-463A-BC75-2970F1EBE27E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyValueToControlWebExtension", "ClientScripts\CopyValueToControl\CopyValueToControlWebExtension\CopyValueToControlWebExtension.csproj", "{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateOnStateChangingWebExtension", "ClientScripts\ValidateOnStateChanging\ValidateOnStateChangingWebExtension\ValidateOnStateChangingWebExtension.csproj", "{23F71676-C2D4-416D-9F7E-5F184E48E4BE}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CheckBoxWebExtension", "Controls\CheckBox\CheckBoxWebExtension\CheckBoxWebExtension.csproj", "{4FB5A553-FC00-4708-9151-CA03490883AD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkWebExtension", "Controls\Link\LinkWebExtension\LinkWebExtension.csproj", "{F212817A-B0A0-4E86-98C7-FD8B10487C84}"
@@ -180,7 +139,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExchangeRates", "ExchangeRates", "{823576AC-7403-47AB-BB7D-D8B9690FA1E6}"
 	ProjectSection(SolutionItems) = preProject
 		Controls\ExchangeRates\README.md = Controls\ExchangeRates\README.md
-		Controls\ExchangeRates\SampleExchangeRatesControlDescription.xml = Controls\ExchangeRates\SampleExchangeRatesControlDescription.xml
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesWebExtension", "Controls\ExchangeRates\ExchangeRatesWebExtension\ExchangeRatesWebExtension.csproj", "{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8}"
@@ -192,12 +150,109 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CreateCardDialog", "CreateC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateCardDialogServerExtension", "ServerExtensions\CreateCardDialog\CreateCardDialogServerExtension\CreateCardDialogServerExtension.csproj", "{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangeLogoAndBackground", "ChangeLogoAndBackground", "{1C49790D-C4FC-44A9-B289-924C5C11FF50}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HyperComments", "HyperComments", "{64097095-C9BA-46E6-BE30-B6C55F04BA97}"
 	ProjectSection(SolutionItems) = preProject
-		ClientScripts\ChangeLogoAndBackground\README.md = ClientScripts\ChangeLogoAndBackground\README.md
+		Controls\HyperComments\README.md = Controls\HyperComments\README.md
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeLogoAndBackgroundWebExtension", "ClientScripts\ChangeLogoAndBackground\ChangeLogoAndBackgroundWebExtension\ChangeLogoAndBackgroundWebExtension.csproj", "{45F24C6F-D36B-44A5-9F53-45B9802CE17D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperCommentsDesignerExtension", "Controls\HyperComments\HyperCommentsDesignerExtension\HyperCommentsDesignerExtension.csproj", "{7C21B9FD-3FAD-4530-84CA-6C588A67977F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HyperCommentsWebExtension", "Controls\HyperComments\HyperCommentsWebExtension\HyperCommentsWebExtension.csproj", "{E2D2F02E-2451-4DE0-9FF8-EBDE92310F5D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JS", "JS", "{7A6974AA-2D46-4E40-8BDE-5CE6C14B681E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "TypeScript", "TypeScript", "{3B49D399-C95B-4342-AAE5-EF458BF46EB7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangeStateByScript", "ChangeStateByScript", "{16C3FA8C-DD5F-4C3D-95CD-44898B823803}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\JS\ChangeStateByScript\ChangeStateByScriptLayout.xml = ClientScripts\JS\ChangeStateByScript\ChangeStateByScriptLayout.xml
+		ClientScripts\JS\ChangeStateByScript\README.md = ClientScripts\JS\ChangeStateByScript\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlsRelation", "ControlsRelation", "{BEAA9D1F-658A-4AE5-A0CC-F8370F636C1A}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\JS\ControlsRelation\ControlsRelationLayout.xml = ClientScripts\JS\ControlsRelation\ControlsRelationLayout.xml
+		ClientScripts\JS\ControlsRelation\README.md = ClientScripts\JS\ControlsRelation\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlValidation", "ControlValidation", "{F35145FD-AC12-4548-9EEF-400EAD3F362A}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\JS\ControlValidation\ControlValidationLayout.xml = ClientScripts\JS\ControlValidation\ControlValidationLayout.xml
+		ClientScripts\JS\ControlValidation\README.md = ClientScripts\JS\ControlValidation\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopyValueToControl", "CopyValueToControl", "{FB2452A6-0D79-41EB-B323-B134F7C98A5A}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\JS\CopyValueToControl\CopyValueToControlLayout.xml = ClientScripts\JS\CopyValueToControl\CopyValueToControlLayout.xml
+		ClientScripts\JS\CopyValueToControl\README.md = ClientScripts\JS\CopyValueToControl\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ValidateOnStateChanging", "ValidateOnStateChanging", "{23620CFC-71B3-46E8-B89C-A5F43922B187}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\JS\ValidateOnStateChanging\README.md = ClientScripts\JS\ValidateOnStateChanging\README.md
+		ClientScripts\JS\ValidateOnStateChanging\ValidateOnStateChangingLayout.xml = ClientScripts\JS\ValidateOnStateChanging\ValidateOnStateChangingLayout.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeStateByScriptWebExtension", "ClientScripts\JS\ChangeStateByScript\ChangeStateByScriptWebExtension\ChangeStateByScriptWebExtension.csproj", "{811262F4-CB7C-4226-9CE2-C084D45C6098}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsRelationWebExtension", "ClientScripts\JS\ControlsRelation\ControlsRelationWebExtension\ControlsRelationWebExtension.csproj", "{E83A816B-7AD4-41DE-823B-DDCBDD124391}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlValidationWebExtension", "ClientScripts\JS\ControlValidation\ControlValidationWebExtension\ControlValidationWebExtension.csproj", "{A26C56C9-31F5-463A-BC75-2970F1EBE27E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyValueToControlWebExtension", "ClientScripts\JS\CopyValueToControl\CopyValueToControlWebExtension\CopyValueToControlWebExtension.csproj", "{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateOnStateChangingWebExtension", "ClientScripts\JS\ValidateOnStateChanging\ValidateOnStateChangingWebExtension\ValidateOnStateChangingWebExtension.csproj", "{23F71676-C2D4-416D-9F7E-5F184E48E4BE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangeLogoAndBackground", "ChangeLogoAndBackground", "{CFC511CE-FDC1-4B86-9BF3-3C350ECFF9F7}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\TypeScript\ChangeLogoAndBackground\README.md = ClientScripts\TypeScript\ChangeLogoAndBackground\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChangeStateByScript", "ChangeStateByScript", "{F208C655-4009-4B5C-9FF6-FF30F46258A0}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\TypeScript\ChangeStateByScript\ChangeStateByScriptLayout.xml = ClientScripts\TypeScript\ChangeStateByScript\ChangeStateByScriptLayout.xml
+		ClientScripts\TypeScript\ChangeStateByScript\README.md = ClientScripts\TypeScript\ChangeStateByScript\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlsRelation", "ControlsRelation", "{259C1BE3-ACC1-4621-AD0F-ACC38E0F77CE}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\TypeScript\ControlsRelation\ControlsRelationLayout.xml = ClientScripts\TypeScript\ControlsRelation\ControlsRelationLayout.xml
+		ClientScripts\TypeScript\ControlsRelation\README.md = ClientScripts\TypeScript\ControlsRelation\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControlValidation", "ControlValidation", "{B0C14F7D-1863-4783-B30C-8F8750230EC1}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\TypeScript\ControlValidation\ControlValidationLayout.xml = ClientScripts\TypeScript\ControlValidation\ControlValidationLayout.xml
+		ClientScripts\TypeScript\ControlValidation\README.md = ClientScripts\TypeScript\ControlValidation\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CopyValueToControl", "CopyValueToControl", "{86069E14-6A2E-4198-BF6A-ED10C4C5AEC6}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\TypeScript\CopyValueToControl\CopyValueToControlLayout.xml = ClientScripts\TypeScript\CopyValueToControl\CopyValueToControlLayout.xml
+		ClientScripts\TypeScript\CopyValueToControl\README.md = ClientScripts\TypeScript\CopyValueToControl\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ValidateOnStateChanging", "ValidateOnStateChanging", "{B7DCDB6E-1064-4A23-9BE1-0EC287A64B15}"
+	ProjectSection(SolutionItems) = preProject
+		ClientScripts\TypeScript\ValidateOnStateChanging\README.md = ClientScripts\TypeScript\ValidateOnStateChanging\README.md
+		ClientScripts\TypeScript\ValidateOnStateChanging\ValidateOnStateChangingLayout.xml = ClientScripts\TypeScript\ValidateOnStateChanging\ValidateOnStateChangingLayout.xml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeLogoAndBackgroundWebExtension", "ClientScripts\TypeScript\ChangeLogoAndBackground\ChangeLogoAndBackgroundWebExtension\ChangeLogoAndBackgroundWebExtension.csproj", "{45F24C6F-D36B-44A5-9F53-45B9802CE17D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChangeStateByScriptWebExtension", "ClientScripts\TypeScript\ChangeStateByScript\ChangeStateByScriptWebExtension\ChangeStateByScriptWebExtension.csproj", "{3F5DD5DB-660D-41D7-8F13-475B0176E12B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlValidationWebExtension", "ClientScripts\TypeScript\ControlValidation\ControlValidationWebExtension\ControlValidationWebExtension.csproj", "{34C9CDA1-64BB-44FF-A7E5-91C6F9D85E16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlsRelationWebExtension", "ClientScripts\TypeScript\ControlsRelation\ControlsRelationWebExtension\ControlsRelationWebExtension.csproj", "{C12B5EE1-2461-4A82-849B-54742A3518FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyValueToControlWebExtension", "ClientScripts\TypeScript\CopyValueToControl\CopyValueToControlWebExtension\CopyValueToControlWebExtension.csproj", "{F4FF631E-CAA5-4F35-B26A-3DD8B3329085}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidateOnStateChangingWebExtension", "ClientScripts\TypeScript\ValidateOnStateChanging\ValidateOnStateChangingWebExtension\ValidateOnStateChangingWebExtension.csproj", "{89DA3FD4-72F0-4D50-AD9C-EF834CA3DBE9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesDesignerExtension", "Controls\ExchangeRates\ExchangeRatesDesignerExtension\ExchangeRatesDesignerExtension.csproj", "{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDesignerExtension", "LinkDesignerExtension\LinkDesignerExtension.csproj", "{6620A1DD-595F-4379-8249-2BA9ABE02668}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -269,26 +324,6 @@ Global
 		{BCAD8C42-2FDB-4F9A-A2CD-80B2FECCBBA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCAD8C42-2FDB-4F9A-A2CD-80B2FECCBBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCAD8C42-2FDB-4F9A-A2CD-80B2FECCBBA1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Release|Any CPU.Build.0 = Release|Any CPU
-		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4FB5A553-FC00-4708-9151-CA03490883AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4FB5A553-FC00-4708-9151-CA03490883AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4FB5A553-FC00-4708-9151-CA03490883AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -313,10 +348,66 @@ Global
 		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C21B9FD-3FAD-4530-84CA-6C588A67977F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C21B9FD-3FAD-4530-84CA-6C588A67977F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C21B9FD-3FAD-4530-84CA-6C588A67977F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C21B9FD-3FAD-4530-84CA-6C588A67977F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2D2F02E-2451-4DE0-9FF8-EBDE92310F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2D2F02E-2451-4DE0-9FF8-EBDE92310F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2D2F02E-2451-4DE0-9FF8-EBDE92310F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2D2F02E-2451-4DE0-9FF8-EBDE92310F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{811262F4-CB7C-4226-9CE2-C084D45C6098}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83A816B-7AD4-41DE-823B-DDCBDD124391}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26C56C9-31F5-463A-BC75-2970F1EBE27E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23F71676-C2D4-416D-9F7E-5F184E48E4BE}.Release|Any CPU.Build.0 = Release|Any CPU
 		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{45F24C6F-D36B-44A5-9F53-45B9802CE17D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F5DD5DB-660D-41D7-8F13-475B0176E12B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F5DD5DB-660D-41D7-8F13-475B0176E12B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F5DD5DB-660D-41D7-8F13-475B0176E12B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F5DD5DB-660D-41D7-8F13-475B0176E12B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34C9CDA1-64BB-44FF-A7E5-91C6F9D85E16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34C9CDA1-64BB-44FF-A7E5-91C6F9D85E16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34C9CDA1-64BB-44FF-A7E5-91C6F9D85E16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34C9CDA1-64BB-44FF-A7E5-91C6F9D85E16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C12B5EE1-2461-4A82-849B-54742A3518FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C12B5EE1-2461-4A82-849B-54742A3518FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C12B5EE1-2461-4A82-849B-54742A3518FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C12B5EE1-2461-4A82-849B-54742A3518FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4FF631E-CAA5-4F35-B26A-3DD8B3329085}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4FF631E-CAA5-4F35-B26A-3DD8B3329085}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4FF631E-CAA5-4F35-B26A-3DD8B3329085}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4FF631E-CAA5-4F35-B26A-3DD8B3329085}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89DA3FD4-72F0-4D50-AD9C-EF834CA3DBE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DA3FD4-72F0-4D50-AD9C-EF834CA3DBE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DA3FD4-72F0-4D50-AD9C-EF834CA3DBE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DA3FD4-72F0-4D50-AD9C-EF834CA3DBE9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6620A1DD-595F-4379-8249-2BA9ABE02668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6620A1DD-595F-4379-8249-2BA9ABE02668}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6620A1DD-595F-4379-8249-2BA9ABE02668}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6620A1DD-595F-4379-8249-2BA9ABE02668}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -333,11 +424,6 @@ Global
 		{FE63F633-6709-4ABB-A0A1-45B6A62BC9DB} = {B8731D0A-16FE-4BDA-94D7-8C2DE780EDEC}
 		{89E5532C-FD0D-4ADD-81F3-4A84FDB8C989} = {B8731D0A-16FE-4BDA-94D7-8C2DE780EDEC}
 		{D6D89E5D-80F9-4DDE-B198-55DC6E204A38} = {CA0BB783-0AFB-4130-B47C-48E31C8DCBC4}
-		{8654A36A-2D73-4B31-B5AD-E4F6DB2C630A} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
-		{E912661E-5F53-4849-A0A4-D5C469B6163B} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
-		{2FF16E57-A95D-4965-8C93-9A8A4C16074B} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
-		{CD496419-8023-44E5-A1F5-F8644EF0FB88} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
-		{54A7BECE-0806-4610-9F50-BBBDAEDF09D0} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
 		{B9FA8B6E-1084-4D15-8CE4-A0A592509760} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
 		{128955F3-7B7E-4AA2-A9E7-ED52EA36F32A} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
 		{B6104E5D-748F-40D8-9051-377050324E28} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
@@ -359,11 +445,6 @@ Global
 		{7C396895-1139-4B3E-BFB7-74EB02E70D03} = {DD48F169-D017-436A-B039-06D82F5997EA}
 		{A3868D20-7250-4EC2-99D5-C26DBD822629} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
 		{BCAD8C42-2FDB-4F9A-A2CD-80B2FECCBBA1} = {A3868D20-7250-4EC2-99D5-C26DBD822629}
-		{811262F4-CB7C-4226-9CE2-C084D45C6098} = {8654A36A-2D73-4B31-B5AD-E4F6DB2C630A}
-		{E83A816B-7AD4-41DE-823B-DDCBDD124391} = {E912661E-5F53-4849-A0A4-D5C469B6163B}
-		{A26C56C9-31F5-463A-BC75-2970F1EBE27E} = {2FF16E57-A95D-4965-8C93-9A8A4C16074B}
-		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717} = {CD496419-8023-44E5-A1F5-F8644EF0FB88}
-		{23F71676-C2D4-416D-9F7E-5F184E48E4BE} = {54A7BECE-0806-4610-9F50-BBBDAEDF09D0}
 		{4FB5A553-FC00-4708-9151-CA03490883AD} = {00EC9F97-3069-4968-A20E-5889DD92EED6}
 		{F212817A-B0A0-4E86-98C7-FD8B10487C84} = {C6E27973-906C-4348-95CA-86CF21C4A54E}
 		{356F71CE-C7E3-4206-9BEE-AEDA93F25C89} = {2D7DC9A7-4666-4051-8650-B8BADCAF0940}
@@ -373,8 +454,35 @@ Global
 		{3AEB300D-3D1C-401F-B6AA-FBC2C8FF94E8} = {823576AC-7403-47AB-BB7D-D8B9690FA1E6}
 		{CCA14EA6-E736-47E8-9442-4C41CB672BE5} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
 		{FFC43D70-6EE2-4AFF-AE0D-D63E2BA36ABC} = {CCA14EA6-E736-47E8-9442-4C41CB672BE5}
-		{1C49790D-C4FC-44A9-B289-924C5C11FF50} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
-		{45F24C6F-D36B-44A5-9F53-45B9802CE17D} = {1C49790D-C4FC-44A9-B289-924C5C11FF50}
+		{64097095-C9BA-46E6-BE30-B6C55F04BA97} = {B6225870-63EC-4E1A-8A34-D73891E1614E}
+		{7C21B9FD-3FAD-4530-84CA-6C588A67977F} = {64097095-C9BA-46E6-BE30-B6C55F04BA97}
+		{E2D2F02E-2451-4DE0-9FF8-EBDE92310F5D} = {64097095-C9BA-46E6-BE30-B6C55F04BA97}
+		{7A6974AA-2D46-4E40-8BDE-5CE6C14B681E} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
+		{3B49D399-C95B-4342-AAE5-EF458BF46EB7} = {205915BD-96EC-4C6D-AC27-247A3C42D5DF}
+		{16C3FA8C-DD5F-4C3D-95CD-44898B823803} = {7A6974AA-2D46-4E40-8BDE-5CE6C14B681E}
+		{BEAA9D1F-658A-4AE5-A0CC-F8370F636C1A} = {7A6974AA-2D46-4E40-8BDE-5CE6C14B681E}
+		{F35145FD-AC12-4548-9EEF-400EAD3F362A} = {7A6974AA-2D46-4E40-8BDE-5CE6C14B681E}
+		{FB2452A6-0D79-41EB-B323-B134F7C98A5A} = {7A6974AA-2D46-4E40-8BDE-5CE6C14B681E}
+		{23620CFC-71B3-46E8-B89C-A5F43922B187} = {7A6974AA-2D46-4E40-8BDE-5CE6C14B681E}
+		{811262F4-CB7C-4226-9CE2-C084D45C6098} = {16C3FA8C-DD5F-4C3D-95CD-44898B823803}
+		{E83A816B-7AD4-41DE-823B-DDCBDD124391} = {BEAA9D1F-658A-4AE5-A0CC-F8370F636C1A}
+		{A26C56C9-31F5-463A-BC75-2970F1EBE27E} = {F35145FD-AC12-4548-9EEF-400EAD3F362A}
+		{90C2EAD0-87BD-4496-9D5C-B28B03BCB717} = {FB2452A6-0D79-41EB-B323-B134F7C98A5A}
+		{23F71676-C2D4-416D-9F7E-5F184E48E4BE} = {23620CFC-71B3-46E8-B89C-A5F43922B187}
+		{CFC511CE-FDC1-4B86-9BF3-3C350ECFF9F7} = {3B49D399-C95B-4342-AAE5-EF458BF46EB7}
+		{F208C655-4009-4B5C-9FF6-FF30F46258A0} = {3B49D399-C95B-4342-AAE5-EF458BF46EB7}
+		{259C1BE3-ACC1-4621-AD0F-ACC38E0F77CE} = {3B49D399-C95B-4342-AAE5-EF458BF46EB7}
+		{B0C14F7D-1863-4783-B30C-8F8750230EC1} = {3B49D399-C95B-4342-AAE5-EF458BF46EB7}
+		{86069E14-6A2E-4198-BF6A-ED10C4C5AEC6} = {3B49D399-C95B-4342-AAE5-EF458BF46EB7}
+		{B7DCDB6E-1064-4A23-9BE1-0EC287A64B15} = {3B49D399-C95B-4342-AAE5-EF458BF46EB7}
+		{45F24C6F-D36B-44A5-9F53-45B9802CE17D} = {CFC511CE-FDC1-4B86-9BF3-3C350ECFF9F7}
+		{3F5DD5DB-660D-41D7-8F13-475B0176E12B} = {F208C655-4009-4B5C-9FF6-FF30F46258A0}
+		{34C9CDA1-64BB-44FF-A7E5-91C6F9D85E16} = {B0C14F7D-1863-4783-B30C-8F8750230EC1}
+		{C12B5EE1-2461-4A82-849B-54742A3518FD} = {259C1BE3-ACC1-4621-AD0F-ACC38E0F77CE}
+		{F4FF631E-CAA5-4F35-B26A-3DD8B3329085} = {86069E14-6A2E-4198-BF6A-ED10C4C5AEC6}
+		{89DA3FD4-72F0-4D50-AD9C-EF834CA3DBE9} = {B7DCDB6E-1064-4A23-9BE1-0EC287A64B15}
+		{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A} = {823576AC-7403-47AB-BB7D-D8B9690FA1E6}
+		{6620A1DD-595F-4379-8249-2BA9ABE02668} = {C6E27973-906C-4348-95CA-86CF21C4A54E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CE59EC9-0DC4-47A2-BC2C-DA79B0CE327B}
