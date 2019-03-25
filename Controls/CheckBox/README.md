@@ -1,4 +1,4 @@
-# CheckBox
+﻿# CheckBox
 
 Этот каталог содержит пример реализации элемента управления "CheckBox".
 
@@ -6,18 +6,17 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
 2. Собрать проект Controls > CheckBox > CheckBoxDesignerExtension
-3. Собрать проект Controls > CheckBox > CheckBoxWebExtension
+3. Открыть консоль в папке Controls > CheckBox > CheckBoxWebExtension и выполнить команду `npm install` и `npm run build:prod`
 4. Скопировать каталог SamplesOutput\Plugins\CheckBoxDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Content\Extensions\CheckBox в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+5. Скопировать каталог SamplesOutput\Site\Content\Modules\CheckBoxWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 6. Перезапустить IIS
+
 
 ## Проверка примера
 

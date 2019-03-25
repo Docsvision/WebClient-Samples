@@ -1,4 +1,4 @@
-# Acquaintance panel
+﻿# Acquaintance panel
 
 Этот пример содержит элемент управления "Панель отправки на ознакомление", который демонстрирует запуск бизнес-процесса из карточки документа и создание кастомной боковой панели.
 
@@ -6,20 +6,19 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект Controls > AcquaintancePanel > AcquaintancePanelDesignerExtension
 3. Собрать проект Controls > AcquaintancePanel > AcquaintancePanelServerExtension
+4. Открыть консоль в папке Controls > AcquaintancePanel > AcquaintancePanelWebExtension и выполнить команду `npm install` и `npm run build:prod`
 4. Скопировать каталог SamplesOutput\Plugins\AcquaintancePanelDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
 5. Скопировать каталог SamplesOutput\Site\Extensions\AcquaintancePanelServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
 6. Скопировать файл SamplesOutput\Site\Extensions\ru\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
 7. Скопировать файл SamplesOutput\Site\Extensions\uk\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
-8. Скопировать каталог SamplesOutput\Site\Content\Extensions\AcquaintancePanel в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+8. Скопировать каталог SamplesOutput\Site\Content\Modules\AcquaintancePanel в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 9. Перезапустить IIS
 
 ## Проверка примера
@@ -49,6 +48,9 @@
 Реализован контроллер LayoutBusinessProcessController с методом SendToAcquaintance, который вызывает сервис ILayoutBPService,
  для отправки документа на ознакомление. В контроллере захардкожен идентификатор бизнес-процесса. 
 Для старта этого бизнес-процесса необходимо передать в качестве параметров "Ознакомителей" ("Performers"), "Документ" ("Document") и дату "Ознакомиться до" ("EndDate").
+
+## Проект AcquaintancePanelWebExtension
+
 Клиентский контрол представляет собой кнопку, при нажатии на которую появляется боковая панель. 
 Боковая панель включает в себя стандартные контролы Web-клиент - MultipleEmployees (для задания списка сотрудников, которым придет задание на ознакомление)
  и DateTimePicker (дата "Ознакомиться до"). При нажатии на кнопку "Отправить на ознакомление" спроисходит валидация параметров и с помощью объекта requestManager 

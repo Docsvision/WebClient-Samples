@@ -1,19 +1,9 @@
 ﻿{
-  "compileOnSave": true,
-  "compilerOptions": {
-    "module": "commonjs",
-    "noImplicitAny": false,
-    "removeComments": false,
-    "preserveConstEnums": true,
-    "sourceMap": false,
-    "target": "es5",
-    "rootDir": "Content/Extensions/TextBox/Scripts",
-    "jsx": "react",
-    "experimentalDecorators": true,
-    "lib": [ "dom", "es6" ]
+  "extends": "./node_modules/@docsvision/webclient-extension-build/tsconfig.json",  
+  "compilerOptions": {   
   },
-  "include": [
-    "../../../Typings/**/*.d.ts",
-    "Content/Extensions/TextBox/Scripts/**/*.ts*"
+  "include": [    
+    "src/**/*.ts*",
+    "node_modules/@docsvision/webclient/**/*.d.ts"
   ]
 }

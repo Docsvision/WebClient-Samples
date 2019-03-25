@@ -132,4 +132,7 @@
   <data name="ControlTypes_SampleCheckBox" xml:space="preserve">
     <value>CheckBox Sample</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
 </root>

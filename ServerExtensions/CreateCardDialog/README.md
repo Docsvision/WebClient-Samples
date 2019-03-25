@@ -6,17 +6,17 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > CreateCardDialog > CreateCardDialogServerExtension
-3. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardDialogServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-4. Скопировать файл SamplesOutput\Site\Extensions\ru\CreateCardDialogServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
-5. Скопировать каталог SamplesOutput\Site\Content\Extensions\CreateCardDialog в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-6. Перезапустить IIS
+3. Открыть консоль в папке ServerExtensions > CreateCardDialog > CreateCardDialogWebExtension и выполнить команду npm install и npm run build:prod
+4. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardDialogServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+5. Скопировать файл SamplesOutput\Site\Extensions\ru\CreateCardDialogServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
+6. Скопировать каталог SamplesOutput\Site\Content\Modules\CreateCardDialogWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+7. Перезапустить IIS
 
 ## Проверка примера
 
@@ -38,7 +38,11 @@
 
 ## Проект CreateCardDialogServerExtension
 
-Проект реализует серверное расширение, в котором регистрируется фабрика для создания типа карточки "Этап", отличная от стандартной. В клиентских скриптах реализовано вебное расширение, которое регистрирует тип карточки для его корректного отображения в вебном клиенте.
+Проект реализует серверное расширение, в котором регистрируется фабрика для создания типа карточки "Этап", отличная от стандартной. 
+
+## Проект CreateCardDialogWebExtension
+
+Содержит клиентские скрипты реализующие вебное расширение, которое регистрирует тип карточки для его корректного отображения в вебном клиенте.
 
 ## Пояснения
 

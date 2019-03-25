@@ -156,4 +156,7 @@
   <data name="SliderDialog_Title" xml:space="preserve">
     <value>Настройка режима галереи</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Сэмплы</value>
+  </data>
 </root>

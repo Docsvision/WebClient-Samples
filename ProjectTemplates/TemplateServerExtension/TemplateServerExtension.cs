@@ -92,13 +92,6 @@ namespace TemplateServerExtension
             };
         }
 
-        /// <summary>
-        /// Gets registered model binders
-        /// </summary>      
-        protected override Dictionary<Type, Func<IModelBinder>> GetModelBinders()
-        {
-            return base.GetModelBinders();
-        }
 
         /// <summary>
         /// Gets resource managers for layout extension

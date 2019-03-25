@@ -1,4 +1,4 @@
-# CustomLibrary
+﻿# CustomLibrary
 
 Этот пример серверного расширения демонстрирует пример взаимодейстия с пользовательским типом карточки DocsVision.
 В библиотеке Sample custom library реализован тип карточки Custom Directory, который представляет из себя справочник
@@ -8,8 +8,7 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 * [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
 * [Docsvision 5 DVExplorer Update 9](http://bit.ly/2sr5DKd)
 
@@ -17,8 +16,9 @@
 
 1. Открыть /Samples.sln
 2. Собрать проекты ServerExtensions > CustomLibrary > CustomLibrary.ObjectModel и CustomLibraryServerExtension
-3. Скопировать каталог SamplesOutput\Site\Extensions\CustomLibraryServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-4. Скопировать каталог SamplesOutput\Site\Content\Extensions\CustomLibrary в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+4. Открыть консоль в папке ServerExtensions > CustomLibrary > CustomLibraryWebExtension и выполнить команду npm install и npm run build:prod
+5. Скопировать каталог SamplesOutput\Site\Extensions\CustomLibraryServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+4. Скопировать каталог SamplesOutput\Site\Content\Modules\CustomLibraryWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 5. (Внимание! Перед выполнением следующего шага, рекомендуется сделать резервную копию базы данных DocsVision)
 На сервере Docsvision 5 установить Docsvision 5 Resource Kit, установить обновление DVExplorer. С помощью утилиты DVCardManager следует загрузить 
 в БД Docsvision библиотеку CustomCardLib из каталога SamplesOutput\SamplesCardDefs\CustomLibrary. Подробное описание процедуры загрузки пользовательской 
@@ -52,5 +52,8 @@
 ## Проект CustomLibraryServerExtension
 
 Проект-расширение для Web-клиент. Содержит сервис по работе со справочником CustomDirectory, методы контроллера CustomLibrary 
-для взаимодейстия с клиентскими скриптами веб-приложения, а так же клиентский скрипт getCustomData.
+для взаимодейстия с клиентскими скриптами веб-приложения.
 
+## Проект CustomLibraryWebExtension
+
+Содержит клиентский скрипт getCustomData.

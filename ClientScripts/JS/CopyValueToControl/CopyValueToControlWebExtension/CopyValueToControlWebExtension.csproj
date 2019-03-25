@@ -45,7 +45,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Content\Extensions\CopyValueToControlJS\Scripts\CopyValueToControl.js" />
+    <Content Include="Content\Modules\CopyValueToControlJS\CopyValueToControl.js" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

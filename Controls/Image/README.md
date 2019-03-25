@@ -1,4 +1,4 @@
-# Image
+﻿# Image
 
 Требует подключенного расширения дизайнера разметок UrlProprtyDesignerExtension
 
@@ -8,19 +8,18 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
 2. Собрать проект Controls > Image > ImageDesignerExtension
 3. Собрать проект Controls > Image > ImageServerExtension
-4. Собрать проект ControlProperties > Url > UrlPropertyDesignerExtension
+4. Открыть консоль в папке Controls > Image > ImageWebExtension и выполнить команду npm install и npm run build:prod
+5. Собрать проект ControlProperties > Url > UrlPropertyDesignerExtension
 5. Скопировать каталог SamplesOutput\Plugins\ImageDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
 6. Скопировать каталог SamplesOutput\Site\Extensions\ImageServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-7. Скопировать каталог SamplesOutput\Site\Content\Extensions\ImageSample в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+7. Скопировать каталог SamplesOutput\Site\Content\Modules\ImageClientExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 8. Скопировать каталог SamplesOutput\Plugins\UrlPropertyDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
 9. Перезапустить IIS
 
@@ -46,8 +45,12 @@
 
 ## Проект ImageServerExtension
 
-Проект-расширение для Web-клиент. Содержит бизнес-логику и реализацию элемента управления на клиенте. 
+Проект-расширение для Web-клиент. Содержит бизнес-логику и реализацию элемента управления на сервере. 
 Демонстрирует работу с кастомным свойством Slider - преобразование его значения (string) в рабочую модель (List<SliderItemDataModel>) 
 с помощью класса SliderConverter и метода ConvertForDisplay. Эта модель дублируется на клиенте ISliderItem[]. 
 Таким образом реализована связка List<SliderItemDataModel> - JSON - ISliderItem[] между сервером и клиентом.
 С помощью Slider можно пролистывать несколько изображений, вешая обработчики onClick на соответсвующие элементы разметки.
+
+## Проект ImageWebExtension
+
+Содержит скрипты и стили контрола SampleImage.

@@ -14,14 +14,14 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ClientScripts > JS > ValidateOnStateChanging > ValidateOnStateChangingWebExtension
-3. Скопировать каталог SamplesOutput\Site\Content\Extensions\ValidateOnStateChangingJS в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+3. Скопировать каталог SamplesOutput\Site\Content\Modules\ValidateOnStateChangingJS в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 4. Перезапустить IIS
 
 ## Проверка примера
 
 1. Запустить конструктор разметок
-2. Импортировать разметку из файла ValidateOnStateChangingLayout.xml без условий использования. При этом будет добавлена разметка в тип карточки документ, вид ДокументУД\Исходящий
-3. Задать для разметки условия использования, поменяв также порядок разметок в условиях использования, чтобы разметка стала первой разметкой для редактирования 
+2. Импортировать решение из файла ValidateOnStateChangingLayout.xml
+3. Сделать решение ValidateOnStateChangingLayout или собственное активным для карточки типа Документ вида ДокументУД/Исходящий
 4. На разметке расположен textBox и кнопки операций (Start approving и др.) по изменению состояния карточки
 5. Перезапустить IIS
 6. Открыть новый документ ДокументУД\Исходящий и нажать кнопку редактировать. При этом должна открыться разметка с textBox и кнопками изменения состояния. 

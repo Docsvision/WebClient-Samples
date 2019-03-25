@@ -1,4 +1,4 @@
-# TextBox
+﻿# TextBox
 
 Требует подключенного расширения дизайнера разметок UrlProprtyDesignerExtension
 
@@ -8,17 +8,15 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
 2. Собрать проект Controls > TextBox > TextBoxDesignerExtension
-3. Собрать проект Controls > TextBox > TextBoxWebExtension
+4. Открыть консоль в папке Controls > TextBox > TextBoxWebExtension и выполнить команду npm install и npm run build:prod
 4. Скопировать каталог SamplesOutput\Plugins\TextBoxDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Content\Extensions\TextBox в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
+5. Скопировать каталог SamplesOutput\Site\Content\Modules\TextBoxWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 6. Перезапустить IIS
 
 ## Проверка примера

@@ -132,4 +132,7 @@
   <data name="ControlTypes_SampleCheckBox" xml:space="preserve">
     <value>Приклад прапора</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Сэмплы</value>
+  </data>
 </root>

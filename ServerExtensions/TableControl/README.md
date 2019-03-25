@@ -1,4 +1,4 @@
-# TableControl
+﻿# TableControl
 
 Этот пример содержит серверное расширение для отображения данных из связанных карточек в табличном контроле. 
 В разметку карточки "Документ УД/Исходящий" добавляется таблица контрагентов, в колонках которой автоматически показываются e-mail и телефон выбранной в строке организации, загружаемые с сервера отдельным запросом.
@@ -7,16 +7,16 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > TableControl > TableControlServerExtension
-3. Скопировать каталог SamplesOutput\Site\Content\Extensions\LayoutTableControl в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-4. Скопировать каталог SamplesOutput\Site\Extensions\TableControlServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-5. Перезапустить IIS
+3. Открыть консоль в папке ServerExtensions > TableControl > TableControlWebExtension и выполнить команду npm install и npm run build:prod
+4. Скопировать каталог SamplesOutput\Site\Content\Modules\TableControlWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+5. Скопировать каталог SamplesOutput\Site\Extensions\TableControlServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+6. Перезапустить IIS
 
 ## Проверка примера
 
@@ -40,5 +40,7 @@
 Реализован контроллер SamplePartnersController с методом GetPartnersInfo, который вызывает сервис ISamplePartnersService,
  для получения информации о контрагентах:  Phone, Email, Name.
 
-В клиентском скрипте реализована функция sampleDocumentViewCardOpened, которая вызывается на событие On card opened.
-Она отправляет запрос на сервер WebClient.getPartnersInfo и заполняет таблицу вернувшимися данными.
+## Проект TableControlWebExtension
+
+Содержит клиентский скипрт с функцией sampleDocumentViewCardOpened, которая вызывается на событие On card opened.
+Она отправляет запрос на сервер getPartnersInfo и заполняет таблицу вернувшимися данными.

@@ -28,7 +28,7 @@ namespace UrlPropertyDesignerExtension.Extension
         {
             return new Dictionary<string, PropertyDescription>
             {
-                { Constants.CommonProperties.Url, GetUrlPropertyDescription() }
+                { Constants.CommonProperties.UrlAddress, GetUrlPropertyDescription() }
                 
             };
         }
@@ -50,7 +50,7 @@ namespace UrlPropertyDesignerExtension.Extension
             return new PropertyDescription
             {
                 Type = typeof(string),
-                Name = Constants.CommonProperties.Url,
+                Name = Constants.CommonProperties.UrlAddress,
                 Category = PropertyCategoryConstants.DataCategory,
                 DisplayName = Resources.ControlTypes_UrlProperty
             };

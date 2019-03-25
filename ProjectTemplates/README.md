@@ -1,4 +1,4 @@
-# TemplateServerExtension
+﻿# TemplateServerExtension
 
 Данная папка содержит шаблоны проектов для создания серверных расширения для WebClient, для Коструктора разметок и шаблон для создания клиентского расширения.
 
@@ -6,14 +6,18 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
+* [VSCode](https://code.visualstudio.com/) или любой другой редактор
 
 ## Сборка и установка
 
+Для проектов TemplateDesignerExtension и TemplateServerExtension:
+
 1. Скопировать TemplateDesignerExtension.zip и TemplateServerExtension.zip файлы в папку для шаблонов Visual Studio.
 Папка с установленной Visual Studio\Templates\ProjectTemplates
-
 2. Шаблоны проектов отображаются в разделе Мои шаблоны диалогового окна Новый проект
+
+Для проекта TemplateWebExtension см. README.md в папке проекта.
 
 ## Проект TemplateDesignerExtension
 

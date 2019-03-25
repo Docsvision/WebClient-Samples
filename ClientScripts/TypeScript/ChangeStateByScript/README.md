@@ -1,4 +1,4 @@
-# ChangeState
+﻿# ChangeState
 
 Этот каталог содержит пример изменения состояния карточки.
 Проверить доступность перехода по Ролевой модели и, если разрешено, выполнить изменение состояния карточки.
@@ -7,22 +7,19 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
-1. Открыть /Samples.sln
-2. Собрать проект ClientScripts > ChangeStateByScript > ChangeStateByScriptWebExtension
-3. Скопировать каталог SamplesOutput\Site\Content\Extensions\ChangeStateByScriptTS в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-4. Перезапустить IIS
+1. Открыть консоль в папке ChangeStateByScriptWebExtension и выполнить команду npm install и npm run build:prod
+2. Скопировать каталог SamplesOutput\Site\Content\Modules\ChangeStateByScriptWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+3. Перезапустить IIS
 
 ## Проверка примера
 
 1. Запустить конструктор разметок
-2. Импортировать разметку из файла ChangeStateByScriptLayout.xml без условий использования. При этом будет добавлена разметка в тип карточки документ, вид ДокументУД\Исходящий
-3. Задать для разметки условия использования, поменяв также порядок разметок в условиях использования, чтобы разметка стала первой разметкой для редактирования 
+2. Импортировать решение из файла ChangeStateByScriptLayout.xml
+3. Сделать решение ChangeStateByScriptLayout активным для карточки типа Документ вида ДокументУД/Исходящий
 4. Перезапустить IIS
 5. Открыть новый документ ДокументУД\Исходящий и нажать кнопку редактировать. При этом должна открыться разметка с кнопкой изменения состояния. 
 6. При нажатии на кнопку изменения состояния проверяется доступность операции Start approving (переход из состояния Drafting на состояние Is approving).

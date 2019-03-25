@@ -1,21 +1,17 @@
-# ChangeLogoAndBackground
+﻿# ChangeLogoAndBackground
 
 Этот каталог содержит пример для изменения заголовка и стилей web-навигатора.
 
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
-1. Открыть /Samples.sln
-2. Собрать проект ClientScripts > ChangeLogoAndBackground > ChangeLogoAndBackgroundWebExtension
-3. Скопировать каталог SamplesOutput\Site\Content\Extensions\ChangeLogoAndBackgroundTS в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-4. Перезапустить IIS
+1. Открыть консоль в папке ChangeLogoAndBackgroundWebExtension и выполнить команду npm install и npm run build:prod
+2. Скопировать каталог SamplesOutput\Site\Content\Modules\ChangeLogoAndBackgroundWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+3. Перезапустить IIS
 
 ## Проверка примера
 

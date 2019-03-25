@@ -4,7 +4,7 @@
         xmlns:editors="clr-namespace:DocsVision.Platform.Tools.LayoutEditor.Editors;assembly=WebLayoutsDesigner"
         xmlns:res="clr-namespace:ImageDesignerExtension"
         xmlns:le="http://docsvision.com/WebLayoutsDesigner"
-        xmlns:editors1="clr-namespace:DocsVision.Platform.Tools.LayoutEditor.Editors;assembly=WebLayoutsDesigner"
+        xmlns:editors1="clr-namespace:DocsVision.Platform.WebLayoutsDesigner.NewEditors;assembly=DocsVision.Platform.WebLayoutsDesignerExtension"
         x:ClassModifier="internal"
         Title="{x:Static res:Resources.SliderDialog_Title}"
         Height="350" Width="500"
@@ -52,7 +52,7 @@
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Grid>
-                                <editors:NodeLocalizedControl DisplayText="{Binding DisplayDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClearDisplayTextCommand="{Binding ClearDescriptionCommand}" ShowLocalizationCommand="{Binding DataContext.ShowLocalizationCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
+                                <editors1:NodeLocalizedControl DisplayText="{Binding DisplayDescription, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ClearDisplayTextCommand="{Binding ClearDescriptionCommand}" ShowLocalizationCommand="{Binding DataContext.ShowLocalizationCommand, RelativeSource={RelativeSource AncestorType=Window}}" />
                             </Grid>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

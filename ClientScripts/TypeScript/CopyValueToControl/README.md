@@ -1,4 +1,4 @@
-# CopyValueToControl
+﻿# CopyValueToControl
 
 Этот каталог содержит пример взаимодействия контролов: копирование значения.
 Есть 2 элемента управления - Строка для редактирования. При завершении ввода значения в один ЭУ, это же значение копируется в другой.
@@ -6,25 +6,22 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
-1. Открыть /Samples.sln
-2. Собрать проект ClientScripts > CopyValueToControl > CopyValueToControlWebExtension
-3. Скопировать каталог SamplesOutput\Site\Content\Extensions\CopyValueToControlTS в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-4. Перезапустить IIS
+1. Открыть консоль в папке CopyValueToControlWebExtension и выполнить команду npm install и npm run build:prod
+2. Скопировать каталог SamplesOutput\Site\Content\Modules\CopyValueToControlWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+3. Перезапустить IIS
 
 ## Проверка примера
 
 1. Запустить конструктор разметок
-2. Импортировать разметку из файла CopyValueToControlLayout.xml без условий использования. При этом будет добавлена разметка в тип карточки документ, вид ДокументУД\Исходящий
-2'. Либо создать в виде ДокументУД\Исходящий разметку для редактирования, добавить туда block, в него добавить 2 textbox,
-задать для первого textbox Edit In Place редактирование, на событие On data changed добавить вызов функции copyValueToControl
+2. Импортировать решение из файла CopyValueToControlLayout.xml
+2'. Либо создать собственное решение, создать для него разметку, добавить туда block, в него добавить 2 textbox,
+задать для первого textbox Edit In Place редактирование, на событие On data changed добавить вызов функции copyValueToControl:CopyValueToControlExt
 (пишется без скобок и без кавычек).
-3. Задать для разметки условия использования, поменяв также порядок разметок в условиях использования, чтобы разметка стала первой разметкой для редактирования 
+3. Сделать решение CopyValueToControlLayout или собственное активным для карточки типа Документ вида ДокументУД/Исходящий
 4. На разметке расположено 2 textBox.
 5. Перезапустить IIS
 6. Открыть документ ДокументУД\Исходящий и нажать кнопку редактировать. При этом должна открыться разметка с двумя textBox.

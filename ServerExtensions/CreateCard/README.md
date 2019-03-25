@@ -1,4 +1,4 @@
-# CreateCard
+﻿# CreateCard
 
 Этот пример содержит создание карточки скриптом с заполнением аттрибутов.
 
@@ -6,16 +6,16 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > CreateCard > CreateCardServerExtension
-3. Скопировать каталог SamplesOutput\Site\Content\Extensions\LayoutCreateCard в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-4. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-5. Перезапустить IIS
+3. Открыть консоль в папке ServerExtensions > CreateCard > CreateCardWebExtension и выполнить команду npm install и npm run build:prod
+4. Скопировать каталог SamplesOutput\Site\Content\Modules\CreateCardWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+5. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+6. Перезапустить IIS
 
 ## Проверка примера
 
@@ -43,5 +43,7 @@
 - Исходящий.Название = "В ответ на " + <Входящий.Исходящий номер>
 - В ссылки Исходящего и исходного Входящего добавить ссылку друг на друга (тип "ответ" - "в ответ на")
 
-При нажатии на кнопку с помощью сервиса requestManager отправляется запрос на сервер. Пользователю отображается созданная карточка Исходящего в режиме просмотра.
 
+## Проект CreateCardWebExtension
+
+Содержит клиентские скрипты, в которых при нажатии на кнопку с помощью сервиса requestManager отправляется запрос на сервер. Пользователю отображается созданная карточка Исходящего в режиме просмотра.

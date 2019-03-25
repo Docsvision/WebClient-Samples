@@ -1,6 +1,6 @@
-# Link
+﻿# Link
 
-Требует подключенного расширения дизайнера разметок UrlProprtyDesignerExtension
+Требует подключенного расширения дизайнера разметок UrlPropertyDesignerExtension
 
 Этот каталог содержит пример реализации элемента управления "Link".
 
@@ -8,26 +8,23 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
-2. Собрать проект Controls > Link > LinkDesignerExtension
-3. Собрать проект Controls > Link > LinkWebExtension
-4. Скопировать каталог SamplesOutput\Plugins\LinkDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Content\Extensions\Link в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-6. Перезапустить IIS
+4. Открыть консоль в папке Controls > Link > LinkWebExtension и выполнить команду npm install и npm run build:prod
+3. Скопировать каталог SamplesOutput\Plugins\LinkDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
+4. Скопировать каталог SamplesOutput\Site\Content\Modules\LinkWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+5. Перезапустить IIS
 
 ## Проверка примера
 
 1. Запустить конструктор разметок
-2. Скопировать любую разметку
-3. Выбрать условия использования этой разметки
-4. Открыть разметку и добавить в нее новый элемент управления "Sample link"
-5. Задать желаемые параметры элемента управления
+2. Импортировать решение из файла SampleLinkControlDescriptionLayout.xml
+3. Сделать решение LinkControlDescriptionLayout активным для карточки типа Документ вида ДокументУД/Исходящий
+4. Открыть разметку LinkControlDescriptionLayout
+5. Задать желаемые параметры элемента управления "Sample link"
 6. Сохранить разметку
 7. Перезапустить IIS
 8. Открыть карточку с этой разметкой
@@ -39,6 +36,6 @@
 Для этого необходимо описать контрол в xml файле, используя уже подключенные к конструктору свойства и ресурсы.
 
 
-## Проект LinkWebExtension
+## Проект LinkClinetExtension
 
 Проект-расширение клиентской части Web-клиент. Содержит клиентский скрипт и стили для SampleLink.

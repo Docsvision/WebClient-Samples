@@ -1,0 +1,65 @@
+{
+	"folders": [
+		{
+			"path": "ClientScripts\\TypeScript\\ChangeLogoAndBackground\\ChangeLogoAndBackgroundWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\ChangeStateByScript\\ChangeStateByScriptWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\ControlsRelation\\ControlsRelationWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\ControlValidation\\ControlValidationWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\CopyValueToControl\\CopyValueToControlWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\ValidateOnStateChanging\\ValidateOnStateChangingWebExtension"
+		},
+		{
+			"path": "Controls\\AcquaintancePanel\\AcquaintancePanelWebExtension"
+		},
+		{
+			"path": "Controls\\CheckBox\\CheckBoxWebExtension"
+		},
+		{
+			"path": "Controls\\ExchangeRates\\ExchangeRatesWebExtension"
+		},
+		{
+			"path": "Controls\\HyperComments\\HyperCommentsWebExtension"
+		},
+		{
+			"path": "Controls\\Image\\ImageWebExtension"
+		},
+		{
+			"path": "Controls\\Link\\LinkWebExtension"
+		},
+		{
+			"path": "Controls\\TextBox\\TextBoxWebExtension"
+		},
+		{
+			"path": "ServerExtensions\\CreateCard\\CreateCardWebExtension"
+		},
+		{
+			"path": "ServerExtensions\\CreateCardDialog\\CreateCardDialogWebExtension"
+		},
+		{
+			"path": "ServerExtensions\\CustomLibrary\\CustomLibraryWebExtension"
+		},
+		{
+			"path": "ServerExtensions\\ExtendedCardInfo\\ExtendedCardInfoWebExtension"
+		},
+		{
+			"path": "ServerExtensions\\LicenseCheck\\LicenseCheckWebExtension"
+		},
+		{
+			"path": "ServerExtensions\\ShiftTasksEndDate\\ShiftTasksEndDateWebExtension"
+		},
+		{
+			"path": "ServerExtensions\\TableControl\\TableControlWebExtension"
+		}
+	],
+	"settings": {}
+}

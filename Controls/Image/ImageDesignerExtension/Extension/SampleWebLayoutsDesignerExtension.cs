@@ -100,7 +100,7 @@ namespace ImageDesignerExtension.Extension
                     PropertyFactory.Create(Constants.SampleImage.ImageWidth),
                     PropertyFactory.Create(Constants.SampleImage.Slider),
                     PropertyFactory.Create(Constants.SampleImage.Description),
-                    PropertyFactory.Create(UrlPropertyDesignerExtension.Extension.Constants.CommonProperties.Url),
+                    PropertyFactory.Create(UrlPropertyDesignerExtension.Extension.Constants.CommonProperties.UrlAddress),
                     bindingProperty,
                     PropertyFactory.GetClickEvent(),
                     PropertyFactory.GetMouseOverEvent(),
@@ -167,7 +167,7 @@ namespace ImageDesignerExtension.Extension
                             keys.Add(item.DescriptionLocalizationKey);
                     }
                 },
-                ChangeLocalizaionKeys = args =>
+                ChangeLocalizationKeys = args =>
                 {
                     var value = (string)args.ControlInfo.GetProperty(args.PropertyDescription.Name);
                     var items = SliderModeHelper.StringToItems(value);

@@ -135,4 +135,7 @@
   <data name="AcquaintancePanel_ButtonText" xml:space="preserve">
     <value>Текст кнопки</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Сэмплы</value>
+  </data>
 </root>

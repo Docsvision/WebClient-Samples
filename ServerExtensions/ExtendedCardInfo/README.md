@@ -1,4 +1,4 @@
-# ExtendedCardInfo
+﻿# ExtendedCardInfo
 
 Этот пример разработки и подключения собственного серверного расширения для чтения значения полей, загруженных и не загруженных на страницу.
 
@@ -6,18 +6,18 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > ExtendedCardInfo > ExtendedCardInfoServerExtension
-3. Скопировать каталог SamplesOutput\Site\Extensions\ExtendedCardInfoServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-4. Скопировать файл SamplesOutput\Site\Extensions\ru\ExtendedCardInfoServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
-5. Скопировать файл SamplesOutput\Site\Extensions\uk\ExtendedCardInfoServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
-6. Скопировать каталог SamplesOutput\Site\Content\Extensions\ExtendedCardInfo в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-7. Перезапустить IIS
+3. Открыть консоль в папке ServerExtensions > ExtendedCardInfo > ExtendedCardInfoWebExtension и выполнить команду npm install и npm run build:prod
+4. Скопировать каталог SamplesOutput\Site\Extensions\ExtendedCardInfoServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+5. Скопировать файл SamplesOutput\Site\Extensions\ru\ExtendedCardInfoServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
+6. Скопировать файл SamplesOutput\Site\Extensions\uk\ExtendedCardInfoServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
+7. Скопировать каталог SamplesOutput\Site\Content\Modules\ExtendedCardInfoWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+8. Перезапустить IIS
 
 ## Проверка примера
 

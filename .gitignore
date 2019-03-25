@@ -1,5 +1,8 @@
+
 *.js
 *.css
+
+
 
 # User-specific files
 *.suo
@@ -87,3 +90,16 @@ FakesAssemblies/
 JsDocs/Output/
 SamplesOutput/
 Controls/AngularControl/AngularApp/dist/
+
+!Controls
+!**/Modules/Imports/*.js
+!copy-path.js
+!gulpfile.js
+!rollup.config.js
+.rpt2_cache
+
+!**/imports/**/*.js
+ProjectTemplates/TemplateWebExtension/Dist
+Typings
+build.bat
+copy-definitions.bat

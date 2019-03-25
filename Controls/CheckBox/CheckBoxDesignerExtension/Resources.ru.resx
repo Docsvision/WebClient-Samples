@@ -132,4 +132,7 @@
   <data name="ControlTypes_SampleCheckBox" xml:space="preserve">
     <value>Пример флага</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Отмена</value>
+  </data>
 </root>

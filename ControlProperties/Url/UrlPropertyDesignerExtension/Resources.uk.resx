@@ -120,4 +120,7 @@
   <data name="ControlTypes_UrlProperty" xml:space="preserve">
     <value>URL адрес</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Сэмплы</value>
+  </data>
 </root>

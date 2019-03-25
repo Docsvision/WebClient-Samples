@@ -132,4 +132,7 @@
   <data name="AcquaintancePanel_SendButton" xml:space="preserve">
     <value>Відправити на ознайомлення</value>
   </data>
+  <data name="AcquaintancePanel_CancelButton" xml:space="preserve">
+    <value>Скасувати</value>
+  </data>
 </root>

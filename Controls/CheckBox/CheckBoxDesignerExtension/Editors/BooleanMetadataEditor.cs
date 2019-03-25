@@ -3,6 +3,7 @@ using System.Windows;
 using DocsVision.Platform.Tools.LayoutEditor.Editors;
 using Xceed.Wpf.Toolkit.PropertyGrid;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
+using DocsVision.BackOffice.WebLayoutsDesigner.Editors;
 
 namespace CheckBoxDesignerExtension.Editors
 {

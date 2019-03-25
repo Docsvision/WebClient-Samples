@@ -1,4 +1,4 @@
-# ExchangeRates
+﻿# ExchangeRates
 
 Этот каталог содержит пример реализации элемента управления "ExchangeRates".
 
@@ -6,33 +6,30 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* [Web Compiler](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.WebCompiler)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
-2. Собрать проект Controls > ExchangeRates > ExchangeRatesDesignerExtension
-3. Собрать проект Controls > ExchangeRates > ExchangeRatesWebExtension
-4. Скопировать каталог SamplesOutput\Plugins\ExchangeRatesDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Content\Extensions\ExchangeRates в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-6. Перезапустить IIS
+2. Открыть консоль в папке Controls > ExchangeRates > ExchangeRatesWebExtension и выполнить команду `npm install` и `npm run build:prod`
+3. Скопировать каталог SamplesOutput\Plugins\SampleExchangeRatesDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
+4. Скопировать каталог SamplesOutput\Site\Content\Modules\ExchangeRatesWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+5. Перезапустить IIS
 
 ## Проверка примера
 
 1. Запустить конструктор разметок
-2. Скопировать любую разметку для карточки вида "Служебная записка"
-3. Выбрать условия использования этой разметки
-4. Открыть разметку и добавить в нее новый элемент управления "Sample exchange rates"
-5. Зарегистрировать бесплатный аккаунт на сайте https://fixer.io/signup/free
-6. Перейти по ссылке https://fixer.io/quickstart и скопировать ключ доступа к API
-7. Задать параметру "Ключ доступа к API" данного элемента управления значение вашего ключа из шага выше
-8. Задать остальные желаемые параметры элемента управления
-9. Сохранить разметку
-10. Перезапустить IIS
-11. Открыть карточку с этой разметкой
-12. Убедиться, что появился новый элемент управления
+2. Импортировать решение из файла SampleExchangeRatesControlDescriptionLayout.xml
+3. Сделать решение SampleExchangeRatesControlDescriptionLayout активным для карточки типа Документ вида ДокументУД/Исходящий
+4. Открыть разметку SampleExchangeRatesControlDescriptionLayout
+4. Зарегистрировать бесплатный аккаунт на сайте https://fixer.io/signup/free
+5. Перейти по ссылке https://fixer.io/quickstart и скопировать ключ доступа к API
+6. Задать параметру "Ключ доступа к API" элемента управления "Sample Link" значение вашего ключа из шага выше
+7. Задать остальные желаемые параметры элемента управления
+8. Сохранить разметку
+9. Перезапустить IIS
+10. Открыть карточку с этой разметкой
+11. Убедиться, что появился новый элемент управления
 
 ### Описание контрола SampleExchangeRatesControlDescription.xml
 

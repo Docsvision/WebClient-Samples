@@ -123,4 +123,7 @@
   <data name="ControlTypes_SampleTextBox" xml:space="preserve">
     <value>Приклад тексту</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Сэмплы</value>
+  </data>
 </root>

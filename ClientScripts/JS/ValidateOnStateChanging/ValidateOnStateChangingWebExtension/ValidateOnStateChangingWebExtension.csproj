@@ -45,7 +45,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Content\Extensions\ValidateOnStateChangingJS\Scripts\ValidateOnStateChanging.js" />
+    <Content Include="Content\Modules\ValidateOnStateChangingJS\ValidateOnStateChanging.js" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

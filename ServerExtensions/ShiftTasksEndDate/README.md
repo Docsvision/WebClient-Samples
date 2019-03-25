@@ -1,24 +1,24 @@
-# ShiftTasksEndDate
+﻿# ShiftTasksEndDate
 
 Этот пример серверного расширения демонстрирует реализацию автоматических изменений данных связанных карточек.
-После сохранения карточки Документа ищутся все его связанные задания, и срок исполнения заданий переносится на 3 дня вперед.
+После сохранения карточки Документа ищутся все его связанные задания, и срок исполнения для отправленных на исполнение заданий переносится на 3 дня вперед.
 
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017](https://www.visualstudio.com)
-* [TypeScript 2.8](https://www.typescriptlang.org)
-* Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
+* [NodeJS v10.6+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > ShiftTasksEndDate > ShiftTasksEndDateServerExtension
-3. Скопировать каталог SamplesOutput\Site\Extensions\ShiftTasksEndDateServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-4. Скопировать файл SamplesOutput\Site\Extensions\ru\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
-5. Скопировать файл SamplesOutput\Site\Extensions\uk\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
-6. Скопировать каталог SamplesOutput\Site\Content\Extensions\ShiftTasksEndDate в каталог "Путь к установленному Web-клиент\Site\Content\Extensions"
-7. Перезапустить IIS
+3. Открыть консоль в папке ServerExtensions > ShiftTasksEndDate > ShiftTasksEndDateWebExtension и выполнить команду npm install и npm run build:prod
+4. Скопировать каталог SamplesOutput\Site\Extensions\ShiftTasksEndDateServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+5. Скопировать файл SamplesOutput\Site\Extensions\ru\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
+6. Скопировать файл SamplesOutput\Site\Extensions\uk\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
+7. Скопировать каталог SamplesOutput\Site\Content\Modules\ShiftTasksEndDateWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
+8. Перезапустить IIS
 
 ## Проверка примера
 
@@ -29,9 +29,9 @@
 5. Сохранить разметку
 6. Перезапустить IIS
 7. Создать карточку документа
-8. Добавить дочерние задания (не группы заданий)
+8. Добавить дочерние задания (не группы заданий), отправить на исполнение
 9. Нажать на редактирование карточки, изменить что-нибудь, сохранить
-10. Можно заметить, что срок исполнения задний сдвинулся на 3 дня
+10. Можно заметить, что срок исполнения для отправленных на исполнение заданий сдвинулся на 3 дня
 
 
 ## Проект ShiftTasksEndDateServerExtension

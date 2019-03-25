@@ -45,7 +45,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="Content\Extensions\ControlValidationJS\Scripts\ControlValidation.js" />
+    <Content Include="Content\Modules\ControlValidationJS\ControlValidation.js" />
+    <Content Include="Content\Modules\ControlValidationJS\EventHandlers.js" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

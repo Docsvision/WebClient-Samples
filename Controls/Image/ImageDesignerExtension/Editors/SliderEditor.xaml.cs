@@ -99,7 +99,7 @@ namespace ImageDesignerExtension.Editors
             if (!String.IsNullOrEmpty(sliderItem.DisplayDescription))
             {
                 var localizationItem = LocalizationHelper.FindLocalization(dataObject.ServiceProvider, sliderItem.DisplayDescription);
-                sliderItem.DescriptionLocalizationKey = localizationItem == null ? LocalizationHelper.AddNewLocalization(dataObject.ServiceProvider, sliderItem.DisplayDescription) : localizationItem.Key;
+                sliderItem.DescriptionLocalizationKey = localizationItem == null ? LocalizationHelper.AddNewLocalization(dataObject.ServiceProvider, sliderItem.DisplayDescription) : localizationItem?.Key;
             }
             else
             {
