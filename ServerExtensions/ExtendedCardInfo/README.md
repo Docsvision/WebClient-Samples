@@ -12,7 +12,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > ExtendedCardInfo > ExtendedCardInfoServerExtension
-3. Открыть консоль в папке ServerExtensions > ExtendedCardInfo > ExtendedCardInfoWebExtension и выполнить команду npm install и npm run build:prod
+3. Открыть консоль в папке ServerExtensions > ExtendedCardInfo > ExtendedCardInfoWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Extensions\ExtendedCardInfoServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
 5. Скопировать файл SamplesOutput\Site\Extensions\ru\ExtendedCardInfoServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
 6. Скопировать файл SamplesOutput\Site\Extensions\uk\ExtendedCardInfoServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"

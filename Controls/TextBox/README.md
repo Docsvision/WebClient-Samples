@@ -14,7 +14,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект Controls > TextBox > TextBoxDesignerExtension
-4. Открыть консоль в папке Controls > TextBox > TextBoxWebExtension и выполнить команду npm install и npm run build:prod
+4. Открыть консоль в папке Controls > TextBox > TextBoxWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
 4. Скопировать каталог SamplesOutput\Plugins\TextBoxDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
 5. Скопировать каталог SamplesOutput\Site\Content\Modules\TextBoxWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 6. Перезапустить IIS

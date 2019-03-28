@@ -13,7 +13,7 @@
 ## Сборка и установка
 
 1. Открыть /Samples.sln
-4. Открыть консоль в папке Controls > Link > LinkWebExtension и выполнить команду npm install и npm run build:prod
+4. Открыть консоль в папке Controls > Link > LinkWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
 3. Скопировать каталог SamplesOutput\Plugins\LinkDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\LinkWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 5. Перезапустить IIS

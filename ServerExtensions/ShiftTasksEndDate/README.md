@@ -13,7 +13,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > ShiftTasksEndDate > ShiftTasksEndDateServerExtension
-3. Открыть консоль в папке ServerExtensions > ShiftTasksEndDate > ShiftTasksEndDateWebExtension и выполнить команду npm install и npm run build:prod
+3. Открыть консоль в папке ServerExtensions > ShiftTasksEndDate > ShiftTasksEndDateWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Extensions\ShiftTasksEndDateServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
 5. Скопировать файл SamplesOutput\Site\Extensions\ru\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
 6. Скопировать файл SamplesOutput\Site\Extensions\uk\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"

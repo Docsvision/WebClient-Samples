@@ -10,7 +10,7 @@
 
 ## Сборка и установка
 
-1. Открыть консоль в папке CopyValueToControlWebExtension и выполнить команду npm install и npm run build:prod
+1. Открыть консоль в папке CopyValueToControlWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
 2. Скопировать каталог SamplesOutput\Site\Content\Modules\CopyValueToControlWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 3. Перезапустить IIS
 

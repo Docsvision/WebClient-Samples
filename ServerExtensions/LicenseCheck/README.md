@@ -12,7 +12,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > LicenseCheck > LicenseCheckServerExtension
-3. Открыть консоль в папке ServerExtensions > LicenseCheck > LicenseCheckWebExtension и выполнить команду npm install и npm run build:prod
+3. Открыть консоль в папке ServerExtensions > LicenseCheck > LicenseCheckWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\LicenseCheckWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 5. Скопировать каталог SamplesOutput\Site\Extensions\LicenseCheckServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
 6. Перезапустить IIS
