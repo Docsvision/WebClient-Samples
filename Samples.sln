@@ -190,6 +190,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExchangeRatesDesignerExtens
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkDesignerExtension", "Controls\Link\LinkDesignerExtension\LinkDesignerExtension.csproj", "{6620A1DD-595F-4379-8249-2BA9ABE02668}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Others", "Others", "{33B63CC5-9D2E-4249-91D4-747F243920B6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ExternalWebService", "ExternalWebService", "{A5B8091E-6927-43E2-952D-CD501718943B}"
+	ProjectSection(SolutionItems) = preProject
+		Others\ExternalWebService\README.md = Others\ExternalWebService\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "Others\ExternalWebService\WebService\WebService.csproj", "{1CD7FD64-4865-4EB6-9E93-56DDA11B1907}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceClient", "Others\ExternalWebService\WebServiceClient\WebServiceClient.csproj", "{7796EBC5-B07E-4793-A7A4-575111772308}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService.Interfaces", "Others\ExternalWebService\WebService.Interfaces\WebService.Interfaces.csproj", "{68399F65-D754-472A-939C-F616678C159F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CardDefs", "CardDefs", "{6E708D89-3637-4996-952F-0FB85D65EEF6}"
+	ProjectSection(SolutionItems) = preProject
+		Others\ExternalWebService\CardDefs\ReportsLibrary.xml = Others\ExternalWebService\CardDefs\ReportsLibrary.xml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{84AE6F40-AD24-4B05-92ED-BEC6E3527D9A}"
+	ProjectSection(SolutionItems) = preProject
+		Others\ExternalWebService\CardDefs\Sql\TestReport.sql = Others\ExternalWebService\CardDefs\Sql\TestReport.sql
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -296,6 +319,18 @@ Global
 		{6620A1DD-595F-4379-8249-2BA9ABE02668}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6620A1DD-595F-4379-8249-2BA9ABE02668}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6620A1DD-595F-4379-8249-2BA9ABE02668}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1CD7FD64-4865-4EB6-9E93-56DDA11B1907}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1CD7FD64-4865-4EB6-9E93-56DDA11B1907}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1CD7FD64-4865-4EB6-9E93-56DDA11B1907}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1CD7FD64-4865-4EB6-9E93-56DDA11B1907}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7796EBC5-B07E-4793-A7A4-575111772308}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7796EBC5-B07E-4793-A7A4-575111772308}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7796EBC5-B07E-4793-A7A4-575111772308}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7796EBC5-B07E-4793-A7A4-575111772308}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68399F65-D754-472A-939C-F616678C159F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68399F65-D754-472A-939C-F616678C159F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68399F65-D754-472A-939C-F616678C159F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68399F65-D754-472A-939C-F616678C159F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -351,6 +386,12 @@ Global
 		{23F71676-C2D4-416D-9F7E-5F184E48E4BE} = {23620CFC-71B3-46E8-B89C-A5F43922B187}
 		{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A} = {823576AC-7403-47AB-BB7D-D8B9690FA1E6}
 		{6620A1DD-595F-4379-8249-2BA9ABE02668} = {C6E27973-906C-4348-95CA-86CF21C4A54E}
+		{A5B8091E-6927-43E2-952D-CD501718943B} = {33B63CC5-9D2E-4249-91D4-747F243920B6}
+		{1CD7FD64-4865-4EB6-9E93-56DDA11B1907} = {A5B8091E-6927-43E2-952D-CD501718943B}
+		{7796EBC5-B07E-4793-A7A4-575111772308} = {A5B8091E-6927-43E2-952D-CD501718943B}
+		{68399F65-D754-472A-939C-F616678C159F} = {A5B8091E-6927-43E2-952D-CD501718943B}
+		{6E708D89-3637-4996-952F-0FB85D65EEF6} = {A5B8091E-6927-43E2-952D-CD501718943B}
+		{84AE6F40-AD24-4B05-92ED-BEC6E3527D9A} = {6E708D89-3637-4996-952F-0FB85D65EEF6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CE59EC9-0DC4-47A2-BC2C-DA79B0CE327B}

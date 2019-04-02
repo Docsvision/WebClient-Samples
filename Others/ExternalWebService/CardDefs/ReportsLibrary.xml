@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CardLibrary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="D030376C-1F99-445B-9455-01538CB11461" Alias="ReportsLibrary">
+  <Name>
+    <LocalizedString Language="en">ReportsLibrary</LocalizedString>
+    <LocalizedString Language="ru-RU">ReportsLibrary</LocalizedString>
+  </Name>
+  <Reports>
+    <Report Alias="TestReport" ID="85701F4B-61FF-4A33-ADD1-959B471E7558" SQLFile="">
+      <Name>
+        <LocalizedString Language="en">TestReport</LocalizedString>
+      </Name>
+      <Parameter Type="uniqueidentifier" Name="CardId" />
+      <SqlFiles>
+        <SqlFile ServerType="mssql">Sql\TestReport.sql</SqlFile>
+      </SqlFiles>
+      <Result>
+        <ResultSet Name="dvtable_report_result_{85701f4b-61ff-4a33-add1-959b471e7558}">
+          <Column Name="Description" DataType="String" Size="255" Nullable="true" />
+        </ResultSet>
+      </Result>
+    </Report>
+  </Reports>
+  <Log>
+    <Name />
+  </Log>
+</CardLibrary>

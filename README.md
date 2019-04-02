@@ -9,7 +9,6 @@
 * [Visual Studio 2017](https://www.visualstudio.com)
 * [NodeJS v10.6+](https://nodejs.org/en/)
 * [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
-* [Docsvision 5 DVExplorer Update 9](http://bit.ly/2sr5DKd)
 
 ### Структура разделов
 
