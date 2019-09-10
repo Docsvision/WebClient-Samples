@@ -59,6 +59,21 @@
 		},
 		{
 			"path": "ServerExtensions\\TableControl\\TableControlWebExtension"
+		},
+		{
+			"path": "ClientScripts\\AdvancedTypeScript\\AdaptiveMenuBar\\AdaptiveMenuBarWebExtension"
+		},
+		{
+			"path": "ClientScripts\\AdvancedTypeScript\\MessageBox\\MessageBoxWebExtension"
+		},
+		{
+			"path": "ClientScripts\\AdvancedTypeScript\\ModalDialog\\ModalDialogWebExtension"
+		},
+		{
+			"path": "ClientScripts\\AdvancedTypeScript\\ModalSidebar\\ModalSidebarWebExtension"
+		},
+		{
+			"path": "Controls\\DownloadFilesBatchOperation\\DownloadFilesBatchOperationWebExtension"
 		}
 	],
 	"settings": {}

@@ -113,10 +113,10 @@ import { classIf } from "@docsvision/webclient/System/CssUtils";
                                 <div className="side-panel-content">
                                     <div className="header">{resources.AcquaintancePanel_Header}</div>
                                     <MultipleEmployees name="sidePanelReceivers" editMode={EditMode.Edit}
-                                        required={true} parent={this.state.wrapper} placeHolder={resources.AcquaintancePanel_ReceiversPlaceholder}
+                                        required={true} placeHolder={resources.AcquaintancePanel_ReceiversPlaceholder}
                                         ref={this.attachReceivers} />
                                     <DateTimePicker name="sidePanelConsiderationDate" editMode={EditMode.Edit}
-                                        parent={this.state.wrapper} required={true} placeHolder={resources.AcquaintancePanel_ConsiderationDatePlaceholder}
+                                        required={true} placeHolder={resources.AcquaintancePanel_ConsiderationDatePlaceholder}
                                         ref={this.attachConsiderationDate} />
                                     <div className="panel-buttons">
                                         <button className="panel-button send" onClick={this.onSendClick}>

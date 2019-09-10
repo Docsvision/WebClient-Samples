@@ -52,7 +52,7 @@ export class SampleTextBoxImpl extends BaseControlImpl<SampleTextBoxParams, Samp
         return {
             height: this.state.imageHeight,
             width: this.state.imageWidth,
-            background: 'url("' + this.state.url + '") 0 0 / cover no-repeat'
+            background: 'url("' + this.state.urlAddress + '") 0 0 / cover no-repeat'
         };
     }
 

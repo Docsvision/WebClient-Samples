@@ -1,12 +1,13 @@
 ﻿import { $SamplePartnersController } from "../Services/SamplePartnersController";
 import { layoutManager } from "@docsvision/webclient/System/LayoutManager";
 import { Department } from "@docsvision/webclient/BackOffice/Department";
+import { $ControlStore } from "@docsvision/webclient/System/LayoutServices";
 
 /* Обработчики событий просмотра документа */
 
 // Загрузить телефоны и email контрагентов
-export async function sampleDocument_loadPartnersInfo(services: $SamplePartnersController) {
-    let controls = layoutManager.cardLayout.controls;
+export async function sampleDocument_loadPartnersInfo(services: $SamplePartnersController & $ControlStore) {
+    let controls = services.controlStore;
     let samplePartnersDepartmentControls = controls.get<Department[]>("samplePartnersDepartment");
     if (!controls.sampleDepartmentEmail || !controls.sampleDepartmentPhone || !controls.samplePartnersDepartment || samplePartnersDepartmentControls.length === 0) return;
 

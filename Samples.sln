@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2020
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{B6225870-63EC-4E1A-8A34-D73891E1614E}"
 EndProject
@@ -213,6 +213,26 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{84AE6F40-AD2
 		Others\ExternalWebService\CardDefs\Sql\TestReport.sql = Others\ExternalWebService\CardDefs\Sql\TestReport.sql
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DownloadFilesBatchOperation", "DownloadFilesBatchOperation", "{F009DC0F-3C88-430E-8A26-AAB682F73392}"
+	ProjectSection(SolutionItems) = preProject
+		Controls\DownloadFilesBatchOperation\README.md = Controls\DownloadFilesBatchOperation\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadFilesBatchOperationDesignerExtension", "Controls\DownloadFilesBatchOperation\DownloadFilesBatchOperationDesignerExtension\DownloadFilesBatchOperationDesignerExtension.csproj", "{61298850-2048-437C-9015-9D129409DE98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownloadFilesBatchOperationServerExtension", "Controls\DownloadFilesBatchOperation\DownloadFilesBatchOperationServerExtension\DownloadFilesBatchOperationServerExtension.csproj", "{6F7F3317-5B74-48FF-8610-07AC9A9A3190}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomConditionTypes", "CustomConditionTypes", "{FAF275D4-E62C-498B-939E-0BBA01C46F48}"
+	ProjectSection(SolutionItems) = preProject
+		ServerExtensions\CustomConditionTypes\README.md = ServerExtensions\CustomConditionTypes\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConditionTypesLayoutExtension", "ServerExtensions\CustomConditionTypes\CustomConditionTypesLayoutExtension\CustomConditionTypesLayoutExtension.csproj", "{BCF78131-ED92-4C52-A9A6-7E8AEC11593F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConditionTypesDesignerExtension", "ServerExtensions\CustomConditionTypes\CustomConditionTypesWebLayoutsDesignerExtension\CustomConditionTypesDesignerExtension.csproj", "{3AA19909-15EE-4233-8999-971B3AED412E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConditionTypesInterfaces", "ServerExtensions\CustomConditionTypes\CustomConditionTypesInterfaces\CustomConditionTypesInterfaces.csproj", "{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -331,6 +351,26 @@ Global
 		{68399F65-D754-472A-939C-F616678C159F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68399F65-D754-472A-939C-F616678C159F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68399F65-D754-472A-939C-F616678C159F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61298850-2048-437C-9015-9D129409DE98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61298850-2048-437C-9015-9D129409DE98}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61298850-2048-437C-9015-9D129409DE98}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61298850-2048-437C-9015-9D129409DE98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F7F3317-5B74-48FF-8610-07AC9A9A3190}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F7F3317-5B74-48FF-8610-07AC9A9A3190}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F7F3317-5B74-48FF-8610-07AC9A9A3190}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F7F3317-5B74-48FF-8610-07AC9A9A3190}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF78131-ED92-4C52-A9A6-7E8AEC11593F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF78131-ED92-4C52-A9A6-7E8AEC11593F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF78131-ED92-4C52-A9A6-7E8AEC11593F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF78131-ED92-4C52-A9A6-7E8AEC11593F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AA19909-15EE-4233-8999-971B3AED412E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA19909-15EE-4233-8999-971B3AED412E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA19909-15EE-4233-8999-971B3AED412E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA19909-15EE-4233-8999-971B3AED412E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -392,6 +432,13 @@ Global
 		{68399F65-D754-472A-939C-F616678C159F} = {A5B8091E-6927-43E2-952D-CD501718943B}
 		{6E708D89-3637-4996-952F-0FB85D65EEF6} = {A5B8091E-6927-43E2-952D-CD501718943B}
 		{84AE6F40-AD24-4B05-92ED-BEC6E3527D9A} = {6E708D89-3637-4996-952F-0FB85D65EEF6}
+		{F009DC0F-3C88-430E-8A26-AAB682F73392} = {B6225870-63EC-4E1A-8A34-D73891E1614E}
+		{61298850-2048-437C-9015-9D129409DE98} = {F009DC0F-3C88-430E-8A26-AAB682F73392}
+		{6F7F3317-5B74-48FF-8610-07AC9A9A3190} = {F009DC0F-3C88-430E-8A26-AAB682F73392}
+		{FAF275D4-E62C-498B-939E-0BBA01C46F48} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
+		{BCF78131-ED92-4C52-A9A6-7E8AEC11593F} = {FAF275D4-E62C-498B-939E-0BBA01C46F48}
+		{3AA19909-15EE-4233-8999-971B3AED412E} = {FAF275D4-E62C-498B-939E-0BBA01C46F48}
+		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD} = {FAF275D4-E62C-498B-939E-0BBA01C46F48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CE59EC9-0DC4-47A2-BC2C-DA79B0CE327B}

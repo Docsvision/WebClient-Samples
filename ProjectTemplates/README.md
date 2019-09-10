@@ -14,7 +14,7 @@
 Для проектов TemplateDesignerExtension и TemplateServerExtension:
 
 1. Скопировать TemplateDesignerExtension.zip и TemplateServerExtension.zip файлы в папку для шаблонов Visual Studio.
-Папка с установленной Visual Studio\Templates\ProjectTemplates
+Папка Мои документы\Visual Studio 2017\Templates\ProjectTemplates
 2. Шаблоны проектов отображаются в разделе Мои шаблоны диалогового окна Новый проект
 
 Для проекта TemplateWebExtension см. README.md в папке проекта.

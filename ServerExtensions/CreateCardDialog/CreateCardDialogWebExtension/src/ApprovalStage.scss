@@ -33,7 +33,7 @@ $approvalStageColorLightest: #b8e;
 
 body[data-folder-color='CardApprovalStage'] {
     .column-header,
-    nav, .row-sidebar {
+    nav, .row-sidebar, .system-web-frame-header-container {
         background-color: $approvalStageColor;
     }
 

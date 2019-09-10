@@ -25,7 +25,7 @@ export class SampleTextBoxParams extends BaseControlParams {
     @rw tabStop?: boolean;
     @r default?: string;
     @r canEdit?: boolean = true;
-    @rw url?: string;
+    @rw urlAddress?: string;
 
     @r imageHeight: string = "1.5em";
     @r imageWidth: string = "1.5em";

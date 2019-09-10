@@ -3,6 +3,9 @@ import { BaseControlParams, BaseControlState, BaseControl } from "@docsvision/we
 import { r } from "@docsvision/webclient/System/Readonly";
 import { rw } from "@docsvision/webclient/System/Readwrite";
 import { ControlImpl } from "@docsvision/webclient/System/ControlImpl";
+import { handler } from "@docsvision/webclient/System/Handler";
+import { IBindingResult } from "@docsvision/webclient/System/IBindingResult";
+import { definedNotNull } from "@docsvision/webclient/System/DefinedNotNull";
 
 export class SampleLinkParams extends BaseControlParams {
     @r standardCssClass?: string = "sample-link";
@@ -29,6 +32,16 @@ export class SampleLink extends BaseControl<SampleLinkParams, SampleLinkState> {
 
     protected getText() {
         return this.state.text ? this.state.text : this.state.urlAddress;
+    }
+
+    // Обработчик значения свойства "binding", присылаемого сервером.
+    // Данное свойство задается только сервером, поэтому в нет смысла объявлять его в SampleLinkParams
+    @handler("binding")
+    protected set binding(binding: IBindingResult<string>) {
+        // Если заполнено binding свойство, то берем значение из него
+        if (binding && definedNotNull(binding.value)) {
+            this.state.urlAddress = binding.value;
+        }
     }
 
     renderControl() {

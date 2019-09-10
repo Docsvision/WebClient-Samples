@@ -80,7 +80,7 @@ namespace TextBoxDesignerExtension.Extension
                     PropertyFactory.GetLabelTextProperty(),
                     PropertyFactory.GetTabStopProperty(),
                     PropertyFactory.GetDefaultProperty(),
-                    PropertyFactory.Create(Constants.CommonProperties.Url),
+                    PropertyFactory.Create(Constants.CommonProperties.UrlAddress),
                     PropertyFactory.GetClickEvent(),
                     PropertyFactory.GetMouseOverEvent(),
                     PropertyFactory.GetMouseOutEvent(),

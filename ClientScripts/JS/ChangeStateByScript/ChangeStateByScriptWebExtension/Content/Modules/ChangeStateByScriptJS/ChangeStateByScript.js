@@ -19,6 +19,6 @@ async function changeStateByScript(sender, args) {
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ChangeStateByScriptJS",
-    version: "5.5.12",
+    version: "5.5.13",
     globalEventHandlers: [{ changeStateByScript: changeStateByScript }]
 });

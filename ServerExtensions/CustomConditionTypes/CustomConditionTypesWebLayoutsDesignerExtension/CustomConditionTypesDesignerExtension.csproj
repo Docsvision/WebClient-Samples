@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3AA19909-15EE-4233-8999-971B3AED412E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CustomConditionTypesDesignerExtension</RootNamespace>
+    <AssemblyName>CustomConditionTypesDesignerExtension</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocsVision.BackOffice.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.BackOffice.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.LayoutEditor.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.LayoutEditor.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.WebClientLibrary.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebLayoutsDesigner">
+      <HintPath>..\..\..\Assemblies\Docsvision\WebLayoutsDesigner.exe</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CustomConditionTypesProvider.cs" />
+    <Compile Include="CustomConditionTypesWebLayoutsDesignerExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CustomConditionTypesInterfaces\CustomConditionTypesInterfaces.csproj">
+      <Project>{3cd8286d-3b5f-480a-8310-2ef1d2e79afd}</Project>
+      <Name>CustomConditionTypesInterfaces</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*.dll" "$(SolutionDir)SamplesOutput\Plugins\$(TargetName)\" /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
+</Project>

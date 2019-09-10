@@ -3,4 +3,9 @@
     width: 100%;
     padding: 5px;
     margin-top: 1em;
+
+    a { 
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
 }

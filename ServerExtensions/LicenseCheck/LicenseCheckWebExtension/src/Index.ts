@@ -11,7 +11,7 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "LicenseCheck",
-    version: "5.5.12",
+    version: "5.5.13",
     globalEventHandlers: [ LicenseCheck ],
     layoutServices: [ 
         Service.fromFactory($LicenseCheckController, (services: $RequestManager) => new LicenseCheckController(services)) 

@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("LinkDesignerExtension")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Digdes")]
+[assembly: AssemblyCompany("Docsvision")]
 [assembly: AssemblyProduct("LinkDesignerExtension")]
-[assembly: AssemblyCopyright("Copyright © Digdes 2018")]
+[assembly: AssemblyCopyright("Copyright © Docsvision 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: AssemblyVersion("5.5.13.0")]
+[assembly: AssemblyFileVersion("5.5.13.0")]

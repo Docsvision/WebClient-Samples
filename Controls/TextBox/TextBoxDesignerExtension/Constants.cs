@@ -9,7 +9,7 @@
 
         internal static class CommonProperties
         {
-            public const string Url = "Url";
+            public const string UrlAddress = "UrlAddress";
         }
 
         internal static class AllowedOperations

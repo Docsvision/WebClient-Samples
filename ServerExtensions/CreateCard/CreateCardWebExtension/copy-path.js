@@ -1,5 +1,5 @@
 const SITE_ROOT = "../../../SamplesOutput/Site";
-const EXTENSION_NAME = "CreateCardClientExtension";
+const EXTENSION_NAME = "CreateCardWebExtension";
 const MODULES_DIR = SITE_ROOT + "/Content/Modules";
 
 module.exports.STYLES_DIR =  `${MODULES_DIR}/${EXTENSION_NAME}`;

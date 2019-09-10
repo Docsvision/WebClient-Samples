@@ -13,6 +13,9 @@
       <Property Type="TabStop" />
       <Property Type="UrlAddress" />
       <Property Type="Text" />
+      <Property Type="DataSource" />
+      <Property Type="DataField" Editor="StringMetadataEditor"/>
+      <Property Type="Binding" />
     </Properties>
     <!-- содержит перечисление событий контрола -->
     <Events>

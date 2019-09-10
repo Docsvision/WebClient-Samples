@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ChangeStateByScript",
-    version: "5.5.12",
+    version: "5.5.13",
     globalEventHandlers: [ChangeStateByScript]
 });
