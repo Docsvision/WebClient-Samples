@@ -25,7 +25,7 @@ Web-сервис позволяет выполнять следующие дей
 2. Собрать проект Others > ExternalWebService > WebService
 3. Собрать проект Others > ExternalWebService > WebServiceClient
 4. На сервере Docsvision 5 установить Docsvision 5 Resource Kit, установить обновление DVExplorer. С помощью утилиты DVCardManager следует загрузить 
-в БД Docsvision библиотеку ReportsLibrary из каталога ExternalWebService\CardDefs\ReportsLibrary. Подробное описание процедуры загрузки пользовательской 
+в БД Docsvision библиотеку ReportsLibrary из каталога `ExternalWebService\CardDefs\ReportsLibrary`. Подробное описание процедуры загрузки пользовательской 
 библиотеки карточек содержится в документации разработчика Docsvision 5.
 5. Перезапустить IIS
 
@@ -33,16 +33,19 @@ Web-сервис позволяет выполнять следующие дей
 ## Проверка примера
 
 Первый вариант запуска веб-сервиса:
-	1. Запустить WebService: Debug > Start new instance
-	2. Запустить WebServiceClient Debug > Start new instance
+
+1. Запустить WebService: Debug > Start new instance
+2. Запустить WebServiceClient Debug > Start new instance
+
 Второй вариант запуска веб-сервиса:
-	1. Опубликовать проект WebService: WebService > Publish в желаемую директорию, директорию можно менять в параметре Targer Location, например, "\SamplesOutput\ExternalWebService\WebService"
-	2. Запустить IIS, создать новый пул приложений, в расширенных настройках значение параметра Identity заменить на свою учетную запись DocsVision Web-клиент, Enable 32-bit Applications установить в true  . 
-	ВАЖНО! Для корректной работы должен быть создан пул приложений, на котором работает StorageServer, как правило на рабочей машине он расположен в директории "C:\Program Files (x86)\Docsvision\Platform\5.5\Site\"
-	3. Создать новый сайт, изменить значение порта на любой кроме 80, например, 81. В качестве пути выбрать директорию, в которую был опубликован проект.
-	4. В настройках Properties > Settings проекта WebServiceClient поменять значение параметра WebServiceUrl на url созданного веб-приложения, например, http://localhost:81/
-	5. Пересобрать WebServiceClient
-	6. Запустить приложение WebServiceClient.exe расположенное в директории SamplesOutput\ExternalWebService\WebServiceClient
+
+1. Опубликовать проект WebService: WebService > Publish в желаемую директорию, директорию можно менять в параметре Targer Location, например, `\SamplesOutput\ExternalWebService\WebService`
+2. Запустить IIS, создать новый пул приложений, в расширенных настройках значение параметра Identity заменить на свою учетную запись DocsVision Web-клиент, Enable 32-bit Applications установить в true  . 
+ВАЖНО! Для корректной работы должен быть создан пул приложений, на котором работает StorageServer, как правило на рабочей машине он расположен в директории `C:\Program Files (x86)\Docsvision\Platform\5.5\Site\`
+3. Создать новый сайт, изменить значение порта на любой кроме 80, например, 81. В качестве пути выбрать директорию, в которую был опубликован проект.
+4. В настройках Properties > Settings проекта WebServiceClient поменять значение параметра WebServiceUrl на url созданного веб-приложения, например, `http://localhost:81/`
+5. Пересобрать WebServiceClient
+6. Запустить приложение WebServiceClient.exe расположенное в директории `SamplesOutput\ExternalWebService\WebServiceClient`
 
 ## Каталог CardDefs
 

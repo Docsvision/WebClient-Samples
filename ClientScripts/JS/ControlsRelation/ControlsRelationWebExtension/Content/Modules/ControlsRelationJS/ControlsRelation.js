@@ -14,6 +14,6 @@ function showRelatedControl(sender) {
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ControlsRelationJS",
-    version: "5.5.13",
+    version: "5.5.14",
     globalEventHandlers: [{ showRelatedControl: showRelatedControl }]
 });

@@ -10,7 +10,7 @@ import { ILocalizationsMap } from "@docsvision/webclient/System/ILocalizationsMa
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "DownloadFilesBatchOperation",
-    version: "5.5.13",
+    version: "5.5.14",
     controls: [{ controlTypeName: "DownloadFilesBatchOperation", constructor: DownloadFilesBatchOperation }],
     getLocalizations: getLocalizations
 })

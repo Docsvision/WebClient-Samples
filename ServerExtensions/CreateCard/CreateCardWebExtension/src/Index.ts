@@ -10,7 +10,7 @@ import { Service } from "@docsvision/webclient/System/Service";
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "CreateCard",
-    version: "5.5.13",
+    version: "5.5.14",
     globalEventHandlers: [ CreateOutgoingDocument ],
     layoutServices: [ 
         Service.fromFactory($SampleDocumentController, (services: $RequestManager) => new SampleDocumentController(services)) 

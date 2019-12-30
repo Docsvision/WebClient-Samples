@@ -8,7 +8,7 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "HyperComments",
-    version: "5.5.13",
+    version: "5.5.14",
     controls: [{ controlTypeName: "HyperComments", constructor: HyperComments }]
 });
 

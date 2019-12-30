@@ -103,3 +103,7 @@ ProjectTemplates/TemplateWebExtension/Dist
 Typings
 build.bat
 copy-definitions.bat
+
+# BuildTasks
+Binaries_WebClient/*
+WebClient/*

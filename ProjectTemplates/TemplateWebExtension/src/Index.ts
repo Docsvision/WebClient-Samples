@@ -10,6 +10,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "Template web extension",
-    version: "5.5.13",
+    version: "5.5.14",
     globalEventHandlers: [ EventHandlers ]
 })
