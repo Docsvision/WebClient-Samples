@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27428.2005
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{B6225870-63EC-4E1A-8A34-D73891E1614E}"
 EndProject
@@ -233,6 +233,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConditionTypesDesigne
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomConditionTypesInterfaces", "ServerExtensions\CustomConditionTypes\CustomConditionTypesInterfaces\CustomConditionTypesInterfaces.csproj", "{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSPSignatureVisualization", "CSPSignatureVisualization", "{2302785A-E207-4147-81A1-00F9541D0177}"
+	ProjectSection(SolutionItems) = preProject
+		ServerExtensions\CSPSignatureVisualization\README.md = ServerExtensions\CSPSignatureVisualization\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSPSignatureVisualizationServerExtension", "ServerExtensions\CSPSignatureVisualization\CSPSignatureVisualizationServerExtension\CSPSignatureVisualizationServerExtension.csproj", "{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -371,6 +378,10 @@ Global
 		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -439,6 +450,8 @@ Global
 		{BCF78131-ED92-4C52-A9A6-7E8AEC11593F} = {FAF275D4-E62C-498B-939E-0BBA01C46F48}
 		{3AA19909-15EE-4233-8999-971B3AED412E} = {FAF275D4-E62C-498B-939E-0BBA01C46F48}
 		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD} = {FAF275D4-E62C-498B-939E-0BBA01C46F48}
+		{2302785A-E207-4147-81A1-00F9541D0177} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
+		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2} = {2302785A-E207-4147-81A1-00F9541D0177}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CE59EC9-0DC4-47A2-BC2C-DA79B0CE327B}

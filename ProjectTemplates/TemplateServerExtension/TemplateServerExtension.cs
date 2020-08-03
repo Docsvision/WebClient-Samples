@@ -165,6 +165,17 @@ namespace TemplateServerExtension
             };
         }
 
+        protected override WebClientNavigatorExtension GetNavigatorExtension()
+        {
+            var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
+            {
+                ExtensionName = ExtensionName,
+                ExtensionVersion = ExtensionVersion
+            };
+
+            return new WebClientNavigatorExtension(navigatorExtensionInitInfo);
+        }
+
         #endregion
     }
 }
