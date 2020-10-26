@@ -1,6 +1,9 @@
 ﻿div.sample-checkbox {    
     margin-top: 1em;
-    display: block !important;
+
+    &.sample-checkbox.sample-checkbox {
+        display: block;
+    }
 
     label.label-text {
         display: inline-block;
@@ -61,8 +64,16 @@
             background-color: rgba(128, 128, 128, 0.5);
         }
 
+        input[type=checkbox] + label:active:after {
+            width: 15px;
+        }
+
         input:checked + label {
             background: rgba(186, 218, 85, 0.5);
         }
+    }
+
+    .checkbox-switch:focus {
+        outline: rgb(77, 144, 254) dashed 1px;
     }
 }

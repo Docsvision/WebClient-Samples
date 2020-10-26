@@ -16,7 +16,7 @@ namespace CustomConditionTypesDesignerExtension
         public override IConditionTypesProvider ConditionTypesProvider => this.conditionTypesProvider;
 
         /// <summary>
-        /// Создаёт новый экземпляр <see cref="SampleWebLayoutsDesignerExtension"/>
+        /// Создаёт новый экземпляр <see cref="CustomConditionTypesWebLayoutsDesignerExtension"/>
         /// </summary>
         /// <param name="provider">Сервис-провайдер</param>
         public CustomConditionTypesWebLayoutsDesignerExtension(IServiceProvider provider)

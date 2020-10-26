@@ -1,4 +1,6 @@
-﻿namespace LicenseCheckServerExtension.Services
+﻿using DocsVision.Platform.WebClient;
+
+namespace LicenseCheckServerExtension.Services
 {
     /// <summary>
     /// Представляет собой интерфейс сервиса для проверки лицензии
@@ -8,6 +10,6 @@
         /// <summary>
         /// Проверить признак лицензии
         /// </summary>
-        bool CheckFeature();
+        bool CheckFeature(SessionContext sessionContext);
     }
 }

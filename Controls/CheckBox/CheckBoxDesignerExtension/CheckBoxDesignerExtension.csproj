@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -43,11 +43,11 @@
     <AssemblyOriginatorKeyFile>..\..\..\StrongNameKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DocsVision.BackOffice.WebLayoutsDesignerExtension">
+    <Reference Include="DocsVision.BackOffice.WebLayoutsDesignerExtension, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebLayoutsDesignerExtension.dll</HintPath>
     </Reference>
-    <Reference Include="Docsvision.LayoutEditor.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.LayoutEditor.ObjectModel.dll</HintPath>
+    <Reference Include="DocsVision.LayoutEditor.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.LayoutEditor.ObjectModel.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="DocsVision.Platform.StorageServer, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">

@@ -15,7 +15,7 @@ Web-сервис позволяет выполнять следующие дей
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017](https://www.visualstudio.com)
+* [Visual Studio 2017/2019](https://www.visualstudio.com)
 * [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
 
 

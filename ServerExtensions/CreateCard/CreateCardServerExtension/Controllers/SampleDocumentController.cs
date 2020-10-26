@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Web.Mvc;
+using CreateCardServerExtension.Services;
+using DocsVision.BackOffice.WebClient.Employee;
+using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
-using ServiceHelper = CreateCardServerExtension.Helpers.ServiceHelper;
 
 namespace CreateCardServerExtension.Controllers
 {
     public class SampleDocumentController : Controller
     {
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
+        private readonly ISampleDocumentService sampleDocumentService;
 
         /// <summary>
         /// Создаёт новый экземпляр <see cref="SampleDocumentController"/>
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
-        public SampleDocumentController(IServiceProvider serviceProvider)
+        public SampleDocumentController(ICurrentObjectContextProvider currentObjectContextProvider, ISampleDocumentService sampleDocumentService)
         {
-            this.serviceProvider = serviceProvider;
-            this.serviceHelper = new ServiceHelper(serviceProvider);
+            this.currentObjectContextProvider = currentObjectContextProvider;
+            this.sampleDocumentService = sampleDocumentService;
         }
 
         /// <summary>
@@ -26,13 +27,8 @@ namespace CreateCardServerExtension.Controllers
         /// <returns></returns>
         public ActionResult CreateOutgoingDocument(Guid parentDocId)
         {
-            var sessionContext = this.serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext();
-            if (this.serviceHelper.EmployeeService.GetCurrentEmployee(sessionContext) == null)
-            {
-                return RedirectToAction("AccessDenied", "Error");
-            }
-
-            var response = this.serviceHelper.LayoutCreateDocumentService.CreateOutgoingDocument(parentDocId);
+            var sessionContext = this.currentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            var response = sampleDocumentService.CreateOutgoingDocument(sessionContext, parentDocId);
 
             return Content(JsonHelper.SerializeToJson(response), "application/json");
         }

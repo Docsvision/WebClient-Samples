@@ -1,4 +1,4 @@
-# ControlValidation
+﻿# ControlValidation
 
 Этот каталог содержит пример валидации данных.
 Выполнить проверку, что заполнено определенное текстовое поле и количество символов не превышает 100.
@@ -6,7 +6,7 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017](https://www.visualstudio.com)
+* [Visual Studio 2017/2019](https://www.visualstudio.com)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
 ## Сборка и установка

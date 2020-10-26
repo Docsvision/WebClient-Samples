@@ -6,7 +6,7 @@ export class CustomLibraryController {
     constructor(private services: $RequestManager) {
     }
 
-    getCustomData(): JQueryDeferred<number> {
+    getCustomData(): Promise<number> {
         var url = urlStore.urlResolver.resolveUrl("GetCustomData", "CustomLibrary");
         return this.services.requestManager.post(url, '');
     }

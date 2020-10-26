@@ -2,7 +2,8 @@
 import { $LicenseCheckController } from "../Services/LicenseCheckController";
 
 export async function checkLicenseFeature(sender: CustomButton) {
-    const data = await sender.layout.getService($LicenseCheckController).checkLicenseFeature();
+    let service = sender.layout.getService($LicenseCheckController);
+    const data = await service.checkLicenseFeature();
     
     if (data) {
         alert('Характеристика существует в лицензии');

@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение
 extensionManager.registerExtension({
     name: "SampleCheckBox",
-    version: "5.5.14",
+    version: "5.5.15",
     controls: [{ controlTypeName: "SampleCheckBox", constructor: SampleCheckBox }]
 });

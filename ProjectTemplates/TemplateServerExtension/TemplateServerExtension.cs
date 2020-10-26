@@ -3,13 +3,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
-using System.Web.Mvc;
-using System.Web.Http.Controllers;
-using DocsVision.BackOffice.WebClient.Services;
+using Autofac;
 using DocsVision.WebClient.Extensibility;
-using DocsVision.WebClientLibrary.ObjectModel.Services.LayoutModel;
-using DocsVision.WebClientLibrary.ObjectModel.Services.BindingResolvers;
-using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;
+using DocsVision.WebClient.Helpers;
 
 namespace TemplateServerExtension
 {
@@ -36,14 +32,6 @@ namespace TemplateServerExtension
         }
 
         /// <summary>
-        /// Получить пространство имён расширения
-        /// </summary>
-        public override string Namespace
-        {
-            get { return Constants.Namespace; }
-        }
-
-        /// <summary>
         /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
@@ -52,46 +40,23 @@ namespace TemplateServerExtension
         }
 
         #region WebClientExtension Overrides
-
-         /// <summary>
-        /// Gets registered service activators
-        /// </summary>
-        /// <param name="serviceProvider">service provider</param>
-        /// <returns>service type/activator mappings</returns>
-        protected override Dictionary<Type, Func<object>> GetServiceActivators(IServiceProvider serviceProvider)
-        {
-            return new Dictionary<Type, Func<object>>
-            {
-
-            };
-        }
-
+        
         /// <summary>
-        /// Gets registered MVC controller activators
+        /// Регистрация типов в IoC контейнере
         /// </summary>
-        /// <param name="serviceProvider">service provider</param>
-        /// <returns>MVC controller type/activator mappings</returns>
-        protected override Dictionary<Type, Func<IController>> GetControllerActivators(IServiceProvider serviceProvider)
+        /// <param name="containerBuilder"></param>
+        public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            return new Dictionary<Type, Func<IController>>
-            {
-
-            };
+            // Теперь регистрация сервисов и других объектов ВК осуществляется в едином методе - InitializeContainer, 
+            // примеры регистрации различных типов ВК представлены ниже
+            // containerBuilder.RegisterType<YourService>().As<IYourService>().SingleInstance();
+            // containerBuilder.RegisterOrderedType<YourBindingConverterType, IBindingConverter>();
+            // containerBuilder.RegisterOrderedType<YourBindingResolverType, IBindingResolver>();            
+            // containerBuilder.RegisterOrderedType<YourControlResolverType, IControlResolver>();
+            // containerBuilder.RegisterOrderedType<YourPropertyResolverType, IPropertyResolver>();  
+            // containerBuilder.RegisterType<YourCardLifeCycle>().Keyed<ICardLifeCycle>(CardTypeID).SingleInstance();
+            // containerBuilder.RegisterType<YourRowLifeCycle>().Keyed<IRowLifeCycle>(SectionID).SingleInstance(); 
         }
-
-        /// <summary>
-        /// Gets registered WebApi controller activators
-        /// </summary>
-        /// <param name="serviceProvider">service provider</param>
-        /// <returns>WebApi controller type/activator mappings</returns>
-        protected override Dictionary<Type, Func<IHttpController>> GetApiControllerActivators(IServiceProvider serviceProvider)
-        {
-            return new Dictionary<Type, Func<IHttpController>>
-            {
-
-            };
-        }
-
 
         /// <summary>
         /// Gets resource managers for layout extension
@@ -100,66 +65,6 @@ namespace TemplateServerExtension
         protected override List<ResourceManager> GetLayoutExtensionResourceManagers()
         {
             return new List<ResourceManager>
-            {
-
-            };
-        }
-
-        /// <summary>
-        /// Gets binding converters
-        /// </summary>
-        /// <returns>a list of binding converters</returns>
-        protected override List<IBindingConverter> GetBindingConverters()
-        {
-            return new List<IBindingConverter>
-            {
-
-            };
-        }
-
-        /// <summary>
-        /// Gets binding resolvers
-        /// </summary>
-        /// <returns>a list of binding resolvers</returns>
-        protected override List<IBindingResolver> GetBindingResolvers()
-        {
-            return new List<IBindingResolver>
-            {
-
-            };
-        }
-
-        /// <summary>
-        /// Gets control resolvers
-        /// </summary>
-        /// <returns>a list of control resolvers</returns>
-        protected override List<IControlResolver> GetControlResolvers()
-        {
-            return new List<IControlResolver>
-            {
-
-            };
-        }
-
-        /// <summary>
-        /// Gets property resolvers
-        /// </summary>
-        /// <returns>a list of property resolvers</returns>
-        protected override List<IPropertyResolver> GetPropertyResolvers()
-        {
-            return new List<IPropertyResolver>
-            {
-
-            };
-        }
-
-        /// <summary>
-        /// Gets card factories
-        /// </summary>
-        /// <returns>a dictionaty of card factories</returns>
-        protected override Dictionary<Guid, Func<ICardFactory>> GetCardFactories()
-        {
-            return new Dictionary<Guid, Func<ICardFactory>>
             {
 
             };

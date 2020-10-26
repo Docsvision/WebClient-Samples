@@ -1,26 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using AcquaintancePanelServerExtension.Services;
+using DocsVision.BackOffice.WebClient.Employee;
+using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
-using ServiceHelper = AcquaintancePanelServerExtension.Helpers.ServiceHelper;
 
 namespace AcquaintancePanelServerExtension.Controllers
 {
     public class LayoutBusinessProcessController : Controller
     {
-
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
         private readonly Guid acquaitanceBPID = new Guid("a490324e-3b99-e211-a503-001676e1723a");
+        
+        private readonly ILayoutBPService layoutBPService;
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
 
         /// <summary>
-        /// Создаёт новый экземпляр <see cref="LayoutLinksController"/>
+        /// Создаёт новый экземпляр <see cref="LayoutBusinessProcessController"/>
         /// </summary>
-        /// <param name="serviceProvider">Service provider</param>
-        public LayoutBusinessProcessController(IServiceProvider serviceProvider)
+        public LayoutBusinessProcessController(ILayoutBPService layoutBPService, ICurrentObjectContextProvider currentObjectContextProvider)
         {
-            this.serviceProvider = serviceProvider;
-            this.serviceHelper = new ServiceHelper(serviceProvider);
+            this.layoutBPService = layoutBPService;
+            this.currentObjectContextProvider = currentObjectContextProvider;
         }
 
         /// <summary>
@@ -29,13 +30,8 @@ namespace AcquaintancePanelServerExtension.Controllers
         /// <returns></returns>
         public ActionResult SendToAcquaintance(Guid cardId, List<Guid> employeeIds = null, DateTime? endDate = null)
         {
-            var sessionContext = this.serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext();
-            if (this.serviceHelper.EmployeeService.GetCurrentEmployee(sessionContext) == null)
-            {
-                return RedirectToAction("AccessDenied", "Error");
-            }
-
-            var response = this.serviceHelper.LayoutBPService.StartBusinessProcess(cardId, acquaitanceBPID, employeeIds, endDate);
+            var sessionContext = this.currentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            var response = this.layoutBPService.StartBusinessProcess(sessionContext, cardId, acquaitanceBPID, employeeIds, endDate);
 
             return Content(JsonHelper.SerializeToJson(response), "application/json");            
         }

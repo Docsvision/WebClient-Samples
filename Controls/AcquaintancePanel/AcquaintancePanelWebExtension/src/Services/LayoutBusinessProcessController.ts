@@ -9,7 +9,7 @@ export class LayoutBusinessProcessController {
     constructor(private services: $RequestManager) {
     }
 
-    sendToAcquaintance(cardId?: string, employeeIds?: string[], endDate?: Date): JQueryDeferred<IStartBPResultModel> {
+    sendToAcquaintance(cardId?: string, employeeIds?: string[], endDate?: Date): Promise<IStartBPResultModel> {
         var url = urlStore.urlResolver.resolveUrl("SendToAcquaintance", "LayoutBusinessProcess");
         var data = {
             "cardId": cardId || layoutManager.cardLayout.cardInfo.id,

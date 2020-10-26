@@ -7,7 +7,7 @@ namespace ExtendedCardInfoServerExtension.Services
     /// <summary>
     /// Сервис для расширенной карточки
     /// </summary>
-    interface IExtendedCardService
+    public interface IExtendedCardService
     {
         /// <summary>
         /// Получить расширенную карточку

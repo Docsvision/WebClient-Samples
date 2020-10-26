@@ -9,6 +9,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "AdaptiveMenuBar Web Extension",
-    version: "5.5.14",
+    version: "5.5.15",
     globalEventHandlers: [ showAdaptiveMenuBar ]
 })

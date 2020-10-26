@@ -5,12 +5,13 @@
 var MessageBox = require("@docsvision/webclient/Helpers/MessageBox/MessageBox").MessageBox;
 var extensionManager = require("@docsvision/webclient/System/ExtensionManager").extensionManager;
 
-async function changeStateByScript(sender, args) {
+function changeStateByScript(sender, args) {
     var layout = sender.layout;
 
     if (layout.editOperations.available('b8a6119c-4d06-4401-b1af-0310615c72f6')) {  // Operation Start approving for Документ УД\Исходящий
-        await layout.changeState('b8a6119c-4d06-4401-b1af-0310615c72f6');
-        MessageBox.ShowInfo('Состояние изменилось');
+        layout.changeState('b8a6119c-4d06-4401-b1af-0310615c72f6').then(function() {
+            MessageBox.ShowInfo('Состояние изменилось');
+        });
     } else {
         MessageBox.ShowError('Операция недоступна');
     }
@@ -19,6 +20,6 @@ async function changeStateByScript(sender, args) {
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ChangeStateByScriptJS",
-    version: "5.5.14",
+    version: "5.5.15",
     globalEventHandlers: [{ changeStateByScript: changeStateByScript }]
 });

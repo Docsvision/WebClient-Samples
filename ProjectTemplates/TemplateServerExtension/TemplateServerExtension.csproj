@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -49,6 +49,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
+      <HintPath>..\..\Assemblies\Autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.Ordering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=84578aafd05fb485">
+      <HintPath>..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
+    </Reference>
     <Reference Include="DocsVision.BackOffice.WebClient">
       <HintPath>..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebClient.dll</HintPath>
       <Private>False</Private>
@@ -106,7 +112,6 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
     <Compile Include="TemplateServerExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

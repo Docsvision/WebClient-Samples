@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Web.Mvc;
+using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
-using ServiceHelper = LicenseCheckServerExtension.Helpers.ServiceHelper;
+using LicenseCheckServerExtension.Services;
 
 namespace LicenseCheckServerExtension.Controllers
 {
@@ -10,17 +11,16 @@ namespace LicenseCheckServerExtension.Controllers
     /// </summary>
     public class LicenseCheckController : Controller
     {
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
-
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
+        private readonly ILicenseCheckService licenseCheckService;
+        
         /// <summary>
         /// Создаёт новый экземпляр <see cref="LicenseCheckController"/>
         /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        public LicenseCheckController(IServiceProvider serviceProvider)
+        public LicenseCheckController(ICurrentObjectContextProvider currentObjectContextProvider, ILicenseCheckService licenseCheckService)
         {
-            this.serviceProvider = serviceProvider;
-            this.serviceHelper = new ServiceHelper(serviceProvider);
+            this.currentObjectContextProvider = currentObjectContextProvider;
+            this.licenseCheckService = licenseCheckService;
         }
 
         /// <summary>
@@ -28,7 +28,8 @@ namespace LicenseCheckServerExtension.Controllers
         /// </summary>
         public string CheckFeature()
         {
-            var response = this.serviceHelper.LicenseCheckService.CheckFeature();
+            var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            var response = licenseCheckService.CheckFeature(sessionContext);
             return JsonHelper.SerializeToJson(response);
         }
     }

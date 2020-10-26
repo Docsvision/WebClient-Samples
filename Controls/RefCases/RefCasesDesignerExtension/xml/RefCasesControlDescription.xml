@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+  <Control Name="RefCases" ControlGroupResourceKey="ControlGroup_Directories"  ResourceKey="Control_RefCases">
+    <Properties>
+      <Property Type="Name" />
+      <Property Type="PlaceHolder" />
+      <Property Type="Tip" />
+      <Property Type="LabelText" />
+      <Property Type="ShowEmptyLabel" />
+      <Property Type="Visibility" />
+      <Property Type="StandardCssClass" DefaultValue="ref-cases" />
+      <Property Type="CustomCssClasses" />
+      <Property Type="TabStop" DefaultValue="True" />
+      <Property Type="Required" />
+      
+      <Property Type="ExtendedDataSource" />
+      <Property Type="DataSource" />
+      <Property Type="DataField" Editor="RefCasesFieldMetadataEditor" />
+      <Property Type="Binding" BindingConverter="RefCasesConverter" />
+      <Property Type="EditOperation" />
+
+      <Property Name="RootSection" ResourceKey="Control_RefCases_Section"
+                Category="BehaviorCategory" DataType="System.Guid"
+                Editor="RefCasesSectionEditor" />
+    </Properties>
+    <Events>
+      <Event Name="Click" ResourceKey="ControlTypes_ClickEventProperty" />
+      <Event Name="MouseOver" ResourceKey="ControlTypes_MouseOverEventProperty" />
+      <Event Name="MouseOut" ResourceKey="ControlTypes_MouseOutEventProperty" />
+      <Event Name="DataChanged" ResourceKey="ControlTypes_DataChangedEventProperty" />
+    </Events>
+  </Control>
+</Controls>

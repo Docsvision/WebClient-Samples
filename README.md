@@ -1,4 +1,4 @@
-# Docsvision Web-клиент. Примеры разработки. 
+﻿# Docsvision Web-клиент. Примеры разработки. 
 
 В данном разделе содержатся примеры разработки скриптов и собственных элементов управления для использования в карточках Docsvision 5 Web-клиент, настроенных с использованием Конструктора Web-разметок.
 
@@ -6,8 +6,8 @@
 
 Для использования примеров необходимо наличие следующих продуктов:
 
-* [Visual Studio 2017](https://www.visualstudio.com)
-* [NodeJS v10.6+](https://nodejs.org/en/)
+* [Visual Studio 2017/2019](https://www.visualstudio.com)
+* [NodeJS v12.16.1+](https://nodejs.org/en/)
 * [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
 
 ### Структура разделов

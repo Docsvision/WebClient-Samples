@@ -7,7 +7,7 @@ export class SampleDocumentController {
     constructor(private services: $RequestManager) {
     }
     
-    public createOutgoingDocument(parentDocId?: string): JQueryDeferred<string> {
+    public createOutgoingDocument(parentDocId?: string): Promise<string> {
         var url = urlStore.urlResolver.resolveUrl("CreateOutgoingDocument", "SampleDocument");
         var data = {
             "parentDocId": (parentDocId || layoutManager.cardLayout.cardInfo.id)

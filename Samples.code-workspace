@@ -74,6 +74,12 @@
 		},
 		{
 			"path": "Controls\\DownloadFilesBatchOperation\\DownloadFilesBatchOperationWebExtension"
+		},
+		{
+			"path": "Controls\\RefCases\\RefCasesWebExtension"
+		},
+		{
+			"path": "Others\\SignalForUsers\\SignalWebExtension"
 		}
 	],
 	"settings": {}

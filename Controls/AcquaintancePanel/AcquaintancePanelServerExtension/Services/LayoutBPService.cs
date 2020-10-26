@@ -2,36 +2,25 @@
 using System.Collections.Generic;
 using System.Linq;
 using AcquaintancePanelServerExtension.Models;
-using AcquaintancePanelServerExtension.Helpers;
 using DocsVision.BackOffice.ObjectModel.Services;
 using DocsVision.BackOffice.CardLib.CardDefs;
+using DocsVision.Platform.WebClient;
 using DocsVision.Workflow.Objects;
 
 namespace AcquaintancePanelServerExtension.Services
 {
     public class LayoutBPService : ILayoutBPService
     {
-
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
-
         /// <summary>
-        /// Создаёт новый экземпляр <see cref="LayoutLinksService"/>
+        /// Создаёт новый экземпляр <see cref="LayoutBPService"/>
         /// </summary>
-        /// <param name="provider">Сервис-провайдер</param>
-        public LayoutBPService(IServiceProvider provider)
+        public LayoutBPService()
         {
-            if (provider == null)
-                throw new ArgumentNullException("provider");
-
-            this.serviceProvider = provider;
-            this.serviceHelper = new ServiceHelper(serviceProvider);
         }
 
-        public StartProcessResultModel StartBusinessProcess(Guid cardId, Guid processTemplateId, IEnumerable<Guid> employeeIds = null, DateTime? endDate = null)
+        public StartProcessResultModel StartBusinessProcess(SessionContext sessionContext, Guid cardId, Guid processTemplateId, IEnumerable<Guid> employeeIds = null, DateTime? endDate = null)
         {
             var resultModel = new StartProcessResultModel();
-            var sessionContext = this.serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext();
 
             try
             {

@@ -2,11 +2,15 @@
 using System.Diagnostics;
 using System.Reflection;
 
+using Autofac;
+using Autofac.Extras.Ordering;
+
 using CSPSignatureVisualizationServerExtension.DataVisualization;
 using CSPSignatureVisualizationServerExtension.Helpers;
-using DocsVision.BackOffice.WebClient.Helpers;
+
+using DocsVision.BackOffice.WebClient.DataVisualization;
 using DocsVision.WebClient.Extensibility;
-using ServiceHelper = CSPSignatureVisualizationServerExtension.Helpers.ServiceHelper;
+using DocsVision.WebClient.Helpers;
 
 namespace CSPSignatureVisualizationServerExtension
 {
@@ -15,6 +19,8 @@ namespace CSPSignatureVisualizationServerExtension
 	/// </summary>
 	public class CSPSignatureVisualizationExtension : WebClientExtension
 	{
+        private readonly IServiceProvider serviceProvider;
+
 		/// <summary>
 		/// Создаёт новый экземпляр класса <see cref="CSPSignatureVisualizationExtension" />
 		/// </summary>
@@ -22,6 +28,7 @@ namespace CSPSignatureVisualizationServerExtension
 		public CSPSignatureVisualizationExtension(IServiceProvider serviceProvider)
 			: base(serviceProvider)
 		{
+            this.serviceProvider = serviceProvider;
 		}
 
 		#region Свойства
@@ -45,17 +52,24 @@ namespace CSPSignatureVisualizationServerExtension
 
 		#region Обработчики событий
 
-		/// <summary>
-		/// Вызывается при загрузке расширения
-		/// </summary>
-		/// <param name="serviceProvider">CSPSignatureVisualizationExtension</param>
-		public override void OnLoad(IServiceProvider serviceProvider)
-		{
-			var serviceHelper = new ServiceHelper(serviceProvider);
+        /// <summary>
+        /// Регистрация типов в IoC контейнере
+        /// </summary>
+        /// <param name="containerBuilder"></param>
+        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        {
+            // Регистрируем тип CSPSignatureImageGenerator как реализацию интерфейса IImageGenerator в containerBuilder
+            containerBuilder.RegisterType<CSPSignatureImageGenerator>()
+                .As<IImageGenerator>()
+                .OrderBy(OrderCounterHelper.OrderCounter)
+                .SingleInstance();
 
-			serviceHelper.ImageGenerationService.Register(new CSPSignatureImageGenerator(serviceProvider));
-			serviceHelper.ImagePositionSelectionService.Register(new CSPSignatureImagePositionSelector());
-		}
+            // Регистрируем тип CSPSignatureImagePositionSelector как реализацию интерфейса IImagePositionSelector в containerBuilder
+            containerBuilder.RegisterType<CSPSignatureImagePositionSelector>()
+                .As<IImagePositionSelector>()
+                .OrderBy(OrderCounterHelper.OrderCounter)
+                .SingleInstance();
+        }
 
 		#endregion Обработчики событий
 

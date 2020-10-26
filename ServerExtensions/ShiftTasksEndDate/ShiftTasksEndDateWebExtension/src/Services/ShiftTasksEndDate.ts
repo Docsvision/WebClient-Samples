@@ -6,7 +6,7 @@ export class AdvancedDocumentController {
     constructor(private services: $RequestManager) {
     }
 
-    shiftTasksEndDate(cardId: string): JQueryDeferred<any> {
+    shiftTasksEndDate(cardId: string) {
         let url = urlStore.urlResolver.resolveUrl("ShiftTasksEndDate", "AdvancedDocument");
         let data = {
             cardId: cardId

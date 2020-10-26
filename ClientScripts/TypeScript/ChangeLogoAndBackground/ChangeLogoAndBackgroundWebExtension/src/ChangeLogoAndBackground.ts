@@ -17,14 +17,14 @@ export class ApplyStylesHandler implements IRouteHandler<any> {
 	public name = "ApplyStylesHandler";
 	public order = AFTER_STANDARD_HANDLERS;
 
-	async prepareRouteMount?(routeData: unknown, routeType: RouteType): JQueryDeferred<RouteHandleResult> {
+	async prepareRouteMount?(routeData: unknown, routeType: RouteType): Promise<RouteHandleResult> {
 		if (routeType !== undefined) {
 			// Скрываем заголовок, чтобы избежать мерцания во время работы стандартных хандлеров
 			this.updateLogoOpacity(0);
 		}
 	}
 
-	async mountRoute(data: unknown, routeType: RouteType): JQueryDeferred<RouteHandleResult> {
+	async mountRoute(data: unknown, routeType: RouteType): Promise<RouteHandleResult> {
 		if (routeType !== undefined) {
 			var availableRoutes = [StandardRoutes.Dashboard, StandardRoutes.Folder];
 			if (availableRoutes.indexOf(routeType) !== -1) {
@@ -41,7 +41,7 @@ export class ApplyStylesHandler implements IRouteHandler<any> {
 		}
 	}
 
-	async unmountRoute(data: any, routeType: RouteType): JQueryDeferred<any> {
+	async unmountRoute(data: any, routeType: RouteType): Promise<any> {
 		$('body').removeClass(ApplyStylesHandler.THEME_CLASS);
 	}
 

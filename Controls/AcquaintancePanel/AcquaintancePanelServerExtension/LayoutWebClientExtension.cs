@@ -3,9 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
-using System.Web.Mvc;
-using AcquaintancePanelServerExtension.Controllers;
 using AcquaintancePanelServerExtension.Services;
+using Autofac;
 using DocsVision.WebClient.Extensibility;
 
 namespace AcquaintancePanelServerExtension
@@ -33,14 +32,6 @@ namespace AcquaintancePanelServerExtension
         }
 
         /// <summary>
-        /// Получить пространство имён расширения
-        /// </summary>
-        public override string Namespace
-        {
-            get { return Constants.Namespace; }
-        }
-
-        /// <summary>
         /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
@@ -50,31 +41,14 @@ namespace AcquaintancePanelServerExtension
 
         #region WebClientExtension Overrides
 
-
         /// <summary>
-        /// Получить зарегистрированные активаторы сервиса
+        /// Регистрация типов в IoC контейнере
         /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        /// <returns>Тип сервиса/Маппинги активатора</returns>
-        protected override Dictionary<Type, Func<object>> GetServiceActivators(IServiceProvider serviceProvider)
+        /// <param name="containerBuilder"></param>
+        public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            return new Dictionary<Type, Func<object>>
-            {
-                  { typeof(ILayoutBPService), () => new LayoutBPService(serviceProvider)}                 
-            };
-        }
-
-        /// <summary>
-        /// Получить зарегистрированные активаторы MVC-контроллера
-        /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        /// <returns>Тип MVC-контроллера/Маппинги активатора</returns>
-        protected override Dictionary<Type, Func<IController>> GetControllerActivators(IServiceProvider serviceProvider)
-        {
-            return new Dictionary<Type, Func<IController>>
-            {
-                { typeof(LayoutBusinessProcessController), () => new LayoutBusinessProcessController(serviceProvider) }                
-            };
+            // Регистрирует тип LayoutBPService как реализацию интерфейса ILayoutBPService в containerBuilder
+            containerBuilder.RegisterType<LayoutBPService>().As<ILayoutBPService>().SingleInstance();
         }
 
         /// <summary>
@@ -86,27 +60,6 @@ namespace AcquaintancePanelServerExtension
             {
                 { Resources.ResourceManager }
             };
-        }
-
-        /// <summary>
-        /// Получить зарегистрированное расширение навигатора
-        /// </summary>
-        /// <returns>Зарегистрированное расширение навигатора</returns>
-        protected override WebClientNavigatorExtension GetNavigatorExtension()
-        {
-            var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
-            {
-                //Здесь указание бандлов не требуется, т.к. Web-client автоматически создает бандлы из каталогов в каталоге Content/Extensions
-                
-                //Scripts = (ScriptBundle)(new ScriptBundle("~/Content/Extensions/AcquaintancePanel/Scripts/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/AcquaintancePanel/Scripts", "*.js", true)),
-                //StyleSheets = (StyleBundle)(new StyleBundle("~/Content/Extensions/AcquaintancePanel/Styles/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/AcquaintancePanel/Styles", "*.css", true)),
-                ExtensionName = ExtensionName,
-                ExtensionVersion = ExtensionVersion
-            };
-
-            return new WebClientNavigatorExtension(navigatorExtensionInitInfo);
         }
 
         #endregion

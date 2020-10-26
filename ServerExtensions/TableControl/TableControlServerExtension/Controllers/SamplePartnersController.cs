@@ -2,25 +2,26 @@
 using System;
 using System.Collections.Generic;
 using System.Web.Mvc;
+using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
 using DocsVision.Platform.WebClient.Models.Generic;
-using ServiceHelper = TableControlServerExtension.Helpers.ServiceHelper;
+using TableControlServerExtension.Services;
 
 namespace TableControlServerExtension.Controllers
 {
     public class SamplePartnersController : Controller
     {
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
+        private readonly ISamplePartnersService samplePartnersService;
 
         /// <summary>
         /// Создаёт новый экземпляр <see cref="SamplePartnersController"/>
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
-        public SamplePartnersController(IServiceProvider serviceProvider)
+        public SamplePartnersController(ICurrentObjectContextProvider currentObjectContextProvider, ISamplePartnersService samplePartnersService)
         {
-            this.serviceProvider = serviceProvider;
-            this.serviceHelper = new ServiceHelper(serviceProvider);
+            this.currentObjectContextProvider = currentObjectContextProvider;
+            this.samplePartnersService = samplePartnersService;
         }
 
         /// <summary>
@@ -29,17 +30,13 @@ namespace TableControlServerExtension.Controllers
         /// <returns></returns>
         public ActionResult GetPartnersInfo(List<Guid> partnerIds)
         {
-            var sessionContext = this.serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
 
-            if (this.serviceHelper.EmployeeService.GetCurrentEmployee(sessionContext) == null)
-            {
-                return RedirectToAction("AccessDenied", "Error");
-            }
             CommonResponse<List<PartnerModel>> response = new CommonResponse<List<PartnerModel>>();
             var result = new List<PartnerModel>();
             foreach (var partnerId in partnerIds)
             {
-                var partnerInfo = this.serviceHelper.SamplePartnersService.GetPartnerInfo(sessionContext, partnerId);
+                var partnerInfo = samplePartnersService.GetPartnerInfo(sessionContext, partnerId);
                 result.Add(partnerInfo);
             }
             response.InitializeSuccess(result);

@@ -49,6 +49,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.Ordering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=84578aafd05fb485">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
+    </Reference>
     <Reference Include="DocsVision.BackOffice.ObjectModel">
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
       <Private>False</Private>
@@ -117,9 +123,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
     <Compile Include="Controllers\SamplePartnersController.cs" />
-    <Compile Include="Helpers\ServiceHelper.cs" />
     <Compile Include="LayoutWebClientExtension.cs" />
     <Compile Include="Models\PartnerModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

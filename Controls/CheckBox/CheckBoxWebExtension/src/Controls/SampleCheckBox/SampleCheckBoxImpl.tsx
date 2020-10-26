@@ -8,6 +8,7 @@ import { BaseControlImpl } from "@docsvision/webclient/System/BaseControlImpl";
 import { SimpleEvent } from "@docsvision/webclient/System/SimpleEvent";
 import { IDataChangedEventArgs } from "@docsvision/webclient/System/IDataChangedEventArgs";
 import { classIf } from "@docsvision/webclient/System/CssUtils";
+import { KeyCodes } from "@docsvision/webclient/System/KeyCodes";
     
 // В этом интерфейсе следует объявлять все служебные значения, с которыми работает SampleCheckBoxImpl 
 // (которые уже не объявлены в SampleCheckBoxState и SampleCheckBoxParams)
@@ -31,16 +32,32 @@ export class SampleCheckBoxImpl extends BaseControlImpl<SampleCheckBoxParams, Sa
 
         // связываем функцию handleCheckBoxClick с текущим экземпляром класса (необходимо выполнять для каждого метода, вызываемого из метода render)
         this.handleCheckBoxClick = this.handleCheckBoxClick.bind(this); 
-        this.handleDataChanged = this.handleDataChanged.bind(this);          
+        this.handleDataChanged = this.handleDataChanged.bind(this);
+        this.handleCheckBoxKeyDown = this.handleCheckBoxKeyDown.bind(this);
     }
 
     // Вызывается при клике по CheckBox
-    protected handleCheckBoxClick(event) {
-        if (this.state.canEdit) {
+    protected handleCheckBoxClick(event: React.MouseEvent) {
+        this.toggle();
+    }
+
+    // Вызывается при нажатии кнопки, когда CheckBox в фокусе
+    protected handleCheckBoxKeyDown(event: React.KeyboardEvent) {
+        if (event.keyCode == KeyCodes.SPACE || event.keyCode == KeyCodes.ENTER) {
+            this.toggle();
+        }
+    }
+
+    protected toggle() {
+        if (this.canEdit) {
             let newValue = !this.getValue();
             // Вызываем метод изменения значения
             this.setValue(newValue);
         }
+    }
+
+    get canEdit() {
+        return this.state.canEdit && !this.state.disabled;
     }
 
     protected handleDataChanged(eventArgs: IDataChangedEventArgs) {
@@ -71,7 +88,7 @@ export class SampleCheckBoxImpl extends BaseControlImpl<SampleCheckBoxParams, Sa
     }
 
     protected getCssClass(): string {
-        return super.getCssClass() + classIf(!this.state.canEdit, "disabled");
+        return super.getCssClass() + classIf(!this.canEdit, "disabled");
     }
 
     // Отрисовка контрола
@@ -80,10 +97,11 @@ export class SampleCheckBoxImpl extends BaseControlImpl<SampleCheckBoxParams, Sa
         // (если не указать onChange для input, React сообщает об ошибке)
         return (
             <div title={this.state.tip}>
-                <input id="switch" type="checkbox" checked={this.state.value} disabled={!this.state.canEdit} tabIndex={this.getTabIndex()} onChange={() => null} />
-                <label htmlFor="switch" onClick={this.handleCheckBoxClick}>Toggle</label>
+                <input id="switch" type="checkbox" checked={this.state.value} disabled={!this.canEdit} onChange={() => null} />
+                <label className="checkbox-switch" htmlFor="switch" onClick={this.handleCheckBoxClick} 
+                    onKeyDown={this.handleCheckBoxKeyDown} tabIndex={this.getTabIndex()}>Toggle</label>
                 <label className="label-text">{this.state.labelText}</label>
             </div>
-        );
+        );             
     }
 }

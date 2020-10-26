@@ -4,7 +4,8 @@ import { $ExtendedCardController } from "../Services/ExtendedCardController";
 
 export async function extendedCardCheckDates(sender: DateTimePicker) {
     let layout = sender.layout;
-    const response = await sender.layout.getService($ExtendedCardController).getExtendedCardModel(layout.cardInfo.id);
+    let service = sender.layout.getService($ExtendedCardController);
+    const response = await service.getExtendedCardModel(layout.cardInfo.id);
 
     let createDate = new Date(response.createDate);
     let regDateControl = layout.controls.regDate as DateTimePicker;

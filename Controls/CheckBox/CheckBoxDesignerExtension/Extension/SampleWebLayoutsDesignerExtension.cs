@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Resources;
 using CheckBoxDesignerExtension.Editors;
@@ -110,6 +110,9 @@ namespace CheckBoxDesignerExtension.Extension
                     PropertyFactory.GetCustomCssClassesProperty(), // Пользовательские css классы
                     PropertyFactory.GetTabStopProperty(), // Переход по tab
                     standardCssClass, // Базовый css класс контрола
+                    PropertyFactory.GetDisabledProperty(), // Редактирование контрола
+                    
+                    
 
                     // Блок свойств Binding
                     PropertyFactory.GetDataSourceProperty(), // Источник данных (отображается только в конструкторе)

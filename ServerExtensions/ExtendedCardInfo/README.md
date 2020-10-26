@@ -5,8 +5,8 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017](https://www.visualstudio.com)
-* [NodeJS v10.6+](https://nodejs.org/en/)
+* [Visual Studio 2017/2019](https://www.visualstudio.com)
+* [NodeJS v12.16.1+](https://nodejs.org/en/)
 
 ## Сборка
 
@@ -30,7 +30,6 @@
 6. Перезапустить IIS
 7. Открыть карточку с этой разметкой
 8. Убедиться, что при изменении даты появляется сообщение.
-9. Должен открыться исходящий документ с заданными атрибутами.
 
 ## Проект ExtendedCardInfoServerExtension
 

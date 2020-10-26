@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Web.Mvc;
+using CustomLibraryServerExtension.Services;
+using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
-using ServiceHelper = CustomLibraryServerExtension.Helpers.ServiceHelper;
 
 namespace CustomLibraryServerExtension.Controllers
 {
@@ -10,17 +11,16 @@ namespace CustomLibraryServerExtension.Controllers
     /// </summary>
     public class CustomLibraryController : Controller
     {
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
+        private readonly ICustomLibraryService customLibraryService;
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
 
         /// <summary>
         /// Создаёт новый экземпляр <see cref="CustomLibraryController"/>
         /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        public CustomLibraryController(IServiceProvider serviceProvider)
+        public CustomLibraryController(ICurrentObjectContextProvider currentObjectContextProvider, ICustomLibraryService customLibraryService)
         {
-            this.serviceProvider = serviceProvider;
-            this.serviceHelper = new ServiceHelper(serviceProvider);
+            this.currentObjectContextProvider = currentObjectContextProvider;
+            this.customLibraryService = customLibraryService;
         }
 
         /// <summary>
@@ -28,7 +28,8 @@ namespace CustomLibraryServerExtension.Controllers
         /// </summary>
         public string GetCustomData()
         {
-            var response = this.serviceHelper.CustomLibraryService.GetCustomData();
+            var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            var response = customLibraryService.GetCustomData(sessionContext);
             return JsonHelper.SerializeToJson(response);
         }
     }

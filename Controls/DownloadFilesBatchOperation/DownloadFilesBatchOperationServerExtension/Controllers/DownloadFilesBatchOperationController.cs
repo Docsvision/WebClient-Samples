@@ -16,11 +16,11 @@ namespace DownloadFilesBatchOperationServerExtension.Controllers
 {
     public class DownloadFilesBatchOperationController : ApiController
     {
-        private readonly IServiceProvider serviceProvider;
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
 
-        public DownloadFilesBatchOperationController(IServiceProvider serviceProvider)
+        public DownloadFilesBatchOperationController(ICurrentObjectContextProvider currentObjectContextProvider)
         {
-            this.serviceProvider = serviceProvider;
+            this.currentObjectContextProvider = currentObjectContextProvider;
         }
 
         [HttpGet]
@@ -28,7 +28,6 @@ namespace DownloadFilesBatchOperationServerExtension.Controllers
         {
             var commonResponse = new CommonResponse<List<FileInfo>>();
 
-            var currentObjectContextProvider = ServiceUtil.GetService<ICurrentObjectContextProvider>(this.serviceProvider);
             var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
 
             try

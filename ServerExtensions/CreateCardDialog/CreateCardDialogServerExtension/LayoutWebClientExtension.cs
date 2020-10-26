@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
-using DocsVision.BackOffice.WebClient.Services;
+using Autofac;
 using DocsVision.ApprovalDesigner.CardLib.CardDefs;
 using DocsVision.WebClient.Extensibility;
+using DocsVision.WebClientLibrary.ObjectModel.Services.EntityLifeCycle;
 
 namespace CreateCardDialogServerExtension
 {
@@ -32,14 +33,6 @@ namespace CreateCardDialogServerExtension
         }
 
         /// <summary>
-        /// Получить пространство имён расширения
-        /// </summary>
-        public override string Namespace
-        {
-            get { return Constants.LayoutNamespace; }
-        }
-
-        /// <summary>
         /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
@@ -50,12 +43,13 @@ namespace CreateCardDialogServerExtension
 
         #region WebClientExtension Overrides
 
-        protected override Dictionary<Guid, Func<ICardFactory>> GetCardFactories()
+        /// <summary>
+        /// Регистрация типов в IoC контейнере
+        /// </summary>
+        /// <param name="containerBuilder"></param>
+        public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            return new Dictionary<Guid, Func<ICardFactory>>
-            {
-                {CardApprovalStage.ID , () => new  ApprovalStageCardFactory() }
-            };
+            containerBuilder.RegisterType<ApprovalStageCardLifeCycle>().Keyed<ICardLifeCycle>(CardApprovalStage.ID).SingleInstance();
         }
 
         /// <summary>
@@ -67,23 +61,6 @@ namespace CreateCardDialogServerExtension
             {
                 { Resources.ResourceManager }
             };
-        }
-
-        protected override WebClientNavigatorExtension GetNavigatorExtension()
-        {
-            var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
-            {
-                //Здесь указание бандлов не требуется, т.к. Web-client автоматически создает бандлы из каталогов в каталоге Content/Extensions
-
-                //Scripts = (ScriptBundle)(new ScriptBundle("~/Content/Extensions/CreateCardDialog/Scripts/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/CreateCardDialog/Scripts", "*.js", true)),
-                //StyleSheets = (StyleBundle)(new StyleBundle("~/Content/Extensions/CreateCardDialog/Styles/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/CreateCardDialog/Styles", "*.css", true)),
-                ExtensionName = ExtensionName,
-                ExtensionVersion = ExtensionVersion
-            };
-
-            return new WebClientNavigatorExtension(navigatorExtensionInitInfo);
         }
 
         #endregion

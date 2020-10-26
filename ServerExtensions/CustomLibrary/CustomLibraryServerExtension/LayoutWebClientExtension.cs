@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Web.Mvc;
+using Autofac;
 using CustomLibraryServerExtension.Controllers;
 using CustomLibraryServerExtension.Services;
 using DocsVision.Platform.ObjectModel;
@@ -35,14 +36,6 @@ namespace CustomLibraryServerExtension
         }
 
         /// <summary>
-        /// Получить пространство имён расширения
-        /// </summary>
-        public override string Namespace
-        {
-            get { return Constants.Namespace; }
-        }
-
-        /// <summary>
         /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
@@ -52,52 +45,13 @@ namespace CustomLibraryServerExtension
 
         #region WebClientExtension Overrides
 
-
         /// <summary>
-        /// Получить зарегистрированные активаторы сервиса
+        /// Регистрация типов в IoC контейнере
         /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        /// <returns>Тип сервиса/Маппинги активатора</returns>
-        protected override Dictionary<Type, Func<object>> GetServiceActivators(IServiceProvider serviceProvider)
+        /// <param name="containerBuilder"></param>
+        public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            return new Dictionary<Type, Func<object>>
-            {                 
-                  { typeof( ICustomLibraryService), () => new CustomLibraryService(serviceProvider)}
-            };
-        }
-
-        /// <summary>
-        /// Получить зарегистрированные активаторы MVC-контроллера
-        /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        /// <returns>Тип MVC-контроллера/Маппинги активатора</returns>
-        protected override Dictionary<Type, Func<IController>> GetControllerActivators(IServiceProvider serviceProvider)
-        {
-            return new Dictionary<Type, Func<IController>>
-            {               
-                { typeof(CustomLibraryController), ()=> new CustomLibraryController(serviceProvider) }
-            };
-        }
-
-        /// <summary>
-        /// Получить зарегистрированное расширение навигатора
-        /// </summary>
-        /// <returns>Зарегистрированное расширение навигатора</returns>
-        protected override WebClientNavigatorExtension GetNavigatorExtension()
-        {
-            var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
-            {
-                //Здесь указание бандлов не требуется, т.к. Web-client автоматически создает бандлы из каталогов в каталоге Content/Extensions
-                
-                //Scripts = (ScriptBundle)(new ScriptBundle("~/Content/Extensions/CustomLibrary/Scripts/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/CustomLibrary/Scripts", "*.js", true)),
-                //StyleSheets = (StyleBundle)(new StyleBundle("~/Content/Extensions/CustomLibrary/Styles/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/CustomLibrary/Styles", "*.css", true)),
-                ExtensionName = ExtensionName,
-                ExtensionVersion = ExtensionVersion
-            };
-
-            return new WebClientNavigatorExtension(navigatorExtensionInitInfo);
+            containerBuilder.RegisterType<CustomLibraryService>().As<ICustomLibraryService>().SingleInstance();
         }
 
         public override void OnObjectContextCreate(ObjectContext objectContext)

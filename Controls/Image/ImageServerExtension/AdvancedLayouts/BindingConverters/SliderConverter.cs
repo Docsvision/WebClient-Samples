@@ -27,9 +27,7 @@ namespace ImageServerExtension.AdvancedLayouts.BindingConverters
         /// </summary>   
         public override BindingResult ConvertForDisplay(ControlContext controlContext, LayoutBinding binding, BindingResult bindingResult)
         {
-            var layoutContext = controlContext.LayoutContext;
-
-            var model = GetList(controlContext, (string)bindingResult.Values[0]);
+            var model = GetList(controlContext, binding, bindingResult.Values[0]);
 
             return new BindingResult
             {
@@ -38,13 +36,14 @@ namespace ImageServerExtension.AdvancedLayouts.BindingConverters
             };
         }
 
-        private List<SliderItemDataModel> GetList(ControlContext controlContext, string str)
+        private List<SliderItemDataModel> GetList(ControlContext controlContext, LayoutBinding binding, string str)
         {
             var layoutContext = controlContext.LayoutContext;
             var list = new List<SliderItemDataModel>();
 
-            if (LayoutContextHelper.TryGetCardData(controlContext.LayoutContext, out var cardData))
+            if (LayoutContextHelper.TryGetCardDataSource(controlContext, binding, out var cardId))
             {
+                var cardData = controlContext.SessionContext.AdvancedCardManager.GetCardData(cardId);
                 Guid cardTypeId = cardData.Type.Id;
 
 

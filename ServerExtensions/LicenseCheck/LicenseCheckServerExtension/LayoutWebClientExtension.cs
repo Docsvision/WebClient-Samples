@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Web.Mvc;
+using Autofac;
 using DocsVision.WebClient.Extensibility;
 using LicenseCheckServerExtension.Controllers;
 using LicenseCheckServerExtension.Services;
@@ -32,14 +33,6 @@ namespace LicenseCheckServerExtension
         }
 
         /// <summary>
-        /// Получить пространство имён расширения
-        /// </summary>
-        public override string Namespace
-        {
-            get { return Constants.Namespace; }
-        }
-
-        /// <summary>
         /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
@@ -49,52 +42,19 @@ namespace LicenseCheckServerExtension
 
         #region WebClientExtension Overrides
 
-
         /// <summary>
-        /// Получить зарегистрированные активаторы сервиса
+        /// Регистрация типов в IoC контейнере
         /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        /// <returns>Тип сервиса/Маппинги активатора</returns>
-        protected override Dictionary<Type, Func<object>> GetServiceActivators(IServiceProvider serviceProvider)
+        /// <param name="containerBuilder"></param>
+        public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            return new Dictionary<Type, Func<object>>
-            {                 
-                  { typeof(ILicenseCheckService), () => new LicenseCheckService(serviceProvider)}                  
-            };
-        }
-
-        /// <summary>
-        /// Получить зарегистрированные активаторы MVC-контроллера
-        /// </summary>
-        /// <param name="serviceProvider">Сервис-провайдер</param>
-        /// <returns>Тип MVC-контроллера/Маппинги активатора</returns>
-        protected override Dictionary<Type, Func<IController>> GetControllerActivators(IServiceProvider serviceProvider)
-        {
-            return new Dictionary<Type, Func<IController>>
-            {               
-                { typeof(LicenseCheckController), () => new LicenseCheckController(serviceProvider) }               
-            };
-        }
-
-        /// <summary>
-        /// Получить зарегистрированное расширение навигатора
-        /// </summary>
-        /// <returns>Зарегистрированное расширение навигатора</returns>
-        protected override WebClientNavigatorExtension GetNavigatorExtension()
-        {
-            var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
-            {
-                //Здесь указание бандлов не требуется, т.к. Web-client автоматически создает бандлы из каталогов в каталоге Content/Extensions
-                
-                //Scripts = (ScriptBundle)(new ScriptBundle("~/Content/Extensions/LicenseCheck/Scripts/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/LicenseCheck/Scripts", "*.js", true)),
-                //StyleSheets = (StyleBundle)(new StyleBundle("~/Content/Extensions/LicenseCheck/Styles/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/LicenseCheck/Styles", "*.css", true)),
-                ExtensionName = ExtensionName,
-                ExtensionVersion = ExtensionVersion
-            };
-
-            return new WebClientNavigatorExtension(navigatorExtensionInitInfo);
+            containerBuilder.RegisterType<LicenseCheckService>().As<ILicenseCheckService>().SingleInstance();
+            // containerBuilder.RegisterOrderedType<YourBindingConverterType, IBindingConverter>();
+            // containerBuilder.RegisterOrderedType<YourBindingResolverType, IBindingResolver>();            
+            // containerBuilder.RegisterOrderedType<YourControlResolverType, IControlResolver>();
+            // containerBuilder.RegisterOrderedType<YourPropertyResolverType, IPropertyResolver>();  
+            // containerBuilder.RegisterType<YourCardLifeCycle>().Keyed<ICardLifeCycle>(CardTypeID).SingleInstance();
+            // containerBuilder.RegisterType<YourRowLifeCycle>().Keyed<IRowLifeCycle>(SectionID).SingleInstance(); 
         }
 
         #endregion

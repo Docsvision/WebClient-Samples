@@ -52,6 +52,7 @@ export class DownloadFilesBatchOperationImpl extends BaseControlImpl<DownloadFil
 
     // Функция, вызываемая при клике по кнопке скачивания файлов
     private onDownloadFilesClick = async () => {
+
         // Функция, которая будет применяться к каждой строке для выполнения групповой операции
         let downloadFilesTask = async (row: ITableRowModel) => {
             let errors = [] as BatchOperationErrorInfo[];
@@ -68,8 +69,8 @@ export class DownloadFilesBatchOperationImpl extends BaseControlImpl<DownloadFil
                         this.state.downloadDocumentFileMode == DownloadDocumentFileMode.Main && fileInfo.isMain ||
                         this.state.downloadDocumentFileMode == DownloadDocumentFileMode.Additional && !fileInfo.isMain) {
                         //Последовательное скачивание файлов с сервера
-                        let fileData = await this.downloadFile(fileInfo) as Blob;
-                        // Сохранение файла через интерфейс браузера
+                        let fileData = await this.downloadFile(fileInfo) as string;
+                        // Сохранение файла через интерфейс браузер
                         saveAs(fileData, fileInfo.fileName);
                     }
                 }

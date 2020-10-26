@@ -17,5 +17,5 @@ gulp.task("build-styles", function() {
 gulp.task("styles", gulp.series("clean-styles", "build-styles"));
 
 gulp.task('watch', function(){
-    gulp.watch([sources.scss], ['build-styles']);
+    gulp.watch([sources.scss], gulp.series('build-styles'));
 });

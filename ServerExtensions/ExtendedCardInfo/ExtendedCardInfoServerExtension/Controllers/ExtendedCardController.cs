@@ -2,36 +2,31 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
+using DocsVision.BackOffice.WebClient.Employee;
+using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
 using DocsVision.Platform.WebClient.Models.Generic;
-using ServiceHelper = ExtendedCardInfoServerExtension.Helpers.ServiceHelper;
+using ExtendedCardInfoServerExtension.Services;
 
 namespace ExtendedCardInfoServerExtension.Controllers
 {
     public class ExtendedCardController : Controller
     {
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
+        private readonly IExtendedCardService extendedCardService;
 
-        public ExtendedCardController(IServiceProvider serviceProvider)
+        public ExtendedCardController(ICurrentObjectContextProvider currentObjectContextProvider, IExtendedCardService extendedCardService)
         {
-            this.serviceProvider = serviceProvider;
-            this.serviceHelper = new ServiceHelper(serviceProvider);
+            this.currentObjectContextProvider = currentObjectContextProvider;
+            this.extendedCardService = extendedCardService;
         }
 
         public ActionResult Get([FromUri]Guid cardId)
         {
             var response = new CommonResponse<ExtendedCardModel>();
             
-            var sessionContext = this.serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext();
-
-            if (this.serviceHelper.EmployeeService.GetCurrentEmployee(sessionContext) == null)
-            {
-                response.InitializeError(Resources.Error_AccessDenied);
-                return GetResponse(response);
-            }
-
-            var extendedCardModel = this.serviceHelper.ExtendedCardService.GetExtendedCard(sessionContext, cardId);
+            var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            var extendedCardModel = extendedCardService.GetExtendedCard(sessionContext, cardId);
 
             if (extendedCardModel == null)
             {

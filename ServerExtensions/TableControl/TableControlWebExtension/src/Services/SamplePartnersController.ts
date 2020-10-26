@@ -6,7 +6,7 @@ export class SamplePartnersController {
     constructor(private services: $RequestManager) {
     }
 
-    getPartnersInfo(partnerIds: string[]): JQueryDeferred<any[]> {
+    getPartnersInfo(partnerIds: string[]): Promise<any[]> {
         var url = urlStore.urlResolver.resolveUrl("GetPartnersInfo", "SamplePartners");
         var data = { "partnerIds": partnerIds };
         return this.services.requestManager.post(url, JSON.stringify(data));

@@ -6,7 +6,7 @@ export class LicenseCheckController {
     constructor(private services: $RequestManager) {
     }
 
-    checkLicenseFeature(): JQueryDeferred<boolean> {
+    checkLicenseFeature(): Promise<boolean> {
         var url = urlStore.urlResolver.resolveUrl("CheckFeature", "LicenseCheck");
         return this.services.requestManager.post(url, '');
     }

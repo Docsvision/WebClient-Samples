@@ -6,7 +6,7 @@ namespace ShiftTasksEndDateServerExtension.Services
     /// <summary>
     /// Расширенный сервис для карточки
     /// </summary>
-    interface IShiftTasksEndDateService
+    public interface IShiftTasksEndDateService
     {
         /// <summary>
         /// Сдвигает дату окончания задач

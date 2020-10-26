@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
+using Autofac;
 using DocsVision.WebClient.Extensibility;
+using DocsVision.WebClient.Helpers;
 using ImageServerExtension.AdvancedLayouts.BindingConverters;
 using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;
 
@@ -31,14 +32,6 @@ namespace ImageServerExtension
         }
 
         /// <summary>
-        /// Получить пространство имён расширения
-        /// </summary>
-        public override string Namespace
-        {
-            get { return Constants.Namespace; }
-        }
-
-        /// <summary>
         /// Получить версию расширения
         /// </summary>
         public override Version ExtensionVersion
@@ -49,36 +42,12 @@ namespace ImageServerExtension
         #region WebClientExtension Overrides
 
         /// <summary>
-        /// Получить зарегистрированное расширение навигатора
+        /// Регистрация типов в IoC контейнере
         /// </summary>
-        /// <returns>Зарегистрированное расширение навигатора</returns>
-        protected override WebClientNavigatorExtension GetNavigatorExtension()
+        /// <param name="containerBuilder"></param>
+        public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
-            {
-                //Здесь указание бандлов не требуется, т.к. Web-client автоматически создает бандлы из каталогов в каталоге Content/Extensions
-                
-                //Scripts = (ScriptBundle)(new ScriptBundle("~/Content/Extensions/ImageSample/Scripts/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/ImageSample/Scripts", "*.js", true)),
-                //StyleSheets = (StyleBundle)(new StyleBundle("~/Content/Extensions/ImageSample/Styles/Bundle")
-                //.IncludeDirectory("~/Content/Extensions/ImageSample/Styles", "*.css", true)),
-                ExtensionName = ExtensionName,
-                ExtensionVersion = ExtensionVersion
-            };
-
-            return new WebClientNavigatorExtension(navigatorExtensionInitInfo);
-        }
-
-        /// <summary>
-        /// Получить binding-конвертеры
-        /// </summary>
-        /// <returns>Список binding-конвертеров</returns>
-        protected override List<IBindingConverter> GetBindingConverters()
-        {
-            return new List<IBindingConverter>
-            {
-                new SliderConverter(this.ServiceProvider)
-            };
+            containerBuilder.RegisterOrderedType<SliderConverter, IBindingConverter>();
         }
 
         #endregion

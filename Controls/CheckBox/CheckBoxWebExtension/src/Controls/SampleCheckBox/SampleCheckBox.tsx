@@ -22,7 +22,8 @@ export class SampleCheckBoxParams extends BaseControlParams {
     @rw labelText?: string;
     @rw tabStop?: boolean;
     @r defaultValue?: boolean;        
-    @r canEdit?: boolean = true;        
+    @r canEdit?: boolean = true;    
+    @rw disabled?: boolean = false;
 
     @apiEvent dataChanged?: BasicApiEvent<IDataChangedEventArgs>;
     @apiEvent checked?: BasicApiEvent<IEventArgs>;
@@ -83,7 +84,7 @@ export class SampleCheckBox extends BaseControl<SampleCheckBoxParams, SampleChec
     // Вызывается при установлении нового значения SampleCheckBoxParams.value через интерфейсы класса SampleCheckBox
     @handler(() => at(SampleCheckBoxParams).value)
     set value(value: boolean) {
-        if (this.state.canEdit) {
+        if (this.checkBoxImpl.canEdit) {
             this.checkBoxImpl.setValue(value);
         } else {
             // Значения будут равны если компонент инициализируется при создании,

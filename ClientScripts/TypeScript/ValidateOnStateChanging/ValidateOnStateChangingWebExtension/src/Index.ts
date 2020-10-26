@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ValidateOnStateChanging",
-    version: "5.5.14",
+    version: "5.5.15",
     globalEventHandlers: [ValidateOnStateChanging]
 });

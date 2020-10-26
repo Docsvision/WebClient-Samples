@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
-VisualStudioVersion = 16.0.29806.167
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Controls", "Controls", "{B6225870-63EC-4E1A-8A34-D73891E1614E}"
 EndProject
@@ -240,6 +240,22 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSPSignatureVisualization",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSPSignatureVisualizationServerExtension", "ServerExtensions\CSPSignatureVisualization\CSPSignatureVisualizationServerExtension\CSPSignatureVisualizationServerExtension.csproj", "{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SignalForUsers", "SignalForUsers", "{06373BC5-13C8-4C5A-93CB-34C7124C4B2F}"
+	ProjectSection(SolutionItems) = preProject
+		Others\SignalForUsers\README.md = Others\SignalForUsers\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SignalForUsersExtension", "Others\SignalForUsers\SignalServerExtension\SignalForUsersExtension.csproj", "{73482636-DA3B-4FE8-9714-AEF770524334}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "RefCases", "RefCases", "{4C8581EC-89C9-4E64-AD0C-8B20219F5E28}"
+	ProjectSection(SolutionItems) = preProject
+		Controls\RefCases\README.md = Controls\RefCases\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefCasesDesignerExtension", "Controls\RefCases\RefCasesDesignerExtension\RefCasesDesignerExtension.csproj", "{EDFA7556-83E3-4BB5-9816-773FFE079014}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RefCasesServerExtension", "Controls\RefCases\RefCasesServerExtension\RefCasesServerExtension.csproj", "{147F3AD3-CFC5-4C0E-9EF8-5B3E2591A82E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -382,6 +398,18 @@ Global
 		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73482636-DA3B-4FE8-9714-AEF770524334}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73482636-DA3B-4FE8-9714-AEF770524334}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73482636-DA3B-4FE8-9714-AEF770524334}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73482636-DA3B-4FE8-9714-AEF770524334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDFA7556-83E3-4BB5-9816-773FFE079014}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDFA7556-83E3-4BB5-9816-773FFE079014}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDFA7556-83E3-4BB5-9816-773FFE079014}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDFA7556-83E3-4BB5-9816-773FFE079014}.Release|Any CPU.Build.0 = Release|Any CPU
+		{147F3AD3-CFC5-4C0E-9EF8-5B3E2591A82E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{147F3AD3-CFC5-4C0E-9EF8-5B3E2591A82E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{147F3AD3-CFC5-4C0E-9EF8-5B3E2591A82E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{147F3AD3-CFC5-4C0E-9EF8-5B3E2591A82E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -452,6 +480,11 @@ Global
 		{3CD8286D-3B5F-480A-8310-2EF1D2E79AFD} = {FAF275D4-E62C-498B-939E-0BBA01C46F48}
 		{2302785A-E207-4147-81A1-00F9541D0177} = {CA2E05C9-ADE2-49C8-805D-C704ED6D0D2F}
 		{9AD80AE3-D142-48C2-915A-2E5A5C553EC2} = {2302785A-E207-4147-81A1-00F9541D0177}
+		{06373BC5-13C8-4C5A-93CB-34C7124C4B2F} = {33B63CC5-9D2E-4249-91D4-747F243920B6}
+		{73482636-DA3B-4FE8-9714-AEF770524334} = {06373BC5-13C8-4C5A-93CB-34C7124C4B2F}
+		{4C8581EC-89C9-4E64-AD0C-8B20219F5E28} = {B6225870-63EC-4E1A-8A34-D73891E1614E}
+		{EDFA7556-83E3-4BB5-9816-773FFE079014} = {4C8581EC-89C9-4E64-AD0C-8B20219F5E28}
+		{147F3AD3-CFC5-4C0E-9EF8-5B3E2591A82E} = {4C8581EC-89C9-4E64-AD0C-8B20219F5E28}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7CE59EC9-0DC4-47A2-BC2C-DA79B0CE327B}

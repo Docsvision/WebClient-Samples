@@ -10,7 +10,7 @@ import { Service } from "@docsvision/webclient/System/Service";
 // Регистрируем расширение, его контролы и сервисы.
 extensionManager.registerExtension({
     name: "AcquaintancePanel",
-    version: "5.5.14",
+    version: "5.5.15",
     controls: [ { controlTypeName: "AcquaintancePanel", constructor: AcquaintancePanel } ],
     layoutServices: [ 
         Service.fromFactory($LayoutBusinessProcessController,  (services: $RequestManager) => new LayoutBusinessProcessController(services))

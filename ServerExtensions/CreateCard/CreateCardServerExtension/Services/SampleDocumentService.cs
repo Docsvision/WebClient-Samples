@@ -1,5 +1,4 @@
-﻿using CreateCardServerExtension.Helpers;
-using DocsVision.BackOffice.CardLib.CardDefs;
+﻿using DocsVision.BackOffice.CardLib.CardDefs;
 using DocsVision.BackOffice.ObjectModel;
 using DocsVision.BackOffice.ObjectModel.Services;
 using DocsVision.Platform.WebClient;
@@ -10,8 +9,6 @@ namespace CreateCardServerExtension.Services
 {
     public class SampleDocumentService : ISampleDocumentService
     {
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
         private static readonly Guid OutgoingCardKindId = new Guid("{8e40f327-9517-4a43-998d-bf2bd619588d}");
         private static readonly Guid AnswerLinkType = new Guid("{ce1eb938-0c99-41fb-a0f2-52c6ace5e80a}");
         private static readonly Guid OppositeLinkType = new Guid("{502f7fe3-477f-492f-9f43-ed2aa7cb32d9}");
@@ -20,19 +17,13 @@ namespace CreateCardServerExtension.Services
         /// <summary>
         /// Создаёт новый экземпляр <see cref="LicenseCheckService"/>
         /// </summary>
-        /// <param name="provider">Сервис-провайдер</param>
-        public SampleDocumentService(IServiceProvider provider)
+        public SampleDocumentService()
         {
-            if (provider == null)
-                throw new ArgumentNullException("provider");
 
-            this.serviceProvider = provider;
-            serviceHelper = new ServiceHelper(serviceProvider);
         }
 
-        public Guid CreateOutgoingDocument(Guid parentDocId)
+        public Guid CreateOutgoingDocument(SessionContext sessionContext, Guid parentDocId)
         {            
-            var sessionContext = serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext(); ;
             var kindsCardKind = sessionContext.ObjectContext.GetObject<KindsCardKind>(OutgoingCardKindId);           
             var parentDoc = sessionContext.ObjectContext.GetObject<Document>(parentDocId);
 

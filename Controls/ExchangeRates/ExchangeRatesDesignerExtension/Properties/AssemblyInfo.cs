@@ -8,9 +8,9 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("ExchangeRatesDesignerExtension")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Digdes")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("ExchangeRatesDesignerExtension")]
-[assembly: AssemblyCopyright("Copyright © Digdes 2019")]
+[assembly: AssemblyCopyright("Copyright © 2020")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номер сборки и номер редакции по умолчанию.
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("5.5.14.0")]
-[assembly: AssemblyFileVersion("5.5.14.0")]
+[assembly: AssemblyVersion("5.5.15.0")]
+[assembly: AssemblyFileVersion("5.5.15.0")]

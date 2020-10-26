@@ -49,6 +49,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.Ordering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=84578aafd05fb485">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
+    </Reference>
     <Reference Include="DocsVision.BackOffice.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
@@ -128,9 +134,7 @@
     <Content Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
     <Compile Include="Controllers\LayoutBusinessProcessController.cs" />
-    <Compile Include="Helpers\ServiceHelper.cs" />
     <Compile Include="LayoutWebClientExtension.cs" />
     <Compile Include="Models\StartProcessResultModel.cs" />
     <Compile Include="Resources.Designer.cs">
@@ -152,7 +156,6 @@
     <Compile Include="Services\LayoutBPService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>

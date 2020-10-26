@@ -8,7 +8,7 @@ export class ExtendedCardController {
     constructor(private services: $RequestManager) {
     }
 
-    getExtendedCardModel(cardId: string): JQueryDeferred<IExtendedCardModel> {
+    getExtendedCardModel(cardId: string): Promise<IExtendedCardModel> {
         let url = urlStore.urlResolver.resolveUrl("Get", "ExtendedCard");
         url = url + "?cardId=" + cardId;
         return this.services.requestManager.get<IExtendedCardModel>(url);

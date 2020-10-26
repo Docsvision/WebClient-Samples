@@ -35,6 +35,12 @@
       <HintPath>..\..\..\Assemblies\Others\Aspose.Pdf.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.Ordering">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
+    </Reference>
     <Reference Include="DocsVision.BackOffice.ObjectModel">
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
       <Private>False</Private>
@@ -95,4 +101,8 @@
     <EmbeddedResource Include="Properties\Resources.ru.resx" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)SamplesOutput\Site\Extensions\$(TargetName)\" /Y /I
+xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SolutionDir)SamplesOutput\Site\Extensions\" /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
 </Project>

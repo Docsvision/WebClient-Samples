@@ -1,9 +1,9 @@
-﻿using LicenseCheckServerExtension.Helpers;
-using DocsVision.Platform.ObjectManager;
+﻿using DocsVision.Platform.ObjectManager;
 using System;
 using System.IO;
 using System.Xml;
 using DocsVision.Platform.StorageServer.Licensing;
+using DocsVision.Platform.WebClient;
 
 namespace LicenseCheckServerExtension.Services
 {
@@ -12,37 +12,28 @@ namespace LicenseCheckServerExtension.Services
     /// </summary>
     public class LicenseCheckService : ILicenseCheckService
     {
-        private readonly IServiceProvider serviceProvider;
-        private readonly ServiceHelper serviceHelper;
         private static readonly Guid CardBuilderFeature = new Guid("{604EA6A5-7988-4099-9539-C8EB82497199}");
 
         /// <summary>
         /// Создаёт новый экземпляр <see cref="LicenseCheckService"/>
         /// </summary>
-        /// <param name="provider">Сервис-провайдер</param>
-        public LicenseCheckService(IServiceProvider provider)
+        public LicenseCheckService()
         {
-            if (provider == null)
-                throw new ArgumentNullException("provider");
 
-            this.serviceProvider = provider;
-            serviceHelper = new ServiceHelper(serviceProvider);
         }
 
         /// <summary>
         /// Проверить признак лицензии
         /// </summary>
-        public bool CheckFeature()
+        public bool CheckFeature(SessionContext sessionContext)
         {
-            var sessionContext = serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext();
-
             return CheckLicenseFeature(sessionContext.Session, CardBuilderFeature);
         }
 
         /// <summary>
         /// Проверить лицензию
         /// </summary>
-        private static bool CheckLicenseFeature(UserSession session, Guid featureId)
+        private bool CheckLicenseFeature(UserSession session, Guid featureId)
         {
             bool featureExists = false;
 

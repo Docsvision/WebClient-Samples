@@ -51,6 +51,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="DocsVision.Platform.ObjectManager, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519" />
     <Reference Include="DocsVision.Platform.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -106,7 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdvancedLayouts\BindingConverters\SliderConverter.cs" />
-    <Compile Include="Constants.cs" />
     <Compile Include="LayoutWebClientExtension.cs" />
     <Compile Include="Models\SliderItemDataModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

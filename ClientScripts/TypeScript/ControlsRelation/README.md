@@ -6,7 +6,7 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [NodeJS v10.6+](https://nodejs.org/en/)
+* [NodeJS v12.16.1+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
@@ -19,7 +19,7 @@
 
 1. Запустить конструктор разметок
 2. Импортировать решение из файла ControlsRelationLayout.xml
-2'. Либо создать собственное решение, создать для него разметку, добавить туда block, в него checkbox и label,
+    1. Либо создать собственное решение, создать для него разметку, добавить туда block, в него checkbox и label,
 для label снять флаг со свойства Visibility и записать отображаемое имя в свойство Text, для checkbox добавить на onDataChanged вызов функции showRelatedControl:ControlsRelationExt
 (пишется showRelatedControl:ControlsRelationExt без скобок и без кавычек, где showRelatedControl - имя функции, а ControlsRelationExt - псевдоним расширения, настроенный в ImportControlsRelationWebExtension.js).
 3. Сделать решение ControlsRelationLayout или собственное активным для карточки типа Документ вида ДокументУД/Исходящий

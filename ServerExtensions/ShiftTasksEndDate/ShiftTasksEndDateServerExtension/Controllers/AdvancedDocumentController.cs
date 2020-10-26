@@ -1,37 +1,31 @@
 ﻿using System;
 using System.Web.Mvc;
+using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Models;
+using ShiftTasksEndDateServerExtension.Services;
 using JsonHelper = DocsVision.Platform.WebClient.Helpers.JsonHelper;
 
 namespace ShiftTasksEndDateServerExtension.Controllers
 {
     public class AdvancedDocumentController : Controller
     {
-        private readonly IServiceProvider serviceProvider;
-        private Helpers.ServiceHelper serviceHelper;
+        private readonly ICurrentObjectContextProvider currentObjectContextProvider;
+        private readonly IShiftTasksEndDateService shiftTasksEndDateService;
 
-        public AdvancedDocumentController(IServiceProvider serviceProvider)
+        public AdvancedDocumentController(ICurrentObjectContextProvider currentObjectContextProvider, IShiftTasksEndDateService shiftTasksEndDateService)
         {
-            this.serviceProvider = serviceProvider;
-            this.serviceHelper = new Helpers.ServiceHelper(serviceProvider);
+            this.currentObjectContextProvider = currentObjectContextProvider;
+            this.shiftTasksEndDateService = shiftTasksEndDateService;
         }
 
         [HttpPost]
         public ActionResult ShiftTasksEndDate(Guid cardId)
         {
+            var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            shiftTasksEndDateService.ShiftTasksEndDate(sessionContext, cardId);
+
             var response = new CommonResponse();
-            var sessionContext = this.serviceHelper.CurrentObjectContextProvider.GetOrCreateCurrentSessionContext();
-
-            if (this.serviceHelper.EmployeeService.GetCurrentEmployee(sessionContext) == null)
-            {
-                response.InitializeError(Resources.Error_AccessDenied);
-                return GetResponse(response);
-            }
-
-            this.serviceHelper.ShiftTasksEndDateService.ShiftTasksEndDate(sessionContext, cardId);
-
             response.InitializeSuccess();
-
             return GetResponse(response);
         }
 

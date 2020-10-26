@@ -12,13 +12,14 @@ import { DownloadFilesBatchOperationImpl, DownloadFilesBatchOperationState } fro
 import { DownloadDocumentFileMode } from './DownloadDocumentFileMode';
 import { handler } from '@docsvision/webclient/System/Handler';
 import { $Folders } from '@docsvision/webclient/Legacy/$Folders';
+import { $FileDownload } from '@docsvision/webclient/Platform/$FileDownload';
 
 export class DownloadFilesBatchOperationParams extends BaseControlParams {       
     @r standardCssClass?: string = "system-download-files-batch-operation";
     @rw buttonText?: string;
     @rw downloadDocumentFileMode?: DownloadDocumentFileMode = DownloadDocumentFileMode.All;
     @rw folders?: string[] = [];
-    @r services?: $TableRowSelection & $BatchOperationsPerformer & $TableManagement & $TableMode & $BatchOperations & $Folders
+    @r services?: $TableRowSelection & $BatchOperationsPerformer & $TableManagement & $TableMode & $BatchOperations & $Folders & $FileDownload
          & $RequestManager & $UrlResolver;
 }
 

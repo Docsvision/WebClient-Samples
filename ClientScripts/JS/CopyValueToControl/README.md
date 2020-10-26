@@ -1,4 +1,4 @@
-# CopyValueToControl
+﻿# CopyValueToControl
 
 Этот каталог содержит пример взаимодействия контролов: копирование значения.
 Есть 2 элемента управления - Строка для редактирования. При завершении ввода значения в один ЭУ, это же значение копируется в другой.
@@ -6,7 +6,7 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017](https://www.visualstudio.com)
+* [Visual Studio 2017/2019](https://www.visualstudio.com)
 * Включенные в **Visual Studio** опции  [NuGet Package Restore](https://docs.microsoft.com/en-us/nuget/consume-packages/package-restore#enabling-and-disabling-package-restore)
 
 ## Сборка и установка
@@ -20,7 +20,7 @@
 
 1. Запустить конструктор разметок
 2. Импортировать решение из файла CopyValueToControlLayout.xml
-2'. Либо создать создать собственное решение, создать для него разметку, добавить туда block, в него добавить 2 textbox,
+    1. Либо создать создать собственное решение, создать для него разметку, добавить туда block, в него добавить 2 textbox,
 задать для первого textbox Edit In Place редактирование, на событие On data changed добавить вызов функции copyValueToControl
 (пишется без скобок и без кавычек).
 3. Сделать решение CopyValueToControlLayout или собственное активным для карточки типа Документ вида ДокументУД/Исходящий

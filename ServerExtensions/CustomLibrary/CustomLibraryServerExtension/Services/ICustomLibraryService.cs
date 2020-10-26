@@ -1,7 +1,9 @@
-﻿namespace CustomLibraryServerExtension.Services
+﻿using DocsVision.Platform.WebClient;
+
+namespace CustomLibraryServerExtension.Services
 {
     public interface ICustomLibraryService
     {
-        int GetCustomData();
+        int GetCustomData(SessionContext sessionContext);
     }
 }

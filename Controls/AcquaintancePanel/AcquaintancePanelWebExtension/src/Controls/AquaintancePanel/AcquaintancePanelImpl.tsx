@@ -15,7 +15,6 @@ import { classIf } from "@docsvision/webclient/System/CssUtils";
 
     export interface AcquaintancePanelState extends AcquaintancePanelParams, PanelState {
         children: GenModels.LayoutModel[];
-        lastLoading: JQueryDeferred<GenModels.LayoutModel[]>;
         isOpened: boolean;
         receivers: MultipleEmployees;
         considerationDate: DateTimePicker;
@@ -89,7 +88,7 @@ import { classIf } from "@docsvision/webclient/System/CssUtils";
             }
         }
 
-        sendToAcquaintance(cardId?: string, employeeIds?: string[], endDate?: Date): JQueryDeferred<IStartBPResultModel> {
+        sendToAcquaintance(cardId?: string, employeeIds?: string[], endDate?: Date): Promise<IStartBPResultModel> {
             return this.state.services.layoutBusinessProcessController.sendToAcquaintance(cardId, employeeIds, endDate);  
         }
 
