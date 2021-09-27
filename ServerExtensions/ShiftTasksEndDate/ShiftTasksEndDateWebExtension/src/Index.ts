@@ -11,7 +11,7 @@ import { Service } from "@docsvision/webclient/System/Service";
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "ShiftTasksEndDate",
-    version: "5.5.15",
+    version: "5.5.16",
     globalEventHandlers: [ ShiftTasksEndDate ],
     layoutServices: [ 
         Service.fromFactory($AdvancedDocumentController, (services: $RequestManager) => new AdvancedDocumentController(services)) 

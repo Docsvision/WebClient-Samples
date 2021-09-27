@@ -7,7 +7,7 @@
     {
         public static class DownloadFilesBatchOperation
         {
-            public const string ControlTypeName = "DownloadFilesBatchOperation";
+            public const string ControlTypeName = "DownloadFilesBatchOperationSample";
 
             public const string DownloadDocumentFileModePropertyName = "DownloadDocumentFileMode";
 

@@ -33,7 +33,7 @@ $approvalStageColorLightest: #b8e;
 
 body[data-folder-color='CardApprovalStage'] {
     .column-header,
-    nav, .row-sidebar, .system-web-frame-header-container {
+    nav, #row-sidebar.row-sidebar, .system-web-frame-header-container {
         background-color: $approvalStageColor;
     }
 
@@ -66,8 +66,7 @@ body[data-folder-color='CardApprovalStage'] {
     }
 
     .sidebar-open {
-        background: $approvalStageColor url("../../../Navigator/Images/shadow-universal.png") no-repeat top left;
-        background-position: 20px 20px;
+        background: $approvalStageColor;
     }
 }
 

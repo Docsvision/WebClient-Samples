@@ -81,7 +81,8 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(ProjectDir)Content\*.*" "$(SolutionDir)SamplesOutput\Site\Content\" /Y /I /E
+    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <PostBuildEvent>xcopy "$(ProjectDir)Content\*.*" "$(SamplesOutput)\Site\Content\" /Y /I /E
 xcopy "$(ProjectDir)..\*.xml" "$(SolutionDir)SamplesOutput\SamplesLayouts\" /Y /I</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

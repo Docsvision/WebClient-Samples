@@ -127,7 +127,7 @@
     <value>Только основные файлы</value>
   </data>
   <data name="DownloadFilesBatchOperation_ControlTypeName" xml:space="preserve">
-    <value>Групповые операции / Скачивание файлов</value>
+    <value>Групповые операции / Скачивание файлов (пример)</value>
   </data>
   <data name="DownloadFilesBatchOperation_DownloadDocumentFileModePropertyName" xml:space="preserve">
     <value>Режим скачивания</value>

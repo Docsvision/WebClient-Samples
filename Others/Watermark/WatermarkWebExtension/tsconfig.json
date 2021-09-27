@@ -1,0 +1,9 @@
+﻿{
+  "extends": "./node_modules/@docsvision/webclient-extension-build/tsconfig.json",  
+  "compilerOptions": {
+  },
+  "include": [    
+    "src/**/*.ts*",
+    "node_modules/@docsvision/webclient/**/*.d.ts"
+  ]
+}

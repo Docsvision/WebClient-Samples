@@ -7,7 +7,7 @@
 Для использования примеров необходимо наличие следующих продуктов:
 
 * [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v12.16.1+](https://nodejs.org/en/)
+* [NodeJS v14.17.0+](https://nodejs.org/en/)
 * [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
 
 ### Структура разделов

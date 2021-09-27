@@ -109,7 +109,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*.dll" "$(SolutionDir)SamplesOutput\Plugins\$(TargetName)\" /Y /I /E</PostBuildEvent>
+    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*.dll" "$(SamplesOutput)\Plugins\$(TargetName)\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

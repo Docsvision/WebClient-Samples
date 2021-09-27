@@ -8,7 +8,7 @@ import { resources } from "@docsvision/webclient/System/Resources";
 // Регистрируем расширение Web-клиента
 extensionManager.registerExtension({
     name: "CreateCardDialog",
-    version: "5.5.15",
+    version: "5.5.16",
     initialize() {
         cardTypeResolver.registerCardType({
             id: "0DB13C90-21B6-49D8-9070-8144DF97552A",

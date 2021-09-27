@@ -14,7 +14,7 @@
 
 ### Необходимое ПО
 
-* [NodeJS v12.16.1+](https://nodejs.org/en/)
+* [NodeJS v14.17.0+](https://nodejs.org/en/)
 * [VSCode](https://code.visualstudio.com/) или любой другой редактор
 
 ### Начало работы

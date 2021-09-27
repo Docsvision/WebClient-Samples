@@ -13,7 +13,7 @@ import { $RequestManager } from "@docsvision/webclient/System/$RequestManager";
 // Регистрируем обработчики из EventHandlers и сервис из CommunicationService
 extensionManager.registerExtension({
     name: "Send message for all users",
-    version: "5.5.15",
+    version: "5.5.16",
     globalEventHandlers: [ EventHandlers ],
     layoutServices: [ 
         Service.fromFactory($MessageService, (services: $RequestManager) => new MessageService(services))

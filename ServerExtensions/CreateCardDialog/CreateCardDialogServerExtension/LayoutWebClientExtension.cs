@@ -49,7 +49,7 @@ namespace CreateCardDialogServerExtension
         /// <param name="containerBuilder"></param>
         public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            containerBuilder.RegisterType<ApprovalStageCardLifeCycle>().Keyed<ICardLifeCycle>(CardApprovalStage.ID).SingleInstance();
+            containerBuilder.RegisterType<ApprovalStageCardLifeCycle>().As<ICardLifeCycleEx>().WithParameter("cardTypeId", CardApprovalStage.ID).SingleInstance();
         }
 
         /// <summary>

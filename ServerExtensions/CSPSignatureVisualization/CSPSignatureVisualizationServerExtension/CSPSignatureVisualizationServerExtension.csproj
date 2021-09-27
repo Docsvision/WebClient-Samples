@@ -102,7 +102,10 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)SamplesOutput\Site\Extensions\$(TargetName)\" /Y /I
-xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SolutionDir)SamplesOutput\Site\Extensions\" /Y /I /E</PostBuildEvent>
+    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <PostBuildEvent>if exist "$(TargetDir)Autofac.dll" del /Q "$(TargetDir)Autofac.dll"
+if exist "$(TargetDir)Autofac.Extras.Ordering.dll" del /Q "$(TargetDir)Autofac.Extras.Ordering.dll"
+xcopy "$(TargetDir)$(TargetName).dll" "$(SamplesOutput)\Site\Extensions\$(TargetName)\" /Y /I
+xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
 </Project>

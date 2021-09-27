@@ -20,6 +20,6 @@ function changeStateByScript(sender, args) {
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ChangeStateByScriptJS",
-    version: "5.5.15",
+    version: "5.5.16",
     globalEventHandlers: [{ changeStateByScript: changeStateByScript }]
 });

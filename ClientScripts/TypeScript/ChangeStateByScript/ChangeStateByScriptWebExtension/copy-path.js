@@ -1,4 +1,5 @@
-const SITE_ROOT = "../../../../SamplesOutput/Site";
+const ROOT = process.env.SamplesOutput || "../../../../SamplesOutput"
+const SITE_ROOT = `${ROOT}/Site`;
 const EXTENSION_NAME = "ChangeStateByScriptWebExtension";
 const MODULES_DIR = SITE_ROOT + "/Content/Modules";
 

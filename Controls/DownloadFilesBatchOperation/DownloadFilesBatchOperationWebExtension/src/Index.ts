@@ -1,5 +1,5 @@
 ﻿import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
-import { DownloadFilesBatchOperation } from "./Controls/DownloadFilesBatchOperation/DownloadFilesBatchOperation";
+import { DownloadFilesBatchOperationSample } from "./Controls/DownloadFilesBatchOperation/DownloadFilesBatchOperationSample";
 import { ILocalizationsMap } from "@docsvision/webclient/System/ILocalizationsMap";
 
 // Главная входная точка всего расширения
@@ -10,8 +10,8 @@ import { ILocalizationsMap } from "@docsvision/webclient/System/ILocalizationsMa
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "DownloadFilesBatchOperation",
-    version: "5.5.15",
-    controls: [{ controlTypeName: "DownloadFilesBatchOperation", constructor: DownloadFilesBatchOperation }],
+    version: "5.5.16",
+    controls: [{ controlTypeName: "DownloadFilesBatchOperationSample", constructor: DownloadFilesBatchOperationSample }],
     getLocalizations: getLocalizations
 })
 

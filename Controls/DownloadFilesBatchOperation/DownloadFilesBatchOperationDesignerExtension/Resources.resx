@@ -127,7 +127,7 @@
     <value>Main files only</value>
   </data>
   <data name="DownloadFilesBatchOperation_ControlTypeName" xml:space="preserve">
-    <value>Group operations / Download files</value>
+    <value>Group operations / Download files (sample)</value>
   </data>
   <data name="DownloadFilesBatchOperation_DownloadDocumentFileModePropertyName" xml:space="preserve">
     <value>Download mode</value>

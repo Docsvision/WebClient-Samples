@@ -14,7 +14,7 @@ import { $KonturRequestController, KonturRequestController } from "./ServerReque
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "Kontur web extension",
-    version: "1.0",
+    version: "5.5.16",
     globalEventHandlers: [ LoadOrganizationInfo, OpenBriefReport ],
     layoutServices: [ 
         Service.fromFactory($KonturRequestController, (services: $RequestManager) => new KonturRequestController(services))

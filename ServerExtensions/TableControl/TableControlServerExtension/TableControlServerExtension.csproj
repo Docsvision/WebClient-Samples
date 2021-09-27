@@ -167,8 +167,9 @@
     </VisualStudio>
   </ProjectExtensions>
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)SamplesOutput\Site\Extensions\$(TargetName)\" /Y /I
-xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SolutionDir)SamplesOutput\Site\Extensions\" /Y /I /E</PostBuildEvent>
+    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SamplesOutput)\Site\Extensions\$(TargetName)\" /Y /I
+xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
     <PreBuildEvent>

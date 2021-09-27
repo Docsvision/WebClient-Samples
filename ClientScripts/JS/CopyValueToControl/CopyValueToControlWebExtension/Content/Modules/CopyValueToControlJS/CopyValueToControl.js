@@ -15,6 +15,6 @@ function copyValueToControl(sender) {
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "CopyValueToControlJS",
-    version: "5.5.15",
+    version: "5.5.16",
     globalEventHandlers: [{ copyValueToControl: copyValueToControl }]
 });

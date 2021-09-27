@@ -84,7 +84,8 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*.dll" "$(SolutionDir)SamplesOutput\Site\Extensions\CustomLibraryServerExtension\" /Y /I /E
+    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*.dll" "$(SamplesOutput)\Site\Extensions\CustomLibraryServerExtension\" /Y /I /E
 xcopy "$(ProjectDir)..\CardDefs\*.xml" "$(SolutionDir)SamplesOutput\SamplesCardDefs\CustomLibrary\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,6 +3,11 @@
 *.css
 
 
+# WixSharp-specific files
+*.msi
+*.wxs
+*.wixobj
+/installroot
 
 # User-specific files
 *.suo

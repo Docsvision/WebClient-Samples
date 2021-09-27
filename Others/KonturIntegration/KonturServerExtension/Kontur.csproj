@@ -183,9 +183,9 @@
     </PreBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SolutionDir)SamplesOutput\Site\Extensions\$(TargetName)\" /Y /I
-
-xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SolutionDir)SamplesOutput\Site\Extensions\" /Y /I /E</PostBuildEvent>
+    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SamplesOutput)\Site\Extensions\$(TargetName)\" /Y /I
+xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
