@@ -26,6 +26,9 @@ namespace CSPSignatureVisualizationServerExtension.DataVisualization
         // Координаты первого изображения штампа электронной подписи
         private static readonly int PagePadding = 30; // 30 миллиметров
 
+        // Номер страницы, на которую требуется вставить изображение штампа
+        private const int PageNumber = 1;
+
         /// <summary>
         ///Создаёт новый экземпляр класса <see cref="CSPSignatureImagePositionSelector"/>
         /// </summary>
@@ -50,9 +53,11 @@ namespace CSPSignatureVisualizationServerExtension.DataVisualization
             if (fileStream is null)
                 throw new ArgumentNullException(nameof(fileStream));
 
-            using (var pdfDocument = new Document(fileStream))
+            // При необходимости поворачиваем требуемую страницу вертикально
+            var pdfStream = PreparePdfStream(fileStream);
+            using (var pdfDocument = new Document(pdfStream))
             {
-                var page = pdfDocument.Pages[1];
+                var page = pdfDocument.Pages[PageNumber];
                 var pdfFileInfo = new PdfFileInfo(pdfDocument);
 
                 double pageWidth = page.Rect.Width;
@@ -136,6 +141,57 @@ namespace CSPSignatureVisualizationServerExtension.DataVisualization
                 annotation.Image = memoryStream;
 
                 page.Annotations.Add(annotation);
+            }
+        }
+
+        // Поворачивает требуемую страницу в PDF-документе вертикально
+        private static Stream PreparePdfStream(Stream pdfStream)
+        {
+            using (var pdf = new Document(pdfStream))
+            {
+                var page = pdf.Pages[PageNumber];
+                
+                // Угол поворота страницы (в градусах) 
+                var rotation = 0;
+
+                // Размер страницы    
+                var pageSize = new PageSize((float)page.Rect.Width, (float)page.Rect.Height);
+
+                // В PDF-документе страницы могут быть развернуты по вертикали или горизонтали
+                // Вычисляем угол поворота и размеры страницы с учётом поворота
+                switch (page.Rotate)
+                {
+                    case Rotation.None:
+                        pdfStream.Position = 0;
+                        return pdfStream;
+                    case Rotation.on90:
+                        pageSize = new PageSize((float)page.Rect.Height, (float)page.Rect.Width);
+                        rotation = 90;
+                        break;
+                    case Rotation.on180:
+                        pageSize = new PageSize((float)page.Rect.Width, (float)page.Rect.Height);
+                        rotation = 180;
+                        break;
+                    case Rotation.on270:
+                        pageSize = new PageSize((float)page.Rect.Height, (float)page.Rect.Width);
+                        rotation = 270;
+                        break;
+                }
+
+                // Поворачиваем страницу вертикально
+                pdf.Pages[PageNumber].Rotate = Rotation.None;
+
+                // Поворачиваем контент на странице на вычисленный угол
+                var editor = new PdfPageEditor();
+                editor.BindPdf(pdf);
+                editor.PageSize = pageSize;
+                editor.Rotation = rotation;
+
+                // Копируем в поток сформированный PDF-файл
+                var result = new MemoryStream();
+                editor.Save(result);
+                result.Seek(0, SeekOrigin.Begin);
+                return result;
             }
         }
 
