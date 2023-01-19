@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("Пример серверного расширения, реализующего генератор штампов электронной подписи документа")]
 [assembly: AssemblyCompany("Docsvision")]
 [assembly: AssemblyProduct("CSPSignatureVisualizationServerExtension")]
-[assembly: AssemblyCopyright("Copyright © 2021 Docsvision")]
+[assembly: AssemblyCopyright("Copyright © 2022 Docsvision")]
 
 // Установка значения False для параметра ComVisible делает типы в этой сборке невидимыми
 // для компонентов COM. Если необходимо обратиться к типу в этой сборке через
@@ -28,5 +28,5 @@ using System.Runtime.InteropServices;
 // Можно задать все значения или принять номера сборки и редакции по умолчанию 
 // используя "*", как показано ниже:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("5.5.16.0")]
-[assembly: AssemblyFileVersion("5.5.16.0")]
+[assembly: AssemblyVersion("5.5.17.0")]
+[assembly: AssemblyFileVersion("5.5.17.0")]

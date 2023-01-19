@@ -10,7 +10,6 @@
     .zurb input[type="text"]:focus, .zurb input[type="password"]:focus, .zurb input[type="date"]:focus, .zurb input[type="datetime"]:focus, .zurb input[type="datetime-local"]:focus, .zurb input[type="month"]:focus, .zurb input[type="week"]:focus, .zurb input[type="email"]:focus, .zurb input[type="number"]:focus, .zurb input[type="search"]:focus, .zurb input[type="tel"]:focus, .zurb input[type="time"]:focus, .zurb input[type="url"]:focus, .zurb input[type="color"]:focus, .zurb textarea:focus,
     .zurb .tabs .tab-item.tab-item.tab-item,
     .zurb .textarea-control,
-    .system-grid-table .system-grid-headers th,
     .system-table .table-header .header-right-items.header-right-items,
     .no-touch .no-hightlight-on-hover .table-helper-row:hover,
     .no-touch .no-hightlight-on-hover .table-helper-row:focus,
@@ -19,10 +18,6 @@
     .dv-control.system-links .links-header .links-command-bar,
     .dv-control.system-filelist.view-mode .title-container .file-list-command-bar {
         background-color: transparent;
-    }
-
-    .system-grid-data-row {
-        background-color: transparent !important;
     }
 
     .system-table .table-header .disclosure-helper.disclosure-helper,
@@ -64,12 +59,6 @@
         color: #777;
     }
 
-    .system-grid-table .system-grid-data-row td.system-grid-data-row-element {
-        border-bottom-color: #ccc;
-    }
-
-    .system-grid-table .system-grid-headers th,
-    .system-grid-table .system-grid-headers th:first-child,
     .table-helper-row.usual-row .table-helper-cell {
         border-color: transparent;
     }

@@ -61,6 +61,10 @@ namespace WebClientSDK
                         Condition = new Condition("OVERRIDESAMPLESOUTPUT", "1"),
                         // DO NOT OVERWRITE IF EXIST
                         Action = EnvVarAction.create
+                    },
+                    new EnvironmentVariable("DocsvisionWebClientSDK", "[INSTALLDIR]")
+                    {
+                        Action = EnvVarAction.set
                     }
                 },
 

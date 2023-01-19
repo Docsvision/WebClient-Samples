@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "SampleImage",
-    version: "5.5.16",
+    version: "5.5.17",
     controls: [{ controlTypeName: "SampleImage", constructor: SampleImage }]
 });

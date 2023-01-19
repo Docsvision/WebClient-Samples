@@ -35,7 +35,7 @@
 Проект-расширение для конструктора разметок. Содержит описание элемента управления "Пример флага" для WebLayoutsDesigner.
 Демонстрирует описание и подключение нового контрола, используя класс ControlTypeDescription, 
 задание ему стандартных свойств, реализованных в  WebLayoutsDesigner (см. PropertyFactory.GetNameProperty()) и
-добавление кастомного свойства, используя класс PropretyDescription (см. свойство DefaultValue). 
+добавление кастомного свойства, используя класс PropertyDescription (см. свойство DefaultValue). 
 Для свойства Поле секции (источник данных), реализован редактор, фильтрующий поля по типу boolean. (класс BooleanMetadataEditor)
 
 ## Проект CheckBoxWebExtension

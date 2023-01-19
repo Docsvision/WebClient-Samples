@@ -38,7 +38,7 @@
 
    1. Скопируйте папку `SamplesOutput\Plugins\RefCasesDesignerExtension\` в  `<Каталог установки Web-клиента>\Plugins`.
    2. Скопируйте папки `SamplesOutput\Site\Extensions\RefCasesServerExtension\` и `SamplesOutput\Site\Extensions\ru\` в  `<Каталог установки Web-клиента>\Site\Extensions`.
-   3. Скопируйте папку `SamplesOutput\Site\Content\Modules\RefCasesClientExtension\` в  `<Каталог установки Web-клиента>\Site\Content\Modules`.
+   3. Скопируйте папку `SamplesOutput\Site\Content\Modules\RefCasesWebExtension\` в  `<Каталог установки Web-клиента>\Site\Content\Modules`.
    4. Перезапустите IIS.
 
 ## Проверка примера

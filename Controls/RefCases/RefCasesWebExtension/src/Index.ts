@@ -11,7 +11,7 @@ import { $RefCasesService, RefCasesService } from "./Services/refCasesServices";
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "RefCases",
-    version: "5.5.16",
+    version: "5.5.17",
     layoutServices: [
         Service.fromFactory($RefCasesService, (services: $RequestManager) => new
         RefCasesService(services))

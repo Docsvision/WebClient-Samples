@@ -22,6 +22,6 @@ function validateOnStateChanging(sender, args) {
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ValidateOnStateChangingJS",
-    version: "5.5.16",
+    version: "5.5.17",
     globalEventHandlers: [{ validateOnStateChanging: validateOnStateChanging }]
 });

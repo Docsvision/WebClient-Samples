@@ -179,6 +179,8 @@
   <PropertyGroup>
     <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
     <PostBuildEvent>xcopy "$(TargetDir)$(TargetName).dll" "$(SamplesOutput)\Site\Extensions\$(TargetName)\" /Y /I
+xcopy "$(TargetDir)Autofac.dll" "$(SamplesOutput)\Site\Extensions\$(TargetName)\" /Y /I
+xcopy "$(TargetDir)Autofac.Extras.Ordering.dll" "$(SamplesOutput)\Site\Extensions\$(TargetName)\" /Y /I
 xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

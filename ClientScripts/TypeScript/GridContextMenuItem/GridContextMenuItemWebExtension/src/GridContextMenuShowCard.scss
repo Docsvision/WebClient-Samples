@@ -1,0 +1,26 @@
+.grid-context-menu__card-layout {
+
+    .modal-dialog-header-helper {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        font-size: 1.4em;
+    }
+
+    .dv-modal-dialog__content {
+        padding: 0;
+        margin: 0;
+    }
+
+    .modal-dialog-close-button-helper, 
+    .modal-dialog-maximize-button-helper {
+        top: 1.3rem;
+    }
+
+    .file-list-command-bar [data-button-name="sign-files"] {
+        display: none;
+    }
+
+    .system-card-management.system-card-management.system-card-management {
+        display: none;
+    }    
+}

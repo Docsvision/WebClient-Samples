@@ -10,6 +10,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "ShowMessages Web Extension",
-    version: "5.5.16",
+    version: "5.5.17",
     globalEventHandlers: [ showMessages ]
 })

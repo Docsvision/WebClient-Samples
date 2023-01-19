@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+    <Control Name="Control1" DisplayName="Control 1">
+        <Properties>
+            <!-- Имя элемента управления в разметке -->
+            <Property Type="Name" />
+            <!-- Свойство для произвольной информации, используемой скриптами -->
+            <Property Type="Tag"/>
+            <!-- Должен ли контрол получать фокус по Tab -->
+            <Property Type="TabStop" DefaultValue="True" />
+            <!-- Подсказка -->
+            <Property Type="Tip" />
+            
+            <!-- CSS-классы -->
+            <Property Type="StandardCssClass" DefaultValue="control-1" />
+            <Property Type="CustomCssClasses" />
+            
+            <!-- Привязка к данным карточки -->
+            <Property Type="ExtendedDataSource" />
+            <Property Type="DataSource" />
+            <Property Type="DataField" />
+            <Property Type="Binding" BindingConverter="" BindingResolver="" />
+            
+            <!-- Видимость и доступность для редактирования по ролевой модели -->
+            <Property Type="EditOperation" />
+            <Property Type="IsInheritedEditOperation" />
+            <Property Type="Disabled" />
+            <Property Type="Visibility" />
+            <Property Type="VisibilityEditOperation" />       
+
+            <!-- Произвольное свойство целочисленного типа -->
+            <Property Name="Number" DisplayName="Число"
+                Category="BehaviorCategory" DataType="System.Int32" DefaultValue="100" />
+            <!-- Произвольное свойство дробного типа -->
+            <Property Name="DoubleNumber" DisplayName="Дробное число"
+                Category="BehaviorCategory" DataType="System.Double" DefaultValue="1.5" />
+            <!-- Произвольное свойство текстового типа -->
+            <Property Name="Text" DisplayName="Текст" 
+                Category="BehaviorCategory" DataType="System.String" DefaultValue="" />
+            <!-- Произвольное свойство текстового типа с редактором в отдельном окне (для большого текста) -->
+            <Property Name="LargeText" DisplayName="Длинный текст" 
+                Category="BehaviorCategory" DataType="System.String" DefaultValue=""
+                Editor="LargeTextEditor" />
+            <!-- Произвольное свойство текстового типа с локализацией -->
+            <Property Name="LocalizedText" DisplayName="ЛокализуемыйТекст" 
+                Editor="LocalizedPropertyEditor" Localized="true"
+                Category="AppearanceCategory" DataType="System.String" DefaultValue="" />
+            <!-- Произвольное свойство логического типа -->
+            <Property Name="Flag" DisplayName="Флаг"
+                Category="BehaviorCategory" DataType="System.Boolean" DefaultValue="False" />
+            <!-- Произвольное свойство типа Guid -->
+            <Property Name="ID" DisplayName="Идентификатор"
+                Category="BehaviorCategory" DataType="System.Guid" />                
+        </Properties>
+        <Events>
+            <!-- События -->
+            <Event Name="Click" DisplayName="При щелчке" />
+            <Event Name="MouseOver" DisplayName="При наведении курсора" />
+            <Event Name="MouseOut" DisplayName="При отведении курсора" />
+        </Events>
+    </Control>
+</Controls>

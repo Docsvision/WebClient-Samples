@@ -15,8 +15,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@docsvision/webclient": "~5.16.1",
-    "@docsvision/webclient-extension-build": "~5.16.1",
+    "@docsvision/web": "^5.17.0",
+    "@docsvision/webclient": "^5.17.0",
+    "@docsvision/webclient-extension-build": "^5.17.0",
     "concurrently": "^5.3.0"
   }
 }

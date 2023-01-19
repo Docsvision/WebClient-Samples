@@ -6,6 +6,7 @@ import { ModalDialogComponent } from "./ModalDialogComponent";
 import { ModalHost } from "@docsvision/webclient/Helpers/ModalHost";
 import { CommonModalDialog } from "@docsvision/webclient/Helpers/ModalDialog/CommonModalDialog";
 import { Button } from "@docsvision/webclient/Helpers/Button";
+import { $DeviceType } from "@docsvision/webclient/StandardServices";
 
 //компонент для отображения нестандартного модального окна с необычным внешним видом или поведением
 //для реализации нестандартных решений рекомендуется использовать собственные компоненты
@@ -28,6 +29,8 @@ export function showCommonDialog(sender: Layout, args: IDataChangedEventArgs){
     let textBox1 = sender.layout.controls.get<TextBox>("textBox1");
     let textBoxModal = null;
 
+    let services = sender.getControlServices();
+
     let onSave = () => {
         textBox1.params.value = textBoxModal.params.value;
         textBox1.save();
@@ -35,7 +38,7 @@ export function showCommonDialog(sender: Layout, args: IDataChangedEventArgs){
     };
 
     let commonHost = new ModalHost("common-dialog", () => (
-        <CommonModalDialog  header={"header"} onClose={() => commonHost.unmount()} isOpen={true}>
+        <CommonModalDialog  header={"header"} onClose={() => commonHost.unmount()} isOpen={true} services={services}>
             <TextBox parent={null} modalMode={true} ref={(el) => textBoxModal = el}/>
             <Button onClick={() => onSave()}>OK</Button>
         </CommonModalDialog>

@@ -19,6 +19,18 @@
 			"path": "ClientScripts\\TypeScript\\ValidateOnStateChanging\\ValidateOnStateChangingWebExtension"
 		},
 		{
+			"path": "ClientScripts\\TypeScript\\GridContextMenuItem\\GridContextMenuItemWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\GridColumnBackgroundRows\\GridColumnBackgroundRowsWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\GridHoverPanelGrouping\\GridHoverPanelGroupingWebExtension"
+		},
+		{
+			"path": "ClientScripts\\TypeScript\\GridToolbarButton\\GridToolbarButtonWebExtension"
+		},
+		{
 			"path": "Controls\\AcquaintancePanel\\AcquaintancePanelWebExtension"
 		},
 		{

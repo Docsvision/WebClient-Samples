@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Docsvision")]
 [assembly: AssemblyProduct("WatermarkWebToolExtension")]
-[assembly: AssemblyCopyright("Copyright © Docsvision 2021")]
+[assembly: AssemblyCopyright("Copyright © Docsvision 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

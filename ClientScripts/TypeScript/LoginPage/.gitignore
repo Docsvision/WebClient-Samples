@@ -1,0 +1,4 @@
+/Scripts/**/*.js
+/Scripts/**/*.map
+/Styles/**/*.css
+node_modules

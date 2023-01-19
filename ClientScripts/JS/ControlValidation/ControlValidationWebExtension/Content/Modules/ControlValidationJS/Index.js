@@ -10,6 +10,6 @@ var EventHandlers = require("./EventHandlers");
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "ControlValidationJS",
-    version: "5.5.16",
+    version: "5.5.17",
     globalEventHandlers: [EventHandlers]
 });

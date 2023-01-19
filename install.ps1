@@ -28,19 +28,22 @@ if (!$Option) {
 	Write-Host -ForegroundColor Green "1) npm i"
 	Write-Host -ForegroundColor Green "2) npm run build:prod"
 	Write-Host -ForegroundColor Green "3) npm i & npm run build:prod"
-	Write-Host -ForegroundColor Green "9) package search (DEBUG)"
+	Write-Host -ForegroundColor Cyan "8) npm i --package-lock-only (update package-lock.json)"
+	Write-Host -ForegroundColor Cyan "9) package search (DEBUG)"
 	Write-Host -ForegroundColor Yellow "0) Exit"
 	$Option = Read-Host -Prompt "Select"
 }
 
 $INSTALL = $False
 $BUILD = $False
+$LOCK = $False
 $SEARCH = $False
 $CI = $False
 Switch ($Option) {
 	1 { $INSTALL = $True; break }
 	2 { $BUILD = $True; break }
 	3 { $INSTALL = $BUILD = $True; break }
+	8 { $LOCK = $True; break }
 	9 { $SEARCH = $True; break }
 	100 { $CI = $BUILD = $True; break }
 	default { exit }
@@ -96,6 +99,12 @@ ForEach ($Package in $PackageList) {
 	if ($BUILD) {
 		npm run build:prod
 		if (!$?) { Write-Warning "npm run build:prod failed" }
+	}
+
+	if ($LOCK) {
+		Remove-Item -Path "$PWD\package-lock.json" -Verbose
+		npm i --package-lock-only
+		if (!$?) { Write-Warning "npm i --package-lock-only failed" }
 	}
 
 	if ($CI) {

@@ -1,0 +1,14 @@
+.hover-panel-custom-grouping-by-column.hover-panel-custom-grouping-by-column {
+    background-size: 20px 17px;
+    
+    display: flex;
+    width: 24px;
+    height: 100%;
+    opacity: 0.5;
+    right: 5px;
+    margin-left: 2px;
+    
+    &:hover {
+        opacity: 1;
+    }
+}

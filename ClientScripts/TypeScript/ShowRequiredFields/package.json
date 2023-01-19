@@ -1,0 +1,27 @@
+{
+  "name": "sample-extension",
+  "version": "1.0.0",
+  "description": "Sample extension for Docsvision WebClient.",
+  "scripts": {
+    "build": " rollup -c rollup.config.js && gulp styles",
+    "build:prod": "SET buildTarget=PROD&& npm run build",
+    "watch": "concurrently \"rollup -c rollup.config.js --watch\" \"gulp watch\""
+  },
+  "author": "Docsvision",
+  "dependencies": {
+    "tslib": "^2.3.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DocsVision/WebClient-Samples.git"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@docsvision/webclient": "5.17.0-beta.17",
+    "@docsvision/webclient-extension-build": "~5.17.0",
+    "concurrently": "^4.1.0",
+    "gulp": "^4.0.0",
+    "rollup": "^2.23.0",
+    "typescript": "^3.9.7"
+  }
+}

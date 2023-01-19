@@ -11,7 +11,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект CSPSignatureVisualizationServerExtension
-3. Скопировать каталог \bin\WebClientBin\WebClientBinCSPSignatureVisualizationServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
+3. Скопировать каталог SamplesOutput\Site\Extensions\CSPSignatureVisualizationServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
 4. Перезапустить IIS на сервере Docsvision 5.
 5. Перезапустить IIS на сервере Docsvision 5 Web-клиент.
 
