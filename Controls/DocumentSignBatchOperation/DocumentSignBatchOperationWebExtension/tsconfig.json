@@ -1,0 +1,12 @@
+﻿{
+  "extends": "./node_modules/@docsvision/webclient-extension-build/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "target": "es6"
+  },
+  "include": [
+    "src/**/*.ts*",
+    "node_modules/@docsvision/webclient/**/*.d.ts", "../Controls/BathCompleteOperation/BathCompleteOperationWebExtension/src/Controls/BathCompleteOperation/BatchCompleteOperation.ts"
+  ]
+}

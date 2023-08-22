@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Controls>
+    <Control Name="DocumentSignBatchOperation" DisplayName="Групповые операции &#47; Подпись документа" ControlGroupResourceKey="ControlGroup_BatchOperations">
+        <Properties>
+            <Property Type="Name" />
+            <Property Type="StandardCssClass" DefaultValue="system-document-batch-sign-operation" />
+			<Property Type="CustomCssClasses"/>
+			<Property Name="ButtonText" ResourceKey="ControlTypes_ButtonTextProperty"
+                Editor="LocalizedPropertyEditor" Localized="true"
+                Category="AppearanceCategory" DataType="System.String"/>
+			<Property Name="ColumnNameForPresentation" DisplayName="Столбцы представления для презентации"
+                DefaultValue="_Digest" Category="AppearanceCategory" DataType="System.String"/>
+            <Property Type="Visibility" />
+        </Properties>
+		<Events>
+		  <Event Name="Click" ResourceKey="ControlTypes_ClickEventProperty" />
+		  <Event Name="MouseOver" ResourceKey="ControlTypes_MouseOverEventProperty" />
+		  <Event Name="MouseOut" ResourceKey="ControlTypes_MouseOutEventProperty" />
+		</Events>
+    </Control>
+</Controls>
