@@ -1,13 +1,13 @@
 ﻿using DocsVision.Platform.ObjectModel;
 using System;
 using System.Net.Http;
-using System.Web.Http;
 using WebService.Helpers;
 using WebService.Interfaces.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebService.Services
 {
-    interface IDocumentService
+    public interface IDocumentService
     {
         /// <summary>
         /// Получить модель карточки документа по его идентификатору
@@ -53,18 +53,16 @@ namespace WebService.Services
         /// <summary>
         /// Скачать файл
         /// </summary>
-        /// <param name="sessionContext">Контекст сессии</param>
-        /// <param name="id">Идентификатор карточки</param>
-        /// <returns><see cref="HttpResponseMessage"/></returns>
-        HttpResponseMessage DownloadFile(SessionContext sessionContext, Guid fileId);
+        Stream? DownloadFile(SessionContext sessionContext, Guid fileId, out string? fileName);
 
         /// <summary>
         /// Загрузить файл в карточку документа
         /// </summary>
         /// <param name="objectContext">Контекст объекта</param>
-        /// <param name="provider">Провайдер</param>
+        /// <param name="file">Загруженный файл</param>
+        /// <param name="cardId">Карточка, куда следует прикрепить файл</param>
         /// <param name="uploadFilesDir">Временная директория загрузки файла</param>
         /// <returns><see cref="Guid"/></returns>  
-        Guid UploadFile(ObjectContext objectContext, MultipartFormDataStreamProvider provider, string uploadFilesDir);
+        Task<Guid> UploadFile(ObjectContext objectContext, IFormFile file, Guid cardId, string uploadFilesDir);
     }
 }

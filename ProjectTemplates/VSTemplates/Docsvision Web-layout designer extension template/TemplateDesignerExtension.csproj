@@ -1,0 +1,43 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <OutputType>Library</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWindowsForms>true</UseWindowsForms>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <DocsvisionWebClientSDK Condition="'$(DocsvisionWebClientSDK)' == ''">..\..\</DocsvisionWebClientSDK>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Plugins\</OutputPath>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\bin\Plugins\</OutputPath>
+    <WarningsNotAsErrors>NU1803</WarningsNotAsErrors>
+    <NoWarn>1701;1702;NU1803</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Sign.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <WarningsNotAsErrors>NU1803</WarningsNotAsErrors>
+    <NoWarn>1701;1702;NU1803</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="DocsVision.LayoutEditor.ObjectModel">
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.LayoutEditor.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="WebLayoutsDesigner">
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\WebLayoutsDesigner.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

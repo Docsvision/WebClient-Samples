@@ -4,9 +4,11 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка
 
@@ -14,12 +16,12 @@
 2. Собрать проект Controls > AcquaintancePanel > AcquaintancePanelDesignerExtension
 3. Собрать проект Controls > AcquaintancePanel > AcquaintancePanelServerExtension
 4. Открыть консоль в папке Controls > AcquaintancePanel > AcquaintancePanelWebExtension и выполнить команду `npm install` и `npm run build:prod`
-4. Скопировать каталог SamplesOutput\Plugins\AcquaintancePanelDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Extensions\AcquaintancePanelServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-6. Скопировать файл SamplesOutput\Site\Extensions\ru\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
-7. Скопировать файл SamplesOutput\Site\Extensions\uk\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
-8. Скопировать каталог SamplesOutput\Site\Content\Modules\AcquaintancePanel в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-9. Перезапустить IIS
+5. Скопировать каталог SamplesOutput\Plugins\AcquaintancePanelDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
+6. Скопировать каталог SamplesOutput\Site\Extensions\AcquaintancePanelServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
+7. Скопировать файл SamplesOutput\Site\Extensions\ru\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к сайту Web-клиента\Extensions\ru"
+8. Скопировать файл SamplesOutput\Site\Extensions\uk\AcquaintancePanelServerExtension.resources.dll в каталог "Путь к сайту Web-клиента\Extensions\uk"
+9. Скопировать каталог SamplesOutput\Site\Content\Modules\AcquaintancePanel в каталог "Путь к сайту Web-клиента\Content\Modules"
+10. Перезапустить Web-сервис
 
 ## Проверка примера
 
@@ -29,7 +31,7 @@
 4. Открыть разметку и добавить в нее новый элемент управления "Пример боковой панели"
 5. Задать желаемые параметры элемента управления(для корректной работы задать editOperation = "Send for acquaintance" или "Отправка на ознакомление")
 6. Сохранить разметку
-7. Перезапустить IIS
+7. Перезапустить Web-сервис
 8. Открыть карточку с этой разметкой
 9. Убедиться, что появился новый элемент управления (кнопка, при нажатии на которую появляется боковая панель)
 10. Заполнить необходимые поля и нажать "Отправить на ознакомление". 

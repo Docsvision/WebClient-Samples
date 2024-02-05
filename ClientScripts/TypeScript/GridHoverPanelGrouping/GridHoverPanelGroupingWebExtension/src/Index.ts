@@ -12,7 +12,7 @@ import { $HoverPanel } from "@docsvision/webclient/Platform/$HoverPanel";
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "HoverPanelGroping",
-    version: "5.5.17",
+    version: "6.1",
     initialize() {
         // Заменяем реализацию стандартного сервиса $HoverPanel на CustomHoverPanelService.
         app.setService($HoverPanel, new CustomHoverPanelService());

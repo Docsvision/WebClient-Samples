@@ -14,9 +14,11 @@ Web-сервис позволяет выполнять следующие дей
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [Docsvision 5 Resource Kit](http://bit.ly/2qEerjr)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [Docsvision Resource Kit](https://docsvision.itsm365.com/sd/operator/#uuid:KB$2437101)
 
 
 ## Сборка
@@ -24,28 +26,20 @@ Web-сервис позволяет выполнять следующие дей
 1. Открыть /Samples.sln
 2. Собрать проект Others > ExternalWebService > WebService
 3. Собрать проект Others > ExternalWebService > WebServiceClient
-4. На сервере Docsvision 5 установить Docsvision 5 Resource Kit, установить обновление DVExplorer. С помощью утилиты DVCardManager следует загрузить 
+4. На сервере Docsvision установить Docsvision Resource Kit. С помощью утилиты DVCardManager следует загрузить 
 в БД Docsvision библиотеку ReportsLibrary из каталога `ExternalWebService\CardDefs\ReportsLibrary`. Подробное описание процедуры загрузки пользовательской 
-библиотеки карточек содержится в документации разработчика Docsvision 5.
-5. Перезапустить IIS
+библиотеки карточек содержится в документации разработчика Docsvision.
+5. Перезапустить Web-сервис
 
 
 ## Проверка примера
 
-Первый вариант запуска веб-сервиса:
-
-1. Запустить WebService: Debug > Start new instance
-2. Запустить WebServiceClient Debug > Start new instance
-
-Второй вариант запуска веб-сервиса:
-
-1. Опубликовать проект WebService: WebService > Publish в желаемую директорию, директорию можно менять в параметре Targer Location, например, `\SamplesOutput\ExternalWebService\WebService`
-2. Запустить IIS, создать новый пул приложений, в расширенных настройках значение параметра Identity заменить на свою учетную запись DocsVision Web-клиент, Enable 32-bit Applications установить в true  . 
-ВАЖНО! Для корректной работы должен быть создан пул приложений, на котором работает StorageServer, как правило на рабочей машине он расположен в директории `C:\Program Files (x86)\Docsvision\Platform\5.5\Site\`
-3. Создать новый сайт, изменить значение порта на любой кроме 80, например, 81. В качестве пути выбрать директорию, в которую был опубликован проект.
-4. В настройках Properties > Settings проекта WebServiceClient поменять значение параметра WebServiceUrl на url созданного веб-приложения, например, `http://localhost:81/`
-5. Пересобрать WebServiceClient
-6. Запустить приложение WebServiceClient.exe расположенное в директории `SamplesOutput\ExternalWebService\WebServiceClient`
+1. Отредактировать в файле SamplesOutput\ExternalWebService\WebService\appsettings.json параметры ServerAddress и BaseName так, чтобы они указывали на рабочий сервер Доксвижн и базу.
+2. Запустить WebService из папки SamplesOutput\ExternalWebService\WebService.
+- На Windows запустить WebService.exe из под учетной записи DocsVision Web-клиент. 
+- На Linux запустить командой dotnet WebService.dll 
+  Для запуска под нужной учетной записью можно задать параметры "SystemUserAccount" и "SystemUserPassword" в appsettings.json.
+3. Запустить приложение SamplesOutput\ExternalWebService\WebServiceClient\WebServiceClient.exe. В выводе консоли отобразится результат выполнения операций.
 
 ## Каталог CardDefs
 

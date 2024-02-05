@@ -6,7 +6,7 @@ export class KonturRequestController {
     constructor(private services: $RequestManager) {
     }
 
-    getFromKontur(method: string, parameters: string): Promise<string | null> {
+    getFromKontur(method: string, parameters: string): Promise<any> {
         return this.services.requestManager.get(`api/KonturRequest/GetFromKontur?method=${method}&parameters=${parameters}`);
     }
 

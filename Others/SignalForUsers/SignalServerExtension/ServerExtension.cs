@@ -6,6 +6,7 @@ using System.Resources;
 using Autofac;
 using DocsVision.WebClient.Extensibility;
 using DocsVision.WebClient.Helpers;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace SignalForUsersExtension
 {
@@ -19,7 +20,7 @@ namespace SignalForUsersExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public SignalForUsersExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -45,17 +46,8 @@ namespace SignalForUsersExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            // Теперь регистрация сервисов и других объектов ВК осуществляется в едином методе - InitializeContainer, 
-            // примеры регистрации различных типов ВК представлены ниже
-            // containerBuilder.RegisterType<YourService>().As<IYourService>().SingleInstance();
-            // containerBuilder.RegisterOrderedType<YourBindingConverterType, IBindingConverter>();
-            // containerBuilder.RegisterOrderedType<YourBindingResolverType, IBindingResolver>();            
-            // containerBuilder.RegisterOrderedType<YourControlResolverType, IControlResolver>();
-            // containerBuilder.RegisterOrderedType<YourPropertyResolverType, IPropertyResolver>();  
-            // containerBuilder.RegisterType<YourCardLifeCycle>().Keyed<ICardLifeCycle>(CardTypeID).SingleInstance();
-            // containerBuilder.RegisterType<YourRowLifeCycle>().Keyed<IRowLifeCycle>(SectionID).SingleInstance(); 
         }
 
         /// <summary>

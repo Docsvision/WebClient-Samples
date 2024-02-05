@@ -1,17 +1,19 @@
-# ShowRequiredFields
+﻿# ShowRequiredFields
 
 Этот каталог содержит пример для отображения незаполненных обязательных полей. Расширение отображает окно со списком незаполненных обязательных полей при создании или сохраненией карточки.
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть консоль в папке ShowRequiredFields и выполнить команду npm install, потом  npm update и в конце npm run build:prod
-2. Скопировать каталог SamplesOutput\Site\Content\Modules\ShowRequiredFields в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-3. Перезапустить IIS
+2. Скопировать каталог SamplesOutput\Site\Content\Modules\ShowRequiredFields в каталог "Путь к сайту Web-клиента\Content\Modules"
+3. Перезапустить Web-сервис
 4. Добавить скрипт showRequiredFields в качестве обработчика события "Before card saving" root для разметок создания и/или редактирования в конструкторе разметок.
 
 ## Проверка примера

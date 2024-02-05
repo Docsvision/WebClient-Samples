@@ -5,11 +5,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Kontur.Controllers
 {
-    public class KonturRequestController : ApiController
+    public class KonturRequestController : ControllerBase
     {
         readonly IKonturRequestService konturRequestService;
         readonly ICurrentObjectContextProvider currentObjectContextProvider;

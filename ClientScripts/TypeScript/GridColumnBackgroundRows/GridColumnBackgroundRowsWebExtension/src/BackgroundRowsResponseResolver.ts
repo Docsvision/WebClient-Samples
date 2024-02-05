@@ -3,6 +3,7 @@ import { GenModels } from "@docsvision/webclient/Generated/DocsVision.WebClient.
 import { IFolderDataLoadingPlugin, ResponseResolveResult } from "@docsvision/webclient/Platform/IFolderDataLoadingPlugin";
 import { PluginOrder } from "@docsvision/webclient/System/PluginOrder";
 import { BackgroundRowsColumnId } from "./BackgroundRowsPlugins";
+import { FilterStatus, getFilterPluginData } from "@docsvision/web/components/table/plugins/filter";
 
 export class BackgroundRowsResponseResolver implements IFolderDataLoadingPlugin {
     id: string = "BackgroundRowsResponseResolver";
@@ -21,6 +22,9 @@ export class BackgroundRowsResponseResolver implements IFolderDataLoadingPlugin 
                 // Отображаемое название столбца.
                 name: "Фон строки",
             } as IColumn;
+
+            // Помечаем столбец, как недоступный для фильтрации
+            getFilterPluginData(backgroundRowsColumn).filterStatus = FilterStatus.Disabled;
 
             data.columns.push(backgroundRowsColumn);
         }

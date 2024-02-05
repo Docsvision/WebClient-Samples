@@ -1,4 +1,4 @@
-import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
+﻿import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 import { app } from "@docsvision/webclient/App";
 import { BackgroundRowsPluginFactory } from "./BackgroundRowsPluginFactory";
 
@@ -11,7 +11,7 @@ import { BackgroundRowsPluginFactory } from "./BackgroundRowsPluginFactory";
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "BackgroundRows",
-    version: "5.5.17",
+    version: "6.1",
     initialize() {
         app.folderPluginProvider.addFactory(new BackgroundRowsPluginFactory());
     },

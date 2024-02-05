@@ -1,11 +1,11 @@
 ﻿using TableControlServerExtension.Models;
 using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
 using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
 using DocsVision.Platform.WebClient.Models.Generic;
 using TableControlServerExtension.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TableControlServerExtension.Controllers
 {
@@ -28,7 +28,8 @@ namespace TableControlServerExtension.Controllers
         /// Получить информацию о подразделениях
         /// </summary>
         /// <returns></returns>
-        public ActionResult GetPartnersInfo(List<Guid> partnerIds)
+        [HttpPost]
+        public ActionResult GetPartnersInfo([FromBody] List<Guid> partnerIds)
         {
             var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
 

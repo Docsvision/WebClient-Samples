@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
-using System.Web.Mvc;
-using System.Web.Http.Controllers;
 using DocsVision.BackOffice.WebClient.Services;
 using DocsVision.WebClient.Extensibility;
 using DocsVision.WebClientLibrary.ObjectModel.Services.LayoutModel;
@@ -14,8 +12,11 @@ using Kontur.Controllers;
 using Kontur.Services;
 using DocsVision.BackOffice.CardLib.CardDefs;
 using DocsVision.Platform.WebClient.WebDav;
-using Autofac;
 using DocsVision.Platform.WebClient.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Configuration;
+using Kontur.Models;
+using Microsoft.Extensions.Hosting;
 
 namespace Kontur
 {
@@ -29,7 +30,7 @@ namespace Kontur
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public KonturServerExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -51,19 +52,11 @@ namespace Kontur
 
         #region WebClientExtension Overrides
 
-        public override void InitializeContainer(global::Autofac.ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<KonturRequestService>().As<IKonturRequestService>().SingleInstance();
-        }
+            services.AddSingleton<IKonturRequestService, KonturRequestService>();
+            services.AddOptions<KonturSettings>().BindConfiguration(KonturSettings.Key);
 
-
-        public override void OnLoad(ILifetimeScope lifetimeScope)
-        {
-            // Регистрируем настройку в секции WebClient в web.config Web-клиента
-            var configurationProvider = lifetimeScope.Resolve<IConfigurationProvider>();
-            configurationProvider.RegisterSetting(Kontur.Constants.KonturKeySetting,
-                    SettingConstants.WebClient.SettingGroup,
-                    new SettingOptions { DefaultValue = "" });
         }
 
 

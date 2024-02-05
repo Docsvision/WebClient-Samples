@@ -10,6 +10,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "ShowModalDialog Web Extension",
-    version: "5.5.17",
+    version: "6.1",
     globalEventHandlers: [ showDialog ]
 })

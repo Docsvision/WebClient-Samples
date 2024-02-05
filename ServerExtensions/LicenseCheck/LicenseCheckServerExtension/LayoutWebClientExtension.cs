@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
-using System.Web.Mvc;
 using Autofac;
 using DocsVision.WebClient.Extensibility;
 using LicenseCheckServerExtension.Controllers;
 using LicenseCheckServerExtension.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace LicenseCheckServerExtension
 {
@@ -20,7 +20,7 @@ namespace LicenseCheckServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -46,15 +46,9 @@ namespace LicenseCheckServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<LicenseCheckService>().As<ILicenseCheckService>().SingleInstance();
-            // containerBuilder.RegisterOrderedType<YourBindingConverterType, IBindingConverter>();
-            // containerBuilder.RegisterOrderedType<YourBindingResolverType, IBindingResolver>();            
-            // containerBuilder.RegisterOrderedType<YourControlResolverType, IControlResolver>();
-            // containerBuilder.RegisterOrderedType<YourPropertyResolverType, IPropertyResolver>();  
-            // containerBuilder.RegisterType<YourCardLifeCycle>().Keyed<ICardLifeCycle>(CardTypeID).SingleInstance();
-            // containerBuilder.RegisterType<YourRowLifeCycle>().Keyed<IRowLifeCycle>(SectionID).SingleInstance(); 
+            services.AddSingleton<ILicenseCheckService, LicenseCheckService>();
         }
 
         #endregion

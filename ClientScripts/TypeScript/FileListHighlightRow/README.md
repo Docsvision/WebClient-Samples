@@ -1,17 +1,19 @@
-# FileListHighlightRow
+﻿# FileListHighlightRow
 
 Этот каталог содержит пример для взаимодействия со строками контрола FileList. Расширение добавляет к строке контрола красную обводку при скачивании файла.
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть консоль в папке FileListHighlightRow и выполнить команду npm install, потом  npm update и в конце npm run build:prod
-2. Скопировать каталог SamplesOutput\Site\Content\Modules\FileListHighlightRow в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-3. Перезапустить IIS
+2. Скопировать каталог SamplesOutput\Site\Content\Modules\FileListHighlightRow в каталог "Путь к сайту Web-клиента\Content\Modules"
+3. Перезапустить Web-сервис
 4. Добавить скрипт fileListHighlightRow в качестве обработчика события "On file version downloaded" контрола FileList в конструкторе разметок.
 
 ## Проверка примера

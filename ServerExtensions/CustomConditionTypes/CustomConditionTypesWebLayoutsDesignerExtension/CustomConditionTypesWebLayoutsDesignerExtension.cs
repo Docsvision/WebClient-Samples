@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Versioning;
 using DocsVision.Platform.Tools.LayoutEditor.DataLayer.Model;
 using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
 using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
@@ -9,6 +10,7 @@ namespace CustomConditionTypesDesignerExtension
     /// <summary>
     /// Представляет собой пример расширения для редактора разметок
     /// </summary>
+    [SupportedOSPlatform("windows")]
     public class CustomConditionTypesWebLayoutsDesignerExtension : WebLayoutsDesignerExtension
     {
         private readonly CustomConditionTypesProvider conditionTypesProvider;

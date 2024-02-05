@@ -10,6 +10,7 @@ namespace AcquaintancePanelDesignerExtension
     /// <summary>
     /// Представляет собой пример расширения для редактора разметок
     /// </summary>
+    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     class SampleWebLayoutsDesignerExtension : WebLayoutsDesignerExtension
     {
         /// <summary>

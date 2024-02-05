@@ -9,11 +9,13 @@
 - SignalServerExtension – папка с серверным расширением Web-клиента, в котором реализована функция отправки сообщений с использованием сервиса IRealtimeCommunicationService API Web-клиента для работы с подсистемой оповещений.
 - SignalWebExtension – папка с клиентским расширением, в котором реализован клиентский сервис, взаимодействующий с методами расширения SignalServerExtension, а также обработчик события нажатия кнопки, использующий данный клиентский сервис.
 
-## Настройка среды разработки
+## Настройка среды
+
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка проекта
 
@@ -34,9 +36,9 @@
 
 3. Публикация компонентов на сервере Web-клиент.
 
-   1. Скопируйте папку `SamplesOutput\Site\Content\Modules\SignalForUsersWebExtension\` в  `<Каталог установки Web-клиента>\Site\Content\Modules`.
-   2. Скопируйте папку `SamplesOutput\Site\Extensions\SignalForUsersExtension` в  `<Каталог установки Web-клиента>\Site\Extensions`.
-   3. Перезапустите IIS.
+   1. Скопируйте папку `SamplesOutput\Site\Content\Modules\SignalForUsersWebExtension\` в  `Путь к сайту Web-клиента\Content\Modules`.
+   2. Скопируйте папку `SamplesOutput\Site\Extensions\SignalForUsersExtension` в  `Путь к сайту Web-клиента\Extensions`.
+   3. Перезапустите Web-сервис.
 
 ## Проверка примера
 

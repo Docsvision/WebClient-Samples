@@ -8,10 +8,10 @@
 
         public const string Manufacturer = "Docsvision";
         public const string UrlManufacturer = "https://docsvision.com";
-        public const string UrlSupport = "http://docsvision.zendesk.com";
+        public const string UrlSupport = "https://docsvision.itsm365.com";
         public const string LicenceFile = @"%DVSDK%\License\ru_license_docsvision_2018.rtf";
 
-        public const string OutFileName = "Docsvision 5 Web-client SDK";
+        public const string OutFileName = "Docsvision Web-client SDK";
 
         public const string BackgroundImage = @"Images\Background.bmp";
         public const string BannerImage = @"Images\Banner.bmp";

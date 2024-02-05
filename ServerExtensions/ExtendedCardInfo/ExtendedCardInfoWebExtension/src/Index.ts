@@ -11,7 +11,7 @@ import { $RequestManager } from "@docsvision/webclient/System/$RequestManager";
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "ExtendedCardInfo",
-    version: "5.5.17",
+    version: "6.1",
     globalEventHandlers: [ ExtendedCardCheckDates ],
     layoutServices: [ 
         Service.fromFactory($ExtendedCardController, (services: $RequestManager) => new ExtendedCardController(services)) 

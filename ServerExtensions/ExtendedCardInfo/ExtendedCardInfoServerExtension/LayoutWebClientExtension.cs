@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
-using System.Web.Mvc;
 using Autofac;
 using DocsVision.WebClient.Extensibility;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ExtendedCardInfoServerExtension
 {
@@ -21,7 +21,7 @@ namespace ExtendedCardInfoServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -46,9 +46,9 @@ namespace ExtendedCardInfoServerExtension
         /// <summary>
         /// Регистрация типов в IoC контейнере
         /// </summary>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<ExtendedCardService>().As<IExtendedCardService>().SingleInstance();
+            services.AddSingleton<IExtendedCardService, ExtendedCardService>();
         }
 
         /// <summary>

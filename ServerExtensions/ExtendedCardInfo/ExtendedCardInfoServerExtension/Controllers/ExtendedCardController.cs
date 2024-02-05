@@ -1,12 +1,11 @@
 ﻿using ExtendedCardInfoServerExtension.Models;
 using System;
-using System.Web.Http;
-using System.Web.Mvc;
 using DocsVision.BackOffice.WebClient.Employee;
 using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
 using DocsVision.Platform.WebClient.Models.Generic;
 using ExtendedCardInfoServerExtension.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ExtendedCardInfoServerExtension.Controllers
 {
@@ -21,7 +20,7 @@ namespace ExtendedCardInfoServerExtension.Controllers
             this.extendedCardService = extendedCardService;
         }
 
-        public ActionResult Get([FromUri]Guid cardId)
+        public ActionResult Get([FromQuery]Guid cardId)
         {
             var response = new CommonResponse<ExtendedCardModel>();
             

@@ -1,9 +1,8 @@
-﻿using System;
-using System.Web.Mvc;
-using CreateCardServerExtension.Services;
-using DocsVision.BackOffice.WebClient.Employee;
+﻿using CreateCardServerExtension.Services;
 using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
+using Microsoft.AspNetCore.Mvc;
+using System;
 
 namespace CreateCardServerExtension.Controllers
 {

@@ -4,9 +4,11 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
@@ -14,10 +16,10 @@
 2. Собрать проект Controls > DownloadFilesGroupOperation > DownloadFilesGroupOperationDesignerExtension
 3. Собрать проект Controls > DownloadFilesGroupOperation > DownloadFilesGroupOperationServerExtension
 4. Открыть консоль в папке Controls > DownloadFilesGroupOperation > DownloadFilesGroupOperationWebExtension и выполнить команду `npm install` и `npm run build:prod`
-5. Скопировать каталог SamplesOutput\Plugins\DownloadFilesGroupOperationDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-6. Скопировать каталог SamplesOutput\Site\Extensions\DownloadFilesGroupOperationServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-7. Скопировать каталог SamplesOutput\Site\Content\Modules\DownloadFilesGroupOperation в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-8. Перезапустить IIS
+5. Скопировать каталог SamplesOutput\Plugins\DownloadFilesGroupOperationDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
+6. Скопировать каталог SamplesOutput\Site\Extensions\DownloadFilesGroupOperationServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
+7. Скопировать каталог SamplesOutput\Site\Content\Modules\DownloadFilesGroupOperation в каталог "Путь к сайту Web-клиента\Content\Modules"
+8. Перезапустить Web-сервис
 
 ## Проверка примера
 

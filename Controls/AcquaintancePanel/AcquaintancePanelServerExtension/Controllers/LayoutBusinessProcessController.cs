@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Web.Mvc;
+using AcquaintancePanelServerExtension.Models;
 using AcquaintancePanelServerExtension.Services;
 using DocsVision.BackOffice.WebClient.Employee;
 using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace AcquaintancePanelServerExtension.Controllers
 {
@@ -28,10 +29,11 @@ namespace AcquaintancePanelServerExtension.Controllers
         /// GET: /LayoutCustomLogic/SendToAcquaintance
         /// </summary>
         /// <returns></returns>
-        public ActionResult SendToAcquaintance(Guid cardId, List<Guid> employeeIds = null, DateTime? endDate = null)
+        [HttpPost]
+        public ActionResult SendToAcquaintance([FromBody] StartProcessRequestModel request)
         {
             var sessionContext = this.currentObjectContextProvider.GetOrCreateCurrentSessionContext();
-            var response = this.layoutBPService.StartBusinessProcess(sessionContext, cardId, acquaitanceBPID, employeeIds, endDate);
+            var response = this.layoutBPService.StartBusinessProcess(sessionContext, request.CardId, acquaitanceBPID, request.EmployeeIds, request.EndDate);
 
             return Content(JsonHelper.SerializeToJson(response), "application/json");            
         }

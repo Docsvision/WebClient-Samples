@@ -8,12 +8,14 @@ using DocsVision.Platform.Tools.LayoutEditor.Helpers;
 using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
 using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
 using DocsVision.Platform.WebClient.Helpers;
+using System.Runtime.Versioning;
 
 namespace ImageDesignerExtension.Extension
 {
     /// <summary>
     /// Представляет собой пример расширения для редактора разметок
     /// </summary>
+    [SupportedOSPlatform("windows")]
     class SampleWebLayoutsDesignerExtension : WebLayoutsDesignerExtension
     {
         IAllowedOperationsStorage allowedOperationsStorage;
@@ -34,7 +36,7 @@ namespace ImageDesignerExtension.Extension
         {
             get
             {
-                return this.allowedOperationsStorage ?? (this.allowedOperationsStorage = ServiceUtil.GetService<IAllowedOperationsStorage>(serviceProvider));
+                return this.allowedOperationsStorage ?? (this.allowedOperationsStorage = serviceProvider.GetService(typeof(IAllowedOperationsStorage)) as IAllowedOperationsStorage);
             }
         }
 

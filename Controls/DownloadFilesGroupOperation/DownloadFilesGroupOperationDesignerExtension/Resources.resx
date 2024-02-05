@@ -135,4 +135,7 @@
   <data name="DownloadFilesGroupOperation_BatchOperationRestrictionFoldersPropertyName" xml:space="preserve">
     <value>Restriction folders (comma separated folder ids)</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Samples</value>
+  </data>
 </root>

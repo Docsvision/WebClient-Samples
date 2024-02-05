@@ -11,7 +11,7 @@ import { Service } from "@docsvision/webclient/System/Service";
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "TableControl",
-    version: "5.5.17",
+    version: "6.1",
     globalEventHandlers: [ CardOpenedHandlers ],
     layoutServices: [ 
         Service.fromFactory($SamplePartnersController, (services: $RequestManager) => new SamplePartnersController(services)) 

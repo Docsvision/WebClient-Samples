@@ -4,8 +4,8 @@ using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
 using AcquaintancePanelServerExtension.Services;
-using Autofac;
 using DocsVision.WebClient.Extensibility;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace AcquaintancePanelServerExtension
 {
@@ -19,7 +19,7 @@ namespace AcquaintancePanelServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -45,10 +45,10 @@ namespace AcquaintancePanelServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
             // Регистрирует тип LayoutBPService как реализацию интерфейса ILayoutBPService в containerBuilder
-            containerBuilder.RegisterType<LayoutBPService>().As<ILayoutBPService>().SingleInstance();
+            services.AddSingleton<ILayoutBPService, LayoutBPService>();
         }
 
         /// <summary>

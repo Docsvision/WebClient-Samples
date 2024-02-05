@@ -1,72 +1,35 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0E4C219D-0523-42E8-8E0C-72ABF8CDED6A}</ProjectGuid>
+    <TargetFramework>net6.0-windows</TargetFramework>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExchangeRatesDesignerExtension</RootNamespace>
-    <AssemblyName>ExchangeRatesDesignerExtension</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Docsvision.LayoutEditor.ObjectModel">
       <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.LayoutEditor.ObjectModel.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="DocsVision.Platform.StorageServer, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Platform.StorageServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-    <Reference Include="WebLayoutsDesigner">
-      <HintPath>..\..\..\Assemblies\Docsvision\WebLayoutsDesigner.exe</HintPath>
-      <Private>False</Private>
+    <Reference Include="DotNetProjects.Wpf.Extended.Toolkit">
+      <HintPath>..\..\..\Assemblies\Others\DotNetProjects.Wpf.Extended.Toolkit.dll</HintPath>
     </Reference>
-    <Reference Include="Xceed.Wpf.Toolkit.Fixed">
-      <HintPath>..\..\..\Assemblies\Others\Xceed.Wpf.Toolkit.Fixed.dll</HintPath>
-      <Private>False</Private>
+    <Reference Include="WebLayoutsDesigner">
+      <HintPath>..\..\..\Assemblies\Docsvision\WebLayoutsDesigner.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
-    <Compile Include="Extension\SampleWebLayoutsDesignerExtension.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources.Designer.cs">
+    <Compile Update="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
-    <Compile Include="Resources.ru.Designer.cs">
+    <Compile Update="Resources.ru.Designer.cs">
       <DependentUpon>Resources.ru.resx</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,22 +39,35 @@
     <Content Include="xml\SampleExchangeRatesControlDescription.xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resources.resx">
+    <EmbeddedResource Update="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources.ru.resx">
+    <EmbeddedResource Update="Resources.ru.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.ru.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources.uk.resx" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+  </ItemGroup>
   <PropertyGroup>
     <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-    <PostBuildEvent>xcopy "$(TargetDir)$(TargetName)*.dll" "$(SamplesOutput)\Plugins\$(TargetName)\" /Y /I /E
-xcopy "$(ProjectDir)xml\*.xml" "$(SamplesOutput)\Plugins\$(TargetName)\" /Y /I /E</PostBuildEvent>
+    <PostBuildEvent>xcopy "$(TargetDir)$(MSBuildProjectName)*.dll" "$(SamplesOutput)\Plugins\$(MSBuildProjectName)\" /Y /I /E
+xcopy "$(MSBuildProjectDirectory)\xml\*.xml" "$(SamplesOutput)\Plugins\$(MSBuildProjectName)\" /Y /I /E</PostBuildEvent>
+    <AssemblyTitle>ExchangeRatesDesignerExtension</AssemblyTitle>
+    <Product>ExchangeRatesDesignerExtension</Product>
+    <Copyright>Copyright © 2022</Copyright>
+    <AssemblyVersion>5.5.17.0</AssemblyVersion>
+    <FileVersion>5.5.17.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
   </PropertyGroup>
 </Project>

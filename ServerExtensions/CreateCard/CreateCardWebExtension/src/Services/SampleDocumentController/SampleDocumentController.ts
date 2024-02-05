@@ -9,11 +9,9 @@ export class SampleDocumentController {
     
     public createOutgoingDocument(parentDocId?: string): Promise<string> {
         var url = urlStore.urlResolver.resolveUrl("CreateOutgoingDocument", "SampleDocument");
-        var data = {
-            "parentDocId": (parentDocId || layoutManager.cardLayout.cardInfo.id)
-        };
+        url += "?parentDocId=" + encodeURIComponent((parentDocId || layoutManager.cardLayout.cardInfo.id));
 
-        return this.services.requestManager.post(url, JSON.stringify(data));
+        return this.services.requestManager.get(url);
     }
 }
 

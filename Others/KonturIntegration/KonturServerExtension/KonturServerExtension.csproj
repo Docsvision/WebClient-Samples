@@ -1,0 +1,99 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <_MigrateToProjectGuid>73631ecf-5403-4db3-ba42-a8179c4ba1c1</_MigrateToProjectGuid>
+    <AssemblyTitle>Kontur</AssemblyTitle>
+    <Description>Расширение Web-клиента Docsvision для интеграции с Контур.Фокус</Description>
+    <Product>Kontur</Product>
+    <Copyright>Copyright ©  2022</Copyright>
+    <AssemblyVersion>5.5.17.0</AssemblyVersion>
+    <FileVersion>5.5.17.0</FileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>..\..\bin\WebClientBin\</OutputPath>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>..\..\bin\WebClientBin\</OutputPath>
+    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocsVision.BackOffice.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.BackOffice.WebClient">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.Platform.ObjectManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.WebClient">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Docsvision.WebClient.Extensibility">
+      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.WebClient.Extensibility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.WebClientLibrary.ObjectModel">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KonturServerExtension.snk" />
+    <None Include="web.Debug.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+    <None Include="web.Release.config">
+      <DependentUpon>web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.4" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>KonturServerExtension.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <PostBuildEvent>xcopy "$(TargetDir)$(MSBuildProjectName).dll" "$(SamplesOutput)\Site\Extensions\$(MSBuildProjectName)\" /Y /I
+xcopy "$(TargetDir)$(MSBuildProjectName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+</Project>

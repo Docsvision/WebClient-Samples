@@ -1,5 +1,11 @@
-﻿using iTextSharp.text;
-using iTextSharp.text.pdf;
+﻿using iText.IO.Font;
+using iText.Kernel.Font;
+using iText.Kernel.Pdf;
+using iText.Kernel.Pdf.Canvas;
+using iText.Kernel.Pdf.Colorspace;
+using iText.Layout;
+using iText.Layout.Element;
+using iText.Layout.Properties;
 using System;
 using System.IO;
 using System.Threading.Tasks;
@@ -24,43 +30,27 @@ namespace WatermarkWebToolExtension.Services
             return await Task.Run(() =>
             {
                 PdfReader reader = new PdfReader(file);
-                PdfStamper stamper = new PdfStamper(reader, new FileStream(fileWithWaternmark, FileMode.Create));
+                PdfWriter writer = new PdfWriter(new FileStream(fileWithWaternmark, FileMode.Create));
+                PdfDocument pdf = new PdfDocument(reader, writer);
+                Document doc = new Document(pdf);
 
                 string fontForWatermark = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), WATERMARK_FONTFILE_NAME);
+                var font = PdfFontFactory.CreateFont(fontForWatermark, PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
+                Text watermarkPhrase = new Text(watermark).SetFont(font).SetFontSize(80);
+                watermarkPhrase.SetOpacity(0.2f);
 
-                BaseFont baseFont = BaseFont.CreateFont(fontForWatermark, BaseFont.IDENTITY_H, BaseFont.EMBEDDED);
-                Font font = new Font(baseFont, 80);
-
-                Phrase watermarkPhrase = new Phrase(watermark, font);
-
-                PdfGState gs1 = new PdfGState
+                for (int pageIndex = 1; pageIndex <= pdf.GetNumberOfPages(); pageIndex++)
                 {
-                    FillOpacity = 0.2f
-                };
-
-                PdfContentByte over;
-                Rectangle pagesize;
-
-                float x, y;
-
-                for (int page = 1; page <= reader.NumberOfPages; page++)
-                {
-                    pagesize = reader.GetPageSize(page);
-                    x = (pagesize.GetLeft(0) + pagesize.GetRight(0)) / 2;
-                    y = (pagesize.GetTop(0) + pagesize.GetBottom(0)) / 2;
-
-                    over = stamper.GetOverContent(page);
-                    over.SaveState();
-                    over.SetGState(gs1);
-                    ColumnText.ShowTextAligned(over, Element.ALIGN_CENTER, watermarkPhrase, x, y, 45f);
-                    over.RestoreState();
+                    var page = pdf.GetPage(pageIndex);
+                    var pagesize = page.GetPageSize();
+                    var x = (pagesize.GetLeft() + pagesize.GetRight()) / 2;
+                    var y = (pagesize.GetTop() + pagesize.GetBottom()) / 2;
+                    doc.ShowTextAligned(new Paragraph(watermarkPhrase), x, y, pageIndex, 
+                        TextAlignment.CENTER, VerticalAlignment.TOP, 45f);
                 }
 
-                stamper.Close();
-                reader.Close();
-
+                pdf.Close();
                 File.Delete(file);
-
                 return fileWithWaternmark;
             });
         }

@@ -3,7 +3,7 @@ using WebService.Helpers;
 
 namespace WebService.Services
 {
-    interface IReportService
+    public interface IReportService
     {
         /// <summary>
         /// Получить отчет по идентификатору карточки

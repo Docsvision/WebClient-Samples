@@ -9,7 +9,7 @@ namespace WebClientSDK.Helpers
             { "Language", "ru-ru" },
             { "WixLocalization", "WixUI_ru-ru.wxl" },
             { "DowngradeErrorMessage", "Более новая версия [ProductName] уже установлена." },
-            { "WebClient", "Docsvision 5 Web-клиент" },
+            { "ProductName", "Docsvision Web-клиент 18 SDK" },
             { "Comments", "Инсталляционная программа для" }
         };
         public static Dictionary<string, string> EN = new Dictionary<string, string>
@@ -17,7 +17,7 @@ namespace WebClientSDK.Helpers
             { "Language", "en-us" },
             { "WixLocalization", "WixUI_en-us.wxl" },
             { "DowngradeErrorMessage", "A newer version of [ProductName] is already installed." },
-            { "WebClient", "Docsvision 5 Web-client" },
+            { "ProductName", "Docsvision Web-client 18 SDK" },
             { "Comments", "Installation program for" }
         };
     }

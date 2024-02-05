@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using DocsVision.WebClient.Extensibility;
 using DocsVision.WebClient.Helpers;
+using Microsoft.Extensions.DependencyInjection;
 using ServerExtension.Feature1;
 using System;
 using System.Collections.Generic;
@@ -20,7 +21,7 @@ namespace ServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public ServerExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -44,18 +45,18 @@ namespace ServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<Feature1Service>().As<IFeature1Service>().SingleInstance();
+            services.AddSingleton<IFeature1Service, Feature1Service>();
 
             // Примеры регистрации различных типов ВК 
-            // containerBuilder.RegisterType<YourServiceClass>().As<YourServiceInterface>().SingleInstance();
-            // containerBuilder.RegisterOrderedType<YourBindingConverterType, IBindingConverter>();
-            // containerBuilder.RegisterOrderedType<YourBindingResolverType, IBindingResolver>();            
-            // containerBuilder.RegisterOrderedType<YourControlResolverType, IControlResolver>();
-            // containerBuilder.RegisterOrderedType<YourPropertyResolverType, IPropertyResolver>();  
-            // containerBuilder.RegisterType<YourCardLifeCycle>().Keyed<ICardLifeCycle>(CardTypeID).SingleInstance();
-            // containerBuilder.RegisterType<YourRowLifeCycle>().Keyed<IRowLifeCycle>(SectionID).SingleInstance(); 
+            // services.AddSingleton<YourServiceInterface, YourServiceClass>();
+            // services.AddSingleton<IBindingConverter, YourBindingConverterType>();
+            // services.AddSingleton<IBindingResolver, YourBindingResolverType>();            
+            // services.AddSingleton<IControlResolver, YourControlResolverType>();
+            // services.AddSingleton<IPropertyResolver, YourPropertyResolverType>();  
+            // services.AddTransient<ICardLifeCycle, YourCardLifeCycle>();
+            // services.AddTransient<IRowLifeCycle, YourRowLifeCycle>(); 
         }
 
         /// <summary>

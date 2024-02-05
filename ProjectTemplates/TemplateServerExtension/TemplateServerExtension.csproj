@@ -1,197 +1,98 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>
-    </ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{535BEAD0-FD10-4517-9C7C-C5DB1EF7B7F6}</ProjectGuid>
-    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ServerExtension</RootNamespace>
     <AssemblyName>ServerExtension</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
-    <IISExpressSSLPort />
-    <IISExpressAnonymousAuthentication />
-    <IISExpressWindowsAuthentication />
-    <IISExpressUseClassicPipelineMode />
     <SccProjectName>SAK</SccProjectName>
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <UseGlobalApplicationHostFile />
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
-    <Use64BitIISExpress />
+    <AssemblyTitle>ServerExtension</AssemblyTitle>
+    <Description>ServerExtension</Description>
+    <Product>ServerExtension</Product>
+    <Copyright>Copyright © 2020</Copyright>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <NoDefaultLaunchSettingsFile>true</NoDefaultLaunchSettingsFile>
+    <DocsvisionWebClientSDK Condition="'$(DocsvisionWebClientSDK)' == ''">..\..\</DocsvisionWebClientSDK>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>bin\WebClientBin\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
     <DocumentationFile>
     </DocumentationFile>
-    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
     <OutputPath>bin\WebClientBin\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac, Version=4.9.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da">
-      <HintPath>..\..\Assemblies\Autofac\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Extras.Ordering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=84578aafd05fb485">
-      <HintPath>..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.ApprovalDesigner.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.ApprovalDesigner.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.ApprovalDesigner.ObjectModel.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.ApprovalDesigner.ObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.BackOffice.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.BackOffice.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.BackOffice.WebLayoutsDesignerExtension, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Layout.WebClient, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebLayoutsDesignerExtension.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Layout.WebClient.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.DVWebTool.WebServices, Version=5.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Platform.ObjectManager, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.DVWebTool.WebServices.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Layout.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Platform.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Layout.WebClient.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.LayoutEditor.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Platform.StorageServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.LayoutEditor.ObjectModel.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Platform.ObjectManager, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Platform.SystemObjects, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Platform.SystemObjects.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Platform.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Platform.WebClient, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Platform.StorageServer, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.WebClient, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.WebClient.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Platform.SystemCards.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.WebClient.Extensibility, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.SystemCards.ObjectModel.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Platform.SystemObjects, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.WebClientLibrary.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.SystemObjects.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Platform.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.WebFrame.WebClient, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.WebFrame.WebClient.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.Platform.WebLayoutsDesignerExtension, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Workflow.Interfaces, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.WebLayoutsDesignerExtension.dll</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Workflow.Interfaces.dll</HintPath>
     </Reference>
-    <Reference Include="DocsVision.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+    <Reference Include="DocsVision.Workflow.Objects, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.WebClient.Extensibility, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.WebClientLibrary.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.WebFrame.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebFrame.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Workflow.Interfaces, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Workflow.Interfaces.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Workflow.Objects, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Workflow.Objects.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Microsoft\Newtonsoft.Json.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Web.DynamicData" />
-    <Reference Include="System.Web.Entity" />
-    <Reference Include="System.Web.ApplicationServices" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Microsoft\System.Web.Http.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Microsoft\System.Web.Mvc.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Microsoft\System.Web.Optimization.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="WebLayoutsDesigner, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\WebLayoutsDesigner.exe</HintPath>
+      <HintPath>$(DocsvisionWebClientSDK)Assemblies\Docsvision\DocsVision.Workflow.Objects.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feature1\Feature1Controller.cs" />
-    <Compile Include="Feature1\Feature1Service.cs" />
-    <Compile Include="Feature1\IFeature1Service.cs" />
-    <Compile Include="Feature1\Models\Action1Response.cs" />
-    <Compile Include="Feature1\Models\Action1Request.cs" />
-    <Compile Include="Resource.Designer.cs">
+    <Compile Update="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
-    <Compile Include="ServerExtension.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Sign.snk" />
     <Content Include="Readme.md" />
-    <EmbeddedResource Include="Resource.ru.resx">
+    <EmbeddedResource Update="Resource.ru.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
@@ -199,55 +100,33 @@
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Resource.resx">
+    <EmbeddedResource Update="Resource.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
-    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="7.0.1" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+  </ItemGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
     <AssemblyOriginatorKeyFile>Sign.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
-  <ProjectExtensions>
-    <VisualStudio>
-      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
-        <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>56941</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56941/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
-        </WebProjectProperties>
-      </FlavorProperties>
-    </VisualStudio>
-  </ProjectExtensions>
-  <PropertyGroup>
-    <PreBuildEvent>
-    </PreBuildEvent>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>

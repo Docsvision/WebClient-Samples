@@ -3,12 +3,10 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
-using Autofac;
-using Autofac.Extras.Ordering;
 using DocsVision.Layout.WebClient.Services;
 using DocsVision.WebClient.Extensibility;
-using DocsVision.WebClient.Helpers;
 using DataGridControlServerExtension.DataGridControlPlugins;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DataGridControlServerExtension
 {
@@ -22,7 +20,7 @@ namespace DataGridControlServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -48,12 +46,9 @@ namespace DataGridControlServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<FilesDataGridControlPlugin>()
-                .As<IDataGridControlPlugin>()
-                .OrderBy(OrderCounterHelper.OrderCounter)
-                .SingleInstance();
+            services.AddSingleton<IDataGridControlPlugin, FilesDataGridControlPlugin>();
         }
 
         /// <summary>

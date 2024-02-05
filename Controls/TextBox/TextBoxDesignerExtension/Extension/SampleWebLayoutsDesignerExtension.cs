@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Resources;
+using System.Runtime.Versioning;
 using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
 using DocsVision.Platform.Tools.LayoutEditor.Helpers;
 using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
@@ -12,6 +13,7 @@ namespace TextBoxDesignerExtension.Extension
     /// <summary>
     /// Представляет собой пример расширения для редактора разметок
     /// </summary>
+    [SupportedOSPlatform("windows")]
     class SampleWebLayoutsDesignerExtension : WebLayoutsDesignerExtension
     {
         IAllowedOperationsStorage allowedOperationsStorage;
@@ -32,7 +34,7 @@ namespace TextBoxDesignerExtension.Extension
         {
             get
             {
-                return this.allowedOperationsStorage ?? (this.allowedOperationsStorage = ServiceUtil.GetService<IAllowedOperationsStorage>(serviceProvider));
+                return this.allowedOperationsStorage ?? (this.allowedOperationsStorage = serviceProvider.GetService(typeof(IAllowedOperationsStorage)) as IAllowedOperationsStorage);
             }
         }
 

@@ -4,6 +4,8 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2019](https://www.visualstudio.com) и выше
 
@@ -11,9 +13,9 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ExcelExportServerExtension
-3. Скопировать каталог SamplesOutput\Site\Extensions\ExcelExportServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-4. Перезапустить IIS на сервере Docsvision 5.
-5. Перезапустить IIS на сервере Docsvision 5 Web-клиент.
+3. Скопировать каталог SamplesOutput\Site\Extensions\ExcelExportServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
+4. Перезапустить Web-сервис на сервере Docsvision.
+5. Перезапустить Web-сервис на сервере Docsvision Web-клиент.
 
 ## Проверка примера
 

@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Web.Mvc;
 using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Models;
 using ShiftTasksEndDateServerExtension.Services;
 using JsonHelper = DocsVision.Platform.WebClient.Helpers.JsonHelper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ShiftTasksEndDateServerExtension.Controllers
 {

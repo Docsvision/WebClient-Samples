@@ -11,7 +11,7 @@ import { Service } from "@docsvision/webclient/System/Service";
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "CustomLibrary",
-    version: "5.5.17",
+    version: "6.1",
     globalEventHandlers: [ CustomData ],
     layoutServices: [ 
         Service.fromFactory($CustomLibraryController, (services: $RequestManager) => new CustomLibraryController(services)) 

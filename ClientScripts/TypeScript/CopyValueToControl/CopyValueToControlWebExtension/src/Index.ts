@@ -1,4 +1,4 @@
-import * as CopyValueToControl from "./CopyValueToControl";
+﻿import * as CopyValueToControl from "./CopyValueToControl";
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 
 // Данный файл является входной точкой для сборки расширения.
@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его обработчики
 extensionManager.registerExtension({
     name: "CopyValueToControl",
-    version: "5.5.17",
+    version: "6.1",
     globalEventHandlers: [CopyValueToControl]
 });

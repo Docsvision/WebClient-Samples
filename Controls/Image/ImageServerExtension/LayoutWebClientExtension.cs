@@ -6,6 +6,7 @@ using DocsVision.WebClient.Extensibility;
 using DocsVision.WebClient.Helpers;
 using ImageServerExtension.AdvancedLayouts.BindingConverters;
 using DocsVision.WebClientLibrary.ObjectModel.Services.BindingConverters;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ImageServerExtension
 {
@@ -19,7 +20,7 @@ namespace ImageServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -45,9 +46,9 @@ namespace ImageServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterOrderedType<SliderConverter, IBindingConverter>();
+            services.AddSingleton<IBindingConverter, SliderConverter>();
         }
 
         #endregion

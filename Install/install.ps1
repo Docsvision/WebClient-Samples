@@ -31,7 +31,7 @@ function Find-VisualStudio {
 	$vswhere = "$ProgramFiles86\Microsoft Visual Studio\Installer\vswhere.exe"
 	if (Test-Path -Path "$vswhere" -PathType Leaf) {
 		# try to get instance with required workloads
-		$script:VisualStudio = &$vswhere -prerelease -latest -requires 'Microsoft.VisualStudio.Workload.ManagedDesktop' 'Microsoft.VisualStudio.Workload.NetWeb' -version 15 -format json | ConvertFrom-Json
+		$script:VisualStudio = &$vswhere -prerelease -latest -requires 'Microsoft.VisualStudio.Workload.ManagedDesktop' 'Microsoft.VisualStudio.Workload.NetWeb' -version 17 -format json | ConvertFrom-Json
 		if ($VisualStudio) {
 			$MSBuildPath = Split-Path -Path "$($VisualStudio.installationPath)\MSBuild\*\*\MSBuild.exe" -Resolve | Select-Object -Last 1
 			if ($MSBuildPath) {
@@ -44,7 +44,7 @@ function Find-VisualStudio {
 			}
 		} else {
 			# try to get any other and add required workloads
-			$script:VisualStudio = &$vswhere -prerelease -latest -version 15 -format json | ConvertFrom-Json
+			$script:VisualStudio = &$vswhere -prerelease -latest -version 17 -format json | ConvertFrom-Json
 			if ($VisualStudio) {
 				if (Invoke-YesNoPrompt -Prompt 'Not found any Visual Studio instances that meet the requirements. Try to add ".NET desktop development" and "ASP.NET and web development" workloads to the latest one?') {
 					$Process = Start-Process -FilePath "$($VisualStudio.properties.setupEngineFilePath)" -ArgumentList 'modify', '--productId', "$($VisualStudio.productId)", '--channelId', "$($VisualStudio.channelId)", '--add', 'Microsoft.VisualStudio.Workload.ManagedDesktop', 'Microsoft.VisualStudio.Workload.NetWeb', '--passive', '--norestart' -Verb RunAs -PassThru -Wait
@@ -62,7 +62,7 @@ function Find-VisualStudio {
 }
 
 function Install-VisualStudio {
-	if (Invoke-YesNoPrompt -Prompt 'Try to install Visual Studio 2019? You can choose any edition.') {
+	if (Invoke-YesNoPrompt -Prompt 'Try to install Visual Studio 2022? You can choose any edition.') {
 		Write-Host '1) Community'
 		Write-Host '2) Professional'
 		Write-Host '3) Enterprise'
@@ -74,7 +74,7 @@ function Install-VisualStudio {
 			3 { $FileName = 'vs_enterprise.exe'; break }
 			default { return $False }
 		}
-		$FilePath = DownloadFile -Uri "https://aka.ms/vs/16/release/$FileName"
+		$FilePath = DownloadFile -Uri "https://aka.ms/vs/17/release/$FileName"
 		$Process = Start-Process -FilePath $FilePath -ArgumentList '--add', 'Microsoft.VisualStudio.Workload.ManagedDesktop', 'Microsoft.VisualStudio.Workload.NetWeb', '--passive', '--norestart' -PassThru -Wait
 		switch ($Process.ExitCode) {
 			0 { return Find-VisualStudio }
@@ -93,7 +93,7 @@ function Update-Path {
 }
 
 function Find-Node {
-	$Version = '14.17.0'
+	$Version = '16.20.0'
 	$Node = Get-Command -Name Node -ErrorAction SilentlyContinue
 	$NPM = Get-Command -Name NPM -ErrorAction SilentlyContinue
 	$NVM = Get-Command -Name NVM -ErrorAction SilentlyContinue
@@ -123,11 +123,11 @@ function Find-Node {
 }
 
 function Install-Node {
-	if (Invoke-YesNoPrompt -Prompt 'Try to install install Node v14.17.0?') {
+	if (Invoke-YesNoPrompt -Prompt 'Try to install install Node v16.20.0?') {
 		if ($Is64BitOperatingSystem) {
-			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v14.17.0/node-v14.17.0-x64.msi'
+			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v16.20.0/node-v16.20.0-x64.msi'
 		} else {
-			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v14.17.0/node-v14.17.0-x86.msi'
+			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v16.20.0/node-v16.20.0-x86.msi'
 		}
 		$Process = Start-Process -FilePath 'msiexec' -ArgumentList '/i', $FilePath, '/qn' -Verb RunAs -PassThru -Wait
 		if ($Process.ExitCode -eq 0) {
@@ -186,16 +186,7 @@ if (!(Find-VisualStudio)) {
 # Node.js
 if (!(Find-Node)) {
 	if (!(Install-Node)) {
-		throw 'FATAL ERROR: cannot continue without Node v14.17.0.'
-	}
-}
-
-# NuGet
-$NuGet = (Get-Command -Name NuGet -ErrorAction SilentlyContinue).Source
-if (!$NuGet) {
-	$NuGet = "$env:TEMP\nuget.exe"
-	if (!(Test-Path -Path $NuGet -PathType Leaf)) {
-		$NuGet = DownloadFile -Uri 'https://dist.nuget.org/win-x86-commandline/latest/nuget.exe'
+		throw 'FATAL ERROR: cannot continue without Node v16.20.0.'
 	}
 }
 
@@ -214,6 +205,7 @@ $TargetList = @(
 	'ClientScripts',
 	'Controls',
 	'Others',
+	'ProjectTemplates',
 	'ServerExtensions'
 )
 
@@ -248,10 +240,10 @@ if ($env:SamplesOutput) {
 }
 
 if ($MSBUILD) {
-	&$NuGet restore 'Samples.sln'
-	MSBuild 'Samples.sln' '-t:Clean;Build' -p:Configuration=Release
+	msbuild Samples.sln /r /p:Configuration=Release
 }
 
+<# TODO: rewrite #>
 if ($NPM) {
 	$PackageList = $TargetList | Resolve-Path | Search-NodePackage
 	ForEach ($Package in $PackageList) {

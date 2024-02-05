@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Web.Mvc;
 using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Helpers;
 using LicenseCheckServerExtension.Services;
+using Microsoft.AspNetCore.Mvc;
 
 namespace LicenseCheckServerExtension.Controllers
 {

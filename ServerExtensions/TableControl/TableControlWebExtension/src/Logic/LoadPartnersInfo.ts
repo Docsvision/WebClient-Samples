@@ -8,7 +8,7 @@ import { $ControlStore } from "@docsvision/webclient/System/LayoutServices";
 // Загрузить телефоны и email контрагентов
 export async function sampleDocument_loadPartnersInfo(services: $SamplePartnersController & $ControlStore) {
     let controls = services.controlStore;
-    let samplePartnersDepartmentControls = controls.get<Department[]>("samplePartnersDepartment");
+    let samplePartnersDepartmentControls = controls.tryGet<Department[]>("samplePartnersDepartment");
     if (!controls.sampleDepartmentEmail || !controls.sampleDepartmentPhone || !controls.samplePartnersDepartment || samplePartnersDepartmentControls.length === 0) return;
 
     // Получить идентификатор из каждого контрола контрагента в таблице

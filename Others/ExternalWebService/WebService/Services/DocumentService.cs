@@ -1,7 +1,6 @@
 ﻿using DocsVision.BackOffice.CardLib.CardDefs;
 using DocsVision.BackOffice.ObjectModel;
 using DocsVision.Platform.ObjectModel;
-using DocsVision.Platform.WebClient.Helpers;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,11 +9,14 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Text;
-using System.Web;
-using System.Web.Http;
 using NLog;
 using WebService.Helpers;
 using WebService.Interfaces.Models;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+using DocsVision.Platform.ObjectManager;
+using LogManager = NLog.LogManager;
+using Microsoft.AspNetCore.Routing.Constraints;
 
 namespace WebService.Services
 {
@@ -53,7 +55,7 @@ namespace WebService.Services
                 {
                     Id = documentFile.FileVersionRowId,
                     Name = documentFile.FileName,
-                    Size = documentFile.FileSize,
+                    Size = (int)documentFile.LongFileSize,
                 };
                 files.Add(file);
             }
@@ -171,7 +173,7 @@ namespace WebService.Services
         /// <param name="changeStaterequestModel">Модель смены состояния карточки документа</param>
         public void ChangeState(SessionContext sessionContext, ObjectContext objectContext, [FromBody]ChangeStateRequestModel changeStateRequestModel)
         {
-            string bpErrors = null;
+            string bpErrors = String.Empty;
 
             var cardDocument = objectContext.GetObject<Document>(changeStateRequestModel.CardId);
             var statesOperation = objectContext.GetObject<StatesOperation>(changeStateRequestModel.OperationId);
@@ -200,22 +202,21 @@ namespace WebService.Services
         /// <param name="sessionContext">Контекст сессии</param>
         /// <param name="id">Идентификатор карточки</param>
         /// <returns><see cref="HttpResponseMessage"/></returns> 
-        public HttpResponseMessage DownloadFile(SessionContext sessionContext, Guid fileId)
+        public Stream? DownloadFile(SessionContext sessionContext, Guid fileId, out string? fileName)
         {
             var fileData = sessionContext.Session.FileManager.GetFile(fileId);
 
             if (fileId != Guid.Empty)
             {
-                var response = new HttpResponseMessage(HttpStatusCode.OK);
-                response.Content = new StreamContent(fileData.OpenReadStream());
-                response.Content.Headers.ContentType = new MediaTypeHeaderValue("application/octet-stream");
-                response.Content.Headers.ContentDisposition = ContentDispositionHeaderValue.Parse("attachment; filename=\"" + HttpUtility.UrlEncode(fileData.Name, UnicodeEncoding.UTF8)
-                    .Replace("+++", " ").Replace("++", " ").Replace("+", " ") + "\"");
-                response.Content.Headers.ContentDisposition.FileName = fileData.Name;
-                return response;
-            }
+                fileName = fileData.Name;
 
-            return new HttpResponseMessage(HttpStatusCode.NotFound);
+                return fileData.OpenReadStream();
+            }
+            else
+            {
+                fileName = null;
+                return null;
+            }
         }
 
         /// <summary>
@@ -225,18 +226,17 @@ namespace WebService.Services
         /// <param name="provider">Провайдер</param>
         /// <param name="uploadFilesDir">Временная директория загрузки файла</param>
         /// <returns><see cref="Guid"/></returns>  
-        public Guid UploadFile(ObjectContext objectContext, MultipartFormDataStreamProvider provider, string uploadFilesDir)
+        public async Task<Guid> UploadFile(ObjectContext objectContext, IFormFile file, Guid cardId, string uploadFilesDir)
         {
             var documentService = objectContext.GetService<DocsVision.BackOffice.ObjectModel.Services.IDocumentService>();
-            var cardId = new Guid(provider.FormData["cardId"]);
             var card = objectContext.GetObject<Document>(cardId);
-            var fileDataItem = provider.FileData.SingleOrDefault() ?? throw new InvalidOperationException("There is no file content");
-            var newFileName = Path.Combine(uploadFilesDir, fileDataItem.Headers.ContentDisposition.FileName);
-            File.Move(fileDataItem.LocalFileName, newFileName);
+            var newFileName = Path.Combine(uploadFilesDir, file.FileName);
+            using (var stream = System.IO.File.Create(newFileName))
+            {
+                await file.CopyToAsync(stream);
+            }
             var documentFile = documentService.AttachMainFile(card, newFileName);
-
             objectContext.AcceptChanges();
-
             return documentFile.FileVersionRowId;
         }
     }

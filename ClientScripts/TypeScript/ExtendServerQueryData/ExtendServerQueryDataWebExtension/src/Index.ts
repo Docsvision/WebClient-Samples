@@ -1,4 +1,4 @@
-import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
+﻿import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 import * as ExtendServerQueryData from "./ExtendServerQueryData";
 
 // Главная входная точка всего расширения
@@ -9,6 +9,6 @@ import * as ExtendServerQueryData from "./ExtendServerQueryData";
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "ExtendServerQueryData",
-    version: "5.5.17",
+    version: "6.1",
     globalEventHandlers: [ExtendServerQueryData]
 });

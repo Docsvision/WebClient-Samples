@@ -4,19 +4,21 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > CreateCardDialog > CreateCardDialogServerExtension
 3. Открыть консоль в папке ServerExtensions > CreateCardDialog > CreateCardDialogWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
-4. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardDialogServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-5. Скопировать файл SamplesOutput\Site\Extensions\ru\CreateCardDialogServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
-6. Скопировать каталог SamplesOutput\Site\Content\Modules\CreateCardDialogWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-7. Перезапустить IIS
+4. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardDialogServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
+5. Скопировать файл SamplesOutput\Site\Extensions\ru\CreateCardDialogServerExtension.resources.dll в каталог "Путь к сайту Web-клиента\Extensions\ru"
+6. Скопировать каталог SamplesOutput\Site\Content\Modules\CreateCardDialogWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
+7. Перезапустить Web-сервис
 
 ## Проверка примера
 
@@ -25,14 +27,18 @@
 3. Выбрать тип "Этап согласования"
 4. Создать разметку создания и просмотра (Например, добавить элемент управления "Строка" и привязать его к свойству "MainInfo\Name")
 5. Выбрать условия использования этих разметок
-6. В конфигурационном файле Web-клиент Web.config в секции Docsvision > Platform > CardTypes добавить строку: 
-```xml
-	<CardType CardTypeId="0DB13C90-21B6-49D8-9070-8144DF97552A" CssClass="approval-stage"/>
+6. В конфигурационном файле Web-клиент appsettings.json в секции Docsvision > Platform > CardTypes добавить строку: 
+```
+	{
+
+        "CardTypeId": "0DB13C90-21B6-49D8-9070-8144DF97552A",
+        "CssClass": "approval-stage"
+    }
 ```
 где "0DB13C90-21B6-49D8-9070-8144DF97552A" - идентификатор типа карточки этапа согласования  
 
 7. Разрешить создание карточек вида "Этап согласования" в справочнике видов карточек.
-8. Перезапустить IIS
+8. Перезапустить Web-сервис
 9. Открыть Web-клиент и нажать на кнопку "Создать"
 10. Должен появиться новый тип карточки "Этап", доступный для создания (фон - фиолетовый).
 11. При выборе его, открывается созданная разметка, при этом фон боковой панели и шапки становится фиолетовым.

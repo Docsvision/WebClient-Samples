@@ -17,7 +17,7 @@ import { $MessageBox } from "@docsvision/webclient/System/$MessageBox";
 // Регистрируем обработчики из EventHandlers и сервис из CommunicationService
 extensionManager.registerExtension({
     name: "Watermark to PDF",
-    version: "5.5.17",
+    version: "6.1",
     globalEventHandlers: [ EventHandlers ],
     layoutServices: [ 
         Service.fromFactory($WatermarkService, (services: $RequestManager & $WebServices & $ApplicationSettings & $MessageBox & $SiteUrl & $CurrentEmployeeId) => new

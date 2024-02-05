@@ -5,6 +5,7 @@ using Autofac;
 using DocsVision.WebClient.Extensibility;
 using DocsVision.WebClient.Services.ExcelExport;
 using ExcelExportServerExtension.ExcelExport;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ExcelExportServerExtension
 {
@@ -20,7 +21,7 @@ namespace ExcelExportServerExtension
 		/// </summary>
 		/// <param name="serviceProvider">Сервис-провайдер</param>
 		public ExcelExportServerExtension(IServiceProvider serviceProvider)
-			: base(serviceProvider)
+			: base()
 		{
             this._serviceProvider = serviceProvider;
 		}
@@ -45,12 +46,10 @@ namespace ExcelExportServerExtension
         /// Регистрирует типы в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-			// Регистрируем тип ExcelExportExampleService как реализацию интерфейса IExcelExportService в containerBuilder
-			containerBuilder.RegisterType<ExcelExportExampleService>()
-                .As<IExcelExportService>()
-                .SingleInstance();
+            // Регистрируем тип ExcelExportExampleService как реализацию интерфейса IExcelExportService в containerBuilder
+            services.AddSingleton<IExcelExportService, ExcelExportExampleService>();
         }
 
 		#endregion Обработчики событий

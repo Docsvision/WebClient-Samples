@@ -6,17 +6,19 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
 4. Открыть консоль в папке Controls > Link > LinkWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
-3. Скопировать каталог SamplesOutput\Plugins\LinkDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-4. Скопировать каталог SamplesOutput\Site\Content\Modules\LinkWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-5. Перезапустить IIS
+3. Скопировать каталог SamplesOutput\Plugins\LinkDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
+4. Скопировать каталог SamplesOutput\Site\Content\Modules\LinkWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
+5. Перезапустить Web-сервис
 
 ## Проверка примера
 
@@ -26,7 +28,7 @@
 4. Открыть разметку LinkControlDescriptionLayout
 5. Задать желаемые параметры элемента управления "Sample link"
 6. Сохранить разметку
-7. Перезапустить IIS
+7. Перезапустить Web-сервис
 8. Открыть карточку с этой разметкой
 9. Убедиться, что появился новый элемент управления
 

@@ -2,11 +2,11 @@
 using DocsVision.Platform.WebClient.Models.RealTimeCommunication.NotificationMessage;
 using DocsVision.Platform.WebClient.Services;
 using System;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace SignalForUsersExtension
 {
-    public class ServiceController : ApiController
+    public class ServiceController : ControllerBase
     {
         readonly IRealtimeCommunicationService communicationService;
 

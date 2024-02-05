@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Resources;
+using System.Runtime.Versioning;
 using DocsVision.Platform.Tools.LayoutEditor.DataLayer.Model;
 using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
 using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
@@ -10,6 +11,7 @@ namespace TemplateDesignerExtension.Extension
     /// <summary>
     /// Представляет собой пример расширения для редактора разметок
     /// </summary>
+    [SupportedOSPlatform("windows")]
     class TemplateDesignerExtension : WebLayoutsDesignerExtension
     {
         /// <summary>

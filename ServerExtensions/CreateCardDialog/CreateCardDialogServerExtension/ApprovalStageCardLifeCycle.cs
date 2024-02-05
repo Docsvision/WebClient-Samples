@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using DocsVision.WebClientLibrary.ObjectModel.Services.EntityLifeCycle.Options;
 using DocsVision.WebClientLibrary.ObjectModel.Services.EntityLifeCycle;
+using DocsVision.ApprovalDesigner.CardLib.CardDefs;
 
 namespace CreateCardDialogServerExtension
 {
@@ -12,7 +13,7 @@ namespace CreateCardDialogServerExtension
     {
         private readonly Guid ApprovalStageCardTypeId = new Guid("0DB13C90-21B6-49D8-9070-8144DF97552A");
 
-        public Guid CardTypeId => throw new NotImplementedException();
+        public Guid CardTypeId => CardApprovalStage.ID;
 
         public Guid CreateFromTemplate(SessionContext sessionContext, Guid templateId, Guid? parentCardId)
         {

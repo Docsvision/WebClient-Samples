@@ -4,19 +4,31 @@ using System.IO;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Http;
 using NLog;
-using WebService.Helpers;
 using WebService.Interfaces.Models;
+using Microsoft.AspNetCore.Mvc;
+using WebService.Services;
 
 namespace WebService.Controllers
 {
-    public class DocumentsController : ApiController
+    public class DocumentsController : ControllerBase
     {
         private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+        private Services.IDocumentService _documentService;
+        private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly ISessionService _sessionService;
 
-        private Services.IDocumentService DocumentService => WebApiApplication.Instance.GetService<Services.IDocumentService>();
+        /// <summary>
+        /// </summary>
+        /// <param name="documentService"></param>
+        public DocumentsController(IDocumentService documentService, 
+            IWebHostEnvironment webHostEnvironment,
+            ISessionService sessionService)
+        {
+            _documentService = documentService;
+            _webHostEnvironment = webHostEnvironment;
+            _sessionService = sessionService;
+        }
 
         /// <summary>
         /// Получить модель карточки документа по его идентификатору
@@ -24,15 +36,15 @@ namespace WebService.Controllers
         /// <param name="id">Идентификатор карточки</param>
         /// <returns><see cref="DocumentModel"/></returns>
         [HttpGet]
-        public DocumentModel Get(Guid id)
+        public DocumentModel? Get(Guid id)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
+            var sessionContext = _sessionService.GetSessionContext();
             var objectContext = sessionContext.CreateObjectContext();
 
-            DocumentModel documentModel = null;
+            DocumentModel? documentModel = null;
             DoAction(() =>
             {
-                documentModel = DocumentService.Get(sessionContext, objectContext, id);
+                documentModel = _documentService.Get(sessionContext, objectContext, id);
             });
 
             return documentModel;
@@ -46,18 +58,18 @@ namespace WebService.Controllers
         [HttpPost]
         public Guid Create([FromBody]DocumentModel document)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
+            var sessionContext = _sessionService.GetSessionContext();
             var objectContext = sessionContext.CreateObjectContext();
 
             var employeeID = sessionContext.Session.Properties.Contains("EmployeeID")
-                    ? Guid.Parse(sessionContext.Session.Properties["EmployeeID"].Value.ToString())
+                    ? Guid.Parse(sessionContext.Session.Properties["EmployeeID"].Value.ToString()!)
                     : Guid.Empty;
             document.Registrar = employeeID;
 
             var newDocumentId = Guid.Empty;
             DoAction(() =>
             {
-                newDocumentId = DocumentService.Create(sessionContext, objectContext, document);
+                newDocumentId = _documentService.Create(sessionContext, objectContext, document);
             });
 
             return newDocumentId;
@@ -70,12 +82,12 @@ namespace WebService.Controllers
         [HttpPost]
         public void Update([FromBody]DocumentModel document)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
+            var sessionContext = _sessionService.GetSessionContext();
             var objectContext = sessionContext.CreateObjectContext();
 
             DoAction(() =>
             {
-                DocumentService.Update(sessionContext, objectContext, document);
+                _documentService.Update(sessionContext, objectContext, document);
             });
         }
 
@@ -86,11 +98,11 @@ namespace WebService.Controllers
         [HttpPost]
         public void Delete([FromBody]Guid id)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
+            var sessionContext = _sessionService.GetSessionContext();
 
             DoAction(() =>
             {
-                DocumentService.Delete(sessionContext, id);
+                _documentService.Delete(sessionContext, id);
             });
         }
 
@@ -101,12 +113,12 @@ namespace WebService.Controllers
         [HttpPost]
         public void ChangeState([FromBody]ChangeStateRequestModel changeStateRequestModel)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
+            var sessionContext = _sessionService.GetSessionContext();
             var objectContext = sessionContext.CreateObjectContext();
 
             DoAction(() =>
             {
-                DocumentService.ChangeState(sessionContext, objectContext, changeStateRequestModel);
+                _documentService.ChangeState(sessionContext, objectContext, changeStateRequestModel);
             });
         }
 
@@ -115,12 +127,12 @@ namespace WebService.Controllers
         /// </summary>
         /// <returns><see cref="Task{Guid}"/></returns>
         [HttpPost]
-        public async Task<Guid> UploadFile()
+        public async Task<Guid> UploadFile([FromForm(Name = "file")] IFormFile file, Guid cardId)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
+            var sessionContext = _sessionService.GetSessionContext();
             var objectContext = sessionContext.CreateObjectContext();
             
-            var uploadDir = Path.Combine(HttpContext.Current.Server.MapPath("~/App_Data"), "Uploads");
+            var uploadDir = Path.Combine(_webHostEnvironment.ContentRootPath, "App_Data", "Uploads");
             var uploadFilesDir = Path.Combine(uploadDir, Guid.NewGuid().ToString());
             Directory.CreateDirectory(uploadFilesDir);
 
@@ -128,12 +140,7 @@ namespace WebService.Controllers
 
             try
             {
-                var provider = new MultipartFormDataStreamProvider(uploadFilesDir);
-                await Request.Content.ReadAsMultipartAsync(provider);
-                DoAction(() =>
-                {
-                    fileId = DocumentService.UploadFile(objectContext, provider, uploadFilesDir);
-                });
+                fileId = await _documentService.UploadFile(objectContext, file, cardId, uploadFilesDir);
             }
             finally
             {
@@ -148,45 +155,37 @@ namespace WebService.Controllers
         /// </summary>
         /// <returns><see cref="HttpResponseMessage"/></returns>
         [HttpGet]
-        public HttpResponseMessage DownloadFile(Guid fileId)
+        public IActionResult DownloadFile(Guid fileId)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
-            var response = new HttpResponseMessage();
+            var sessionContext = _sessionService.GetSessionContext();
+            Stream? fileStream = null;
+            string? fileName = null;
 
             DoAction(() =>
             {
-                response = DocumentService.DownloadFile(sessionContext, fileId);
+                 fileStream = _documentService.DownloadFile(sessionContext, fileId, out fileName);
             });
 
-            return response;
+            if (fileStream != null)
+            {
+                return File(fileStream, "application/octet-stream", fileName);
+            }
+            else
+            {
+                return NotFound();
+            }
         }
-
+                                                                   
         private void DoAction(Action action)
         {
             try
             {
                 action();
             }
-            catch (StorageServerException ex)
-            {
-                Logger.Error(ex);
-                if (ex.ErrorCode == 1344)
-                {
-                    throw new HttpResponseException(HttpStatusCode.NotFound);
-                }
-                else
-                {
-                    var httpResponseMessage = new HttpResponseMessage(HttpStatusCode.InternalServerError);
-                    httpResponseMessage.ReasonPhrase = ex.Message;
-                    throw new HttpResponseException(httpResponseMessage);
-                }
-            }
             catch (Exception ex)
             {
                 Logger.Error(ex);
-                var httpResponseMessage = new HttpResponseMessage(HttpStatusCode.InternalServerError);
-                httpResponseMessage.ReasonPhrase = ex.Message;
-                throw new HttpResponseException(httpResponseMessage);
+                throw;
             }
         }
     }

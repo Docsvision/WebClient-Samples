@@ -135,4 +135,7 @@
   <data name="DownloadFilesGroupOperation_BatchOperationRestrictionFoldersPropertyName" xml:space="preserve">
     <value>ID Каталогов, в которых операция доступна (через запятую)</value>
   </data>
+  <data name="ControlGroup_Samples" xml:space="preserve">
+    <value>Сэмплы</value>
+  </data>
 </root>

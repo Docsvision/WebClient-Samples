@@ -4,18 +4,20 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
 1. Открыть /Samples.sln
 2. Собрать проект Controls > CheckBox > CheckBoxDesignerExtension
 3. Открыть консоль в папке Controls > CheckBox > CheckBoxWebExtension и выполнить команду `npm install` и `npm run build:prod`
-4. Скопировать каталог SamplesOutput\Plugins\CheckBoxDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Site\Content\Modules\CheckBoxWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-6. Перезапустить IIS
+4. Скопировать каталог SamplesOutput\Plugins\CheckBoxDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
+5. Скопировать каталог SamplesOutput\Site\Content\Modules\CheckBoxWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
+6. Перезапустить Web-сервис
 
 
 ## Проверка примера
@@ -26,7 +28,7 @@
 4. Открыть разметку и добавить в нее новый элемент управления "Пример флага"
 5. Задать желаемые параметры элемента управления
 6. Сохранить разметку
-7. Перезапустить IIS
+7. Перезапустить Web-сервис
 8. Открыть карточку с этой разметкой
 9. Убедиться, что появился новый элемент управления
 

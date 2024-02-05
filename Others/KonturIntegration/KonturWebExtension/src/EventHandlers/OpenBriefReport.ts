@@ -6,6 +6,7 @@ import { $KonturRequestController } from "../ServerRequests.ts/KonturRequestCont
 import { $CardId } from "@docsvision/webclient/System/LayoutServices";
 import { $Router } from "@docsvision/webclient/System/$Router";
 import { toShortDateString } from "@docsvision/webclient/System/DateTimeUtils";
+import { $Layout } from "@docsvision/webclient/System/$Layout";
 
 export async function openBriefReport(sender: LayoutControl) {
     await openBriefReportInternal(sender, false);
@@ -19,17 +20,11 @@ export async function openBriefReportAndAttachFile(sender: LayoutControl) {
 async function openBriefReportInternal(sender: LayoutControl, attachReportToCard: boolean) {
     let layout = new NewContractLayout(sender.layout);
     if (layout.INN.hasValue()) {
-        let briefReportStr = await sender.layout.getService($KonturRequestController).getFromKontur("briefReport", "inn=" + layout.INN.value);
+        let reports = await sender.layout.getService($KonturRequestController).getFromKontur("briefReport", "inn=" + layout.INN.value);
         let report: BriefReport;
 
-        if (briefReportStr) {
-            try {
-                let reports = JSON.parse(briefReportStr);
-                report = reports[0];
-            } catch (err) {
-                console.error(err);
-                MessageBox.ShowError("Возникла ошибка при загрузке отчета: " + err);
-            }
+        if (reports?.[0]) {
+            report = reports[0] as BriefReport;
         } else {
             MessageBox.ShowError("Не удалось загрузить отчет");
         }
@@ -43,7 +38,7 @@ async function openBriefReportInternal(sender: LayoutControl, attachReportToCard
                     await sender.layout.getService($KonturRequestController).addKonturReportToCard(
                         sender.layout.getService($CardId), reportFileName, "inn=" + layout.INN.value);
                 } finally {
-                    await sender.layout.getService($Router).refresh();
+                    await sender.layout.getService($Layout).reloadFromServer();
                 }
             }
         }

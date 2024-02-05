@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
 using System.Resources;
-using System.Web.Mvc;
 using Autofac;
 using DocsVision.WebClient.Extensibility;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace ShiftTasksEndDateServerExtension
 {
@@ -21,7 +21,7 @@ namespace ShiftTasksEndDateServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -46,10 +46,9 @@ namespace ShiftTasksEndDateServerExtension
         /// <summary>
         /// Регистрация типов в IoC контейнере
         /// </summary>
-        /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<ShiftTasksEndDateService>().As<IShiftTasksEndDateService>().SingleInstance();
+            services.AddSingleton<IShiftTasksEndDateService, ShiftTasksEndDateService>();
         }
 
         /// <summary>

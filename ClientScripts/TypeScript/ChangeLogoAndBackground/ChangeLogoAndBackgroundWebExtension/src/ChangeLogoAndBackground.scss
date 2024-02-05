@@ -16,8 +16,14 @@
     .performers-table th,
     .no-touch .zurb .performers-table tr:hover,
     .dv-control.system-links .links-header .links-command-bar,
-    .dv-control.system-filelist.view-mode .title-container .file-list-command-bar {
-        background-color: transparent;
+    .dv-control.system-filelist.view-mode .title-container .file-list-command-bar,
+    .dv-table {
+        background-color: transparent !important;
+    }
+
+    .dv-toolbar,
+    .dv-table-header-column {
+        background-color: white;
     }
 
     .system-table .table-header .disclosure-helper.disclosure-helper,

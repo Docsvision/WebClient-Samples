@@ -3,11 +3,7 @@ import { getServices } from "../Services/Services";
 import { Layout } from "@docsvision/webclient/System/Layout";
 
 
-/* Обработчики событий просмотра документа */
-
-declare function outgoingDocumentViewCardOpened(sender, args);
-
+/* Обработчик события открытия разметки просмотра документа */
 export function sampleDocumentViewCardOpened(sender: Layout, e) {
-    outgoingDocumentViewCardOpened(sender, e); // Вызываем стандартный обработчик из решения УД
     sampleDocument_loadPartnersInfo(getServices(sender));
 }

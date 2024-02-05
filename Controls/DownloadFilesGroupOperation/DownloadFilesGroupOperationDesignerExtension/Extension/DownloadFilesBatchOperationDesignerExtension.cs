@@ -11,7 +11,9 @@ using DocsVision.Platform.Tools.LayoutEditor.Solutions.Interfaces;
 using DocsVision.Platform.WebClient;
 using DocsVision.WebClientLibrary.ObjectModel.Services;
 using DownloadFilesGroupOperationDesignerExtension.Editors;
+using Resource = DocsVision.BackOffice.WebLayoutsDesigner.Resource;
 
+[assembly: System.Runtime.Versioning.SupportedOSPlatform("windows")]
 namespace DownloadFilesGroupOperationDesignerExtension.Extension
 {
     /// <summary>
@@ -66,11 +68,12 @@ namespace DownloadFilesGroupOperationDesignerExtension.Extension
             var controlTypeDescription = new ControlTypeDescription(Constants.DownloadFilesGroupOperation.ControlTypeName)
             {
                 DisplayName = Resources.DownloadFilesGroupOperation_ControlTypeName,
-                ControlGroupDisplayName = DocsVision.BackOffice.WebLayoutsDesigner.Resource.ControlGroup_BatchOperations,
+                ControlGroupDisplayName = Resources.ControlGroup_Samples,
                 CheckAsChild = (parentControl) =>
                 {
-                    // Контрол разрешено разместить либо в специальном узле контрола Links, либо в специальном контроле-контейнере
-                    return parentControl.ControlTypeDescription.ControlTypeName == ControlTypeConstants.Links.BatchOperationsNodeClassName || CheckAvailableGroupControls();
+                    // Контрол разрешено разместить либо в специальном контроле-контейнере
+                    return parentControl.ControlTypeDescription.ControlTypeName.Contains(
+                        DocsVision.Platform.WebLayoutsDesigner.ControlTypeConstants.Batch.BatchOperationsNodeClassName);
                 },
                 PropertyDescriptions = {
                         standardCssClassProperty,
@@ -86,21 +89,6 @@ namespace DownloadFilesGroupOperationDesignerExtension.Extension
                     }
             };
             return controlTypeDescription;
-        }
-
-        private bool CheckAvailableGroupControls()
-        {
-            var selectedLayoutService = ServiceUtil.GetService<ISelectedLayoutService>(serviceProvider);
-            var layoutId = selectedLayoutService.LayoutInfo.LayoutId;
-            var currentObjectContextProvider = ServiceUtil.GetService<ICurrentObjectContextProvider>(serviceProvider);
-            var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
-            var solutionsService = sessionContext.ObjectContext.GetService<ISolutionsService>();
-            var layout = solutionsService.GetLayout(layoutId);
-            var locationNodesService = ServiceUtil.GetService<ILocationNodesService>(serviceProvider);
-            var locationNode = locationNodesService.GetLocation(layout.LocationId);
-            if (locationNode.Location.Id == DocsVision.WebFrame.WebClient.Constants.Locations.GridOperations.Id)
-                return true;
-            else return false;
         }
 
         /// <summary>

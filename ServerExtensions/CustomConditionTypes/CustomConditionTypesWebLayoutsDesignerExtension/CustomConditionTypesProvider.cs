@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using DocsVision.BackOffice.CardLib.CardDefs;
 using DocsVision.BackOffice.ObjectModel;
 using DocsVision.BackOffice.ObjectModel.Services;
@@ -14,6 +15,7 @@ using Constants = CustomConditionTypesInterfaces.Constants;
 
 namespace CustomConditionTypesDesignerExtension
 {
+    [SupportedOSPlatform("windows")]
     internal class CustomConditionTypesProvider : IConditionTypesProvider
     {
         public Guid Id => Constants.ExtensionId;
@@ -25,9 +27,9 @@ namespace CustomConditionTypesDesignerExtension
         {
             var staffTree = new List<Staff>();
 
-            var objectContext = this.SessionContextProvider.GetOrCreateCurrentObjectContext();
+            var sessionContext = this.SessionContextProvider.GetOrCreateCurrentSessionContext();
 
-            var staffService = objectContext.GetService<IStaffService>();
+            var staffService = sessionContext.ObjectContext.GetService<IStaffService>();
             var units = staffService.GetUnits(null, true).OrderBy(u => u.Name);
 
             foreach (var unit in units)
@@ -46,8 +48,8 @@ namespace CustomConditionTypesDesignerExtension
         {
             var usersTree = new List<StaffEmployee>();
 
-            var objectContext = this.SessionContextProvider.GetOrCreateCurrentObjectContext();
-            var staffService = objectContext.GetService<IStaffService>();
+            var sessionContext = this.SessionContextProvider.GetOrCreateCurrentSessionContext();
+            var staffService = sessionContext.ObjectContext.GetService<IStaffService>();
             var units = staffService.GetUnits(null, true).OrderBy(u => u.Name);
             foreach (var unit in units)
             {
@@ -112,9 +114,9 @@ namespace CustomConditionTypesDesignerExtension
             var groupsEditor = new ConditionItemEditor();
             var groupsHeader = new ConditionHeader { Header = "Groups", ConditionTypeId = Constants.ConditionTypes.GroupsConditionType };
 
-            var objectContext = this.SessionContextProvider.GetOrCreateCurrentObjectContext();
+            var sessionContext = this.SessionContextProvider.GetOrCreateCurrentSessionContext();
 
-            var refStaff = objectContext.GetObject<Staff>(RefStaff.ID);
+            var refStaff = sessionContext.ObjectContext.GetObject<Staff>(RefStaff.ID);
 
             var staffGroups = new List<StaffGroup>();
             foreach (var group in refStaff.Groups)
@@ -161,9 +163,9 @@ namespace CustomConditionTypesDesignerExtension
             var usersEditor = new ConditionItemEditor();
             var usersHeader = new ConditionHeader { Header = "Units", ConditionTypeId = Constants.ConditionTypes.UnitConditionType };
 
-            var objectContext = this.SessionContextProvider.GetOrCreateCurrentObjectContext();
+            var sessionContext = this.SessionContextProvider.GetOrCreateCurrentSessionContext();
 
-            var refStaff = objectContext.GetObject<Staff>(RefStaff.ID);
+            var refStaff = sessionContext.ObjectContext.GetObject<Staff>(RefStaff.ID);
 
             var staffUnits = new List<StaffUnit>();
             foreach (var unit in refStaff.Units)
@@ -255,14 +257,14 @@ namespace CustomConditionTypesDesignerExtension
             Guid conditionTypeId = item.ConditionTypeId;
             var value = item.Value;
 
-            var objectContext = this.SessionContextProvider.GetOrCreateCurrentObjectContext();
+            var sessionContext = this.SessionContextProvider.GetOrCreateCurrentSessionContext();
 
             if (conditionTypeId == Constants.ConditionTypes.GroupsConditionType)
             {
                 if (value != null)
                 {
                     var id = Guid.Parse(value);
-                    var group = objectContext.GetObject<StaffGroup>(id);
+                    var group = sessionContext.ObjectContext.GetObject<StaffGroup>(id);
                     displayName = group.Name;
                 }
                 else
@@ -275,7 +277,7 @@ namespace CustomConditionTypesDesignerExtension
                 if (value != null)
                 {
                     var id = Guid.Parse(value);
-                    var unit = objectContext.GetObject<StaffUnit>(id);
+                    var unit = sessionContext.ObjectContext.GetObject<StaffUnit>(id);
                     displayName = unit.Name;
                 }
                 else
@@ -288,7 +290,7 @@ namespace CustomConditionTypesDesignerExtension
                 if (value != null)
                 {
                     var id = Guid.Parse(value);
-                    var role = objectContext.GetObject<StaffRole>(id);
+                    var role = sessionContext.ObjectContext.GetObject<StaffRole>(id);
                     displayName = role.Name;
                 }
                 else

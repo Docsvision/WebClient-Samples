@@ -5,9 +5,11 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка
 
@@ -15,11 +17,11 @@
 2. Собрать проект ServerExtensions > CustomConditionTypes > CustomConditionTypesDesignerExtension
 3. Собрать проект ServerExtensions > CustomConditionTypes > CustomConditionTypesLayoutExtension
 4. Собрать проект ServerExtensions > CustomConditionTypes > CustomConditionTypesInterfaces
-4. Скопировать каталог SamplesOutput\Plugins\CustomConditionTypesDesignerExtension в каталог "Путь к установленному Web-клиент\Plugins"
-5. Скопировать каталог SamplesOutput\Plugins\CustomConditionTypesInterfaces в каталог "Путь к установленному Web-клиент\Plugins"
-6. Скопировать каталог SamplesOutput\Site\Extensions\CustomConditionTypesInterfaces в каталог "Путь к установленному Web-клиент\Site\Extensions"
-7. Скопировать каталог SamplesOutput\Site\Extensions\CustomConditionTypesLayoutExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-8. Перезапустить IIS
+5. Скопировать каталог SamplesOutput\Plugins\CustomConditionTypesDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
+6. Скопировать каталог SamplesOutput\Plugins\CustomConditionTypesInterfaces в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
+7. Скопировать каталог SamplesOutput\Site\Extensions\CustomConditionTypesInterfaces в каталог "Путь к сайту Web-клиента\Extensions"
+8. Скопировать каталог SamplesOutput\Site\Extensions\CustomConditionTypesLayoutExtension в каталог "Путь к сайту Web-клиента\Extensions"
+9. Перезапустить Web-сервис
 
 ## Проверка примера
 

@@ -1,4 +1,4 @@
-import { SampleExchangeRates } from "./Controls/SampleExchangeRates/SampleExchangeRates";
+﻿import { SampleExchangeRates } from "./Controls/SampleExchangeRates/SampleExchangeRates";
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 
 // Данный файл является входной точкой для сборки расширения.
@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "SampleExchangeRates",
-    version: "5.5.17",
+    version: "6.1",
     controls: [{ controlTypeName: "SampleExchangeRates", constructor: SampleExchangeRates }]
 });

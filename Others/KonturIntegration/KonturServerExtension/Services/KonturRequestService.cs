@@ -5,13 +5,15 @@ using DocsVision.Platform.WebClient;
 using DocsVision.Platform.WebClient.Configuration;
 using DocsVision.Platform.WebClient.Models;
 using DocsVision.Platform.WebClient.Web;
+using Kontur.Models;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace Kontur.Services
 {
@@ -23,26 +25,26 @@ namespace Kontur.Services
     /// </remarks>
     public class KonturRequestService : IKonturRequestService
     {
-        readonly string konturKey = "";
         const string urlTemplate = "https://focus-api.kontur.ru/api3/{0}?key={2}&{1}";
         const string briefReportpdfMethod = "briefReport";
         HttpClient client = new HttpClient();
         IEnvironmentService environmentService;
+        readonly KonturSettings settings;
 
-        public KonturRequestService(IConfigurationProvider configurationProvider, IEnvironmentService environmentService)
+        public KonturRequestService(IEnvironmentService environmentService, IOptions<KonturSettings> settings)
         {
-            this.konturKey = configurationProvider.GetSetting<string>(Constants.KonturKeySetting);
             this.environmentService = environmentService;
+            this.settings = settings.Value;
         }
 
         public Task<string> PreformGetFromContur(string method, string parameters)
         {
-            return client.GetStringAsync(new Uri(String.Format(urlTemplate, method, parameters, konturKey), UriKind.Absolute));
+            return client.GetStringAsync(new Uri(String.Format(urlTemplate, method, parameters, settings.ApiKey), UriKind.Absolute));
         }
 
         public Task<Stream> PreformGetFromConturEx(string method, string parameters)
         {
-            return client.GetStreamAsync(new Uri(String.Format(urlTemplate, method, parameters, konturKey), UriKind.Absolute));
+            return client.GetStreamAsync(new Uri(String.Format(urlTemplate, method, parameters, settings.ApiKey), UriKind.Absolute));
         }
 
         public async System.Threading.Tasks.Task AddKonturReportToCard(SessionContext sessionContext, Guid cardId, string fileName, string parameters)

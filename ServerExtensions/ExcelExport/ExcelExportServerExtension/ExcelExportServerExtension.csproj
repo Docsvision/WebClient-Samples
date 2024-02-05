@@ -1,45 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{38DCBE49-744C-4429-9D9F-AEAEAC7A1782}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelExportServerExtension</RootNamespace>
-    <AssemblyName>ExcelExportServerExtension</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <Deterministic>true</Deterministic>
+    <AssemblyTitle>Excel Export Server Extension</AssemblyTitle>
+    <Description>Пример серверного расширения, позволяющего вмешаться в процесс экспорта представления в Excel</Description>
+    <Company>Docsvision</Company>
+    <Product>ExcelExportServerExtension</Product>
+    <Copyright>Copyright © 2022 Docsvision</Copyright>
+    <AssemblyVersion>5.5.17.0</AssemblyVersion>
+    <FileVersion>5.5.17.0</FileVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
     <OutputPath>..\..\..\bin\WebClientBin\ExcelExportServerExtension\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <NoWarn>1701;1702;NU1803</NoWarn>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Autofac">
-      <HintPath>..\..\..\Assemblies\Autofac\Autofac.dll</HintPath>
-    </Reference>
-    <Reference Include="Autofac.Extras.Ordering">
-      <HintPath>..\..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
-    </Reference>
-    <Reference Include="ClosedXML">
-      <HintPath>..\..\..\Assemblies\Others\ClosedXML.dll</HintPath>
-    </Reference>
     <Reference Include="DocsVision.Platform.WebClient">
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
     </Reference>
@@ -50,32 +24,26 @@
       <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.WebClient.Extensibility.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="System">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Web" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExcelExportServerExtension.cs" />
-    <Compile Include="ExcelExport\ExcelExportExampleService.cs" />
-    <Compile Include="Models\GridColumnModel.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <PackageReference Include="Autofac" Version="7.1.0" />
+    <PackageReference Include="ClosedXML" Version="0.102.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
-  <ItemGroup />
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
     <PostBuildEvent>if exist "$(TargetDir)Autofac.dll" del /Q "$(TargetDir)Autofac.dll"
 if exist "$(TargetDir)Autofac.Extras.Ordering.dll" del /Q "$(TargetDir)Autofac.Extras.Ordering.dll"
-xcopy "$(TargetDir)$(TargetName).dll" "$(SamplesOutput)\Site\Extensions\$(TargetName)\" /Y /I
-xcopy "$(TargetDir)$(TargetName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
+xcopy "$(TargetDir)$(MSBuildProjectName).dll" "$(SamplesOutput)\Site\Extensions\$(MSBuildProjectName)\" /Y /I
+xcopy "$(TargetDir)$(MSBuildProjectName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <NoWarn>1701;1702;NU1803</NoWarn>
   </PropertyGroup>
 </Project>

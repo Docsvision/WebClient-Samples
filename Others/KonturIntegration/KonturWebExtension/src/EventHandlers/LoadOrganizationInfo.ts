@@ -52,19 +52,16 @@ export async function loadOrganizationInfo(sender: LayoutControl) {
 }
 
 async function loadOrganizationData(sender: LayoutControl, method: string, parameters: string) {
-    let dataStr = await sender.layout.getService($KonturRequestController).getFromKontur(method, parameters);
-    let data;
-    if (dataStr) {
-        try {
-            data = JSON.parse(dataStr);
+    try {
+        let data = await sender.layout.getService($KonturRequestController).getFromKontur(method, parameters);
+        if (!data) {
+            MessageBox.ShowWarning("Информация об организации не найдена!");
         }
-        catch (err) {
-            console.error(err);
-            MessageBox.ShowWarning("Ошибка при загрузке организации: " + err);
-        }
+        return data;
     }
-    else {
-        MessageBox.ShowWarning("Информация об организации не найдена!");
+    catch (err) {
+        console.error(err);
+        MessageBox.ShowWarning("Ошибка при загрузке организации: " + err);
+        return null;
     }
-    return data;
 }

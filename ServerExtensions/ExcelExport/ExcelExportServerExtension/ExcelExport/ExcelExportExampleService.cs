@@ -1,14 +1,12 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using DocsVision.WebClient.Models.Grid;
+using DocsVision.WebClient.Services.ExcelExport;
+using ExcelExportServerExtension.Models;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.IO;
 using System.Linq;
-using ExcelExportServerExtension.Models;
-using DocsVision.WebClient.Models.Grid;
-using DocsVision.WebClient.Services.ExcelExport;
-using ClosedXML.Excel;
 
 namespace ExcelExportServerExtension.ExcelExport
 {

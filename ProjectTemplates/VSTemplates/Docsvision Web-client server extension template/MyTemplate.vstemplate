@@ -1,0 +1,43 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Docsvision Web-client server extension template</Name>
+    <Description>
+    </Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>DocsvisionWebclientServerExtension</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="TemplateServerExtension.csproj" File="TemplateServerExtension.csproj" ReplaceParameters="true">
+      <Folder Name="Properties" TargetFolderName="Properties">
+        <ProjectItem ReplaceParameters="true" TargetFileName="AssemblyInfo.cs">AssemblyInfo.cs</ProjectItem>
+      </Folder>
+      <Folder Name=".vs" TargetFolderName=".vs" />
+      <Folder Name="Feature1" TargetFolderName="Feature1">
+        <Folder Name="Models" TargetFolderName="Models">
+          <ProjectItem ReplaceParameters="true" TargetFileName="Action1Request.cs">Action1Request.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="Action1Response.cs">Action1Response.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Feature1Controller.cs">Feature1Controller.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="Feature1Service.cs">Feature1Service.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="IFeature1Service.cs">IFeature1Service.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Readme.md">Readme.md</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Readme.md">vstg0001.md</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resource.resx">Resource.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resource.Designer.cs">Resource.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resource.ru.resx">Resource.ru.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="ServerExtension.cs">ServerExtension.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sign.snk">Sign.snk</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sign.snk">vstg0002.snk</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -8,9 +8,9 @@
 
 ### Сборка и установка
 
-1. Убедитесь, что установлен Docsvision WebClient SDK (в частности, в этом случае в переменной окружения DocsvisionWebClientSDK содержится путь к его папке, например, C:\Program Files (x86)\Docsvision\WebClient\5.5\SDK\).
+1. Убедитесь, что установлен Docsvision WebClient SDK (в частности, в этом случае в переменной окружения DocsvisionWebClientSDK содержится путь к его папке, например, C:\Program Files (x86)\Docsvision\WebClient\SDK\).
 2. Соберите проект в VisualStudio.
-3. Скопируйте $safeprojectname$.dll и $safeprojectname$.dll.pdb из папки "bin\WebClientBin" в `<Каталог установки Web-клиента>\Site\bin`.
+3. Скопируйте $safeprojectname$.dll и $safeprojectname$.dll.pdb из папки "bin\WebClientBin" в `<Каталог установки Web-клиента>\Extensions`.
 
 ### Проверка работы
 

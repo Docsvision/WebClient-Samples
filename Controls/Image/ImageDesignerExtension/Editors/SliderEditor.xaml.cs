@@ -13,12 +13,14 @@ using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
 using DocsVision.Platform.Tools.LayoutEditor.PropertiesEditor;
 using Xceed.Wpf.Toolkit.PropertyGrid;
 using Xceed.Wpf.Toolkit.PropertyGrid.Editors;
+using System.Runtime.Versioning;
 
 namespace ImageDesignerExtension.Editors
 {
     /// <summary>
     /// Логика взаимодействия для SliderModeEditor.xaml
     /// </summary>
+    [SupportedOSPlatform("windows")]
     internal partial class SliderEditor : UserControl, ITypeEditor, INotifyPropertyChanged
     {
         #region Private fields

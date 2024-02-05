@@ -1,4 +1,4 @@
-import { SampleCheckBox } from "./Controls/SampleCheckBox/SampleCheckBox";
+﻿import { SampleCheckBox } from "./Controls/SampleCheckBox/SampleCheckBox";
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 
 // Данный файл является входной точкой для сборки расширения.
@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение
 extensionManager.registerExtension({
     name: "SampleCheckBox",
-    version: "5.5.17",
+    version: "6.1",
     controls: [{ controlTypeName: "SampleCheckBox", constructor: SampleCheckBox }]
 });

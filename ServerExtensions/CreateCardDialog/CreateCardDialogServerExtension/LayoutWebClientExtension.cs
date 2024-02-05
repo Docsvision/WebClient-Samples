@@ -7,6 +7,7 @@ using Autofac;
 using DocsVision.ApprovalDesigner.CardLib.CardDefs;
 using DocsVision.WebClient.Extensibility;
 using DocsVision.WebClientLibrary.ObjectModel.Services.EntityLifeCycle;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CreateCardDialogServerExtension
 {
@@ -20,7 +21,7 @@ namespace CreateCardDialogServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -47,9 +48,9 @@ namespace CreateCardDialogServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<ApprovalStageCardLifeCycle>().As<ICardLifeCycleEx>().WithParameter("cardTypeId", CardApprovalStage.ID).SingleInstance();
+            services.AddTransient<ICardLifeCycleEx, ApprovalStageCardLifeCycle>();
         }
 
         /// <summary>

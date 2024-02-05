@@ -49,7 +49,7 @@ namespace WebService.Helpers
         /// </summary>
         /// <param name="serviceType">service type</param>
         /// <returns>specified service instance</returns>
-		public object GetService(Type serviceType)
+		public object? GetService(Type serviceType)
         {
             return serviceType == typeof(UserSession) ? Session : null;
         }

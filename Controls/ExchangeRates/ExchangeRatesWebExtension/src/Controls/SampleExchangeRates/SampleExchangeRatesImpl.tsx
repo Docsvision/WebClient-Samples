@@ -15,8 +15,8 @@ export class SampleExchangeRatesImpl extends BaseControlImpl<SampleExchangeRates
 		super(props, state);
 	}
 
-	async componentWillMount() {
-		super.componentWillMount();
+	async componentDidMount() {
+		super.componentDidMount()
 
 		const url = formatString(exchangeRatesSourceUrl, this.props.apiToken);
 		const response = await fetch(url);

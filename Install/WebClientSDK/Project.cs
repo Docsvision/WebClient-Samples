@@ -11,13 +11,12 @@ namespace WebClientSDK
     {
         public static void Build(Dictionary<string, string> Localization)
         {
-            var ProductName = string.Format("{0} {1} SDK", Localization["WebClient"], BuildInfo.WebClientDisplayVersion);
             var project = new ManagedProject
             {
-                Name = ProductName,
+                Name = Localization["ProductName"],
                 OutFileName = Constants.OutFileName,
                 UpgradeCode = new Guid(Constants.UpgradeCode),
-                Version = new Version(BuildInfo.FileVersion),
+                Version = new Version(Environment.GetEnvironmentVariable("BUILD_NUMBER") ?? "1.0.0.0"),
                 InstallScope = InstallScope.perMachine,
                 LicenceFile = Constants.LicenceFile,
                 BackgroundImage = Constants.BackgroundImage,
@@ -70,7 +69,7 @@ namespace WebClientSDK
 
                 ControlPanelInfo =
                 {
-                    Comments = string.Format("{0} {1}", Localization["Comments"], ProductName),
+                    Comments = string.Format("{0} {1}", Localization["Comments"], Localization["ProductName"]),
                     HelpLink = Constants.UrlSupport,
                     HelpTelephone = Constants.UrlSupport,
                     UrlInfoAbout = Constants.UrlManufacturer,

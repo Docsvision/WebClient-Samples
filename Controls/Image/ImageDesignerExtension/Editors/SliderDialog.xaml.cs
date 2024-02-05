@@ -9,12 +9,14 @@ using System.Windows;
 using System.Windows.Input;
 using DocsVision.Platform.Tools.LayoutEditor.Helpers;
 using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
+using System.Runtime.Versioning;
 
 namespace ImageDesignerExtension.Editors
 {
     /// <summary>
     /// Логика взаимодействия для SliderDialog.xaml
     /// </summary>
+    [SupportedOSPlatform("windows")]
     internal partial class SliderDialog : Window, INotifyPropertyChanged
     {
         #region Private fields

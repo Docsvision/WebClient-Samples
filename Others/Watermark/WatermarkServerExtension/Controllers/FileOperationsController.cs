@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DocsVision.Platform.WebClient.Web;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -15,13 +18,15 @@ using WatermarkServerExtension.Services;
 namespace WatermarkServerExtension.Controllers
 {
     // Контроллер получения-записи файлов карточки
-    public class FileOperationsController : ApiController
+    public class FileOperationsController : ControllerBase
     {
-        IFileService fileService;
+        private readonly IFileService fileService;
+        private readonly IEnvironmentService environmentService;
 
-        public FileOperationsController(IFileService fileService)
+        public FileOperationsController(IFileService fileService, IEnvironmentService environmentService)
         {
             this.fileService = fileService;
+            this.environmentService = environmentService;
         }
 
         // Возвращает файл из карточки файла с версиями с ИД fileCardID 
@@ -40,51 +45,22 @@ namespace WatermarkServerExtension.Controllers
 
         // Добавляет в карточку файлы из запроса
         [HttpPost]
-        public async Task<HttpResponseMessage> AddFile()
+        public async Task<ActionResult> AddFile([FromForm(Name = "file")] FormFileCollection formFiles, Guid cardId)
         {
 
-            // Проверяем формат содержимого запроса
-            if (!Request.Content.IsMimeMultipartContent())
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.UnsupportedMediaType, "Ошибка в формате входных данных");
-            }
-
             string rootPath = CreateAndGetTempFolder();
-            MultipartFormDataStreamProvider provider;
-
             try
             {
-                provider = new MultipartFormDataStreamProvider(rootPath);
-            }
-            catch (Exception ex)
-            {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, $"Ошибка при работе с временными данными: {ex.Message}");
-            }
-
-            try
-            {
-                // Читаем данные из запроса
-                await Request.Content.ReadAsMultipartAsync(provider);
-
-                // Если не передали файлы для добавления
-                if (provider.FileData.Count < 1)
-                {
-                    return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, "В запросе не переданы файлы для получения");
-                }
-
-                // Идентификатор карточки, в которую добавляются файлы
-                Guid cardId = GetCardIdFromResponse(provider.FormData);
-
                 // Добавляемые файлы
-                List<string> files = await SaveFilesFromResponse(provider.FileData);
+                List<string> files = await SaveFilesFromResponse(formFiles);
                 
                 await fileService.AddFilesToCard(cardId, files);
-                return Request.CreateResponse(HttpStatusCode.OK);
+                return Ok();
 
             }
             catch (Exception e)
             {
-                return Request.CreateErrorResponse(HttpStatusCode.InternalServerError, e.Message);
+                return Problem(statusCode: (int)HttpStatusCode.InternalServerError, detail: e.Message);
             }
         }
 
@@ -103,31 +79,31 @@ namespace WatermarkServerExtension.Controllers
         // Создаёт временную папку на сервере для загружаемых файлов
         private string CreateAndGetTempFolder() {
             // Устанавливаем каталог для оперативного сохранения файлов
-            string serverRoot = HttpContext.Current.Server.MapPath("~/App_Data");
-            string rootPath = Path.Combine(serverRoot, Path.GetRandomFileName());
+            string rootPath = Path.Combine(environmentService.SiteRootDir, Path.GetRandomFileName());
+
             Directory.CreateDirectory(rootPath);
             return rootPath;
         }
 
 
         // Сохраняет файлы из запроса на диск
-        private async Task<List<string>> SaveFilesFromResponse(Collection<MultipartFileData> fileData)
+        private async Task<List<string>> SaveFilesFromResponse(FormFileCollection fileData)
         {
             // Пути к копиям оперативных файлов (полученных IIS автоматически), которые будут добавляться в карточки
             var naturalFiles = new List<string>();
 
             // Загружаем файлы из запроса
-            foreach (MultipartFileData file in fileData)
+            foreach (var file in fileData)
             {
                 string tempFolderForFile = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
                 Directory.CreateDirectory(tempFolderForFile);
 
                 // Устанавиваем настоящее название для оперативного файла
-                string naturalFileName = Path.Combine(tempFolderForFile, file.Headers.ContentDisposition.FileName);
+                string naturalFileName = Path.Combine(tempFolderForFile, file.FileName);
 
-                using (Stream source = File.Open(file.LocalFileName, FileMode.Open))
+                using (Stream source = file.OpenReadStream())
                 {
-                    using (Stream destination = File.Create(naturalFileName))
+                    using (Stream destination = new FileStream(naturalFileName, FileMode.Create))
                     {
                         await source.CopyToAsync(destination);
                     }

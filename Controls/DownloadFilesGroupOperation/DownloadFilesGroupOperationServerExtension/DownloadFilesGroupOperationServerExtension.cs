@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Resources;
 using Autofac;
 using DocsVision.WebClient.Extensibility;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DownloadFilesGroupOperationServerExtension
 {
@@ -18,7 +19,7 @@ namespace DownloadFilesGroupOperationServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public DownloadFilesGroupOperationServerExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -44,7 +45,7 @@ namespace DownloadFilesGroupOperationServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
             
         }
@@ -55,10 +56,8 @@ namespace DownloadFilesGroupOperationServerExtension
         /// <returns></returns>
         protected override List<ResourceManager> GetLayoutExtensionResourceManagers()
         {
-            return new List<ResourceManager>
-            {
-
-            };
+            return new List<ResourceManager>();
+            
         }
 
         #endregion

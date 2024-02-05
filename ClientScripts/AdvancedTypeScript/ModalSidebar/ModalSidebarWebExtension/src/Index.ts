@@ -10,6 +10,10 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // обработчики событий, сервисы и прочие сущности web-приложения.
 extensionManager.registerExtension({
     name: "ShowModalSidebar Web Extension",
+<<<<<<< HEAD
     version: "5.5.17",
+=======
+    version: "6.1",
+>>>>>>> develop
     globalEventHandlers: [ showModalSidebar ]
 })

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Resources;
+using System.Runtime.Versioning;
 using CheckBoxDesignerExtension.Editors;
 using DocsVision.Platform.Tools.LayoutEditor.Extensibility;
 using DocsVision.Platform.Tools.LayoutEditor.Helpers;
@@ -13,6 +14,7 @@ namespace CheckBoxDesignerExtension.Extension
     /// <summary>
     /// Представляет собой пример расширения для редактора разметок
     /// </summary>
+    [SupportedOSPlatform("windows")]
     class SampleWebLayoutsDesignerExtension : WebLayoutsDesignerExtension
     {
         IAllowedOperationsStorage allowedOperationsStorage;
@@ -29,6 +31,7 @@ namespace CheckBoxDesignerExtension.Extension
         /// <summary>
         /// Возвращает <see cref="IAllowedOperationsStorage"/>
         /// </summary>
+        [Obsolete]
         protected IAllowedOperationsStorage AllowedOperationsStorage
         {
             get
@@ -116,6 +119,7 @@ namespace CheckBoxDesignerExtension.Extension
 
                     // Блок свойств Binding
                     PropertyFactory.GetDataSourceProperty(), // Источник данных (отображается только в конструкторе)
+                    PropertyFactory.GetExtendedDataSourceProperty(),  // Расширенный источник данных (отображается только в конструкторе)
                     dataFieldProperty,  // Поле данных (отображается только в конструкторе)
                     PropertyFactory.GetBindingProperty(),    // Свойство binding (не отображается в конструкторе)
                     PropertyFactory.GetEditOperationProperty(), // Режим редактирования (отображается только в конструкторе)                    

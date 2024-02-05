@@ -14,6 +14,7 @@ import "file-saver"
 import { DownloadDocumentFileMode } from './DownloadDocumentFileMode';
 import { showIf } from '@docsvision/webclient/System/CssUtils';
 import FileSaver from 'file-saver';
+import { formatString } from '@docsvision/webclient/System/StringUtils';
 
 export interface DownloadFilesBatchOperationSampleState extends DownloadFilesBatchOperationSampleParams, BaseControlState {
 }
@@ -58,8 +59,9 @@ export class DownloadFilesBatchOperationSampleImpl extends BaseControlImpl<Downl
         let downloadFilesTask = async (row: ITableRowModel) => {
             let errors = [] as BatchOperationErrorInfo[];
             try {
-                let url = this.state.services.urlResolver.resolveApiUrl("GetDocumentFiles", "DownloadFilesBatchOperationSample");
-                let requestAddress = "{0}?documentId={1}".format(url, row.instanceId);
+                let url = this.state.services.urlResolver.resolveApiUrl("GetDocumentFiles", "DownloadFilesGroupOperationSample");
+                let requestAddress = formatString("{0}?documentId={1}", url, row.instanceId);
+                
                 // Запрос списка файлов из карточки row.instanceId для скачивания
                 let fileInfos = await this.state.services.requestManager.get<IFileInfo[]>(requestAddress, {
                     disableDialogsOnErrors: true,
@@ -98,7 +100,7 @@ export class DownloadFilesBatchOperationSampleImpl extends BaseControlImpl<Downl
 
     private async downloadFile(fileInfo: IFileInfo) {
         let url = this.state.services.urlResolver.resolveUrl("Download", "File");
-        let requestAddress = "{0}?fileId={1}".format(url, fileInfo.fileId);
+        let requestAddress = formatString("{0}?fileId={1}", url, fileInfo.fileId);
         let fileData = await this.state.services.requestManager.get(requestAddress, {
             disableDialogsOnErrors: true,
             returnRawResponse: true,
@@ -114,7 +116,7 @@ export class DownloadFilesBatchOperationSampleImpl extends BaseControlImpl<Downl
     private isVisible() {
         let currentFolderId = this.state.services.folders.getCurrentFolderId();
         if (this.state.folders.length == 0){
-            return false;
+            return true;
         }
         if (this.state.folders && this.state.folders.length > 0 && currentFolderId && !this.state.folders.includes(currentFolderId)) {
             return false;

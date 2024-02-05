@@ -10,8 +10,8 @@
   "author": "Docsvision",
   "dependencies": {},
   "devDependencies": {
-    "@docsvision/webclient": "~5.17.0",
-    "@docsvision/webclient-extension-build": "~5.17.0",
+    "@docsvision/webclient": "~6.1.0",
+    "@docsvision/webclient-extension-build": "~6.1.0",
     "concurrently": "^5.3.0"
   }
 }

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
 using System.Text;
 
 namespace ImageDesignerExtension.Editors
@@ -9,6 +10,7 @@ namespace ImageDesignerExtension.Editors
     /// <summary>
     /// Представляет собой вспомогательный класс для режима слайдера
     /// </summary>
+    [SupportedOSPlatform("windows")]
     class SliderModeHelper
     {
         private const char splitSymbol = ';';

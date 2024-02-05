@@ -40,9 +40,8 @@ namespace WebClientSDK.Helpers
                 {
                     if (product.IsInstalled)
                     {
-                        var WebClientInstallLocation = Path.Combine(product.InstallLocation, "5.5");
-                        e.Session["WEBCLIENTDIR"] = WebClientInstallLocation;
-                        e.Session["INSTALLDIR"] = Path.Combine(WebClientInstallLocation, "SDK");
+                        e.Session["WEBCLIENTDIR"] = product.InstallLocation;
+                        e.Session["INSTALLDIR"] = Path.Combine(product.InstallLocation, "SDK");
                         break;
                     }
                 }

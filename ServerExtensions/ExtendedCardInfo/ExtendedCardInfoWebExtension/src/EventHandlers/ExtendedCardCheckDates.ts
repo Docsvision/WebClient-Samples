@@ -1,20 +1,24 @@
 ﻿
 import { DateTimePicker } from "@docsvision/webclient/Platform/DateTimePicker";
 import { $ExtendedCardController } from "../Services/ExtendedCardController";
+import { $MessageBox } from "@docsvision/webclient/System/$MessageBox";
+import { $CardId, $ControlStore } from "@docsvision/webclient/System/LayoutServices";
 
 export async function extendedCardCheckDates(sender: DateTimePicker) {
-    let layout = sender.layout;
-    let service = sender.layout.getService($ExtendedCardController);
-    const response = await service.getExtendedCardModel(layout.cardInfo.id);
+    let cardId = sender.getService($CardId);
+    const controls = sender.getService($ControlStore);
+    let extendedCardController = sender.getService($ExtendedCardController);
+    let messageBox = sender.getService($MessageBox);
+    const response = await extendedCardController.getExtendedCardModel(cardId);
 
     let createDate = new Date(response.createDate);
-    let regDateControl = layout.controls.regDate as DateTimePicker;
+    let regDateControl = controls.regDate as DateTimePicker;
     if (regDateControl.params.value > createDate) {
-        alert('Дата регистрации документа больше даты создания документа');
+        messageBox.showInfo('Дата регистрации документа больше даты создания документа');
     } else if (regDateControl.params.value < createDate) {
-        alert('Дата создания документа больше даты регистрации документа');
+        messageBox.showInfo('Дата создания документа больше даты регистрации документа');
     } else {
-        alert('Дата регистрации документа равна дате создания документа');
+        messageBox.showInfo('Дата регистрации документа равна дате создания документа');
     } 
 }
 

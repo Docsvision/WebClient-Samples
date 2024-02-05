@@ -10,7 +10,7 @@ namespace WatermarkWebToolExtension
         public string DisplayName => "Watermark to PDF";
 
         // Регистрация контроллера расширения
-        public void Register(WebSocketServer server)
+        public void Register(WebSocketSharper.Server.WebSocketServer server)
         {
             // Регистрация контроллера PDFWatermarkController для маршрута Watermark
             server.AddWebSocketService<WatermarkController>("/Watermark");

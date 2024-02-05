@@ -8,8 +8,7 @@ export class SamplePartnersController {
 
     getPartnersInfo(partnerIds: string[]): Promise<any[]> {
         var url = urlStore.urlResolver.resolveUrl("GetPartnersInfo", "SamplePartners");
-        var data = { "partnerIds": partnerIds };
-        return this.services.requestManager.post(url, JSON.stringify(data));
+        return this.services.requestManager.post(url, JSON.stringify(partnerIds));
     }
 }
 

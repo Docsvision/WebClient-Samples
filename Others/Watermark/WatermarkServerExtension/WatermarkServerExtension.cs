@@ -1,5 +1,5 @@
-﻿using Autofac;
-using DocsVision.WebClient.Extensibility;
+﻿using DocsVision.WebClient.Extensibility;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Diagnostics;
 using System.Reflection;
@@ -17,7 +17,7 @@ namespace WatermarkServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public WatermarkServerExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -43,9 +43,9 @@ namespace WatermarkServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-             containerBuilder.RegisterType<FileService>().As<IFileService>().SingleInstance();
+            services.AddSingleton<IFileService, FileService>();
         }
 
         #endregion

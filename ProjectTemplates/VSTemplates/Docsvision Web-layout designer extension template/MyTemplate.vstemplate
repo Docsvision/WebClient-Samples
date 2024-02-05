@@ -1,0 +1,30 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>Docsvision web-layout designer extension template</Name>
+    <Description>
+    </Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>DocsvisionWebLayoutDesignerExtension</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="TemplateDesignerExtension.csproj" File="TemplateDesignerExtension.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="Constants.cs">Constants.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="DesignerExtension.cs">DesignerExtension.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Readme.md">Readme.md</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resources.Designer.cs">Resources.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resources.resx">Resources.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resources.ru.Designer.cs">Resources.ru.Designer.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Resources.ru.resx">Resources.ru.resx</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="Sign.snk">Sign.snk</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

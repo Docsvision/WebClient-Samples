@@ -2,9 +2,12 @@
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Reflection;
 using System.Threading.Tasks;
 using WebService.Interfaces.Models;
+using Microsoft.Extensions.Configuration;
+using WebService;
 
 namespace WebServiceClient
 {
@@ -24,7 +27,7 @@ namespace WebServiceClient
             }
             else
             {
-                HttpResponseMessage response = await client.PostAsJsonAsync("api/Documents/Create", document);
+                HttpResponseMessage response = await client.PostAsJsonAsync("Documents/Create", document);
                 response.EnsureSuccessStatusCode();
 
                 return response;
@@ -33,21 +36,21 @@ namespace WebServiceClient
 
         static async Task<HttpResponseMessage> GetCardAsync(Guid cardId)
         {
-            HttpResponseMessage response = await client.GetAsync($"api/Documents/Get?id={cardId}");
+            HttpResponseMessage response = await client.GetAsync($"Documents/Get?id={cardId}");
 
             return response;
         }
 
         static async Task<HttpResponseMessage> UpdateCardAsync(DocumentModel document)
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync("api/Documents/Update", document);
+            HttpResponseMessage response = await client.PostAsJsonAsync("Documents/Update", document);
 
             return response;
         }
 
         static async Task<HttpResponseMessage> ChangeCardStateAsync(ChangeStateRequestModel changeStateRequestModel)
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync($"api/Documents/Changestate", changeStateRequestModel);
+            HttpResponseMessage response = await client.PostAsJsonAsync($"Documents/Changestate", changeStateRequestModel);
 
             return response;
         }
@@ -60,9 +63,9 @@ namespace WebServiceClient
             {
                 var streamContent = new StreamContent(fstream);
                 content.Add(streamContent, "file", Path.GetFileName(filePath));
-                content.Add(new StringContent(cardId.ToString()),"cardId");
+                content.Add(new StringContent(cardId.ToString()), "cardId");
 
-                HttpResponseMessage response = await client.PostAsync($"api/Documents/UploadFile", content);
+                HttpResponseMessage response = await client.PostAsync($"Documents/UploadFile", content);
                 response.EnsureSuccessStatusCode();
 
                 return response;
@@ -71,14 +74,14 @@ namespace WebServiceClient
 
         static async Task<HttpResponseMessage> DownloadFileAsync(Guid fileId)
         {
-            HttpResponseMessage response = await client.GetAsync($"api/Documents/DownloadFile?fileid={fileId}", HttpCompletionOption.ResponseHeadersRead);
+            HttpResponseMessage response = await client.GetAsync($"Documents/DownloadFile?fileid={fileId}", HttpCompletionOption.ResponseHeadersRead);
 
             response.EnsureSuccessStatusCode();
-            string fileName = response.Content.Headers.ContentDisposition.FileName;
-            var applicationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string? fileName = response.Content.Headers.ContentDisposition?.FileName;
+            var applicationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
             string downloadFileDir = Path.Combine(applicationDirectory, "Downloads");
             Directory.CreateDirectory(downloadFileDir);
-            downloadFileDir = Path.Combine(downloadFileDir, fileName);
+            downloadFileDir = Path.Combine(downloadFileDir, fileName ?? fileId.ToString());
             using (var stream = await response.Content.ReadAsStreamAsync())
             {
                 using (FileStream fsNew = new FileStream(downloadFileDir, FileMode.Create, FileAccess.Write))
@@ -91,25 +94,31 @@ namespace WebServiceClient
 
         static async Task<HttpResponseMessage> DeleteCardAsync(Guid cardId)
         {
-            HttpResponseMessage response = await client.PostAsJsonAsync($"api/Documents/Delete", cardId);
+            HttpResponseMessage response = await client.PostAsJsonAsync($"Documents/Delete", cardId);
 
             return response;
         }
 
         static async Task<HttpResponseMessage> GetTestReportDataAsync(Guid cardId)
         {
-            HttpResponseMessage response = await client.GetAsync($"api/Reports/GetTestReportData?cardId={cardId}");
+            HttpResponseMessage response = await client.GetAsync($"Reports/GetTestReportData?cardId={cardId}");
 
             return response;
         }
 
         static async Task RunAsync()
         {
-            client.BaseAddress = new Uri(Properties.Settings.Default.WebServiceUrl);
+            var configuration = new ConfigurationBuilder().AddJsonFile(Settings.SettingFile);
+            var config = configuration.Build();
+            var connectionString = config.GetSection(Settings.Connection.Section)[Settings.Connection.WebServiceUrl];
+            if (connectionString == null)
+                throw new Exception("WebServiceUrl is not specified");
+
+            client.BaseAddress = new Uri(connectionString);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-            HttpResponseMessage response = null;
+            HttpResponseMessage? response = null;
             try
             {
                 // Создание новой карточки документа
@@ -124,7 +133,7 @@ namespace WebServiceClient
                 response = await CreateCardAsync(document);
                 Guid cardId = Guid.Parse(response.Content.ReadAsStringAsync().Result.Trim('\"'));
                 document.Id = cardId;
-                Console.WriteLine($"URL: {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL: {response.RequestMessage?.RequestUri}");
                 Console.WriteLine($"Query parameters: document: {document}");
                 Console.WriteLine($"Created document card id: {cardId}");
                 Console.WriteLine();
@@ -133,7 +142,7 @@ namespace WebServiceClient
                 Console.WriteLine("############ GET CARD ############");
                 Console.WriteLine();
                 response = await GetCardAsync(cardId);
-                Console.WriteLine($"URL:  {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL:  {response.RequestMessage?.RequestUri}");
                 Console.WriteLine($"Query parameters: cardId: {cardId}");
                 Console.WriteLine($"Document data: {response.Content.ReadAsStringAsync().Result}");
                 Console.WriteLine();
@@ -143,7 +152,7 @@ namespace WebServiceClient
                 Console.WriteLine();
                 document.Name = "NewDocumentName";
                 response = await UpdateCardAsync(document);
-                Console.WriteLine($"URL:  {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL:  {response.RequestMessage?.RequestUri}");
                 Console.WriteLine($"Query parameters: document: {document}");
                 Console.WriteLine($"Document data: {response.StatusCode}");
                 Console.WriteLine();
@@ -152,11 +161,11 @@ namespace WebServiceClient
                 Console.WriteLine("############ UPLOAD FILE ############");
                 Console.WriteLine();
 
-                var applicationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                var applicationDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)!;
                 var uploadFileName = Path.Combine(applicationDirectory, "testfile.txt");
 
                 response = await UploadFileAsync(uploadFileName, cardId);
-                Console.WriteLine($"URL:  {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL:  {response.RequestMessage?.RequestUri}");
                 Console.WriteLine($"Query parameters: uploadFileName: {uploadFileName}, cardId: {cardId}");
                 Guid fileId = Guid.Parse(response.Content.ReadAsStringAsync().Result.Trim('\"'));
                 Console.WriteLine($"Response: newFileId: {fileId}");
@@ -172,7 +181,7 @@ namespace WebServiceClient
                     OperationId = new Guid("68c039da-d2e4-4c01-975a-eed6ca0b17a7")
                 };
                 response = await ChangeCardStateAsync(changeStateRequestModel);
-                Console.WriteLine($"URL:  {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL:  {response.RequestMessage?.RequestUri}");
                 Console.WriteLine(
                     $"Query parameters: cardId: {cardId}, operationId:{changeStateRequestModel.OperationId}");
                 Console.WriteLine($"Document data: {response.StatusCode}");
@@ -182,7 +191,7 @@ namespace WebServiceClient
                 Console.WriteLine("############ DOWNLOAD FILE ############");
                 Console.WriteLine();
                 response = await DownloadFileAsync(fileId);
-                Console.WriteLine($"URL:  {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL:  {response.RequestMessage?.RequestUri}");
                 Console.WriteLine($"Query parameters: fileId: {fileId}");
                 Console.WriteLine($"Response: {response.StatusCode}");
                 Console.WriteLine();
@@ -191,7 +200,7 @@ namespace WebServiceClient
                 Console.WriteLine("############ CARD REPORT ############");
                 Console.WriteLine();
                 response = await GetTestReportDataAsync(cardId);
-                Console.WriteLine($"URL:  {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL:  {response.RequestMessage?.RequestUri}");
                 Console.WriteLine($"Query parameters: cardId: {cardId}");
                 Console.WriteLine($"Response: {response.Content.ReadAsStringAsync().Result}");
                 Console.WriteLine();
@@ -200,7 +209,7 @@ namespace WebServiceClient
                 Console.WriteLine("############ DELETE CARD ############");
                 Console.WriteLine();
                 response = await DeleteCardAsync(cardId);
-                Console.WriteLine($"URL:  {response.RequestMessage.RequestUri}");
+                Console.WriteLine($"URL:  {response.RequestMessage?.RequestUri}");
                 Console.WriteLine($"Query parameters: cardId: {cardId}");
                 Console.WriteLine($"Response: {response.StatusCode}");
                 Console.WriteLine();

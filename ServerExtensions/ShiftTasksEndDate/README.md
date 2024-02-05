@@ -5,20 +5,22 @@
 
 ## Настройка среды
 
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
+
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > ShiftTasksEndDate > ShiftTasksEndDateServerExtension
 3. Открыть консоль в папке ServerExtensions > ShiftTasksEndDate > ShiftTasksEndDateWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
-4. Скопировать каталог SamplesOutput\Site\Extensions\ShiftTasksEndDateServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-5. Скопировать файл SamplesOutput\Site\Extensions\ru\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\ru"
-6. Скопировать файл SamplesOutput\Site\Extensions\uk\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к установленному Web-клиент\Site\Extensions\uk"
-7. Скопировать каталог SamplesOutput\Site\Content\Modules\ShiftTasksEndDateWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
-8. Перезапустить IIS
+4. Скопировать каталог SamplesOutput\Site\Extensions\ShiftTasksEndDateServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
+5. Скопировать файл SamplesOutput\Site\Extensions\ru\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к сайту Web-клиента\Extensions\ru"
+6. Скопировать файл SamplesOutput\Site\Extensions\uk\ShiftTasksEndDateServerExtension.resources.dll в каталог "Путь к сайту Web-клиента\Extensions\uk"
+7. Скопировать каталог SamplesOutput\Site\Content\Modules\ShiftTasksEndDateWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
+8. Перезапустить Web-сервис
 
 ## Проверка примера
 
@@ -27,7 +29,7 @@
 3. Выбрать условия использования этой разметки
 4. В разметке редактирования на событие OnCardSaved элемента root прикрепляем обработчик с названием shiftTasksEndDate 
 5. Сохранить разметку
-6. Перезапустить IIS
+6. Перезапустить Web-сервис
 7. Создать карточку документа
 8. Добавить дочерние задания (не группы заданий), отправить на исполнение
 9. Нажать на редактирование карточки, изменить что-нибудь, сохранить

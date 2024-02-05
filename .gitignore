@@ -14,6 +14,7 @@
 *.user
 *.userosscache
 *.sln.docstates
+launchSettings.json
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
@@ -112,3 +113,5 @@ copy-definitions.bat
 # BuildTasks
 Binaries_WebClient/*
 WebClient/*
+ClientScripts/TypeScript/Output
+Others/ExternalWebService/WebService/App_Data

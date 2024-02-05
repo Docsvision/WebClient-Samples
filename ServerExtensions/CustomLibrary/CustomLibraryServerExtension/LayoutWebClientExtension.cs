@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Reflection;
-using System.Web.Mvc;
 using Autofac;
 using CustomLibraryServerExtension.Controllers;
 using CustomLibraryServerExtension.Services;
@@ -10,6 +9,7 @@ using DocsVision.Platform.ObjectModel;
 using DocsVision.Platform.ObjectModel.Mapping;
 using CustomLibrary.ObjectModel.Mapping;
 using DocsVision.WebClient.Extensibility;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace CustomLibraryServerExtension
 {
@@ -23,7 +23,7 @@ namespace CustomLibraryServerExtension
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
         public LayoutWebClientExtension(IServiceProvider serviceProvider)
-            : base(serviceProvider)
+            : base()
         {
         }
 
@@ -49,9 +49,9 @@ namespace CustomLibraryServerExtension
         /// Регистрация типов в IoC контейнере
         /// </summary>
         /// <param name="containerBuilder"></param>
-        public override void InitializeContainer(ContainerBuilder containerBuilder)
+        public override void InitializeServiceCollection(IServiceCollection services)
         {
-            containerBuilder.RegisterType<CustomLibraryService>().As<ICustomLibraryService>().SingleInstance();
+            services.AddSingleton<ICustomLibraryService, CustomLibraryService>();
         }
 
         public override void OnObjectContextCreate(ObjectContext objectContext)

@@ -3,14 +3,14 @@ using DocsVision.Platform.WebClient.Models;
 using DocsVision.Platform.WebClient.Models.Generic;
 using ServerExtension.Feature1.Models;
 using System;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ServerExtension.Feature1
 {
     /// <summary>
     /// Контроллер регистрирует конечные точки серверного API.
     /// </summary>
-    public class Feature1Controller : ApiController
+    public class Feature1Controller : ControllerBase
     {
         private readonly ICurrentObjectContextProvider _currentObjectContextProvider;
         private readonly IFeature1Service _feature1Service;
@@ -33,7 +33,7 @@ namespace ServerExtension.Feature1
         /// <param name="request">Параметры из тела запроса.</param>
         /// <remarks>Атрибут HttpPost или HttpGet указывает на вид обрабатываемого запроса.</remarks>
         [HttpPost]
-        public CommonResponse<Action1Response> Action1(Action1Request request)
+        public CommonResponse<Action1Response> Action1([FromBody] Action1Request request)
         {
             // Объект sessionContext необходимо получать в начале каждого запроса.
             // Использовать повторно объект между запросами нельзя.

@@ -10,11 +10,13 @@
 - KonturWebExtension – папка с клиентским расширением, в котором реализовано открытие отчета о контрагенте и загрузка информации.
 - KonturSolution.xml - решение с разметкой для организации контрагента, содержащее разметку с необходимыми обработчиками и контролами.
 
-## Настройка среды разработки
+## Настройка среды
+
+Пример рассчитан на версию Web-клиента 18 (6.1) или выше.
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [Visual Studio 2022](https://www.visualstudio.com)
+* [NodeJS v16.20.0+](https://nodejs.org/en/)
 
 ## Сборка проекта
 
@@ -35,9 +37,9 @@
 
 3. Публикация компонентов на сервере Web-клиент.
 
-   1. Скопируйте папку `SamplesOutput\Site\Content\Modules\KonturWebExtension\` в  `<Каталог установки Web-клиента>\Site\Content\Modules`.
-   2. Скопируйте папку `SamplesOutput\Site\Extensions\KonturServerExtension` в  `<Каталог установки Web-клиента>\Site\Extensions`.
-   3. Перезапустите IIS.
+   1. Скопируйте папку `SamplesOutput\Site\Content\Modules\KonturWebExtension\` в  `Путь к сайту Web-клиента\Content\Modules`.
+   2. Скопируйте папку `SamplesOutput\Site\Extensions\KonturServerExtension` в  `Путь к сайту Web-клиента\Extensions`.
+   3. Перезапустите Web-сервис.
 
 ## Проверка примера
 
@@ -45,7 +47,11 @@
 
 1. В Конструкторе web-разметок импортируйте решение KonturSolution.xml.
 
-2. В web.config Web-клиента добавьте настройку `<Setting Name="KonturKey" Value="ключ доступа к Контур.Фокус" />` в раздел WebClient, указан ваш ключ доступа к API Контур.Фокус.
+2. В appsettings.json Web-клиента добавьте в корневой элемент настройку с ключом доступа к API Контур.Фокус.
+
+    "KonturSettings": {
+        "ApiKey": "..."
+    }
 
 3. Зайдите на разметку с контролом PartnerDepartment (например, создание исходящего документа), откройте окно справочника и нажмите кнопку добавления организации.
 

@@ -9,12 +9,11 @@ using DownloadFilesGroupOperationServerExtension.Modes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.Http;
+using Microsoft.AspNetCore.Mvc;
 
 namespace DownloadFilesGroupOperationServerExtension.Controllers
 {
-    public class DownloadFilesGroupOperationSampleController : ApiController
+    public class DownloadFilesGroupOperationSampleController : ControllerBase
     {
         private readonly ICurrentObjectContextProvider currentObjectContextProvider;
 

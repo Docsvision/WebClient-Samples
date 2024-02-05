@@ -19,10 +19,10 @@ namespace CheckBoxDesignerExtension {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class Resources {
+    internal class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace CheckBoxDesignerExtension {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Resources.ResourceManager ResourceManager {
+        internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("CheckBoxDesignerExtension.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace CheckBoxDesignerExtension {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        public static global::System.Globalization.CultureInfo Culture {
+        internal static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace CheckBoxDesignerExtension {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        public static string Cancel {
+        internal static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace CheckBoxDesignerExtension {
         /// <summary>
         ///   Looks up a localized string similar to Samples.
         /// </summary>
-        public static string ControlGroup_Samples {
+        internal static string ControlGroup_Samples {
             get {
                 return ResourceManager.GetString("ControlGroup_Samples", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace CheckBoxDesignerExtension {
         /// <summary>
         ///   Looks up a localized string similar to Default value.
         /// </summary>
-        public static string ControlTypes_DefaultValueProperty {
+        internal static string ControlTypes_DefaultValueProperty {
             get {
                 return ResourceManager.GetString("ControlTypes_DefaultValueProperty", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace CheckBoxDesignerExtension {
         /// <summary>
         ///   Looks up a localized string similar to On checked.
         /// </summary>
-        public static string ControlTypes_EventCheckedProperty {
+        internal static string ControlTypes_EventCheckedProperty {
             get {
                 return ResourceManager.GetString("ControlTypes_EventCheckedProperty", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace CheckBoxDesignerExtension {
         /// <summary>
         ///   Looks up a localized string similar to On unchecked.
         /// </summary>
-        public static string ControlTypes_EventUncheckedProperty {
+        internal static string ControlTypes_EventUncheckedProperty {
             get {
                 return ResourceManager.GetString("ControlTypes_EventUncheckedProperty", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace CheckBoxDesignerExtension {
         /// <summary>
         ///   Looks up a localized string similar to CheckBox Sample.
         /// </summary>
-        public static string ControlTypes_SampleCheckBox {
+        internal static string ControlTypes_SampleCheckBox {
             get {
                 return ResourceManager.GetString("ControlTypes_SampleCheckBox", resourceCulture);
             }

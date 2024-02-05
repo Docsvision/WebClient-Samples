@@ -1,4 +1,4 @@
-import { SampleImage } from "./Controls/ImageSample/SampleImage";
+﻿import { SampleImage } from "./Controls/ImageSample/SampleImage";
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 
 // Данный файл является входной точкой для сборки расширения.
@@ -7,6 +7,6 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 // Регистрируем расширение и все его элементы
 extensionManager.registerExtension({
     name: "SampleImage",
-    version: "5.5.17",
+    version: "6.1",
     controls: [{ controlTypeName: "SampleImage", constructor: SampleImage }]
 });

@@ -67,17 +67,17 @@ export class DocumentSignBatchOperationImpl extends BaseControlImpl<DocumentSign
         const saveSignDialogData = async (signOptions: IDigitalSignOptions) => {
             label = signOptions.label;
             selectedMethod = signOptions.method;
-            powerOfAttorneyID = signOptions.powerOfAttorneyID;
+            powerOfAttorneyID = signOptions["powerOfAttorneyID"];
             return { cardInfo: signOptions.cardInfo }
         }
 
         const selectedRows = this.state.services.tableRowSelection.selection.selectedRows;
         try {
             await this.state.services.digitalSignature.showDocumentSignDialog(
-            selectedRows[0].row?.entityId, 
+            selectedRows[0].instanceId, 
             {
-                onCreateSignature: saveSignDialogData,
-                onAttachSignatureToCard: doNothing,
+                onCreateSignature: saveSignDialogData as any,
+                onAttachSignatureToCard: doNothing as any,
             });
         } catch(err) {
             console.log(err);
@@ -111,16 +111,17 @@ export class DocumentSignBatchOperationImpl extends BaseControlImpl<DocumentSign
                         fileName: file.name,
                         versionId: file.currentVersion?.versionId
                     }));
-                    const signResult = await this.state.services.digitalSignature.createDocumentSignature({
+                    const request = {
                         cardId: row.instanceId,
                         method: { isSimple: selectedMethod.isSimple, certificateInfo: { ...selectedMethod.certificateInfo, source: GenModels.SignatureMethodSources.LocalCryptoPro }},
                         label: label,
                         files: documentFilesEx,
                         signAttachments: true,
-                        signFields: true,
-                        powerOfAttorneyID
-                    });
-                    await this.state.services.digitalSignature.attachDocumentSignature(signResult, { disableDialogsOnErrors: true });
+                        signFields: true
+                    } as IDigitalSignOptions;
+                    request["powerOfAttorneyID"] = powerOfAttorneyID;
+                    const signResult = await this.state.services.digitalSignature.createDocumentSignature(request);
+                    await this.state.services.digitalSignature.attachDocumentSignature(signResult);
                 } catch (responseObject) {
                     console.log(responseObject);
                     if (typeof responseObject === "string" && responseObject.includes(resources.Error_AccessDenied)) {

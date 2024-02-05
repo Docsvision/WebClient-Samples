@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Runtime.Versioning;
 using System.Windows.Input;
 using DocsVision.Platform.Tools.LayoutEditor.Infrostructure;
 
@@ -9,6 +10,7 @@ namespace ImageDesignerExtension.Models
     /// <summary>
     /// Представляет собой класс для элемента слайдера
     /// </summary>
+    [SupportedOSPlatform("windows")]
     class SliderItem : INotifyPropertyChanged
     {
         private ICommand clearDescriptionCommand;

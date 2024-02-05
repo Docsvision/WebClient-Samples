@@ -1,12 +1,19 @@
 ﻿using System;
-using System.Web.Http;
-using WebService.Helpers;
+using Microsoft.AspNetCore.Mvc;
+using WebService.Services;
 
 namespace WebService.Controllers
 {
-    public class ReportsController : ApiController
+    public class ReportsController : ControllerBase
     {
-        private Services.IReportService ReportService => WebApiApplication.Instance.GetService<Services.IReportService>();
+        Services.IReportService _reportService;
+        ISessionService _sessionService;
+
+        public ReportsController(Services.IReportService reportService, ISessionService sessionService)
+        {
+            _reportService = reportService;
+            _sessionService = sessionService;
+        }
 
         /// <summary>
         /// Получить отчет по идентификатору карточки
@@ -16,9 +23,9 @@ namespace WebService.Controllers
         [HttpGet]
         public string GetTestReportData(Guid cardId)
         {
-            var sessionContext = SessionHelper.GetSessionContext();
+            var sessionContext = _sessionService.GetSessionContext();
 
-            var cardDescription = ReportService.GetTestReportData(sessionContext, cardId);
+            var cardDescription = _reportService.GetTestReportData(sessionContext, cardId);
 
             return cardDescription;
         }

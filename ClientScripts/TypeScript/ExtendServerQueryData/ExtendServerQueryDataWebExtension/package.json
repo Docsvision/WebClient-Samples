@@ -15,9 +15,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@docsvision/web": "^5.16.0",
-    "@docsvision/webclient": "~5.17.0-beta.13",
-    "@docsvision/webclient-extension-build": "~5.17.0",
+    "@docsvision/web": "^6.1.0",
+    "@docsvision/webclient": "~6.1.0",
+    "@docsvision/webclient-extension-build": "~6.1.0",
     "concurrently": "^5.3.0",
     "effector": "^21.8.11",
     "effector-react": "^21.3.1"

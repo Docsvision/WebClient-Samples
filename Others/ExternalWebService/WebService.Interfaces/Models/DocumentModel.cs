@@ -7,11 +7,11 @@ namespace WebService.Interfaces.Models
     {
         public Guid? Id { get; set; }
         public Guid? KindId { get; set; }
-        public string Name { get; set; }
+        public string? Name { get; set; }
         public DateTime? RegDate { get; set; }
         public Guid? Registrar { get; set; }
-        public ContractModel Contract { get; set; }
-        public List<FileModel> Files { get; set; }
+        public ContractModel? Contract { get; set; }
+        public List<FileModel>? Files { get; set; }
 
         public override string ToString()
         {
