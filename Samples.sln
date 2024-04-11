@@ -117,14 +117,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql", "Sql", "{84AE6F40-AD2
 		Others\ExternalWebService\CardDefs\Sql\TestReport.sql = Others\ExternalWebService\CardDefs\Sql\TestReport.sql
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DownloadFilesGroupOperation", "DownloadFilesGroupOperation", "{F009DC0F-3C88-430E-8A26-AAB682F73392}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DownloadFilesBatchOperationSample", "DownloadFilesBatchOperationSample", "{F009DC0F-3C88-430E-8A26-AAB682F73392}"
 	ProjectSection(SolutionItems) = preProject
-		Controls\DownloadFilesGroupOperation\README.md = Controls\DownloadFilesGroupOperation\README.md
+		Controls\DownloadFilesBatchOperationSample\README.md = Controls\DownloadFilesBatchOperationSample\README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DownloadFilesGroupOperationDesignerExtension", "Controls\DownloadFilesGroupOperation\DownloadFilesGroupOperationDesignerExtension\DownloadFilesGroupOperationDesignerExtension.csproj", "{61298850-2048-437C-9015-9D129409DE98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DownloadFilesBatchOperationSampleDesignerExtension", "Controls\DownloadFilesBatchOperationSample\DownloadFilesBatchOperationSampleDesignerExtension\DownloadFilesBatchOperationSampleDesignerExtension.csproj", "{61298850-2048-437C-9015-9D129409DE98}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DownloadFilesGroupOperationServerExtension", "Controls\DownloadFilesGroupOperation\DownloadFilesGroupOperationServerExtension\DownloadFilesGroupOperationServerExtension.csproj", "{6F7F3317-5B74-48FF-8610-07AC9A9A3190}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DownloadFilesBatchOperationSampleServerExtension", "Controls\DownloadFilesBatchOperationSample\DownloadFilesBatchOperationSampleServerExtension\DownloadFilesBatchOperationSampleServerExtension.csproj", "{6F7F3317-5B74-48FF-8610-07AC9A9A3190}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomConditionTypes", "CustomConditionTypes", "{FAF275D4-E62C-498B-939E-0BBA01C46F48}"
 	ProjectSection(SolutionItems) = preProject

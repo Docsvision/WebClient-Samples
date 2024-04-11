@@ -1,4 +1,4 @@
-﻿namespace DownloadFilesGroupOperationDesignerExtension.Editors
+﻿namespace DownloadFilesBatchOperationSampleDesignerExtension.Editors
 {
     enum DownloadDocumentFileMode
     {

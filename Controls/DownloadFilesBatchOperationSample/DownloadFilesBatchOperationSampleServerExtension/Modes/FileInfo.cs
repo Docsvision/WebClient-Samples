@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DownloadFilesGroupOperationServerExtension.Modes
+namespace DownloadFilesBatchOperationSampleServerExtension.Modes
 {
     public class FileInfo
     {

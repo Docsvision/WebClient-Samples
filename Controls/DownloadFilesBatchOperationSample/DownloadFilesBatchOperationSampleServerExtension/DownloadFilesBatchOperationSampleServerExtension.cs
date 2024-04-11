@@ -7,18 +7,18 @@ using Autofac;
 using DocsVision.WebClient.Extensibility;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace DownloadFilesGroupOperationServerExtension
+namespace DownloadFilesBatchOperationSampleServerExtension
 {
     /// <summary>
     /// Задаёт описание расширения для WebClient, которое задано в текущей сборке
     /// </summary>
-    public class DownloadFilesGroupOperationServerExtension : WebClientExtension
+    public class DownloadFilesBatchOperationSampleServerExtension : WebClientExtension
     {
         /// <summary>
-        /// Создаёт новый экземпляр <see cref="DownloadFilesGroupOperationServerExtension" />
+        /// Создаёт новый экземпляр <see cref="DownloadFilesBatchOperationSampleServerExtension" />
         /// </summary>
         /// <param name="serviceProvider">Сервис-провайдер</param>
-        public DownloadFilesGroupOperationServerExtension(IServiceProvider serviceProvider)
+        public DownloadFilesBatchOperationSampleServerExtension(IServiceProvider serviceProvider)
             : base()
         {
         }
@@ -28,7 +28,7 @@ namespace DownloadFilesGroupOperationServerExtension
         /// </summary>
         public override string ExtensionName
         {
-            get { return Assembly.GetAssembly(typeof(DownloadFilesGroupOperationServerExtension)).GetName().Name; }
+            get { return Assembly.GetAssembly(typeof(DownloadFilesBatchOperationSampleServerExtension)).GetName().Name; }
         }
 
         /// <summary>
