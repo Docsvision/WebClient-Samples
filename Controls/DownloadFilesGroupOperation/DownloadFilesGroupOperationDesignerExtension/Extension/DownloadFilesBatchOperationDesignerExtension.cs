@@ -10,20 +10,20 @@ using DocsVision.Platform.Tools.LayoutEditor.ObjectModel.Descriptions;
 using DocsVision.Platform.Tools.LayoutEditor.Solutions.Interfaces;
 using DocsVision.Platform.WebClient;
 using DocsVision.WebClientLibrary.ObjectModel.Services;
-using DownloadFilesGroupOperationDesignerExtension.Editors;
+using DownloadFilesBatchOperationSampleDesignerExtension.Editors;
 
-namespace DownloadFilesGroupOperationDesignerExtension.Extension
+namespace DownloadFilesBatchOperationSampleDesignerExtension.Extension
 {
     /// <summary>
     /// Представляет собой пример расширения для редактора разметок
     /// </summary>
-    class DownloadFilesGroupOperationDesignerExtension : WebLayoutsDesignerExtension
+    class DownloadFilesBatchOperationSampleDesignerExtension : WebLayoutsDesignerExtension
     {
         /// <summary>
-        /// Создаёт новый экземпляр <see cref="DownloadFilesGroupOperationDesignerExtension"/>
+        /// Создаёт новый экземпляр <see cref="DownloadFilesBatchOperationSampleDesignerExtension"/>
         /// </summary>
         /// <param name="provider">Сервис-провайдер</param>
-        public DownloadFilesGroupOperationDesignerExtension(IServiceProvider provider)
+        public DownloadFilesBatchOperationSampleDesignerExtension(IServiceProvider provider)
             : base(provider)
         {
         }
@@ -36,11 +36,11 @@ namespace DownloadFilesGroupOperationDesignerExtension.Extension
         {
             return new List<ControlTypeDescription>
             {
-                GetDownloadFilesGroupOperationControlTypeDescription()
+                GetDownloadFilesBatchOperationSampleControlTypeDescription()
             };
         }
 
-        private ControlTypeDescription GetDownloadFilesGroupOperationControlTypeDescription()
+        private ControlTypeDescription GetDownloadFilesBatchOperationSampleControlTypeDescription()
         {
             var standardCssClassProperty = this.PropertyFactory.GetStandardCssClassProperty();
             standardCssClassProperty.DefaultValue = "system-download-files-batch-operation";
@@ -48,24 +48,24 @@ namespace DownloadFilesGroupOperationDesignerExtension.Extension
             var downloadDocumentFileMode = new PropertyDescription
             {
                 Type = typeof(int),
-                Name = Constants.DownloadFilesGroupOperation.DownloadDocumentFileModePropertyName,
+                Name = Constants.DownloadFilesBatchOperationSample.DownloadDocumentFileModePropertyName,
                 Category = PropertyCategoryConstants.BehaviorCategory,
                 ItemsSource = typeof(DownloadDocumentFileModeSource),
                 DefaultValue = (int)DownloadDocumentFileMode.All,
-                DisplayName = Resources.DownloadFilesGroupOperation_DownloadDocumentFileModePropertyName
+                DisplayName = Resources.DownloadFilesBatchOperationSample_DownloadDocumentFileModePropertyName
             };
 
             var BatchOperationRestrictionFoldersPropertyDescription = new PropertyDescription
             {
                 Type = typeof(string),
-                Name = Constants.DownloadFilesGroupOperation.BatchOperationRestrictionFoldersPropertyName,
+                Name = Constants.DownloadFilesBatchOperationSample.BatchOperationRestrictionFoldersPropertyName,
                 Category = PropertyCategoryConstants.AppearanceCategory,
-                DisplayName = Resources.DownloadFilesGroupOperation_BatchOperationRestrictionFoldersPropertyName
+                DisplayName = Resources.DownloadFilesBatchOperationSample_BatchOperationRestrictionFoldersPropertyName
             };
 
-            var controlTypeDescription = new ControlTypeDescription(Constants.DownloadFilesGroupOperation.ControlTypeName)
+            var controlTypeDescription = new ControlTypeDescription(Constants.DownloadFilesBatchOperationSample.ControlTypeName)
             {
-                DisplayName = Resources.DownloadFilesGroupOperation_ControlTypeName,
+                DisplayName = Resources.DownloadFilesBatchOperationSample_ControlTypeName,
                 ControlGroupDisplayName = DocsVision.BackOffice.WebLayoutsDesigner.Resource.ControlGroup_BatchOperations,
                 CheckAsChild = (parentControl) =>
                 {

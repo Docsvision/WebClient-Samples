@@ -6,10 +6,10 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("DownloadFilesGroupOperationServerExtension")]
-[assembly: AssemblyDescription("DownloadFilesGroupOperationServerExtension")]
+[assembly: AssemblyTitle("DownloadFilesBatchOperationSampleServerExtension")]
+[assembly: AssemblyDescription("DownloadFilesBatchOperationSampleServerExtension")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("DownloadFilesGroupOperationServerExtension")]
+[assembly: AssemblyProduct("DownloadFilesBatchOperationSampleServerExtension")]
 [assembly: AssemblyCopyright("Copyright © 2022")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

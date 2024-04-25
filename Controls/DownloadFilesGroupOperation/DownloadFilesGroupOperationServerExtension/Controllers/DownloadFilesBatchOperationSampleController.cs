@@ -5,20 +5,20 @@ using DocsVision.Platform.WebClient.Diagnostics;
 using DocsVision.Platform.WebClient.Helpers;
 using DocsVision.Platform.WebClient.Models;
 using DocsVision.Platform.WebClient.Models.Generic;
-using DownloadFilesGroupOperationServerExtension.Modes;
+using DownloadFilesBatchOperationSampleServerExtension.Modes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
 
-namespace DownloadFilesGroupOperationServerExtension.Controllers
+namespace DownloadFilesBatchOperationSampleServerExtension.Controllers
 {
-    public class DownloadFilesGroupOperationSampleController : ApiController
+    public class DownloadFilesBatchOperationSampleSampleController : ApiController
     {
         private readonly ICurrentObjectContextProvider currentObjectContextProvider;
 
-        public DownloadFilesGroupOperationSampleController(ICurrentObjectContextProvider currentObjectContextProvider)
+        public DownloadFilesBatchOperationSampleSampleController(ICurrentObjectContextProvider currentObjectContextProvider)
         {
             this.currentObjectContextProvider = currentObjectContextProvider;
         }
