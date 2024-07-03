@@ -1,0 +1,15 @@
+﻿{
+"ConnectionTypes": {},
+	"TasksTypes": {
+		"SampleTaskDocsvision": {
+			"factory": "SampleWorkerExtension.WorkerService.SampleTaskFactory, SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519"
+		}
+	},
+	"QueuesTypes": {},
+	"ComponentTypes": {},
+	"RoleTypes": {
+		"SampleRole": {
+			"settingsFactory": "SampleWorkerExtension.Roles.SampleRoleSettingsFactory, SampleWorkerExtension.Role, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519"
+		}
+	}
+}
