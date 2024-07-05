@@ -14,7 +14,6 @@ namespace DocsVision.ConversionSampleServerExtension
     /// </summary>
     public class ConversionSampleServerExtension : WebClientExtension
     {
-        private readonly IServiceProvider _serviceProvider;
         /// <summary>
         /// Создаёт новый экземпляр класса <see cref="ConversionSampleServerExtension" />.
         /// </summary>
@@ -22,7 +21,6 @@ namespace DocsVision.ConversionSampleServerExtension
         public ConversionSampleServerExtension(IServiceProvider serviceProvider)
             : base(serviceProvider)
         {
-            _serviceProvider = serviceProvider;
         }
 
         #region Свойства
@@ -60,17 +58,6 @@ namespace DocsVision.ConversionSampleServerExtension
 				.SingleInstance();
 
             containerBuilder.RegisterInstance(Resources.ResourceManager).As<ResourceManager>();
-        }
-
-        protected override WebClientNavigatorExtension GetNavigatorExtension()
-        {
-            var navigatorExtensionInitInfo = new WebClientNavigatorExtensionInitInfo
-            {
-                ExtensionName = ExtensionName,
-                ExtensionVersion = ExtensionVersion
-            };
-
-            return new WebClientNavigatorExtension(navigatorExtensionInitInfo);
         }
 
         #endregion Обработчики событий
