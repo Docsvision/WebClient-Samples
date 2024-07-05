@@ -27,6 +27,8 @@ namespace SampleWorkerExtension.Manager
         private const string NavigatorExtensionTypeName = "DocsVision.Platform.Settings.Navigator.AddIn.NavigatorExtension, DocsVision.Platform.Settings, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519";
         private const string NavigatorAdditionalSettingsGroupName = "AdditionalSettings";
 
+        private Guid CardDocumentDraftingBuiltInStateId = new Guid("B2D12DBF-B344-4827-97F1-3DD6407FB350");
+
         /// <summary>
         /// Initializes instance of <see cref="ISampleManager"/>.
         /// </summary>
@@ -57,13 +59,15 @@ namespace SampleWorkerExtension.Manager
 
         public void Process(SampleEventArgs eventArgs)
         {
+            Document doc = context.GetObject<Document>(eventArgs.CardId);
+            context.RefreshObject<Document>(ref doc);
+
+            if (doc.SystemInfo.State.BuiltInState != CardDocumentDraftingBuiltInStateId)
+                return;
+
             var initTask = Task.Run(async () => await HttpClientInitialize());
             initTask.Wait();
 
-            Document doc = context.GetObject<Document>(eventArgs.CardId);
-            context.RefreshObject<Document>(ref doc);
-            IVersionedFileCardService fileCardService = context.GetService<IVersionedFileCardService>();
-            IDocumentService documentService = context.GetService<IDocumentService>();
             var files = doc.Files.Where(f => f.FileType == DocumentFileType.Main && !f.FileName.EndsWith(".pdf", StringComparison.OrdinalIgnoreCase)).ToList();
             List<Guid> newFiles = new List<Guid>(files.Count);
             foreach (var file in files)
