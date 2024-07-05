@@ -53,7 +53,7 @@
       <HintPath>..\..\..\..\..\..\SamplesGitLab\samples\Assemblies\Autofac\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Autofac.Extras.Ordering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=84578aafd05fb485">
-      <HintPath>..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.ApprovalDesigner.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -65,19 +65,19 @@
     </Reference>
     <Reference Include="DocsVision.BackOffice.WebLayoutsDesignerExtension, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebLayoutsDesignerExtension.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebLayoutsDesignerExtension.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.DVWebTool.WebServices, Version=5.5.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.DVWebTool.WebServices.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.DVWebTool.WebServices.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Layout.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Layout.WebClient.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.Layout.WebClient.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.LayoutEditor.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.LayoutEditor.ObjectModel.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.LayoutEditor.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Platform.ObjectManager, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -101,27 +101,27 @@
     </Reference>
     <Reference Include="DocsVision.Platform.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Platform.WebLayoutsDesignerExtension, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.Platform.WebLayoutsDesignerExtension.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebLayoutsDesignerExtension.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebClient.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.WebClient.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.WebClient.Extensibility, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.WebClientLibrary.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.WebFrame.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\DocsVision.WebFrame.WebClient.dll</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.WebFrame.WebClient.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Workflow.Interfaces, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -171,15 +171,10 @@
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="WebLayoutsDesigner, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Assemblies\Docsvision\WebLayoutsDesigner.exe</HintPath>
+      <HintPath>..\..\..\..\Assemblies\Docsvision\WebLayoutsDesigner.exe</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Feature1\Feature1Controller.cs" />
-    <Compile Include="Feature1\Feature1Service.cs" />
-    <Compile Include="Feature1\IFeature1Service.cs" />
-    <Compile Include="Feature1\Models\Action1Response.cs" />
-    <Compile Include="Feature1\Models\Action1Request.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

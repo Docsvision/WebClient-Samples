@@ -1,5 +1,6 @@
 ﻿using Autofac;
 using DocsVision.WebClient.Extensibility;
+using ServerExtension.Services;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -44,14 +45,7 @@ namespace ServerExtension
         /// <param name="containerBuilder"></param>
         public override void InitializeContainer(ContainerBuilder containerBuilder)
         {
-            // Примеры регистрации различных типов ВК 
-            // containerBuilder.RegisterType<YourServiceClass>().As<YourServiceInterface>().SingleInstance();
-            // containerBuilder.RegisterOrderedType<YourBindingConverterType, IBindingConverter>();
-            // containerBuilder.RegisterOrderedType<YourBindingResolverType, IBindingResolver>();            
-            // containerBuilder.RegisterOrderedType<YourControlResolverType, IControlResolver>();
-            // containerBuilder.RegisterOrderedType<YourPropertyResolverType, IPropertyResolver>();  
-            // containerBuilder.RegisterType<YourCardLifeCycle>().Keyed<ICardLifeCycle>(CardTypeID).SingleInstance();
-            // containerBuilder.RegisterType<YourRowLifeCycle>().Keyed<IRowLifeCycle>(SectionID).SingleInstance(); 
+            containerBuilder.RegisterType<SampleWorkerService>().As<ISampleWorkerService>().SingleInstance();
         }
 
         /// <summary>
