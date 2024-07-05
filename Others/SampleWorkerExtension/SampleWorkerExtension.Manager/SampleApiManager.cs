@@ -26,6 +26,7 @@ namespace SampleWorkerExtension.Manager
 
         private const string NavigatorExtensionTypeName = "DocsVision.Platform.Settings.Navigator.AddIn.NavigatorExtension, DocsVision.Platform.Settings, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519";
         private const string NavigatorAdditionalSettingsGroupName = "AdditionalSettings";
+        private const string WebClientControllerUri = "/api/ConversionFile/AttachPdfa";
 
         private Guid CardDocumentDraftingBuiltInStateId = new Guid("B2D12DBF-B344-4827-97F1-3DD6407FB350");
 
@@ -88,7 +89,12 @@ namespace SampleWorkerExtension.Manager
 
         private async Task ProcessCardFile(Guid docId, Guid fileId)
         {
-            var request = new HttpRequestMessage(HttpMethod.Post, $"{WebClient}/ConversionFile/AttachPdfa?DocumentId={docId}&FileId={fileId}");
+            var request = new HttpRequestMessage(HttpMethod.Post, $"{WebClient}{WebClientControllerUri}");
+            var collection = new List<KeyValuePair<string, string>>();
+            collection.Add(new KeyValuePair<string, string>("DocumentId", docId.ToString()));
+            collection.Add(new KeyValuePair<string, string>("FileId", fileId.ToString()));
+            var content = new FormUrlEncodedContent(collection);
+            request.Content = content;
             var response = await httpClient.SendAsync(request);
             if (!response.IsSuccessStatusCode)
                 throw new Exception($"Error while process file {fileId} in card {docId}");
@@ -114,7 +120,6 @@ namespace SampleWorkerExtension.Manager
 
         private string GetConvertedName(string fileName)
         {
-            string convertedName = string.Empty;
             int i = fileName.LastIndexOf('.');
             return fileName.Substring(0, i) + "_pdfa.pdf";
         }
