@@ -1,4 +1,4 @@
-﻿import * as Feature1Handlers from "./Feature1/Action1EventHandler";
+﻿import * as EventHandlers from "./EventHandlers";
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 
 // Главная входная точка всего расширения
@@ -10,5 +10,5 @@ import { extensionManager } from "@docsvision/webclient/System/ExtensionManager"
 extensionManager.registerExtension({
     name: "Sample worker web extension",
     version: "1.0",
-    globalEventHandlers: [ Feature1Handlers ],
+    globalEventHandlers: [ EventHandlers ],
 })
