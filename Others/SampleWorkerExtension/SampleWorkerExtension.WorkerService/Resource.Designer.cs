@@ -61,6 +61,15 @@ namespace SampleWorkerExtension.WorkerService {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Work on .
+        /// </summary>
+        internal static string SampleEventDescription {
+            get {
+                return ResourceManager.GetString("SampleEventDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Sample extension for worker.
         /// </summary>
         internal static string SampleExtension_Name {
@@ -70,7 +79,7 @@ namespace SampleWorkerExtension.WorkerService {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Event1 has occured.
+        ///   Looks up a localized string similar to Process card files has occured.
         /// </summary>
         internal static string SampleSomeEvent1Id {
             get {

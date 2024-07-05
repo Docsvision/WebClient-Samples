@@ -105,8 +105,9 @@ namespace SampleWorkerExtension.WorkerService
 
             XmlReader reader = XmlReader.Create(new System.IO.StringReader(serialized));
             SampleEventArgs args = (SampleEventArgs)xmlSerializer.Deserialize(reader);
-            //UserSession session = (ServiceProvider.GetService(typeof(IConnectionPool)) as IConnectionPool).GetConnection<UserSession>();
-            return $"My description {args.Data} on id:{args.Id}";
+            UserSession session = (ServiceProvider.GetService(typeof(IConnectionPool)) as IConnectionPool).GetConnection<UserSession>();
+            var cardData = session.CardManager.GetCardData(args.CardId);
+            return $"{Resource.SampleEventDescription} {cardData.Description}({args.CardId})";
 
         }
         private ObjectContext GetObjectContext()

@@ -34,48 +34,40 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>DocsVision2007.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>StrongNameKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DocsVision.BackOffice.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\DocsVision.BackOffice.ObjectModel\v4.0_5.5.0.0__7148afe997f90519\DocsVision.BackOffice.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Git\WorkerService\bin\Debug\DocsVision.Platform.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Platform.ObjectManager, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Docsvision\5.5\Client\DocsVision.Platform.ObjectManager.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Platform.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\DocsVision.Platform.ObjectModel\v4.0_5.5.0.0__7148afe997f90519\DocsVision.Platform.ObjectModel.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.Settings, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.Settings.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Platform.StorageServer, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Windows\Microsoft.NET\assembly\GAC_MSIL\DocsVision.Platform.StorageServer\v4.0_5.5.0.0__7148afe997f90519\DocsVision.Platform.StorageServer.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.Platform.SystemCards.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\Docsvision\5.5\Client\DocsVision.Platform.SystemCards.ObjectModel.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.SystemCards.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Docsvision.WorkerService.Interfaces, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Git\WorkerService\bin\Debug\Docsvision.WorkerService.Interfaces.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.WorkerService.Interfaces.dll</HintPath>
     </Reference>
     <Reference Include="Docsvision.WorkerService.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Git\WorkerService\bin\Debug\Docsvision.WorkerService.ObjectModel.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.WorkerService.ObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -114,9 +106,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resource.ru.resx" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DocsVision2007.snk" />
+    <None Include="..\..\..\StrongNameKey.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

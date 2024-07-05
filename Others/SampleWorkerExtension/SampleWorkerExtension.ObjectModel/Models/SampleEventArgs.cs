@@ -8,14 +8,6 @@ namespace SampleWorkerExtension.ObjectModel.Models
     [Serializable]
     public class SampleEventArgs : EventServiceEventArgs
     {
-        /// <summary>
-        /// Gets ot sets some Data
-        /// </summary>
-        public string Data { get; set; }
 
-        /// <summary>
-        /// Gets or sets some Id
-        /// </summary>
-        public Guid Id { get; set; }
     }
 }

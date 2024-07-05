@@ -2,14 +2,14 @@
 "ConnectionTypes": {},
 	"TasksTypes": {
 		"SampleTaskDocsvision": {
-			"factory": "SampleWorkerExtension.WorkerService.SampleTaskFactory, SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519"
+			"factory": "SampleWorkerExtension.WorkerService.SampleTaskFactory, SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29"
 		}
 	},
 	"QueuesTypes": {},
 	"ComponentTypes": {},
 	"RoleTypes": {
 		"SampleRole": {
-			"settingsFactory": "SampleWorkerExtension.Roles.SampleRoleSettingsFactory, SampleWorkerExtension.Role, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519"
+			"settingsFactory": "SampleWorkerExtension.Roles.SampleRoleSettingsFactory, SampleWorkerExtension.Role, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29"
 		}
 	}
 }

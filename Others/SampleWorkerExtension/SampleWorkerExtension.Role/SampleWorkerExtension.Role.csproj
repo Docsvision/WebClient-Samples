@@ -34,16 +34,14 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>DocsVision2007.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>StrongNameKey.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DocsVision.ManagementConsole.Settings.Common">
-      <HintPath>..\..\..\..\..\..\Git\ManagementConsole\WebAdminConsole\WebAdminConsole\Bin\Debug\Extensions\DocsVision.ManagementConsole.Settings.Common.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.ManagementConsole.Settings.Common.dll</HintPath>
     </Reference>
     <Reference Include="DocsVision.ManagementConsole.WorkerExtension.WebService">
-      <HintPath>..\..\..\..\..\..\Git\ManagementConsole\WebAdminConsole\WebAdminConsole\Bin\Debug\Extensions\DocsVision.ManagementConsole.WorkerExtension.WebService.dll</HintPath>
-      <Private>False</Private>
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.ManagementConsole.WorkerExtension.WebService.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -60,8 +58,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="DocsVision2007.snk" />
     <None Include="SampleWorkerExtension.json" />
+    <None Include="..\..\..\StrongNameKey.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

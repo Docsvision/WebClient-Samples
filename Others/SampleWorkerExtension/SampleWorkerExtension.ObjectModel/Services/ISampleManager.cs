@@ -1,4 +1,5 @@
 ﻿using DocsVision.Platform.ObjectModel;
+using SampleWorkerExtension.ObjectModel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace SampleWorkerExtension.ObjectModel.Services
         /// </summary>
         /// <param name="objectContext">Instance of <see cref="ObjectContext"/>.</param>
         void Initialize(ObjectContext objectContext);
+
+        void Process(SampleEventArgs sampleEventArgs);
     }
 }

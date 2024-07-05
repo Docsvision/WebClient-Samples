@@ -11,28 +11,27 @@ using Docsvision.WorkerService.Interfaces;
 using EventDescription = SampleWorkerExtension.ObjectModel.Models.EventDescription;
 using DocsVision.Platform.ObjectModel;
 using SampleWorkerExtension.ObjectModel.Services;
-using System.Net;
 
 namespace SampleWorkerExtension.WorkerExtension.Services
 {
     public class SampleEventHandlerService : EventHandlerService, ISampleEventHandlerService
     {
         public static readonly Guid ServiceId = new Guid("B363DA98-9580-457F-AAAC-325D036F380A");
-        private const string SampleComponentTypeName = "SampleWorkerExtension.SampleApiManager, SampleWorkerExtension.Manager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519";
+        private const string SampleComponentTypeName = "SampleWorkerExtension.Manager.SampleApiManager, SampleWorkerExtension.Manager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29";
 
         private IServiceProvider serviceProvider;
         private ISampleManager sampleManager;
 
         protected override Guid GetId() => ServiceId;
 
-        public static readonly EventDescription SampleEvent1 = new EventDescription { Id = new Guid("B2C6F070-C7F1-4F07-914F-94652804DD1C"), AutoSendToSelf = true, Concurrent = false };
+        public static readonly EventDescription ConvertCardFiles = new EventDescription { Id = new Guid("B2C6F070-C7F1-4F07-914F-94652804DD1C"), AutoSendToSelf = true, Concurrent = false };
 
         private readonly Dictionary<Guid, EventHandlerInfo> handlersInfo = new Dictionary<Guid, EventHandlerInfo>
         {
             {
-                SampleEvent1.Id,
+                ConvertCardFiles.Id,
                 new EventHandlerInfo
-                    { EventId = SampleEvent1.Id, EventArgsType = typeof(SampleEventArgs), EventHandlerName = nameof(OnSampleEvent1) }
+                    { EventId = ConvertCardFiles.Id, EventArgsType = typeof(SampleEventArgs), EventHandlerName = nameof(ProcessCardFiles) }
             }
         };
 
@@ -68,10 +67,17 @@ namespace SampleWorkerExtension.WorkerExtension.Services
         }
 
         #region Worker
-        public EventResult OnSampleEvent1(SampleEventArgs eventArgs)
+        public EventResult ProcessCardFiles(SampleEventArgs eventArgs)
         {
-            //do some logic
-            return EventResult.Handled;
+            try
+            {
+                SampleManager.Process(eventArgs);
+                return EventResult.Handled;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
         }
 
         #endregion

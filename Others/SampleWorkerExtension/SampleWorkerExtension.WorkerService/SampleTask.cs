@@ -15,7 +15,7 @@ namespace SampleWorkerExtension.WorkerService
         private readonly ObjectContext objectContext;
         private readonly IServiceProvider serviceProvider;
 
-        private string WorkerTypeName = "SampleWorkerExtension.WorkerExtension.Services.SampleEventHandlerService, SampleWorkerExtension.WorkerExtension, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519";
+        private string WorkerTypeName = "SampleWorkerExtension.WorkerExtension.Services.SampleEventHandlerService, SampleWorkerExtension.WorkerExtension, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29";
         public SampleWorkerTask(IMessage message, ObjectContext context, IServiceProvider serviceProvider)
         {
             this.message = message;
@@ -34,7 +34,7 @@ namespace SampleWorkerExtension.WorkerService
         {
             errorDescription = null;
 
-            System.Diagnostics.Trace.WriteLine($"{DateTime.Now.ToString(System.Globalization.DateTimeFormatInfo.InvariantInfo)} Running task for message {message.TypeId}, {message.Data}");
+            System.Diagnostics.Trace.WriteLine($"{DateTime.Now.ToString(System.Globalization.DateTimeFormatInfo.InvariantInfo)} Running task for message {message.Id} type {message.TypeId}, {message.Data}");
 
             ISampleEventHandlerService targetService = CreateService(WorkerTypeName);
 
