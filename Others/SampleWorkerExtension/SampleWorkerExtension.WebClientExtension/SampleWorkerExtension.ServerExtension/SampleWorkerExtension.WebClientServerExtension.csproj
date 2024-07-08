@@ -199,6 +199,12 @@
       <LastGenOutput>Resource.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+	<ItemGroup>
+		<Compile Include="Models\WorkerMessageArgs.cs" />
+		<Compile Include="Controllers\SampleWorkerController.cs" />
+		<Compile Include="Services\ISampleWorkerService.cs" />
+		<Compile Include="Services\SampleWorkerService.cs" />
+	</ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
