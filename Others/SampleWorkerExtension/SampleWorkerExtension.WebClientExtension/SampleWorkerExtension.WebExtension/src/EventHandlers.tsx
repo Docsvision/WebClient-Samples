@@ -5,8 +5,8 @@ import { $CardId } from "@docsvision/webclient/System/LayoutServices";
 import { $SampleWorkerController } from "./$SampleWorkerController";
 
 export async function sendConversionTask(sender: LayoutControl, e: IEventArgs) {
-    let cardId = sender.layout.getService($CardId);
-    let sampleWorkerController = sender.layout.getService($SampleWorkerController);
+    const cardId = sender.layout.getService($CardId);
+    const sampleWorkerController = sender.layout.getService($SampleWorkerController);
     await sampleWorkerController.sendToWorker({
         cardId
     });
