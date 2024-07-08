@@ -5,7 +5,7 @@ using System.Web;
 
 namespace ServerExtension.Models
 {
-    public class WorkerMessageArgs
+    public class SampleEventArgs
     {
         public Guid CardId { get; set; }
     }

@@ -10,6 +10,6 @@ namespace ServerExtension.Services
 {
     public interface ISampleWorkerService
     {
-        Guid CreateMessageToWorker(ObjectContext context, WorkerMessageArgs args, Guid eventId);
+        Guid CreateMessageToWorker(ObjectContext context, SampleEventArgs args, Guid eventId);
     }
 }

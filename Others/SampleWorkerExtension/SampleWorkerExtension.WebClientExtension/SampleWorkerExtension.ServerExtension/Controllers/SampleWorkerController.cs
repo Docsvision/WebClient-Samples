@@ -30,7 +30,7 @@ namespace ServerExtension.Controllers
         /// <param name="request"></param>
         /// <returns></returns>
         [HttpPost]
-        public CommonResponse SendToWorker([FromBody] WorkerMessageArgs request)
+        public CommonResponse SendToWorker([FromBody] SampleEventArgs request)
         {
             var response = new CommonResponse();
             var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
