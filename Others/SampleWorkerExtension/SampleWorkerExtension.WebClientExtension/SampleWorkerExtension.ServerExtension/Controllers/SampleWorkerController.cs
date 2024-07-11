@@ -33,7 +33,7 @@ namespace ServerExtension.Controllers
         public CommonResponse SendToWorker([FromBody] SampleEventArgs request)
         {
             var response = new CommonResponse();
-            var sessionContext = currentObjectContextProvider.GetOrCreateCurrentSessionContext();
+            var sessionContext = currentObjectContextProvider.GetOrCreateApplicationPoolSessionContext();
             try
             {
                 sampleWorkerService.CreateMessageToWorker(sessionContext.ObjectContext, request, Constants.SampleSomeEventId);
