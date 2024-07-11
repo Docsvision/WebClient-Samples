@@ -17,7 +17,7 @@ namespace SampleWorkerExtension.WorkerExtension.Services
     public class SampleEventHandlerService : EventHandlerService, ISampleEventHandlerService
     {
         public static readonly Guid ServiceId = new Guid("B363DA98-9580-457F-AAAC-325D036F380A");
-        private const string SampleComponentTypeName = "SampleWorkerExtension.Manager.SampleApiManager, SampleWorkerExtension.Manager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29";
+        private const string SampleComponentTypeName = "SampleWorkerExtension.Manager.SampleApiManager, DocsVision.SampleWorkerExtension.Manager, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29";
 
         private IServiceProvider serviceProvider;
         private ISampleManager sampleManager;

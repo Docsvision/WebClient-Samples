@@ -12,7 +12,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ServerExtension</RootNamespace>
-    <AssemblyName>SampleWorker.ServerExtension</AssemblyName>
+    <AssemblyName>DocsVision.SampleWorker.ServerExtension</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -32,7 +32,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\</OutputPath>
+    <OutputPath>..\..\..\..\SamplesOutput\WorkerService\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -52,34 +52,42 @@
     <Reference Include="Autofac, Version=4.9.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Autofac\Autofac.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Autofac.Extras.Ordering, Version=1.0.0.0, Culture=neutral, PublicKeyToken=84578aafd05fb485">
       <HintPath>..\..\..\..\Assemblies\Autofac\Autofac.Extras.Ordering.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DocsVision.Platform.ObjectManager, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DocsVision.Platform.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DocsVision.Platform.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DocsVision.WebClient, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.WebClient.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="DocsVision.WebClient.Extensibility, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Microsoft\Newtonsoft.Json.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Web.DynamicData" />
@@ -94,6 +102,7 @@
     <Reference Include="System.Web.Http, Version=5.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\Assemblies\Microsoft\System.Web.Http.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />

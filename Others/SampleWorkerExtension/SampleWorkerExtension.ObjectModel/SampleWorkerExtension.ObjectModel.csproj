@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SampleWorkerExtension.ObjectModel</RootNamespace>
-    <AssemblyName>SampleWorkerExtension.ObjectModel</AssemblyName>
+    <AssemblyName>DocsVision.SampleWorkerExtension.ObjectModel</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\bin\</OutputPath>
+    <OutputPath>..\..\..\SamplesOutput\WorkerService\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -40,10 +40,12 @@
     <Reference Include="DocsVision.Platform.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Docsvision.WorkerService.Interfaces, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.WorkerService.Interfaces.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

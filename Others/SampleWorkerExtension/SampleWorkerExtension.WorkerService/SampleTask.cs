@@ -15,7 +15,7 @@ namespace SampleWorkerExtension.WorkerService
         private readonly ObjectContext objectContext;
         private readonly IServiceProvider serviceProvider;
 
-        private string WorkerTypeName = "SampleWorkerExtension.WorkerExtension.Services.SampleEventHandlerService, SampleWorkerExtension.WorkerExtension, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29";
+        private string WorkerTypeName = "SampleWorkerExtension.WorkerExtension.Services.SampleEventHandlerService, DocsVision.SampleWorkerExtension.WorkerExtension, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29";
         public SampleWorkerTask(IMessage message, ObjectContext context, IServiceProvider serviceProvider)
         {
             this.message = message;
