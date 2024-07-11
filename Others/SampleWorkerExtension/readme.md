@@ -22,10 +22,10 @@ npm run build
 
 1. Отправить в GAC сборки собранные в пункте 2
 
-SampleWorkerExtension.Manager
-SampleWorkerExtension.ObjectModel
-SampleWorkerExtension.WorkerService
-SampleWorkerExtension.WorkerService.resources
+DocsVision.SampleWorkerExtension.Manager.dll
+DocsVision.SampleWorkerExtension.ObjectModel.dll
+DocsVision.SampleWorkerExtension.WorkerService.dll
+DocsVision.SampleWorkerExtension.WorkerService.resources.dll
 
 2. Добавить сборку SampleWorkerExtension.Role и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в консоль настройки. 
 Если папки с расширениями нет, то создать вручную. Например, C:\Program Files (x86)\Docsvision\ManagementConsole\SampleExtensions
@@ -43,7 +43,7 @@ C:\Program Files (x86)\Docsvision\ManagementConsoleExternalAPI\DocsVision.Manage
 В секцию Libraries добавить строку с SampleWorkerExtension.WorkerService. Секция будет выглядеть вот так:
 	<Libraries>
       <add Path="DocsVision.BackOffice.ObjectModel, Version=5.5.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519" />
-	  <add Path="SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29" /> 
+	  <add Path="DocsVision.SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29" /> 
     </Libraries>
 
 ## Проверка
