@@ -20,20 +20,20 @@ npm run build
 
 ## Установка
 
-1. Отправить в GAC сборки собранные в пункте 2
+1. Отправить в GAC сборки собранные(Samples\SamplesOutput\WorkerService) в пункте 2
 
-DocsVision.SampleWorkerExtension.Manager.dll
-DocsVision.SampleWorkerExtension.ObjectModel.dll
-DocsVision.SampleWorkerExtension.WorkerService.dll
-DocsVision.SampleWorkerExtension.WorkerService.resources.dll
+gacutil.exe -if DocsVision.SampleWorkerExtension.Manager.dll
+gacutil.exe -if DocsVision.SampleWorkerExtension.ObjectModel.dll
+gacutil.exe -if DocsVision.SampleWorkerExtension.WorkerService.dll
+gacutil.exe -if ru\DocsVision.SampleWorkerExtension.WorkerService.resources.dll
 
-2. Добавить сборку SampleWorkerExtension.Role и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в консоль настройки. 
+2. Добавить сборку DocsVision.SampleWorkerExtension.Role.dll и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в консоль настройки. 
 Если папки с расширениями нет, то создать вручную. Например, C:\Program Files (x86)\Docsvision\ManagementConsole\SampleExtensions
 
-3. Добавить сборку SampleWorkerExtension.WorkerExtension в папку WorkerService
+3. Добавить сборку DocsVision.SampleWorkerExtension.WorkerExtension.dll в папку WorkerService
 Например, C:\Program Files (x86)\Docsvision\WorkerService\5.5\Extensions
 
-4. Установить серверное расширение ВК SampleWorkerExtension.WebClientServerExtension
+4. Установить серверное расширение ВК SampleWorkerExtension.WebClientServerExtension.dll(инструкция внутри проекта)
 
 5. Установить сэмпл ConversionSample
 
