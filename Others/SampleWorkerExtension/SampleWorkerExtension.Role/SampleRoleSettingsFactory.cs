@@ -21,7 +21,7 @@ namespace SampleWorkerExtension.Roles
         }
         public override string GetDisplayName(RoleType roleType, int localeId)
         {
-            return "Пример расширения";
+            return "Расширение для WorkerService";
         }
 
         public override Role CreateRole(RoleType roleType)
