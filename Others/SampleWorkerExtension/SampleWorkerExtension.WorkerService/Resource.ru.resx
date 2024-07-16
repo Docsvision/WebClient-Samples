@@ -121,7 +121,7 @@
     <value>Обработка</value>
   </data>
   <data name="SampleExtension_Name" xml:space="preserve">
-    <value>Пример расширения для воркера</value>
+    <value>Расширение для воркера</value>
   </data>
   <data name="SampleSomeEvent1Id" xml:space="preserve">
     <value>Обработка файлов карточки</value>
