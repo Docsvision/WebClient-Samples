@@ -76,7 +76,7 @@ namespace WatermarkWebToolExtension
         // Возвращает строку с названиями файлов, в которые добавлены запросы
         private async Task<string> HandleRequest(AddWatermarkRequest request)
         {
-            var connectionService = new ConnectionToWebClient(request.ServerAddress);
+            var connectionService = new ConnectionToWebClient(request.ServerAddress, request.AccessToken);
 
             try
             {
@@ -167,5 +167,8 @@ namespace WatermarkWebToolExtension
 
         // Адрес сервера Web-клиента
         public string ServerAddress { get; set; }
+
+        // Токен для авторизации в сервере Web-клиента
+        public string AccessToken { get; set; }
     }
 }
