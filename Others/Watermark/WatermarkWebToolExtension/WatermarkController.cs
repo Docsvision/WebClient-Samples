@@ -78,16 +78,6 @@ namespace WatermarkWebToolExtension
         {
             var connectionService = new ConnectionToWebClient(request.ServerAddress, request.AccessToken);
 
-            try
-            {
-                await connectionService.Authentificate();
-            }
-            catch (Exception ex)
-            {
-                Logger.Error(ex.Message);
-                throw new Exception("Не удалось подключиться к серверу Web-клиента");
-            }
-
             List<string> files = new List<string>();
 
             // Загружаем с Web-клиента файлы, идентификаторы которых переданы в запросе

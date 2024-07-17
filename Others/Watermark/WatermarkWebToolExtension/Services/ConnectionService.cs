@@ -26,13 +26,6 @@ namespace WatermarkWebToolExtension.Services
             this.httpClient = CreateHttpClient(serverAddress, accessToken);
         }
 
-        // Открытие подключения к серверу Web-клиента с авторизацией через форму
-        public async Task Authentificate()
-        {
-            var response = await httpClient.GetAsync(LOGIN_PAGE_URL);
-            response.EnsureSuccessStatusCode();
-        }
-
         // Получение файла с сервера Web-клиента
         // Будет возвращен локальный путь к файлу
         public async Task<string> PullFile(Guid fileId)
@@ -79,13 +72,11 @@ namespace WatermarkWebToolExtension.Services
         private HttpClient CreateHttpClient(string serverAddress, string accessToken)
         {
             var httpClientHandler = new HttpClientHandler();
-            httpClientHandler.UseDefaultCredentials = true;
             httpClientHandler.UseCookies = true;
             httpClientHandler.CookieContainer = new System.Net.CookieContainer();
             var cookie = new System.Net.Cookie("UserCulture", System.Threading.Thread.CurrentThread.CurrentCulture.TwoLetterISOLanguageName);
             var domain = new Uri(serverAddress);
             httpClientHandler.CookieContainer.Add(domain, cookie);
-            // httpClientHandler.
 
             var client = new HttpClient(httpClientHandler);
             client.DefaultRequestHeaders.Add(AuthorizationHeaderName, String.Format(AuthorizatoinHeaderTemplate, accessToken));
