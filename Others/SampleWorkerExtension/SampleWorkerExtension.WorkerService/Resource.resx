@@ -121,7 +121,7 @@
     <value>Work on </value>
   </data>
   <data name="SampleExtension_Name" xml:space="preserve">
-    <value>Sample extension for worker</value>
+    <value>Sample extension for worker service</value>
   </data>
   <data name="SampleSomeEvent1Id" xml:space="preserve">
     <value>Process card files has occured</value>
