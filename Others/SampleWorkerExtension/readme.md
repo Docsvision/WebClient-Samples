@@ -33,7 +33,7 @@ gacutil.exe -if ru\DocsVision.SampleWorkerExtension.WorkerService.resources.dll
 3. Добавить сборку DocsVision.SampleWorkerExtension.WorkerExtension.dll в папку WorkerService
 Например, C:\Program Files (x86)\Docsvision\WorkerService\5.5\Extensions
 
-4. Установить серверное расширение ВК SampleWorkerExtension.WebClientServerExtension.dll(инструкция внутри проекта)
+4. Установить серверное и клиентское расширения для ВК, которые находятся в Others\SampleWorkerExtension\SampleWorkerExtension.WebClientExtension(инструкция внутри проекта)
 
 5. Установить сэмпл ConversionSample
 
