@@ -27,7 +27,7 @@ gacutil.exe -if DocsVision.SampleWorkerExtension.ObjectModel.dll
 gacutil.exe -if DocsVision.SampleWorkerExtension.WorkerService.dll
 gacutil.exe -if ru\DocsVision.SampleWorkerExtension.WorkerService.resources.dll
 
-2. Добавить сборку DocsVision.SampleWorkerExtension.Role.dll и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в консоль настройки. 
+2. Добавить сборки DocsVision.SampleWorkerExtension.Role.dll вместе с ресурсами ru\DocsVision.SampleWorkerExtension.Role.resources.dll и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в папку консоли настройки. 
 Если папки с расширениями нет, то создать вручную. Например, C:\Program Files (x86)\Docsvision\ManagementConsole\SampleExtensions
 
 3. Добавить сборку DocsVision.SampleWorkerExtension.WorkerExtension.dll в папку WorkerService
@@ -48,7 +48,7 @@ C:\Program Files (x86)\Docsvision\ManagementConsoleExternalAPI\DocsVision.Manage
 
 ## Проверка
 
-1. В КОНСОЛИ УПРАВЛЕНИЯ создать процесс воркера с типом конфигурации Sample Extensions
+1. В КОНСОЛИ УПРАВЛЕНИЯ создать процесс воркера с типом конфигурации Расширение для WorkerService
 2. В разметке документа ВК(например, просмотр) создать кнопку и добавить обработчик события "При щелчке" 
 sendConversionTask;
 3. Создать документ в вк, приложить файлы. Сохранить документ и в открывшейся разметке нажать созданную кнопку. Через некоторое время в секции файлов появятся сконвертированные pdf-файлы

@@ -21,7 +21,7 @@ namespace SampleWorkerExtension.Roles
         }
         public override string GetDisplayName(RoleType roleType, int localeId)
         {
-            return "Расширение для WorkerService";
+            return Resource.SampleName;
         }
 
         public override Role CreateRole(RoleType roleType)
@@ -41,7 +41,7 @@ namespace SampleWorkerExtension.Roles
                 {
                     LinkId = SampleRole.DocsvisionConnectionLinkId,
                     ConnectionType = "DocsvisionConnection",
-                    DisplayName = "Соединение Docsvision"
+                    DisplayName = Resource.SampleName_Connection
                 }
             };
         }
