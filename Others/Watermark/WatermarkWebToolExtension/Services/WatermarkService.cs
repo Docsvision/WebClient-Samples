@@ -7,6 +7,7 @@ using iText.Layout;
 using iText.Layout.Element;
 using iText.Layout.Properties;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Threading.Tasks;
 
@@ -14,7 +15,8 @@ namespace WatermarkWebToolExtension.Services
 {
     public class WatermarkService
     {
-        string WATERMARK_FONTFILE_NAME = "ARIAL.TTF";
+        private const string WatermarkFontFilename = "Roboto-Bold.ttf";
+        private const string PathToFonts = "Fonts";
 
         // Добавление водяного знака с помощью библиотеки iText
         public async Task<string> AddWatermark(string file, string watermark) 
@@ -34,7 +36,8 @@ namespace WatermarkWebToolExtension.Services
                 PdfDocument pdf = new PdfDocument(reader, writer);
                 Document doc = new Document(pdf);
 
-                string fontForWatermark = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), WATERMARK_FONTFILE_NAME);
+                var assemblyDirectory = Path.GetDirectoryName(typeof(WatermarkService).Assembly.Location);
+                string fontForWatermark = Path.Combine(assemblyDirectory, PathToFonts, WatermarkFontFilename);
                 var font = PdfFontFactory.CreateFont(fontForWatermark, PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.FORCE_EMBEDDED);
                 Text watermarkPhrase = new Text(watermark).SetFont(font).SetFontSize(80);
                 watermarkPhrase.SetOpacity(0.2f);

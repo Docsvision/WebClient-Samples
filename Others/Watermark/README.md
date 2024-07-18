@@ -48,8 +48,8 @@
 
    1. Остановите Web-сервис.
    2. Скопируйте папку `SamplesOutput\Site\Content\Modules\WatermarkWebExtension\` в  `Путь к сайту Web-клиента\Content\Modules`.
-   3. Скопируйте папку `SamplesOutput\Site\Content\Tools\DVWebTool\Application Files\` в  `Путь к папке с панелью управления Web-клиентом\Site\Content\Tools\DVWebTool\` (например `C:\Program Files (x86)\Docsvision6\WebClient\Site\Content\Tools\DVWebTool`
-   4. Скопируйте папку `SamplesOutput\Site\Extensions\WatermarkServerExtension` в  `Путь к сайту Web-клиента\Extensions`.
+   3. Скопируйте папку `SamplesOutput\Site\Extensions\WatermarkServerExtension` в  `Путь к сайту Web-клиента\Extensions`.
+   4. Для работы пользователей на Windows cкопируйте папку `SamplesOutput\Site\Content\Tools\DVWebTool\Application Files\` в  `Путь к папке с панелью управления Web-клиентом\Site\Content\Tools\DVWebTool\` (например `C:\Program Files (x86)\Docsvision6\WebClient\Site\Content\Tools\DVWebTool`
    5. Запустите Web-сервис.
    
 4. Регистрация расширения DvWebTool на сервере Web-клиент.
@@ -58,8 +58,36 @@
    2. Нажмите кнопку "Собрать DVWebTool"
    3. В диалоге введите адрес публикации Web-клиента, при необходимости установите другие опции, и нажмите кнопку ОК
    4. Установите собранный DvWebTool на сервер Web-клиента (см. пункт «Установка и запуск программы «DVWebTool» руководства пользователя Web-клиент).
+   5. Перезапустить Web-сервис.
+
+5. Сборка и установка пакета для DvSupService 
+
+Для работы пользователей на Linux нужно обеспечить копирование файлов расширения в папку установки DvSupService ('/lib/docsvision/dvsupservice'). Рекомендуемый способ это сделать - собрать deb-пакет и распространить его любым удобным способом. Для этого нужно:
+
+   1. Убедиться, что собран проект Other > Watermark > WatermarkWebToolExtension. В результате в папке Others\Watermark\DebPackage\Build\DvSupServiceExtension должны оказаться файлы расширения в папках Assemblies и Services.
+   2. Скопировать папку D:\Work\WebCSamples\Others\Watermark\DebPackage на Linux.
+   3. Установить необходимые для сборки компоненты следующей командой:
    
-5. Рекомендуется перезапустить Web-сервис.
+   sudo apt-get install make debhelper dpkg-dev
+
+   4. Откройте консоль в папке Build и соберите пакет с помощью следующей команды:
+   
+   cd DebPackage/Build
+   make
+   
+   В результате в папке DebPackage появится файл dvsupservice-extension_1.0_amd64.deb
+   
+   5. Остановите сервис dvsupservice командой:
+   
+   sudo systemctl stop dvsupservice
+   
+   6. Распространить и установить у пользователя собранный пакет. Для этого можно создать репозиторий (см. https://help.docsvision.com/dv6/install-linux/alternative/#simple-repo), чтобы можно было установить расширение с помощью команды `sudo apt-get install dvsupservice-extension`. Либо просто скопировать файл на клиентскую машину и выполнить команду:
+   
+   sudo dpkg -i dvsupservice-extension_1.0_amd64.deb 
+   
+   7.Запустите сервис dvsupservice.
+   
+   sudo systemctl start dvsupservice
    
 
 ## Проверка примера
