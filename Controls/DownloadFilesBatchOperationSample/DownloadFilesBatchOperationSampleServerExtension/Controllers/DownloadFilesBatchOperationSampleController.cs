@@ -13,11 +13,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace DownloadFilesBatchOperationSampleServerExtension.Controllers
 {
-    public class DownloadFilesBatchOperationSampleSampleController : ControllerBase
+    public class DownloadFilesBatchOperationSampleController : ControllerBase
     {
         private readonly ICurrentObjectContextProvider currentObjectContextProvider;
 
-        public DownloadFilesBatchOperationSampleSampleController(ICurrentObjectContextProvider currentObjectContextProvider)
+        public DownloadFilesBatchOperationSampleController(ICurrentObjectContextProvider currentObjectContextProvider)
         {
             this.currentObjectContextProvider = currentObjectContextProvider;
         }
