@@ -16,10 +16,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект Others > SampleWorkerExtension
-3. Собрать проект Samples\Others\SampleWorkerExtension\SampleWorkerExtension.WebClientExtension\SampleWorkerExtension.WebExtension
-выполнить 
-npm i
-npm run build
+3. Собрать проект Samples\Others\SampleWorkerExtension\SampleWorkerExtension.WebClientExtension\SampleWorkerExtension.WebExtension (инструкция внутри проекта)
 4. Собрать ConversionSample (инструкция внутри проекта)
 
 ## Установка
@@ -31,7 +28,7 @@ gacutil.exe -if DocsVision.SampleWorkerExtension.ObjectModel.dll
 gacutil.exe -if DocsVision.SampleWorkerExtension.WorkerService.dll
 gacutil.exe -if ru\DocsVision.SampleWorkerExtension.WorkerService.resources.dll
 
-2. Добавить сборки DocsVision.SampleWorkerExtension.Role.dll вместе с ресурсами ru\DocsVision.SampleWorkerExtension.Role.resources.dll и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в папку консоли управления. 
+2. Добавить сборки DocsVision.SampleWorkerExtension.Role.dll вместе с ресурсами ru\DocsVision.SampleWorkerExtension.Role.resources.dll и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в папку Консоли управления. 
 Если папки с расширениями нет, то создать вручную. Например, C:\Program Files (x86)\Docsvision\ManagementConsole\SampleExtensions
 
 3. Добавить сборку DocsVision.SampleWorkerExtension.WorkerExtension.dll в папку WorkerService
@@ -54,7 +51,7 @@ C:\Program Files (x86)\Docsvision\ManagementConsoleExternalAPI\DocsVision.Manage
 
 ## Проверка
 
-1. В КОНСОЛИ УПРАВЛЕНИЯ создать процесс WorkerSerivce с типом конфигурации "Расширение для WorkerService"
+1. В КОНСОЛИ УПРАВЛЕНИЯ создать процесс WorkerService с типом конфигурации "Расширение для WorkerService"
 2. В разметке документа Web-клиента (например, просмотр) создать кнопку и добавить обработчик события "При щелчке" 
 sendConversionTask;
-3. Создать документ в Web-клиенте, приложить файл. Сохранить документ, и в открывшейся разметке нажать созданную кнопку. Через некоторое время в секции файлов появятся сконвертированный pdf-файл. Для отображения файла в списке файлов необходимо обновить страницу.
+3. Создать документ в Web-клиенте, приложить файл. Сохранить документ, и в открывшейся разметке нажать созданную кнопку. Через некоторое время в секции файлов появится сконвертированный pdf-файл. Для отображения файла в списке файлов необходимо обновить страницу.
