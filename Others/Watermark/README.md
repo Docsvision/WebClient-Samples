@@ -65,7 +65,7 @@
 Для работы пользователей на Linux нужно обеспечить копирование файлов расширения в папку установки DvSupService ('/lib/docsvision/dvsupservice'). Рекомендуемый способ это сделать - собрать deb-пакет и распространить его любым удобным способом. Для этого нужно:
 
    1. Убедиться, что собран проект Other > Watermark > WatermarkWebToolExtension. В результате в папке Others\Watermark\DebPackage\Build\DvSupServiceExtension должны оказаться файлы расширения в папках Assemblies и Services.
-   2. Скопировать папку Others\Watermark\DebPackage на Linux.
+   2. Скопировать папку Others\Watermark\DebPackage на Linux в каталог, где планируется выполнять сборку пакета (расположение папки значения не имеет).
    3. Установить необходимые для сборки компоненты следующей командой:
    
    sudo apt-get install make debhelper dpkg-dev
