@@ -72,8 +72,10 @@
 
    4. Откройте консоль в папке Build и соберите пакет с помощью следующей команды:
    
+	   ```
        cd DebPackage/Build
 	   make
+	   ```
    
    В результате в папке DebPackage появится файл dvsupservice-extension_1.0_amd64.deb
    
