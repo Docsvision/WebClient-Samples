@@ -95,6 +95,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
+    <Compile Include="SampleRoleTemplateProvider.cs" />
     <Compile Include="SampleTask.cs" />
     <Compile Include="SampleTaskFactory.cs" />
     <Compile Include="SessionProvider.cs" />

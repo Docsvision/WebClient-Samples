@@ -8,7 +8,7 @@
 	"QueuesTypes": {},
 	"ComponentTypes": {},
 	"RoleTypes": {
-		"SampleRole": {
+		"SampleLogicRole": {
 			"settingsFactory": "SampleWorkerExtension.Roles.SampleRoleSettingsFactory, DocsVision.SampleWorkerExtension.Role, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29"
 		}
 	}

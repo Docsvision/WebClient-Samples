@@ -31,7 +31,7 @@ gacutil.exe -if ru\DocsVision.SampleWorkerExtension.WorkerService.resources.dll
 2. Добавить сборки DocsVision.SampleWorkerExtension.Role.dll вместе с ресурсами ru\DocsVision.SampleWorkerExtension.Role.resources.dll и конфигурационный файл SampleWorkerExtension.json(находится в проекте SampleWorkerExtension.Role) в папку Консоли управления. 
 Если папки с расширениями нет, то создать вручную. Например, C:\Program Files (x86)\Docsvision\ManagementConsole\SampleExtensions
 
-3. Добавить сборку DocsVision.SampleWorkerExtension.WorkerExtension.dll в папку WorkerService
+3. Добавить сборки DocsVision.SampleWorkerExtension.WorkerExtension.dll и DocsVision.SampleWorkerExtension.WorkerService.dll в папку WorkerService
 Например, C:\Program Files (x86)\Docsvision\WorkerService\5.5\Extensions
 
 4. Установить серверное и клиентское расширения для ВК, которые находятся в Others\SampleWorkerExtension\SampleWorkerExtension.WebClientExtension (инструкция внутри проекта)
