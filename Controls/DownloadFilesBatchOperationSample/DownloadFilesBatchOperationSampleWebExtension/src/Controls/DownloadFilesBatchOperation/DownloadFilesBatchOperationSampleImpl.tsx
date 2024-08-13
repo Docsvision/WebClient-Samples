@@ -59,7 +59,7 @@ export class DownloadFilesBatchOperationSampleImpl extends BaseControlImpl<Downl
         let downloadFilesTask = async (row: ITableRowModel) => {
             let errors = [] as BatchOperationErrorInfo[];
             try {
-                let url = this.state.services.urlResolver.resolveApiUrl("GetDocumentFiles", "DownloadFilesGroupOperationSample");
+                let url = this.state.services.urlResolver.resolveApiUrl("GetDocumentFiles", "DownloadFilesBatchOperationSample");
                 let requestAddress = formatString("{0}?documentId={1}", url, row.instanceId);
                 
                 // Запрос списка файлов из карточки row.instanceId для скачивания

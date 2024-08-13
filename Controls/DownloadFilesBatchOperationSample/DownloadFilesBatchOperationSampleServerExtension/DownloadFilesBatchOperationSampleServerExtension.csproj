@@ -6,9 +6,9 @@
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
     <_MigrateToProjectGuid>36aa8aaa-75ac-4bb8-b6c1-db0e038e9316</_MigrateToProjectGuid>
-    <AssemblyTitle>DownloadFilesGroupOperationServerExtension</AssemblyTitle>
-    <Description>DownloadFilesGroupOperationServerExtension</Description>
-    <Product>DownloadFilesGroupOperationServerExtension</Product>
+    <AssemblyTitle>DownloadFilesBatchOperationSampleServerExtension</AssemblyTitle>
+    <Description>DownloadFilesBatchOperationSampleServerExtension</Description>
+    <Product>DownloadFilesBatchOperationSampleServerExtension</Product>
     <Copyright>Copyright © 2022</Copyright>
     <AssemblyVersion>5.5.17.0</AssemblyVersion>
     <FileVersion>5.5.17.0</FileVersion>

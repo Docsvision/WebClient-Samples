@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DownloadFilesGroupOperationDesignerExtension {
+namespace DownloadFilesBatchOperationSampleDesignerExtension {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace DownloadFilesGroupOperationDesignerExtension {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DownloadFilesGroupOperationDesignerExtension.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("DownloadFilesBatchOperationSampleDesignerExtension.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -99,27 +99,27 @@ namespace DownloadFilesGroupOperationDesignerExtension {
         /// <summary>
         ///   Ищет локализованную строку, похожую на Restriction folders (comma separated folder ids).
         /// </summary>
-        internal static string DownloadFilesGroupOperation_BatchOperationRestrictionFoldersPropertyName {
+        internal static string DownloadFilesBatchOperationSample_BatchOperationRestrictionFoldersPropertyName {
             get {
-                return ResourceManager.GetString("DownloadFilesGroupOperation_BatchOperationRestrictionFoldersPropertyName", resourceCulture);
+                return ResourceManager.GetString("DownloadFilesBatchOperationSample_BatchOperationRestrictionFoldersPropertyName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Group operations / Download files (sample).
         /// </summary>
-        internal static string DownloadFilesGroupOperation_ControlTypeName {
+        internal static string DownloadFilesBatchOperationSample_ControlTypeName {
             get {
-                return ResourceManager.GetString("DownloadFilesGroupOperation_ControlTypeName", resourceCulture);
+                return ResourceManager.GetString("DownloadFilesBatchOperationSample_ControlTypeName", resourceCulture);
             }
         }
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на Download mode.
         /// </summary>
-        internal static string DownloadFilesGroupOperation_DownloadDocumentFileModePropertyName {
+        internal static string DownloadFilesBatchOperationSample_DownloadDocumentFileModePropertyName {
             get {
-                return ResourceManager.GetString("DownloadFilesGroupOperation_DownloadDocumentFileModePropertyName", resourceCulture);
+                return ResourceManager.GetString("DownloadFilesBatchOperationSample_DownloadDocumentFileModePropertyName", resourceCulture);
             }
         }
     }

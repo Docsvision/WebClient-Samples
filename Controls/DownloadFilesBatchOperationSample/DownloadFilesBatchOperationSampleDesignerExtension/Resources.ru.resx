@@ -126,13 +126,13 @@
   <data name="DownloadDocumentFileMode_Main" xml:space="preserve">
     <value>Только основные файлы</value>
   </data>
-  <data name="DownloadFilesGroupOperation_ControlTypeName" xml:space="preserve">
+  <data name="DownloadFilesBatchOperationSample_ControlTypeName" xml:space="preserve">
     <value>Групповые операции / Скачивание файлов (пример)</value>
   </data>
-  <data name="DownloadFilesGroupOperation_DownloadDocumentFileModePropertyName" xml:space="preserve">
+  <data name="DownloadFilesBatchOperationSample_DownloadDocumentFileModePropertyName" xml:space="preserve">
     <value>Режим скачивания</value>
   </data>
-  <data name="DownloadFilesGroupOperation_BatchOperationRestrictionFoldersPropertyName" xml:space="preserve">
+  <data name="DownloadFilesBatchOperationSample_BatchOperationRestrictionFoldersPropertyName" xml:space="preserve">
     <value>ID Каталогов, в которых операция доступна (через запятую)</value>
   </data>
   <data name="ControlGroup_Samples" xml:space="preserve">
