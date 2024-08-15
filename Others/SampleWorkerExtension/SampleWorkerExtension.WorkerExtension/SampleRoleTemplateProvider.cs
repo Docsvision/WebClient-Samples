@@ -2,7 +2,7 @@
 using Docsvision.WorkerService.Objects;
 using System.Collections.Generic;
 
-namespace SampleWorkerExtension.Roles
+namespace SampleWorkerExtension.WorkerExtension.Role
 {
     public class SampleRoleTemplateProvider : IRoleTemplateProvider
     {
