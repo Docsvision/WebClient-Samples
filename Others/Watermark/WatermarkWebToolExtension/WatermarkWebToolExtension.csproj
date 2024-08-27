@@ -63,10 +63,8 @@ xcopy /F "$(MSBuildProjectDirectory)\Fonts\*.*" "$(MSBuildProjectDirectory)\..\D
       <ReferenceCopyLocalPaths Update="%(ReferenceCopyLocalPaths)" DestinationSubDirectory="$([MSBuild]::MakeRelative($(OutputPath), $(SamplesOutput)))\Site\Content\Tools\DVWebTool\Application Files\Assemblies\%(ReferenceCopyLocalPaths.DestinationSubDirectory)" />
     </ItemGroup>
   </Target>
-  <Target Name="CopyRefsHack" AfterTargets="ResolveReferences">
-    <ItemGroup>
-      <ReferenceCopyLocalPaths Update="%(ReferenceCopyLocalPaths)" DestinationSubDirectory="$([MSBuild]::MakeRelative($(OutputPath), $(MSBuildProjectDirectory)))\..\DebPackage\Build\DvSupServiceExtension\Assemblies\%(ReferenceCopyLocalPaths.DestinationSubDirectory)" />
-    </ItemGroup>
+  <Target Name="CopyRefsHack2" AfterTargets="CopyRefsHack">
+    <Copy SourceFiles="@(ReferenceCopyLocalPaths)" DestinationFolder="$(MSBuildProjectDirectory)\..\DebPackage\Build\DvSupServiceExtension\Assemblies\" />
   </Target>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
