@@ -49,7 +49,7 @@
    1. Остановите Web-сервис.
    2. Скопируйте папку `SamplesOutput\Site\Content\Modules\WatermarkWebExtension\` в  `Путь к сайту Web-клиента\Content\Modules`.
    3. Скопируйте папку `SamplesOutput\Site\Extensions\WatermarkServerExtension` в  `Путь к сайту Web-клиента\Extensions`.
-   4. Для работы пользователей на Windows cкопируйте папку `SamplesOutput\Site\Content\Tools\DVWebTool\Application Files\` в  `Путь к папке с панелью управления Web-клиентом\Site\Content\Tools\DVWebTool\` (например `C:\Program Files (x86)\Docsvision6\WebClient\Site\Content\Tools\DVWebTool`
+   4. Для работы пользователей на Windows cкопируйте файлы из папки `SamplesOutput\Site\Content\Tools\DVWebTool\Application Files\` в  `Путь к папке с панелью управления Web-клиентом\Site\Content\Tools\DVWebTool\Application Files\` (например `C:\Program Files (x86)\Docsvision6\WebClient\Site\Content\Tools\DVWebTool\Application Files\`
    5. Запустите Web-сервис.
    
 4. Регистрация расширения DvWebTool на сервере Web-клиент.
