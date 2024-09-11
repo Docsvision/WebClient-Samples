@@ -1,0 +1,78 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Library</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>DocsVision.ConverionSampleServerExtension</RootNamespace>
+    <AssemblyName>DocsVision.ConverionSampleServerExtension</AssemblyName>
+	<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	<BaseOutputPath>..\..\..\bin\WebClientBin\</BaseOutputPath>
+	<SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Properties\**" />
+    <EmbeddedResource Remove="Properties\**" />
+    <None Remove="Properties\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\Assemblies\Autofac\Autofac.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.BackOffice.ObjectModel">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.BackOffice.WebClient">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.ConversionService">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.ConversionService.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocsVision.ConversionService.resources">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.ConversionService.resources.dll</HintPath>
+    </Reference>
+    <Reference Include="DocsVision.Platform.CardLib">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.CardLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.Platform.ObjectModel">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.Platform.Settings.ObjectModel">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.Settings.ObjectModel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DocsVision.Platform.WebClient">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DocsVision.WebClient.Extensibility">
+      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc">
+      <HintPath>..\..\..\Assemblies\Microsoft\Microsoft.AspNetCore.Mvc.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNetCore.Mvc.Core">
+      <HintPath>..\..\..\Assemblies\Microsoft\Microsoft.AspNetCore.Mvc.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\Assemblies\Microsoft\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="echo  &quot;$(SamplesOutput)\Site\Extensions\$(TargetName)\&quot;&#xD;&#xA;xcopy &quot;$(TargetDir)$(TargetName).dll&quot; &quot;$(SamplesOutput)\Site\Extensions\ConversionSampleServerExtension\&quot; /Y /I&#xD;&#xA;xcopy &quot;$(TargetDir)DocsVision.ConversionService.dll&quot; &quot;$(SamplesOutput)\Site\Extensions\ConversionSampleServerExtension\&quot; /Y /I&#xD;&#xA;xcopy &quot;$(TargetDir)DocsVision.ConversionService.resources.dll&quot; &quot;$(SamplesOutput)\Site\Extensions\ConversionSampleServerExtension&quot; /Y /I&#xD;&#xA;xcopy &quot;$(TargetDir)DocsVision.Platform.Settings.ObjectModel.dll&quot; &quot;$(SamplesOutput)\Site\Extensions\ConversionSampleServerExtension\&quot; /Y /I&#xD;&#xA;xcopy &quot;$(TargetDir)$(TargetName)*.resources.dll&quot; &quot;$(SamplesOutput)\Site\Extensions\ConversionSampleServerExtension&quot; /Y /I /E" />
+  </Target>
+
+
+</Project>
