@@ -14,11 +14,11 @@ using System.Web.Http;
 
 namespace DownloadFilesBatchOperationSampleServerExtension.Controllers
 {
-    public class DownloadFilesBatchOperationSampleSampleController : ApiController
+    public class DownloadFilesBatchOperationSampleController : ApiController
     {
         private readonly ICurrentObjectContextProvider currentObjectContextProvider;
 
-        public DownloadFilesBatchOperationSampleSampleController(ICurrentObjectContextProvider currentObjectContextProvider)
+        public DownloadFilesBatchOperationSampleController(ICurrentObjectContextProvider currentObjectContextProvider)
         {
             this.currentObjectContextProvider = currentObjectContextProvider;
         }
