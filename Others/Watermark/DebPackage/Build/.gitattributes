@@ -1,0 +1,3 @@
+*.sh eol=lf
+Makefile eol=lf
+debian/** eol=lf

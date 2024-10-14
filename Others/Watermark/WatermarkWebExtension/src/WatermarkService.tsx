@@ -1,6 +1,7 @@
 import { DVWebToolConnection } from "@docsvision/webclient/Helpers/DVWebToolConnection/DVWebToolConnection";
 import { $WebServices } from "@docsvision/webclient/System/IWebServicesService";
 import { $ApplicationSettings, $SiteUrl, $CurrentEmployeeId } from "@docsvision/webclient/StandardServices";
+import { $JwtTokenController } from "@docsvision/webclient/Generated/DocsVision.WebClient.Controllers"
 import { $MessageBox } from "@docsvision/webclient/System/$MessageBox";
 import { serviceName } from "@docsvision/webclient/System/ServiceUtils";
 import { $RequestManager } from "@docsvision/webclient/System/$RequestManager";
@@ -10,11 +11,16 @@ import { IWebServicesResponse } from "@docsvision/webclient/System/IWebServicesR
 // Клиентский сервис, предоставляющий доступ к методу добавления водяных знаков, предоставляемому расширением DVWebTool
 export class WatermarkService {
 
-    constructor(private services: $RequestManager & $WebServices & $ApplicationSettings & $MessageBox & $SiteUrl & $CurrentEmployeeId) {
+    constructor(private services: $RequestManager & $WebServices & $ApplicationSettings 
+        & $MessageBox & $SiteUrl & $CurrentEmployeeId & $JwtTokenController) {
     }
 
     // Метод принимает ИД карточки и ИД её конвертируемых файлов
-    AddWatermarkToFiles(cardID: string, fileIDs: string[]): Promise<IWebServicesResponse<any>> {
+    async AddWatermarkToFiles(cardID: string, fileIDs: string[]): Promise<IWebServicesResponse<any>> {
+
+        // Токен доступа, с помощью которого DVWebTool будет выполнять запросы к серверу Web-клиента
+        // Внимание! Время жизни токена ограничено!
+        const accessToken = await this.services.jwtTokenController.getAccessToken();
 
         // В данных нужно также передать:
         // адрес сервера Web-клиента (DVWebTool должен подключиться к Web-клиенту для получения и сохранения файлов карточки) и 
@@ -24,7 +30,8 @@ export class WatermarkService {
                 cardID: cardID,
                 fileIDs: fileIDs,
                 userID: this.services.currentEmployeeId,
-                serverAddress: this.services.siteUrl
+                serverAddress: this.services.siteUrl,
+                accessToken
             },
             action: 'AddWatermarkToFiles', // Название метода, вызываемого из расширения DVWebTool
             locale: this.services.applicationSettings.culture.twoLetterISOLanguageName // Обязательное для передачи название локали

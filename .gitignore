@@ -115,3 +115,4 @@ Binaries_WebClient/*
 WebClient/*
 ClientScripts/TypeScript/Output
 Others/ExternalWebService/WebService/App_Data
+Others/Watermark/WatermarkDebPackage/WatermarkExtension

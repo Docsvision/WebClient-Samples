@@ -6,8 +6,9 @@ import { Service } from "@docsvision/webclient/System/Service";
 import { $RequestManager } from "@docsvision/webclient/System/$RequestManager";
 import { $WatermarkService, WatermarkService} from "./WatermarkService";
 import { $WebServices } from "@docsvision/webclient/System/IWebServicesService";
-import { $ApplicationSettings, $CurrentEmployeeId, $SiteUrl } from "@docsvision/webclient/StandardServices";
+import { $ApplicationSettings, $CurrentEmployeeId, $SiteUrl, $StandardServices } from "@docsvision/webclient/StandardServices";
 import { $MessageBox } from "@docsvision/webclient/System/$MessageBox";
+import { $StandardControllers } from "@docsvision/webclient/Legacy/StandardControllers";
 
 
 // Главная входная точка всего расширения
@@ -20,7 +21,7 @@ extensionManager.registerExtension({
     version: "6.1",
     globalEventHandlers: [ EventHandlers ],
     layoutServices: [ 
-        Service.fromFactory($WatermarkService, (services: $RequestManager & $WebServices & $ApplicationSettings & $MessageBox & $SiteUrl & $CurrentEmployeeId) => new
+        Service.fromFactory($WatermarkService, (services: $StandardControllers & $StandardServices) => new
         WatermarkService(services))
     ]
 })

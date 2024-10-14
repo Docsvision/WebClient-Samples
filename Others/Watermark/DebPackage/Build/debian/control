@@ -1,0 +1,12 @@
+Source: dvsupservice-extension
+Section: misc
+Priority: optional
+Maintainer: DocsVision <help@docsvision.com>
+Build-Depends: debhelper (>= 13~)
+Standards-Version: 4.0.0
+Homepage: https://docsvision.com
+
+Package: dvsupservice-extension
+Architecture: amd64
+Description: Watermark extension for DvSupService
+Depends: docsvision-dvsupservice
