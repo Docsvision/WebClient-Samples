@@ -1,0 +1,15 @@
+﻿{
+"ConnectionTypes": {},
+	"TasksTypes": {
+		"SampleTaskDocsvision": {
+			"factory": "SampleWorkerExtension.WorkerService.SampleTaskFactory, DocsVision.SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29"
+		}
+	},
+	"QueuesTypes": {},
+	"ComponentTypes": {},
+	"RoleTypes": {
+		"SampleLogicRole": {
+			"settingsFactory": "SampleWorkerExtension.Roles.SampleRoleSettingsFactory, DocsVision.SampleWorkerExtension.Role, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29"
+		}
+	}
+}
