@@ -1,13 +1,13 @@
-﻿namespace DownloadFilesGroupOperationDesignerExtension.Extension
+﻿namespace DownloadFilesBatchOperationSampleDesignerExtension.Extension
 {
     /// <summary>
     /// Содержит константы для системных наменований пользовательских контролов, свойств и событий
     /// </summary>
     internal static class Constants
     {
-        public static class DownloadFilesGroupOperation
+        public static class DownloadFilesBatchOperationSample
         {
-            public const string ControlTypeName = "DownloadFilesGroupOperation";
+            public const string ControlTypeName = "DownloadFilesBatchOperationSample";
 
             public const string DownloadDocumentFileModePropertyName = "DownloadDocumentFileMode";
 

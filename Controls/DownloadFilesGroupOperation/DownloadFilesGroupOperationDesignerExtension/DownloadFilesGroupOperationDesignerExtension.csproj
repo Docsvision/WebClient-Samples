@@ -7,8 +7,8 @@
     <ProjectGuid>{61298850-2048-437C-9015-9D129409DE98}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DownloadFilesGroupOperationDesignerExtension</RootNamespace>
-    <AssemblyName>DownloadFilesGroupOperationDesignerExtension</AssemblyName>
+    <RootNamespace>DownloadFilesBatchOperationSampleDesignerExtension</RootNamespace>
+    <AssemblyName>DownloadFilesBatchOperationSampleDesignerExtension</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>

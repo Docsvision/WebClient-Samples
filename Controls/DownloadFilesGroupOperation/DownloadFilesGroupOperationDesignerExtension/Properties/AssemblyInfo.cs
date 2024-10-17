@@ -6,8 +6,8 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 
-[assembly: AssemblyTitle("DownloadFilesGroupOperationDesignerExtension")]
-[assembly: AssemblyDescription("DownloadFilesGroupOperationDesignerExtension")]
+[assembly: AssemblyTitle("DownloadFilesBatchOperationSampleDesignerExtension")]
+[assembly: AssemblyDescription("DownloadFilesBatchOperationSampleDesignerExtension")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("CheckBoxDesignerExtension")]
 [assembly: AssemblyCopyright("Copyright © 2022")]

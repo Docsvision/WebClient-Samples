@@ -1,6 +1,6 @@
 ﻿using Xceed.Wpf.Toolkit.PropertyGrid.Attributes;
 
-namespace DownloadFilesGroupOperationDesignerExtension.Editors
+namespace DownloadFilesBatchOperationSampleDesignerExtension.Editors
 {
     class DownloadDocumentFileModeSource : IItemsSource
     {
