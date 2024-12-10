@@ -1,68 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<OutputType>Library</OutputType>
-		<RootNamespace>CSPSignatureVisualizationServerExtension</RootNamespace>
-		<AssemblyName>CSPSignatureVisualizationServerExtension</AssemblyName>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>disable</Nullable>
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <NoWarn>CS0618</NoWarn>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<Reference Include="DocsVision.BackOffice.ObjectModel">
-			<HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="DocsVision.BackOffice.WebClient">
-			<HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebClient.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="DocsVision.WebClient.Extensibility">
-			<HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="DocsVision.Platform.WebClient">
-			<HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="PdfSharp">
-			<HintPath>..\..\..\Assemblies\Docsvision\PdfSharp.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="SkiaSharp">
-			<HintPath>..\..\..\Assemblies\Others\SkiaSharp.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="Svg.Skia">
-			<HintPath>..\..\..\Assemblies\Others\Svg.Skia.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-		<Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
-			<HintPath>..\..\..\Assemblies\Microsoft\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
-			<Private>False</Private>
-		</Reference>
-	</ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
 
-	<ItemGroup>
-	  <Compile Update="Resources.Designer.cs">
-	    <DesignTime>True</DesignTime>
-	    <AutoGen>True</AutoGen>
-	    <DependentUpon>Resources.resx</DependentUpon>
-	  </Compile>
-	</ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
 
-	<ItemGroup>
-	  <EmbeddedResource Update="Resources.resx">
-	    <Generator>ResXFileCodeGenerator</Generator>
-	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-	  </EmbeddedResource>
-	</ItemGroup>
-
-	<PropertyGroup>
-		<SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-		<PostBuildEvent>xcopy "$(TargetDir)$(MSBuildProjectName).dll" "$(SamplesOutput)\Site\Extensions\$(MSBuildProjectName)\" /Y /I
-xcopy "$(TargetDir)$(MSBuildProjectName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
-	</PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DocsVision.WebClient.Extensibility" Version="6.1.716" />
+  </ItemGroup>
 
 </Project>

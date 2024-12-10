@@ -1,0 +1,33 @@
+<Project>
+
+	<PropertyGroup>
+		<SamplesOutput Condition="'$(SamplesOutput)'==''">$(MSBuildThisFileDirectory)SamplesOutput</SamplesOutput>
+	</PropertyGroup>
+
+	<Target Name="_CopyFilesToSamplesOutput" AfterTargets="Build">
+		<ItemGroup>
+			<SourceFiles Include="$(OutputPath)**\*.*" Condition="$(MSBuildProjectName.EndsWith('DesignerExtension'))">
+				<TargetSubdirectory>Plugins\$(MSBuildProjectName)</TargetSubdirectory>
+			</SourceFiles>
+			<SourceFiles Include="$(OutputPath)**\*.*" Condition="$(MSBuildProjectName.EndsWith('ServerExtension')) or $(MSBuildProjectName.EndsWith('LayoutExtension')) or '$(MSBuildProjectName)'=='SignalForUsersExtension'">
+				<TargetSubdirectory>Site\Extensions\$(MSBuildProjectName)</TargetSubdirectory>
+			</SourceFiles>
+			<SourceFiles Include="$(OutputPath)..\**\*.*" Condition="$(MSBuildProjectName.EndsWith('WebToolExtension'))">
+				<TargetSubdirectory>Site\Content\Tools\DVWebTool\Application Files</TargetSubdirectory>
+			</SourceFiles>
+			<SourceFiles Include="$(OutputPath)**\*.*" Condition="'$(MSBuildProjectName)'=='WebService' or '$(MSBuildProjectName)'=='WebServiceClient'">
+				<TargetSubdirectory>ExternalWebService\$(MSBuildProjectName)</TargetSubdirectory>
+			</SourceFiles>
+			<SourceFiles Include="$(MSBuildProjectDirectory)\..\CardDefs\**\*.*" Condition="'$(MSBuildProjectName)'=='WebService'">
+				<TargetSubdirectory>ExternalWebService\CardDefs</TargetSubdirectory>
+			</SourceFiles>
+			<SourceFiles Include="$(MSBuildProjectDirectory)\..\CardDefs\**\*.xml" Condition="'$(MSBuildProjectName)'=='CustomLibraryServerExtension'">
+				<TargetSubdirectory>SamplesCardDefs\CustomLibrary</TargetSubdirectory>
+			</SourceFiles>
+		</ItemGroup>
+		<Copy SourceFiles="@(SourceFiles)"
+			DestinationFolder="$(SamplesOutput)\%(SourceFiles.TargetSubdirectory)\%(RecursiveDir)"
+			SkipUnchangedFiles="true" />
+	</Target>
+
+</Project>

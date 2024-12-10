@@ -1,46 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <OutputType>Library</OutputType>
-    <RootNamespace>CustomLibrary</RootNamespace>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <OutputPath>..\..\..\bin\WebClientBin\</OutputPath>
     <AssemblyTitle>Custom library object model</AssemblyTitle>
     <Description>Custom library object model</Description>
     <Product>Custom library object model</Product>
-    <Copyright>Copyright © 2022</Copyright>
-    <AssemblyVersion>5.5.17.0</AssemblyVersion>
-    <FileVersion>5.5.17.0</FileVersion>
   </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\..\StrongNameKey.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="DocsVision.BackOffice.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="..\CardDefs\CustomDirectory.CS">
+    <Compile Include="..\CardDefs\CustomDirectory.cs">
       <Link>CustomLibrary\CardLib\CardDefs\CustomDirectory.cs</Link>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>CustomDirectory.xml</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <Content Include="..\CardDefs\CustomDirectory.xml">
       <Link>CustomLibrary\CardLib\CardDefs\CustomDirectory.xml</Link>
@@ -48,18 +23,9 @@
       <LastGenOutput>CustomDirectory.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.223" />
   </ItemGroup>
-  <PropertyGroup>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-    <PostBuildEvent>xcopy "$(TargetDir)$(MSBuildProjectName)*.dll" "$(SamplesOutput)\Site\Extensions\CustomLibraryServerExtension\" /Y /I /E
-xcopy "$(MSBuildProjectDirectory)\..\CardDefs\*.xml" "$(SolutionDir)SamplesOutput\SamplesCardDefs\CustomLibrary\" /Y /I /E</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
+
 </Project>

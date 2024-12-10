@@ -5,72 +5,9 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDependencyFile>false</GenerateDependencyFile>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
+    <SatelliteResourceLanguages>ru</SatelliteResourceLanguages>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\WebService.Interfaces\WebService.Interfaces.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="DocsVision.BackOffice.Localization">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.Localization.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.BackOffice.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.BackOffice.Xml.Schemas">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.Xml.Schemas.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Configuration">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Configuration.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Configuration.Registry">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Configuration.Registry.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.CardLib">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.CardLib.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectManager">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectManager.Rest">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.Rest.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.StorageServer">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.SystemCards.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.SystemCards.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.Xml.Schemas">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.Xml.Schemas.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.Xml.Schemas.XmlSerializers">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.Xml.Schemas.XmlSerializers.dll</HintPath>
-    </Reference>
-    <Reference Include="NLog">
-      <HintPath>..\..\..\Assemblies\Others\NLog.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing.Common">
-      <HintPath>..\..\..\Assemblies\Microsoft\System.Drawing.Common.dll</HintPath>
-    </Reference>
-  </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -78,13 +15,22 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Update="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(TargetDir)*.*&quot; &quot;$(SamplesOutput)\ExternalWebService\$(MSBuildProjectName)\&quot; /Y /I /E" />
-  </Target>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebService.Interfaces\WebService.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.223" />
+    <PackageReference Include="DocsVision.Platform.ObjectManager.Rest" Version="6.1.374" />
+    <PackageReference Include="NLog" Version="5.1.1" />
+  </ItemGroup>
+
 </Project>

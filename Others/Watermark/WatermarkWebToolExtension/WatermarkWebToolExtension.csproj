@@ -1,72 +1,44 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NoWarn>CS8002</NoWarn>
+    <OutputPath>bin\$(Configuration)\Services\</OutputPath>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\bin\DvWebTool\</OutputPath>
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
+
   <ItemGroup>
-    <None Remove="Fonts\LICENSE.txt" />
-    <None Remove="Fonts\Roboto-Bold.ttf" />
-    <None Remove="Fonts\Roboto-Regular.ttf" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Fonts\LICENSE.txt">
+    <None Update="Fonts\*">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\Roboto-Bold.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Fonts\Roboto-Regular.ttf">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    </None>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="DocsVision.DVWebTool.WebServices">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.DVWebTool.WebServices.dll</HintPath>
-    </Reference>
-    <Reference Include="websocket-sharp">
-      <HintPath>..\..\..\Assemblies\Microsoft\websocket-sharp.dll</HintPath>
-    </Reference>
-    <Reference Include="WebSocketSharper">
-      <HintPath>..\..\..\Assemblies\Others\WebSocketSharper.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+
   <ItemGroup>
     <PackageReference Include="BouncyCastle.Cryptography" Version="2.2.1" />
-    <PackageReference Include="itext7" Version="8.0.1" />
+    <PackageReference Include="DocsVision.DVWebTool.WebServices" Version="6.1.716" />
     <PackageReference Include="itext7.bouncy-castle-adapter" Version="8.0.1" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="6.0.0" />
-    <PackageReference Include="NLog" Version="5.2.3" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="itext7" Version="8.0.1" />
+    <PackageReference Include="WebSocketSharp" Version="1.0.3-rc11" NoWarn="NU1701" />
   </ItemGroup>
-  <PropertyGroup>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-    <PostBuildEvent>xcopy /F "$(TargetDir)$(MSBuildProjectName).dll" "$(SamplesOutput)\Site\Content\Tools\DVWebTool\Application Files\Services\" /Y /I
-xcopy /F "$(MSBuildProjectDirectory)\Fonts\*.*" "$(SamplesOutput)\Site\Content\Tools\DVWebTool\Application Files\Services\Fonts" /Y /I
-xcopy /F "$(TargetDir)$(MSBuildProjectName).dll" "$(MSBuildProjectDirectory)\..\DebPackage\Build\DvSupServiceExtension\Services\" /Y /I
-xcopy /F "$(MSBuildProjectDirectory)\Fonts\*.*" "$(MSBuildProjectDirectory)\..\DebPackage\Build\DvSupServiceExtension\Services\Fonts" /Y /I</PostBuildEvent>
-    <AssemblyTitle>WatermarkWebToolExtension</AssemblyTitle>
-    <Company>Docsvision</Company>
-    <Product>WatermarkWebToolExtension</Product>
-    <Copyright>Copyright © Docsvision 2022</Copyright>
-    <AssemblyVersion>5.5.1.0</AssemblyVersion>
-    <FileVersion>5.5.1.0</FileVersion>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-  </PropertyGroup>
-  <Target Name="CopyRefsHack" AfterTargets="ResolveReferences">
+
+  <Target Name="_ModifyReferenceCopyLocalPaths" AfterTargets="ResolveAssemblyReferences">
     <ItemGroup>
-      <ReferenceCopyLocalPaths Update="%(ReferenceCopyLocalPaths)" DestinationSubDirectory="$([MSBuild]::MakeRelative($(OutputPath), $(SamplesOutput)))\Site\Content\Tools\DVWebTool\Application Files\Assemblies\%(ReferenceCopyLocalPaths.DestinationSubDirectory)" />
+      <ReferenceCopyLocalPaths Remove="@(ReferenceCopyLocalPaths)"
+        Condition="$([System.String]::Copy('%(NuGetPackageId)').StartsWith('DocsVision.'))" />
+      <ReferenceCopyLocalPaths Update="@(ReferenceCopyLocalPaths)"
+        DestinationSubDirectory="..\Assemblies\%(ReferenceCopyLocalPaths.DestinationSubDirectory)" />
     </ItemGroup>
   </Target>
-  <Target Name="CopyRefsHack2" AfterTargets="CopyRefsHack">
-    <Copy SourceFiles="@(ReferenceCopyLocalPaths)" DestinationFolder="$(MSBuildProjectDirectory)\..\DebPackage\Build\DvSupServiceExtension\Assemblies\" />
+
+  <Target Name="_CopyFilesToDebianPackage" AfterTargets="Build">
+    <ItemGroup>
+      <WebToolFiles Include="$(OutputPath)..\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(WebToolFiles)"
+      DestinationFolder="$(MSBuildProjectDirectory)\..\DebPackage\Build\DvSupServiceExtension\%(RecursiveDir)"
+      SkipUnchangedFiles="true"
+      UseHardlinksIfPossible="true"
+      ErrorIfLinkFails="true" />
   </Target>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
-  </PropertyGroup>
+
 </Project>

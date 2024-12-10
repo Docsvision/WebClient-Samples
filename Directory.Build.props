@@ -1,0 +1,12 @@
+<Project>
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)StrongNameKey.snk</AssemblyOriginatorKeyFile>
+		<AssemblyVersion>6.0.0.0</AssemblyVersion>
+		<Copyright>Copyright © $([System.DateTime]::Today.Year)</Copyright>
+		<FileVersion>6.1.1</FileVersion>
+		<SGenKeyFile>$(AssemblyOriginatorKeyFile)</SGenKeyFile>
+		<SignAssembly>true</SignAssembly>
+		<Version>6.1.1</Version>
+	</PropertyGroup>
+</Project>

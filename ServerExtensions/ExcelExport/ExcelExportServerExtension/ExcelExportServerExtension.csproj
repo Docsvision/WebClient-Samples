@@ -1,49 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <OutputType>Library</OutputType>
-    <AssemblyTitle>Excel Export Server Extension</AssemblyTitle>
-    <Description>Пример серверного расширения, позволяющего вмешаться в процесс экспорта представления в Excel</Description>
-    <Company>Docsvision</Company>
-    <Product>ExcelExportServerExtension</Product>
-    <Copyright>Copyright © 2022 Docsvision</Copyright>
-    <AssemblyVersion>5.5.17.0</AssemblyVersion>
-    <FileVersion>5.5.17.0</FileVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\bin\WebClientBin\ExcelExportServerExtension\</OutputPath>
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="DocsVision.Platform.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Docsvision.WebClient.Extensibility">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.WebClient.Extensibility.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Autofac" Version="7.1.0" />
-    <PackageReference Include="ClosedXML" Version="0.102.0" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-  </ItemGroup>
-  <PropertyGroup>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-    <PostBuildEvent>if exist "$(TargetDir)Autofac.dll" del /Q "$(TargetDir)Autofac.dll"
-if exist "$(TargetDir)Autofac.Extras.Ordering.dll" del /Q "$(TargetDir)Autofac.Extras.Ordering.dll"
-xcopy "$(TargetDir)$(MSBuildProjectName).dll" "$(SamplesOutput)\Site\Extensions\$(MSBuildProjectName)\" /Y /I
-xcopy "$(TargetDir)$(MSBuildProjectName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
-  </PropertyGroup>
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AssemblyTitle>Excel Export Server Extension</AssemblyTitle>
+    <Description>Пример серверного расширения, позволяющего вмешаться в процесс экспорта представления в Excel</Description>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocsVision.WebClient" Version="6.1.716" />
+  </ItemGroup>
+
 </Project>

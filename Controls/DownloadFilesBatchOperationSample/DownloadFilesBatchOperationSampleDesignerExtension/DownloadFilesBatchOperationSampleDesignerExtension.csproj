@@ -1,84 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <OutputType>Library</OutputType>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
-    <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\bin\Plugins\</OutputPath>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>
-    </DocumentationFile>
-    <WarningsNotAsErrors>NU1803</WarningsNotAsErrors>
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\..\bin\Plugins\</OutputPath>
-    <WarningsNotAsErrors>NU1803</WarningsNotAsErrors>
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\..\StrongNameKey.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="DocsVision.BackOffice.WebLayoutsDesignerExtension">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebLayoutsDesignerExtension.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.BackOffice.WebLayoutsDesignerExtension">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebLayoutsDesignerExtension.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.LayoutEditor.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.LayoutEditor.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform.StorageServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.WebClientLibrary.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.WebFrame.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebFrame.WebClient.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.WebFrame.WebLayoutsDesignerExtension">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebFrame.WebLayoutsDesignerExtension.dll</HintPath>
-    </Reference>
-    <Reference Include="DotNetProjects.Wpf.Extended.Toolkit">
-      <HintPath>..\..\..\Assemblies\Others\DotNetProjects.Wpf.Extended.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="WebLayoutsDesigner">
-      <HintPath>..\..\..\Assemblies\Docsvision\WebLayoutsDesigner.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
-  </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
       <DesignTime>True</DesignTime>
@@ -86,15 +11,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Update="Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
-  <PropertyGroup>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-    <PostBuildEvent>echo "$(SamplesOutput)\Plugins\$(MSBuildProjectName)\"
-xcopy "$(TargetDir)$(MSBuildProjectName)*.dll" "$(SamplesOutput)\Plugins\$(MSBuildProjectName)\" /Y /I /E</PostBuildEvent>
-  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DocsVision.BackOffice.WebLayoutsDesignerExtension" Version="6.1.716" />
+  </ItemGroup>
+
 </Project>

@@ -1,28 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="Docsvision.LayoutEditor.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.LayoutEditor.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform.StorageServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DotNetProjects.Wpf.Extended.Toolkit">
-      <HintPath>..\..\..\Assemblies\Others\DotNetProjects.Wpf.Extended.Toolkit.dll</HintPath>
-    </Reference>
-    <Reference Include="WebLayoutsDesigner">
-      <HintPath>..\..\..\Assemblies\Docsvision\WebLayoutsDesigner.dll</HintPath>
-    </Reference>
+    <None Update="xml\SampleExchangeRatesControlDescription.xml">
+      <TargetPath>%(Filename)%(Extension)</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -35,9 +23,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="xml\SampleExchangeRatesControlDescription.xml" />
-  </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Update="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -50,24 +36,9 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="WebLayoutsDesigner" Version="6.1.716" />
   </ItemGroup>
-  <PropertyGroup>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-    <PostBuildEvent>xcopy "$(TargetDir)$(MSBuildProjectName)*.dll" "$(SamplesOutput)\Plugins\$(MSBuildProjectName)\" /Y /I /E
-xcopy "$(MSBuildProjectDirectory)\xml\*.xml" "$(SamplesOutput)\Plugins\$(MSBuildProjectName)\" /Y /I /E</PostBuildEvent>
-    <AssemblyTitle>ExchangeRatesDesignerExtension</AssemblyTitle>
-    <Product>ExchangeRatesDesignerExtension</Product>
-    <Copyright>Copyright © 2022</Copyright>
-    <AssemblyVersion>5.5.17.0</AssemblyVersion>
-    <FileVersion>5.5.17.0</FileVersion>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;NU1803;NU1803</NoWarn>
-  </PropertyGroup>
+
 </Project>

@@ -1,41 +1,13 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <OutputType>Library</OutputType>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <AssemblyTitle>DataGridControlServerExtension</AssemblyTitle>
-    <Product>DataGridControlServerExtension</Product>
-    <Copyright>Copyright © 2022</Copyright>
-    <AssemblyVersion>5.5.17.0</AssemblyVersion>
-    <FileVersion>5.5.17.0</FileVersion>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\bin\WebClientBin\</OutputPath>
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
+
   <ItemGroup>
-    <Reference Include="DocsVision.BackOffice.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Layout.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Layout.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectManager">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.WebClient.Extensibility">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClient.Extensibility.dll</HintPath>
-    </Reference>
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -48,6 +20,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Update="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -59,17 +32,9 @@
       <LastGenOutput>Resources.ru.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+
   <ItemGroup>
-    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
-    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="DocsVision.Layout.WebClient" Version="6.1.716" />
   </ItemGroup>
-  <PropertyGroup>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
-    <PostBuildEvent>echo  "$(SamplesOutput)\Site\Extensions\$(MSBuildProjectName)\"
-xcopy "$(TargetDir)$(MSBuildProjectName).dll" "$(SamplesOutput)\Site\Extensions\$(MSBuildProjectName)\" /Y /I
-xcopy "$(TargetDir)$(MSBuildProjectName)*.resources.dll" "$(SamplesOutput)\Site\Extensions\" /Y /I /E</PostBuildEvent>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <NoWarn>1701;1702;NU1803</NoWarn>
-  </PropertyGroup>
+
 </Project>

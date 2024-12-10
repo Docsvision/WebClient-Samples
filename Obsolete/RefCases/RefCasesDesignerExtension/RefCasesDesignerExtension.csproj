@@ -1,96 +1,19 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
-    <OutputType>Library</OutputType>
-    <SccProjectName>SAK</SccProjectName>
-    <SccLocalPath>SAK</SccLocalPath>
-    <SccAuxPath>SAK</SccAuxPath>
-    <SccProvider>SAK</SccProvider>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
-    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <OutputPath>..\..\..\bin\Plugins\</OutputPath>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DocumentationFile>
-    </DocumentationFile>
-    <WarningsNotAsErrors>NU1803</WarningsNotAsErrors>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <OutputPath>..\..\bin\Plugins\</OutputPath>
-    <WarningsNotAsErrors>NU1803</WarningsNotAsErrors>
-  </PropertyGroup>
-  <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
-  </PropertyGroup>
-  <PropertyGroup>
-    <AssemblyOriginatorKeyFile>..\..\..\StrongNameKey.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Remove="FakesAssemblies\**" />
-    <EmbeddedResource Remove="FakesAssemblies\**" />
-    <None Remove="FakesAssemblies\**" />
-    <Page Remove="FakesAssemblies\**" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="DocsVision.BackOffice.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.BackOffice.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.BackOffice.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="Docsvision.LayoutEditor.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\Docsvision.LayoutEditor.ObjectModel.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectManager">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectManager.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.StorageServer">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.StorageServer.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="DocsVision.Platform.WebClient">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebClient.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Platform.WebLayoutsDesignerExtension">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Platform.WebLayoutsDesignerExtension.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.WebClientLibrary.ObjectModel">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.WebClientLibrary.ObjectModel.dll</HintPath>
-    </Reference>
-    <Reference Include="DocsVision.Workflow.Objects">
-      <HintPath>..\..\..\Assemblies\Docsvision\DocsVision.Workflow.Objects.dll</HintPath>
-    </Reference>
-    <Reference Include="WebLayoutsDesigner">
-      <HintPath>..\..\..\Assemblies\Docsvision\WebLayoutsDesigner.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="xml\RefCasesControlDescription.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="DotNetProjects.Extended.Wpf.Toolkit" Version="5.0.103" />
-    <PackageReference Include="Microsoft.QualityTools.Testing.Fakes" Version="16.11.230815" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Fakes\" />
-    <Folder Include="Test\" />
-  </ItemGroup>
-  <PropertyGroup>
-    <SamplesOutput Condition=" '$(SamplesOutput)' == '' ">$(SolutionDir)SamplesOutput</SamplesOutput>
 
-  </PropertyGroup>
   <ItemGroup>
-    <AdditionalDesignTimeBuildInput Remove="FakesAssemblies\**" />
+    <None Update="xml\RefCasesControlDescription.xml">
+      <TargetPath>%(Filename)%(Extension)</TargetPath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="xcopy &quot;$(TargetDir)$(MSBuildProjectName)*.dll&quot; &quot;$(SamplesOutput)\Plugins\$(MSBuildProjectName)\&quot; /Y /I /E" />
-  </Target>
+
+  <ItemGroup>
+    <PackageReference Include="DocsVision.Platform.WebLayoutsDesignerExtension" Version="6.1.716" />
+  </ItemGroup>
+
 </Project>
