@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <GenerateDependencyFile>false</GenerateDependencyFile>
@@ -30,7 +30,7 @@
   <ItemGroup>
     <PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.223" />
     <PackageReference Include="DocsVision.Platform.ObjectManager.Rest" Version="6.1.374" />
-    <PackageReference Include="NLog" Version="5.1.1" />
+    <PackageReference Include="NLog" Version="5.4.0" />
   </ItemGroup>
 
 </Project>
