@@ -25,7 +25,7 @@ export async function loadOrganizationInfo(sender: LayoutControl) {
                         zipCode: addr.zipCode,
                         country: '',
                         city: `${addr.regionName.topoValue} ${addr.regionName.topoFullName} ${addr.city.topoShortName}.${addr.city.topoValue}`,
-                        address: `${addr.street.topoShortName}. ${addr.street.topoValue}, ${addr.house.topoShortName} ${addr.street.topoValue}`
+                        address: `${addr.street.topoShortName}. ${addr.street.topoValue}, ${addr.house.topoShortName} ${addr.house.topoValue}`
                     }
                 } catch (err) {
                     console.error(err);
