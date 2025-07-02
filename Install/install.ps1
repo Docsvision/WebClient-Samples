@@ -93,7 +93,7 @@ function Update-Path {
 }
 
 function Find-Node {
-	$Version = '16.20.0'
+	$Version = '22.14.0'
 	$Node = Get-Command -Name Node -ErrorAction SilentlyContinue
 	$NPM = Get-Command -Name NPM -ErrorAction SilentlyContinue
 	$NVM = Get-Command -Name NVM -ErrorAction SilentlyContinue
@@ -123,11 +123,11 @@ function Find-Node {
 }
 
 function Install-Node {
-	if (Invoke-YesNoPrompt -Prompt 'Try to install install Node v16.20.0?') {
+	if (Invoke-YesNoPrompt -Prompt 'Try to install install Node v22.14.0?') {
 		if ($Is64BitOperatingSystem) {
-			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v16.20.0/node-v16.20.0-x64.msi'
+			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v22.14.0/node-v22.14.0-x64.msi'
 		} else {
-			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v16.20.0/node-v16.20.0-x86.msi'
+			$FilePath = DownloadFile -Uri 'https://nodejs.org/dist/v22.14.0/node-v22.14.0-x86.msi'
 		}
 		$Process = Start-Process -FilePath 'msiexec' -ArgumentList '/i', $FilePath, '/qn' -Verb RunAs -PassThru -Wait
 		if ($Process.ExitCode -eq 0) {
@@ -186,7 +186,7 @@ if (!(Find-VisualStudio)) {
 # Node.js
 if (!(Find-Node)) {
 	if (!(Install-Node)) {
-		throw 'FATAL ERROR: cannot continue without Node v16.20.0.'
+		throw 'FATAL ERROR: cannot continue without Node v22.14.0.'
 	}
 }
 

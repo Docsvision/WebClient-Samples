@@ -7,7 +7,7 @@
 Для использования примеров необходимо наличие следующих продуктов:
 
 * [Visual Studio 2022](https://www.visualstudio.com). Более ранние версии Visual Studio [несовместимы с .NET6](https://github.com/dotnet/core/issues/5567).
-* [NodeJS v16.20.0+](https://nodejs.org/en/)
+* [NodeJS v22.14.0+](https://nodejs.org/en/)
 * [Docsvision Resource Kit](https://docsvision.itsm365.com/sd/operator/#uuid:KB$2437101)
 
 ### Структура разделов
