@@ -8,7 +8,7 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2017/2019](https://www.visualstudio.com)
-* [NodeJS v14.17.0+](https://nodejs.org/en/)
+* [NodeJS v22.14.0+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
