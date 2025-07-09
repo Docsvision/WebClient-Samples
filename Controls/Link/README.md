@@ -10,7 +10,7 @@
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2022](https://www.visualstudio.com)
-* [NodeJS v16.20.0+](https://nodejs.org/en/)
+* [NodeJS v22.14.0+](https://nodejs.org/en/)
 
 ## Сборка и установка
 
