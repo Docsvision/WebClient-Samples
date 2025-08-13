@@ -10,7 +10,8 @@
   "author": "Docsvision",
   "dependencies": {
     "gulp": "^4.0.2",
-    "rollup": "^2.33.1"
+    "rollup": "^2.33.1",
+    "react": "17.0.2"
   },
   "repository": {
     "type": "git",
@@ -18,8 +19,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@docsvision/webclient": "~5.16.1",
+    "@docsvision/webclient": "~5.17.0",
     "@docsvision/webclient-extension-build": "~5.17.0",
-    "concurrently": "^4.1.1"
+    "concurrently": "^4.1.1",
+    "@types/react": "17.0.3"
   }
 }
