@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <AssemblyTitle>DocsVision Approval Designer Get Approvers Sample</AssemblyTitle>
     <Description>DocsVision Approval Designer Get Approvers Sample</Description>
   </PropertyGroup>
