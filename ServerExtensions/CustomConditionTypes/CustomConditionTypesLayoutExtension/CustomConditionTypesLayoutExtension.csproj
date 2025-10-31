@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocsVision.WebClientLibrary.ObjectModel" Version="6.1.716" />
+    <PackageReference Include="DocsVision.WebClientLibrary.ObjectModel" Version="6.1.1110" />
   </ItemGroup>
 
 </Project>

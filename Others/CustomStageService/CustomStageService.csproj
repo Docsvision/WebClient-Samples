@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocsVision.ApprovalDesigner.ObjectModel" Version="6.1.105" />
+    <PackageReference Include="DocsVision.ApprovalDesigner.ObjectModel" Version="6.1.130" />
   </ItemGroup>
 
 </Project>

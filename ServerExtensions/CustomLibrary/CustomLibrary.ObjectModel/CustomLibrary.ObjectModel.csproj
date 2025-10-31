@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.223" />
+    <PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.274" />
   </ItemGroup>
 
 </Project>

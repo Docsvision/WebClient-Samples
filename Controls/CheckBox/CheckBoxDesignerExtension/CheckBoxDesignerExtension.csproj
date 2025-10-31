@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocsVision.Platform.WebLayoutsDesignerExtension" Version="6.1.716" />
+    <PackageReference Include="DocsVision.Platform.WebLayoutsDesignerExtension" Version="6.1.1110" />
   </ItemGroup>
 
 </Project>
