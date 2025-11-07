@@ -18,10 +18,8 @@
 3. Собрать проект ServerExtensions > CustomConditionTypes > CustomConditionTypesLayoutExtension
 4. Собрать проект ServerExtensions > CustomConditionTypes > CustomConditionTypesInterfaces
 5. Скопировать каталог SamplesOutput\Plugins\CustomConditionTypesDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
-6. Скопировать каталог SamplesOutput\Plugins\CustomConditionTypesInterfaces в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
-7. Скопировать каталог SamplesOutput\Site\Extensions\CustomConditionTypesInterfaces в каталог "Путь к сайту Web-клиента\Extensions"
-8. Скопировать каталог SamplesOutput\Site\Extensions\CustomConditionTypesLayoutExtension в каталог "Путь к сайту Web-клиента\Extensions"
-9. Перезапустить Web-сервис
+6. Скопировать каталог SamplesOutput\Site\Extensions\CustomConditionTypesLayoutExtension в каталог "Путь к сайту Web-клиента\Extensions"
+7. Перезапустить Web-сервис
 
 ## Проверка примера
 
