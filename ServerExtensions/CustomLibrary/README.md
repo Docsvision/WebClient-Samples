@@ -22,7 +22,7 @@
 4. Скопировать каталог SamplesOutput\Site\Extensions\CustomLibraryServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
 5. Скопировать каталог SamplesOutput\Site\Content\Modules\CustomLibraryWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
 6. (Внимание! Перед выполнением следующего шага, рекомендуется сделать резервную копию базы данных DocsVision)
-На сервере Docsvision установить Docsvision Resource Kit, установить обновление DVExplorer. С помощью утилиты DVCardManager следует загрузить 
+На Windows-машине установить Docsvision Resource Kit, установить обновление DVExplorer. С помощью утилиты DVCardManager следует добавить базу данных и загрузить
 в БД Docsvision библиотеку CustomCardLib из каталога SamplesOutput\SamplesCardDefs\CustomLibrary. Подробное описание процедуры загрузки пользовательской 
 библиотеки карточек содержится в документации разработчика Docsvision. 
 7. С помощью утилиты DVExplorer подключиться к БД, открыть карточку справочника Custom Directory, добавить строку секции MainInfo 
