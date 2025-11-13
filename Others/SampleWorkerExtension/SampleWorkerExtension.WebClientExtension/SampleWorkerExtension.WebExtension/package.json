@@ -20,7 +20,6 @@
     "@docsvision/web": "~6.1.0",
     "@docsvision/webclient": "~6.1.0",
     "@docsvision/webclient-extension-build": "~6.1.0",
-    "concurrently": "^5.3.0",
-    "@types/react": "17.0.3"
+    "concurrently": "^5.3.0"
   }
 }
