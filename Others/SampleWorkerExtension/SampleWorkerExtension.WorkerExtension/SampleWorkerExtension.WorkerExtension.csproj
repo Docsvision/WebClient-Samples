@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">  
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<AssemblyName>DocsVision.SampleWorkerExtension.WorkerExtension</AssemblyName>
+	<EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\..\..\StrongNameKey.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\SamplesOutput\WorkerService\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>..\..\..\SamplesOutput\WorkerService\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SampleWorkerExtension.ObjectModel\SampleWorkerExtension.ObjectModel.csproj">
+      <Project>{97585707-efbc-47c3-a310-ca819b9df1d4}</Project>
+      <Name>SampleWorkerExtension.ObjectModel</Name>
+      <Private>False</Private>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\StrongNameKey.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DocsVision.Platform" Version="6.1.546" />
+    <PackageReference Include="DocsVision.Platform.ObjectManager" Version="6.1.546" />
+    <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.546" />
+    <PackageReference Include="DocsVision.Platform.StorageServer" Version="6.1.546" />
+    <PackageReference Include="Docsvision.WorkerService.Interfaces" Version="6.1.114" />
+  </ItemGroup>
+</Project>
