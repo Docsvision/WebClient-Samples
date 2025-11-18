@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using DocsVision.WebAdminConsole.Instances;
-using DocsVision.WebAdminConsole.Types;
-using DocsVision.WebAdminConsole.WorkerExtension.Services;
-using DocsVision.WebAdminConsole.WorkerExtension.Worker;
-using DocsVision.WebAdminConsole.WorkerExtension.Worker.Models;
+using Docsvision.WorkerService.ManagementConsoleExtension.ObjectModel.Factories;
+using Docsvision.WorkerService.Runtime.Settings.Settings.Instances;
+using Docsvision.WorkerService.Runtime.Settings.Settings.Types;
+using Docsvision.WorkerService.ManagementConsoleExtension.ObjectModel.Models;
+using Docsvision.WorkerService.ManagementConsoleExtension.ObjectModel.Services;
 
 namespace SampleWorkerExtension.Role
 {
@@ -24,9 +24,9 @@ namespace SampleWorkerExtension.Role
             return Resource.SampleName;
         }
 
-        public override DocsVision.WebAdminConsole.Instances.Role CreateRole(RoleType roleType)
+        public override Docsvision.WorkerService.Runtime.Settings.Settings.Instances.Role CreateRole(RoleType roleType)
         {
-            DocsVision.WebAdminConsole.Instances.Role role = base.CreateRole(roleType);
+            var role = base.CreateRole(roleType);
             role.Queues.Add(CreateQueue("DocsvisionQueue"));
             role.TaskType = "SampleTaskDocsvision";
 
@@ -46,7 +46,7 @@ namespace SampleWorkerExtension.Role
             };
         }
 
-        public override void ChangeConnection(DocsVision.WebAdminConsole.Instances.Role role, RoleConnection connection)
+        public override void ChangeConnection(Docsvision.WorkerService.Runtime.Settings.Settings.Instances.Role role, RoleConnection connection)
         {
             base.ChangeConnection(role, connection);
 

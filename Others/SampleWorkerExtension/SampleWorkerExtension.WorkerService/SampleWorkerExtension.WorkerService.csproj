@@ -46,7 +46,5 @@
     <PackageReference Include="DocsVision.Platform.Settings.ObjectModel" Version="6.1.110" />
     <PackageReference Include="DocsVision.Platform.StorageServer" Version="6.1.546" />
     <PackageReference Include="DocsVision.Platform.SystemCards.ObjectModel" Version="6.1.546" />
-    <PackageReference Include="Docsvision.WorkerService.Interfaces" Version="6.1.114" />
-    <PackageReference Include="Docsvision.WorkerService.ObjectModel" Version="6.1.114" />
   </ItemGroup>
 </Project>

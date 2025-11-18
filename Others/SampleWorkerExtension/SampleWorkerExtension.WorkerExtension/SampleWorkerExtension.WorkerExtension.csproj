@@ -33,6 +33,5 @@
     <PackageReference Include="DocsVision.Platform.ObjectManager" Version="6.1.546" />
     <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.546" />
     <PackageReference Include="DocsVision.Platform.StorageServer" Version="6.1.546" />
-    <PackageReference Include="Docsvision.WorkerService.Interfaces" Version="6.1.114" />
   </ItemGroup>
 </Project>

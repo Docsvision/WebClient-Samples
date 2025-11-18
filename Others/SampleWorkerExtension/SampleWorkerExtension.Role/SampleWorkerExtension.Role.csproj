@@ -30,8 +30,7 @@
     <EmbeddedResource Include="Resource.ru.resx" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DocsVision.ManagementConsole.Settings.Common" Version="6.1.170" />
-    <PackageReference Include="DocsVision.ManagementConsole.WorkerExtension.WebService" Version="6.1.170" />
+    <PackageReference Include="Docsvision.WorkerService.ManagementConsoleExtension.ObjectModel" Version="6.1.114" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Resource.Designer.cs">
