@@ -19,7 +19,9 @@
     <OutputPath>..\..\..\SamplesOutput\WorkerService\</OutputPath>
   </PropertyGroup>
   <ItemGroup>
-    <None Include="SampleWorkerExtension.json" />
+    <None Include="SampleWorkerExtension.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="..\..\..\StrongNameKey.snk" />
   </ItemGroup>
   <ItemGroup>
