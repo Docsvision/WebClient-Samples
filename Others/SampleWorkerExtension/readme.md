@@ -18,6 +18,7 @@
 	GetDisplayName определяет как в админке будет отображаться тип конфигурации(по сути локализация)
 - SampleWorkerExtension.WorkerExtension
 	Сборка - расширение WorkerService: здесь описывается сервис(SampleEventHandlerService), который обрабатывает события сгенерированные для воркера. Загружается логика обработки сообщений SampleWorkerExtension.Manager
+	Так же реализован IRoleTemplateProvider, который добавляет созданную роль в список поддерживаемых и позволяет отображать в доступных типах конфигурацию семпла
 - SampleWorkerExtension.WorkerService
    Проект реализует фабрику задач для WorkerService и позволяет обрабатывать в WorkerService собственное расширение и его сервисы, оформленные в виде сервисов-обработчиков событий.
    Обратите внимание, что в конструкторе фабрики SampleTaskFactory свойство MessageTypes(id сервисов обработки = SampleEventHandlerService.ServiceId) определяет какие типы сообщений будут запрашиваться из базы. 
@@ -30,7 +31,7 @@
 * ManagementConsole 6.1.174 и выше
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2022](https://www.visualstudio.com)
+* [Visual Studio 2022](https://www.visualstudio.com)
 
 ## Сборка
 
