@@ -2,16 +2,11 @@
 using DocsVision.Platform.WebClient.Models;
 using ServerExtension.Models;
 using ServerExtension.Services;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ServerExtension.Controllers
 {
-    public class SampleWorkerController: ApiController
+    public class SampleWorkerController: Controller
     {
         private readonly ICurrentObjectContextProvider currentObjectContextProvider;
         private readonly ISampleWorkerService sampleWorkerService;
