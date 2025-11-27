@@ -64,14 +64,14 @@ ru\DocsVision.SampleWorkerExtension.WorkerService.resources.dll
 
 5. Установить сэмпл ConversionSample (инструкция внутри проекта)
 
-6. Отредактировать конфигурационный файл ExternalAPI /usr/lib/docsvision/externalapi/appsettings.json
+6. Отредактировать конфигурационный файл /usr/lib/docsvision/managementconsole/config/managementConsoleWorkerExtension.json
 
 В секцию Libraries добавить строку с SampleWorkerExtension.WorkerService. Секция будет выглядеть вот так:
-```
-	<Libraries>
-      <add Path="DocsVision.BackOffice.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519" />
-	  <add Path="DocsVision.SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29" /> 
-    </Libraries>
+```json
+    "Libraries": [
+      "DocsVision.BackOffice.ObjectModel, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7148afe997f90519",
+      "DocsVision.SampleWorkerExtension.WorkerService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29",
+    ]
 ```
 
 ## Проверка

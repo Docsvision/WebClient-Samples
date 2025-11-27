@@ -5,7 +5,7 @@
 ## Настройка среды
 
 **Перечень необходимых инструментов:** 
-* [Visual Studio 2017/2019](https://www.visualstudio.com)
+* [Visual Studio 2022](https://www.visualstudio.com)
 * [NodeJS v22.14.0+](https://nodejs.org/en/)
 
 ## Сборка
@@ -15,7 +15,7 @@
 3. Открыть консоль в папке Others > SampleWorkerExtension > SampleWorkerExtension.WebClientExtension > SampleWorkerExtension.WebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\SampleWorkerWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 5. Скопировать каталог SamplesOutput\Site\Extensions\SampleWorkerExtension.ServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
-6. Перезапустить IIS
+6. Перезапустить сервис Web-клиент.
 
 ## Проверка примера
 
@@ -25,7 +25,7 @@
 4. Открыть разметку и добавить в нее элемент управления "Кнопка"
 5. На событие onClick задать функцию sendConversionTask 
 6. Сохранить разметку
-7. Перезапустить IIS
+7. Перезапустить сервис Web-клиент.
 8. Открыть карточку с этой разметкой
 9. Убедиться, что появился новый элемент управления (кнопка, при нажатии на которую создается исходящий документ)
 10. Должен открыться исходящий документ, с заданными аттрибутами.
