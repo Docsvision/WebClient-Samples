@@ -28,7 +28,7 @@
 
 **Требования к модулям Docsvision:**
 
-* ManagementConsole 6.1.174 и выше
+* ManagementConsole 6.2 и выше
 
 **Перечень необходимых инструментов:** 
 * [Visual Studio 2022](https://www.visualstudio.com)
