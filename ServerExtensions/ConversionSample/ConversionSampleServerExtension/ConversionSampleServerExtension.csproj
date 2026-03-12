@@ -9,7 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocsVision.ConversionService" Version="6.1.20" />
+    <PackageReference Include="DocsVision.ConversionService" Version="6.1.23-g2908a732bc" />
     <PackageReference Include="DocsVision.Platform.Settings.ObjectModel" Version="6.1.110" />
     <PackageReference Include="DocsVision.WebClient.Extensibility" Version="6.1.1110" />
   </ItemGroup>
