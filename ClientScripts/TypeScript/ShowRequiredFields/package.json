@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "sample-extension",
   "version": "1.0.0",
   "description": "Sample extension for Docsvision WebClient.",
@@ -17,8 +17,8 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@docsvision/webclient": "6.1.0",
-    "@docsvision/webclient-extension-build": "~6.1.0",
+    "@docsvision/webclient": "6.1",
+    "@docsvision/webclient-extension-build": "~6.1",
     "concurrently": "^4.1.0",
     "gulp": "^4.0.0",
     "rollup": "^2.23.0",

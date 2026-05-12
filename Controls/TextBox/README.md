@@ -16,7 +16,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект Controls > TextBox > TextBoxDesignerExtension
-3. Открыть консоль в папке Controls > TextBox > TextBoxWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+3. Открыть консоль в папке Controls > TextBox > TextBoxWebExtension и выполнить команду npm install, потом  npm run build:prod
 4. Скопировать каталог SamplesOutput\Plugins\TextBoxDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
 5. Скопировать каталог SamplesOutput\Site\Content\Modules\TextBoxWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
 6. Выполнить инструкции по сборке и установке семпла ControlProperties > Url

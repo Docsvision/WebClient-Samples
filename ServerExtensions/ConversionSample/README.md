@@ -14,7 +14,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > ConversionSample > ConversionSampleServerExtension
-3. Открыть консоль в папке ServerExtensions > ConversionSample > ConversionSampleWebExtension `npm install`, `npm update` и `npm run build:prod`
+3. Открыть консоль в папке ServerExtensions > ConversionSample > ConversionSampleWebExtension `npm install` и `npm run build:prod`
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\ConversionSampleWebExtension в каталог "Путь к установленному Web-клиент/Content/Modules"
 5. Скопировать каталог SamplesOutput\Site\Extensions\ConversionSampleServerExtension в каталог "Путь к установленному Web-клиент/Extensions"
 6. Перезапустить службу сервера приложений sudo systemctl restart dvappserver

@@ -14,7 +14,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > CreateCard > CreateCardServerExtension
-3. Открыть консоль в папке ServerExtensions > CreateCard > CreateCardWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+3. Открыть консоль в папке ServerExtensions > CreateCard > CreateCardWebExtension и выполнить команду npm install, потом  npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\CreateCardWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
 5. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
 6. Перезапустить Web-сервис

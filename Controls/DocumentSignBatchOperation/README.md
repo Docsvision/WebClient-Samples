@@ -11,7 +11,7 @@
 
 ## Сборка и установка
 
-1. Открыть консоль в папке DocumentSignBatchOperationWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+1. Открыть консоль в папке DocumentSignBatchOperationWebExtension и выполнить команду npm install, потом  npm run build:prod
 2. Скопировать каталог SamplesOutput\Site\Content\Modules\DocumentSignBatchOperationWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
 3. Скопировать файл расширения Конструктора веб-разметок из папки DocumentSignBatchOperationDesignerExtension в папку "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins". 
 4. Перезапустить Web-сервис

@@ -15,7 +15,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > TableControl > TableControlServerExtension
-3. Открыть консоль в папке ServerExtensions > TableControl > TableControlWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+3. Открыть консоль в папке ServerExtensions > TableControl > TableControlWebExtension и выполнить команду npm install, потом  npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\TableControlWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
 5. Скопировать каталог SamplesOutput\Site\Extensions\TableControlServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
 6. Перезапустить Web-сервис

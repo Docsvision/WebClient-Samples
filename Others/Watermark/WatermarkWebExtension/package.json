@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "watermark-extension",
   "version": "5.5.0",
   "description": "Watermark to PDF extension for Docsvision WebClient.",
@@ -19,7 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "@docsvision/webclient": "^6.1.4-beta.1",
-    "@docsvision/webclient-extension-build": "~6.1.0",
+    "@docsvision/webclient-extension-build": "~6.1",
     "concurrently": "^4.1.1"
   }
 }

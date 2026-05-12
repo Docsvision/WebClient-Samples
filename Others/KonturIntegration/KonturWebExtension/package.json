@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "kontur-web-extension",
   "version": "1.0.0",
   "description": "Sample extension for Docsvision WebClient.",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "devDependencies": {
     "@docsvision/webclient": "~5.16.1",
-    "@docsvision/webclient-extension-build": "~6.1.0",
+    "@docsvision/webclient-extension-build": "~6.1",
     "concurrently": "^5.3.0"
   }
 }

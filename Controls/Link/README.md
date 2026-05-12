@@ -15,7 +15,7 @@
 ## Сборка и установка
 
 1. Открыть /Samples.sln
-4. Открыть консоль в папке Controls > Link > LinkWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+4. Открыть консоль в папке Controls > Link > LinkWebExtension и выполнить команду npm install, потом  npm run build:prod
 3. Скопировать каталог SamplesOutput\Plugins\LinkDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\LinkWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
 5. Перезапустить Web-сервис
