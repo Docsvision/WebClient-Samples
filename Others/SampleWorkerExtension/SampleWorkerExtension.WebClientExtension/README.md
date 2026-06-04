@@ -12,7 +12,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект Others > SampleWorkerExtension > SampleWorkerExtension.WebClientServerExtension
-3. Открыть консоль в папке Others > SampleWorkerExtension > SampleWorkerExtension.WebClientExtension > SampleWorkerExtension.WebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+3. Открыть консоль в папке Others > SampleWorkerExtension > SampleWorkerExtension.WebClientExtension > SampleWorkerExtension.WebExtension и выполнить команду npm install, потом  npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\SampleWorkerWebExtension в каталог "Путь к установленному Web-клиент\Site\Content\Modules"
 5. Скопировать каталог SamplesOutput\Site\Extensions\SampleWorkerExtension.ServerExtension в каталог "Путь к установленному Web-клиент\Site\Extensions"
 6. Перезапустить сервис Web-клиент.

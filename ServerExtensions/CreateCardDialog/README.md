@@ -14,7 +14,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > CreateCardDialog > CreateCardDialogServerExtension
-3. Открыть консоль в папке ServerExtensions > CreateCardDialog > CreateCardDialogWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+3. Открыть консоль в папке ServerExtensions > CreateCardDialog > CreateCardDialogWebExtension и выполнить команду npm install, потом  npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Extensions\CreateCardDialogServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
 5. Скопировать файл SamplesOutput\Site\Extensions\ru\CreateCardDialogServerExtension.resources.dll в каталог "Путь к сайту Web-клиента\Extensions\ru"
 6. Скопировать каталог SamplesOutput\Site\Content\Modules\CreateCardDialogWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"

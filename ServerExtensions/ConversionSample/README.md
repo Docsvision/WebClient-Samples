@@ -14,7 +14,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проект ServerExtensions > ConversionSample > ConversionSampleServerExtension
-3. Открыть консоль в папке ServerExtensions > ConversionSample > ConversionSampleWebExtension `npm install`, `npm update` и `npm run build:prod`
+3. Открыть консоль в папке ServerExtensions > ConversionSample > ConversionSampleWebExtension `npm install` и `npm run build:prod`
 4. Скопировать каталог SamplesOutput\Site\Content\Modules\ConversionSampleWebExtension в каталог "Путь к установленному Web-клиент/Content/Modules"
 5. Скопировать каталог SamplesOutput\Site\Extensions\ConversionSampleServerExtension в каталог "Путь к установленному Web-клиент/Extensions"
 6. Перезапустить службу сервера приложений sudo systemctl restart dvappserver
@@ -23,9 +23,9 @@
 ## Проверка примера
 
 > Для работы расширения требуется задать адрес Web-клиента в Справочнике системных настроек и адрес сервера Р7/OnlyOffice в конфигурационном файле Web-клиента.
-На сервере Р7/OnlyOffice должна быть отключена авторизация по токенам (параметры inbox, outbox и browser в секции token\enable конфигурационного файла Р7/OnlyOffice).
+Если на сервере Р7/OnlyOffice включена авторизация по токенам, то следует прописать токен в конфигурации Web-клиента согласно документации (раздел "Функции администратора модуля Web-клиент / Настройка "Р7-Офис. Сервер документов").
 
 1. Открыть конструктор веб-разметок.
-2. В разметке просмотра документа на событие "Перед стартом согласования" элемента управления agreementManagement назначить обработчик attachPdfa.
+2. В разметке просмотра документа на событие "Перед стартом согласования" элемента управления agreementManagementButton назначить обработчик attachPdfa.
 3. Создать карточку документа, приложить к ней .docx-файл и отправить на согласование.
 4. К документу будет добавлен первый файл из списка, сконвертированный в PDF/A.

@@ -17,7 +17,7 @@
 1. Открыть /Samples.sln
 2. Собрать проект Controls > Image > ImageDesignerExtension
 3. Собрать проект Controls > Image > ImageServerExtension
-4. Открыть консоль в папке Controls > Image > ImageWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+4. Открыть консоль в папке Controls > Image > ImageWebExtension и выполнить команду npm install, потом  npm run build:prod
 5. Собрать проект ControlProperties > Url > UrlPropertyDesignerExtension
 6. Скопировать каталог SamplesOutput\Plugins\ImageDesignerExtension в каталог "Путь к директории с исполняемым файлом конструктора Web-разметок\Plugins"
 7. Скопировать каталог SamplesOutput\Site\Extensions\ImageServerExtension в каталог "Путь к сайту Web-клиента\Extensions"

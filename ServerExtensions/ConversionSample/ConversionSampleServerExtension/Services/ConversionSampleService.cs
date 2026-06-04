@@ -41,40 +41,25 @@ namespace DocsVision.ConversionSampleServerExtension.Services
         /// </summary>
         /// <param name="sessionContext">>Контекст сессии.</param>
         public CommonResponse CanConvert(SessionContext sessionContext, Guid fileId)
-		{
-			var response = new CommonResponse();
+        {
+            var response = new CommonResponse();
             var objectContext = sessionContext.ObjectContext;
+            var uniConversionService = new ConversionService.Services.ConversionService(
+                _serviceProvider, 
+                GetConversionServiceOptions(objectContext), 
+                Trace.TraceByLevel);
 
-            // Получаем адрес сервера Р7 из конфигурационного файла Web-клиента.
-            var conversionServiceUrl = _configurationProvider.GetSetting<string>(SettingConstants.WebClient.ServerR7ConnectionAddress);
-            if (string.IsNullOrEmpty(conversionServiceUrl))
+            var result = uniConversionService.IsConvert(objectContext, fileId);
+
+            if (result.Success)
             {
-                throw new ArgumentNullException(nameof(conversionServiceUrl));
+                response.InitializeSuccess();
             }
-
-            // Получаем адрес Web-клиента из Справочника системных настроек.
-
-            
-            var settingsService = objectContext.GetService<ISettingsService>();
-            var additionalSettings = settingsService.GetPropertyObject<AdditionalSettings>(NavigatorExtensionTypeName, NavigatorAdditionalSettingsGroupName);
-            if (string.IsNullOrWhiteSpace(additionalSettings?.ThinClientServerAddress))
+            else
             {
-                throw new ArgumentNullException(nameof(additionalSettings.ThinClientServerAddress));
-            }
-
-            var uniConversionService = new ConversionService.Services.ConversionService(_serviceProvider, conversionServiceUrl,
-                additionalSettings.ThinClientServerAddress, Trace.TraceByLevel);
-			var result = uniConversionService.IsConvert(objectContext, fileId);
-
-			if (result.Success)
-			{
-				response.InitializeSuccess();
-			} 
-			else
-			{
                 response.InitializeError(result.Message);
             }
-			return response;
+            return response;
         }
 
         /// <summary>
@@ -87,24 +72,11 @@ namespace DocsVision.ConversionSampleServerExtension.Services
 		{
 			var objectContext = sessionContext.ObjectContext;
 
-			// Получаем адрес сервера Р7 из конфигурационного файла Web-клиента.
-			var conversionServiceUrl = _configurationProvider.GetSetting<string>(SettingConstants.WebClient.ServerR7ConnectionAddress);
-			if (string.IsNullOrEmpty(conversionServiceUrl))
-			{
-				throw new ArgumentNullException(nameof(conversionServiceUrl));
-			}
-
-            // Получаем адрес Web-клиента из Справочника системных настроек.
-            var settingsService = objectContext.GetService<ISettingsService>();
-			var additionalSettings = settingsService.GetPropertyObject<AdditionalSettings>(NavigatorExtensionTypeName, NavigatorAdditionalSettingsGroupName);
-			if (string.IsNullOrWhiteSpace(additionalSettings?.ThinClientServerAddress))
-			{
-				throw new ArgumentNullException(nameof(additionalSettings.ThinClientServerAddress));
-			}
-
-			// Конвертируем файла.
-			var uniConversionService = new ConversionService.Services.ConversionService(_serviceProvider, conversionServiceUrl,
-				additionalSettings.ThinClientServerAddress, Trace.TraceByLevel);
+            // Конвертируем файл.
+            var uniConversionService = new ConversionService.Services.ConversionService(
+                _serviceProvider, 
+                GetConversionServiceOptions(objectContext), 
+                Trace.TraceByLevel);
 			var result = uniConversionService.ConvertToStream(objectContext, fileId, ConversionFormat.pdfa);
 
 			var response = new CommonResponse();
@@ -137,8 +109,37 @@ namespace DocsVision.ConversionSampleServerExtension.Services
 			return response;
 		}
 
-		// Формирует имя сконвертированного файла.
-		private static string RenameFile(string fileName)
+        // Получает настройки для работы с сервисом конвертации
+        private ConversionServiceOptions GetConversionServiceOptions(Platform.ObjectModel.ObjectContext objectContext)
+        {
+            // Получаем адрес сервера Р7 из конфигурационного файла Web-клиента.
+            var conversionServiceUrl = _configurationProvider.GetSetting<string>(SettingConstants.WebClient.ServerR7ConnectionAddress);
+            if (string.IsNullOrEmpty(conversionServiceUrl))
+            {
+                throw new ArgumentNullException(nameof(conversionServiceUrl));
+            }
+
+            // Получаем опциональную настройку для авторизации в Р7 с помощью токенов из конфигурационного файла Web-клиента.
+            var serverR7SecretToken = _configurationProvider.GetSetting<string>(SettingConstants.WebClient.ServerR7SecretToken);
+
+            // Получаем адрес Web-клиента из Справочника системных настроек.
+            var settingsService = objectContext.GetService<ISettingsService>();
+            var additionalSettings = settingsService.GetPropertyObject<AdditionalSettings>(NavigatorExtensionTypeName, NavigatorAdditionalSettingsGroupName);
+            if (string.IsNullOrWhiteSpace(additionalSettings?.ThinClientServerAddress))
+            {
+                throw new ArgumentNullException(nameof(additionalSettings.ThinClientServerAddress));
+            }
+
+            return new ConversionServiceOptions
+            {
+                ServiceUrl = conversionServiceUrl,
+                WebClientUrl = additionalSettings.ThinClientServerAddress,
+                ServerR7SecretToken = serverR7SecretToken
+            };
+        }
+
+        // Формирует имя сконвертированного файла.
+        private static string RenameFile(string fileName)
 		{
 			fileName = Path.GetFileNameWithoutExtension(fileName);
 			if (fileName.Length > 245)

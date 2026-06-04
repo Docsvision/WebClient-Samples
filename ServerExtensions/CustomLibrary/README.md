@@ -18,7 +18,7 @@
 
 1. Открыть /Samples.sln
 2. Собрать проекты ServerExtensions > CustomLibrary > CustomLibrary.ObjectModel и CustomLibraryServerExtension
-3. Открыть консоль в папке ServerExtensions > CustomLibrary > CustomLibraryWebExtension и выполнить команду npm install, потом  npm update и в конце npm run build:prod
+3. Открыть консоль в папке ServerExtensions > CustomLibrary > CustomLibraryWebExtension и выполнить команду npm install, потом  npm run build:prod
 4. Скопировать каталог SamplesOutput\Site\Extensions\CustomLibraryServerExtension в каталог "Путь к сайту Web-клиента\Extensions"
 5. Скопировать каталог SamplesOutput\Site\Content\Modules\CustomLibraryWebExtension в каталог "Путь к сайту Web-клиента\Content\Modules"
 6. (Внимание! Перед выполнением следующего шага, рекомендуется сделать резервную копию базы данных DocsVision)
