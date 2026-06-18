@@ -3,14 +3,12 @@
   "version": "5.5.0",
   "description": "Watermark to PDF extension for Docsvision WebClient.",
   "scripts": {
-    "build": " rollup -c rollup.config.js && gulp styles",
+    "build": "rollup -c rollup.config.js",
     "build:prod": "SET buildTarget=PROD&& npm run build",
-    "watch": "concurrently \"rollup -c rollup.config.js --watch\" \"gulp watch\""
+    "watch": "rollup -c rollup.config.js --watch"
   },
   "author": "Docsvision",
   "dependencies": {
-    "gulp": "^4.0.2",
-    "rollup": "^2.33.1"
   },
   "repository": {
     "type": "git",
@@ -18,8 +16,7 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "@docsvision/webclient": "^6.1.4-beta.1",
-    "@docsvision/webclient-extension-build": "~6.1.0",
-    "concurrently": "^4.1.1"
+    "@docsvision/webclient": "^6.1.12",
+    "@docsvision/webclient-extension-build": "^6.1.3"
   }
 }

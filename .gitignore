@@ -426,3 +426,4 @@ FodyWeavers.xsd
 # ClientScripts/TypeScript/Output
 # Others/ExternalWebService/WebService/App_Data
 # Others/Watermark/WatermarkDebPackage/WatermarkExtension
+ProjectTemplates/TemplateWebExtension/Dist

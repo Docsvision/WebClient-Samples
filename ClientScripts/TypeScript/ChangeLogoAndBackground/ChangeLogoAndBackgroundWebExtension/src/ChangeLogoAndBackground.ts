@@ -6,9 +6,12 @@ import { LayoutControl } from "@docsvision/webclient/System/BaseControl";
 import { $LayoutManager } from "@docsvision/webclient/System/$LayoutManager";
 import { WebFrameCompanyLogo } from "@docsvision/webclient/Platform/WebFrameCompanyLogo";
 import { LogoType } from "@docsvision/webclient/Platform/$CompanyLogo";
+import "./ChangeLogoAndBackground.scss";
 
 const ROOT_LAYOUT_NAME = "root";
 const LOGO_CONTROL_NAME = "webFrameCompanyLogo";
+
+declare function $(arg);
 
 /**
  * Добавление пользовательских стилей на страницу в зависимости от её адреса

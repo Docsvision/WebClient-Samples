@@ -14,7 +14,7 @@ import { DepartmentParams } from "@docsvision/webclient/BackOffice/Department";
 import { definedNotNull } from "@docsvision/webclient/System/DefinedNotNull";
 import { editOperationAvailable } from "@docsvision/webclient/System/OperationUtils";
 import { getBindingResult } from "@docsvision/webclient/System/GetBindingResult";
-
+import "./SampleTextBox.scss";
 
 export class SampleTextBoxParams extends BaseControlParams {
     @r standardCssClass?: string = "sample-textbox";

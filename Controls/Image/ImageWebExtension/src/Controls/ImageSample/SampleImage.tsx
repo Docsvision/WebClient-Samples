@@ -6,7 +6,7 @@ import { r } from "@docsvision/webclient/System/Readonly";
 import { rw } from "@docsvision/webclient/System/Readwrite";
 import { handler, at } from "@docsvision/webclient/System/Handler";
 import { IBindingResult } from "@docsvision/webclient/System/IBindingResult";
-
+import "./SampleImage.scss";
 
 export class SampleImageParams extends BaseControlParams {
     @r standardCssClass?: string = "sample-image";
