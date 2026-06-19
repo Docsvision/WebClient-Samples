@@ -9,12 +9,11 @@
     },
     "author": "Docsvision",
     "dependencies": {
-        "@docsvision/web": "^6.1.0",
-        "@rollup/plugin-replace": "^2.4.2"
+        "@docsvision/web": "^6.1.0"
     },
     "license": "MIT",
     "devDependencies": {
-		"@docsvision/webclient": "^6.1.12",
-		"@docsvision/webclient-extension-build": "^6.1.4"
+      "@docsvision/webclient": "^6.1.13",
+      "@docsvision/webclient-extension-build": "^6.1.5"
     }
 }
