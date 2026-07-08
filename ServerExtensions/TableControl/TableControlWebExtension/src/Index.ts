@@ -4,6 +4,7 @@ import { $SamplePartnersController, SamplePartnersController } from "./Services/
 import { $RequestManager } from "@docsvision/webclient/System/$RequestManager";
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 import { Service } from "@docsvision/webclient/System/Service";
+import "./CommonStyles/SampleDocument.scss";
 
 // Данный файл является входной точкой для сборки расширения.
 // Он должен прямо или косвенно импортировать все другие файлы скриптов.

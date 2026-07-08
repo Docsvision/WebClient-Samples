@@ -1,5 +1,6 @@
 ﻿import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 import * as EventHandler from "./EventHandlers/EventHandler";
+import "./style.scss";
 
 // Главная входная точка всего расширения
 // Данный файл должен импортировать прямо или косвенно все остальные файлы, 

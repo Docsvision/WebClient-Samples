@@ -5,6 +5,7 @@
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 import { ILocalizationsMap } from "@docsvision/webclient/System/ILocalizationsMap";
 import { DocumentSignBatchOperation } from "./Controls/DocumentSignBatchOperation/DocumentSignBatchOperation";
+import "./style.scss";
 
 // Регистрация расширения позволяет корректно установить все
 // обработчики событий, сервисы и прочие сущности web-приложения.

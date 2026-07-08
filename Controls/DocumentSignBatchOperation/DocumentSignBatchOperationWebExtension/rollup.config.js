@@ -1,7 +1,7 @@
-const { BUNDLE_DIR } = require("./copy-path");
+﻿const { BUNDLE_DIR } = require("./copy-path");
 const defaultOptions = require("@docsvision/webclient-extension-build/rollup.config.js");
 const fs = require('fs');
-const replace = require('@rollup/plugin-replace');
+// const replace = require('@rollup/plugin-replace');
 
 // let versionInfo = fs.readFileSync("../BuildInfo.cs");
 // let regexp = /Version = "(.*)";/gm;
@@ -12,9 +12,8 @@ const replace = require('@rollup/plugin-replace');
 module.exports = {
   input: 'src/Index.ts',
   output: {
-    file: BUNDLE_DIR + '/extension.js',
-    format: defaultOptions.output.format,
-    sourcemap: true
+    ...defaultOptions.output,
+    file: BUNDLE_DIR + '/extension.js'
   },
   plugins: defaultOptions.plugins,
   external: defaultOptions.external

@@ -13,6 +13,7 @@ import { $LayoutManager } from '@docsvision/webclient/System/$LayoutManager';
 import { PlatformModeConditionTypes } from '@docsvision/webclient/Platform/PlatformModeConditionTypes';
 import { GenModels } from "@docsvision/webclient/Generated/DocsVision.WebClient.Models"
 import { CommonModalDialogProps } from '@docsvision/webclient/Helpers/ModalDialog/CommonModalDialog';
+import "./GridContextMenuShowCard.scss";
 
 const GRID_CONTEXT_MENU_SHOW_CARD_LOCATION_NAME = "GRID_CONTEXT_MENU_SHOW_CARD";
 

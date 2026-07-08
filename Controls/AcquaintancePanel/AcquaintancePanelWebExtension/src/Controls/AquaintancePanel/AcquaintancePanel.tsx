@@ -12,6 +12,7 @@ import { handler } from "@docsvision/webclient/System/Handler";
 import { IBindingResult } from "@docsvision/webclient/System/IBindingResult";
 import { $Layout } from "@docsvision/webclient/System/$Layout";
 import { editOperationAvailable } from "@docsvision/webclient/System/OperationUtils";
+import "./AcquaintancePanel.scss";
 
 export class AcquaintancePanelParams extends PanelParams {
     @rw sendButtonText: string;

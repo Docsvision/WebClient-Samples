@@ -5,7 +5,7 @@ import { $RequestManager } from "@docsvision/webclient/System/$RequestManager";
 import { $Feature1 } from "./Feature1/$Feature1";
 import { Feature1Service } from "./Feature1/$Feature1Service";
 import { Control1 } from "./Feature1/Control1";
-
+import "./Index.scss";
 
 // Главная входная точка всего расширения
 // Данный файл должен импортировать прямо или косвенно все остальные файлы, 

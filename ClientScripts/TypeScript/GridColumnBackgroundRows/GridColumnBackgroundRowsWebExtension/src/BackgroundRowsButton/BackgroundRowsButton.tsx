@@ -3,6 +3,7 @@ import { getRowLoaded } from "@docsvision/web/components/table/plugins/lazy-load
 import { ICompositionPluginProps } from "@docsvision/web/core/composition";
 import React, { useState, ChangeEvent, PropsWithChildren } from "react";
 import { $BackgroundRows } from "../$BackgroundRows";
+import "./BackgroundRowsButton.scss";
 
 export interface IBackgroundRowsButton extends PropsWithChildren<ICompositionPluginProps<"TableCell", ICellData, $BackgroundRows>> {
 }

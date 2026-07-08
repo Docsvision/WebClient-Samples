@@ -4,9 +4,9 @@ const defaultOptions = require("@docsvision/webclient-extension-build/rollup.con
 module.exports = {
   input: 'src/Index.tsx',
   output: {
+    ...defaultOptions.output,
     file: SCRIPTS_DIR + '/extension.js',
-    format: 'umd',
-    sourcemap: true
+    format: 'umd'
   },
   plugins: defaultOptions.plugins
 };

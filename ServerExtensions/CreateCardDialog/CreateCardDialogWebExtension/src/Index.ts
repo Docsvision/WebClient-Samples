@@ -1,6 +1,7 @@
 import { extensionManager } from "@docsvision/webclient/System/ExtensionManager";
 import { cardTypeResolver } from "@docsvision/webclient/System/CardTypeResolver";
 import { resources } from "@docsvision/webclient/System/Resources";
+import "./ApprovalStage.scss";
 
 // Данный файл является входной точкой для сборки расширения.
 // Он должен прямо или косвенно импортировать все другие файлы скриптов.

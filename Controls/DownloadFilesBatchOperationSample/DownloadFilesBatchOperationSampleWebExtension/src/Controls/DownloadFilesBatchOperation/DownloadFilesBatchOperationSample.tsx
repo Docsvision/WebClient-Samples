@@ -13,6 +13,7 @@ import { DownloadDocumentFileMode } from './DownloadDocumentFileMode';
 import { handler } from '@docsvision/webclient/System/Handler';
 import { $Folders } from '@docsvision/webclient/Legacy/$Folders';
 import { $FileDownload } from '@docsvision/webclient/Platform/$FileDownload';
+import "./DownloadFilesBatchOperationSample.scss";
 
 export class DownloadFilesBatchOperationSampleParams extends BaseControlParams {       
     @r standardCssClass?: string = "system-download-files-batch-operation";

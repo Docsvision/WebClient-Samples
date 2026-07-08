@@ -2,7 +2,7 @@ import React from 'react';
 import { windowWithLoginExtensionManager, ILoginPlugin, ILoginExtensionManager, LoginEvents } from '@docsvision/webclient/Account';
 import { LoginView } from '@docsvision/webclient/Account/LoginContainer';
 import { LoginLogic } from '@docsvision/webclient/Account/LoginLogic';
-import "index.scss"
+import "./index.scss"
 
 const loginExtensionManager: ILoginExtensionManager = (window as windowWithLoginExtensionManager).loginExtensionManager;
 // Заменяем текст

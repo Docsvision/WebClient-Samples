@@ -2,6 +2,7 @@
 import { SampleExchangeRatesState, SampleExchangeRatesImpl } from "./SampleExchangeRatesImpl";
 import { BaseControlParams, BaseControl } from "@docsvision/webclient/System/BaseControl";
 import { r } from "@docsvision/webclient/System/Readonly";
+import "./SampleExchangeRates.scss";
 
 export class SampleExchangeRatesParams extends BaseControlParams {
 	@r standardCssClass?: string = "sample-exchange-rates";

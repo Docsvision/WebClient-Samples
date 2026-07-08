@@ -5,6 +5,7 @@ import { $SidePanel } from "@docsvision/web/components/table/plugins/side-panel"
 import { PluginPlacement } from "@docsvision/web/core/composition";
 import { useStore } from "effector-react";
 import React from "react";
+import "./CustomHoverPanelPlugins.scss";
 
 export const CustomHoverPanelFeature = "CustomHoverPanelFeature";
 

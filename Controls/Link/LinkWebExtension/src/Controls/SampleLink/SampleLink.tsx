@@ -6,6 +6,7 @@ import { ControlImpl } from "@docsvision/webclient/System/ControlImpl";
 import { handler } from "@docsvision/webclient/System/Handler";
 import { IBindingResult } from "@docsvision/webclient/System/IBindingResult";
 import { definedNotNull } from "@docsvision/webclient/System/DefinedNotNull";
+import "./SampleLink.scss";
 
 export class SampleLinkParams extends BaseControlParams {
     @r standardCssClass?: string = "sample-link";

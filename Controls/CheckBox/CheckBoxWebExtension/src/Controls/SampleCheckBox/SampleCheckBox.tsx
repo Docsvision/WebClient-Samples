@@ -13,6 +13,7 @@ import { IBindingResult } from "@docsvision/webclient/System/IBindingResult";
 import { resources } from "@docsvision/webclient/System/Resources";
 import { editOperationAvailable } from "@docsvision/webclient/System/OperationUtils";
 import { getBindingResult } from "@docsvision/webclient/System/GetBindingResult";
+import "./SampleCheckBox.scss";
 
 export class SampleCheckBoxParams extends BaseControlParams {
     @r standardCssClass?: string = "Sample-checkbox";

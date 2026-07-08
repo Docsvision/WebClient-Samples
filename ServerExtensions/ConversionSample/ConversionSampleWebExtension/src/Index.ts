@@ -3,6 +3,7 @@ import { Service } from "@docsvision/web/core/services";
 import { $RequestManager } from "@docsvision/webclient/System/$RequestManager";
 import * as AttachPdfa from "./EventHandlers/AttachPdfa";
 import { $ConversionFileController, ConversionFileController } from "./Services/ConversionSample";
+import "./Index.scss";
 
 extensionManager.registerExtension({
     name: "Conversion sample web extension",
