@@ -16,7 +16,7 @@ static const CARDTYPE_INFO* GetCardType(REFGUID cardTypeId)
 {
 	static const CARDTYPE_INFO Cards[] =
 	{
-		// Добавить идентификаторы карточек, иконки и схемы
+		// Р”РѕР±Р°РІРёС‚СЊ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂС‹ РєР°СЂС‚РѕС‡РµРє, РёРєРѕРЅРєРё Рё СЃС…РµРјС‹
 		{ { 0xCCCA40C0, 0x5FA4, 0x4878, { 0xB0, 0xDA, 0x34, 0xE6, 0x7E, 0x16, 0x7B, 0xEA } }, IDI_CARD, IDR_CARD },
 	};
 

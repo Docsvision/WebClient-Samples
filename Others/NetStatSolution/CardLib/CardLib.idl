@@ -5,9 +5,9 @@ import "ocidl.idl";
 #include "dvver.h"
 
 [
-	uuid(2A629DC9-1645-4E03-9F15-5870BC6D2A5F), // Идентификатор типа библиотеки
+	uuid(2A629DC9-1645-4E03-9F15-5870BC6D2A5F), // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ С‚РёРїР° Р±РёР±Р»РёРѕС‚РµРєРё
 	version(TYPELIB_VERSION),
-	helpstring("NetstatSolution card lib") // Заголовок библиотеки
+	helpstring("NetstatSolution card lib") // Р—Р°РіРѕР»РѕРІРѕРє Р±РёР±Р»РёРѕС‚РµРєРё
 ]
 library NetstatSolution
 {
@@ -15,7 +15,7 @@ library NetstatSolution
 	importlib("ObjectManager.tlb");
 
 	[
-		uuid(F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092), // Идентификатор компонента библиотеки
+		uuid(F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092), // РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєРѕРјРїРѕРЅРµРЅС‚Р° Р±РёР±Р»РёРѕС‚РµРєРё
 		helpstring("NetstatSolution card lib")
 	]
 	coclass CardLib
