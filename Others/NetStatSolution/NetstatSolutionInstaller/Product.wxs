@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?define UpgradeCode="{DA6EF640-6580-4322-8BAB-1E49A224B822}"?>
+	<?define ProductVersion="!(bind.FileVersion.Snapin)"?>
+	<?define RTMProductVersion="6.0.0" ?>
+
+	<Product Id="*"
+			 Name="NetstatSolution"
+			 Language="1049"
+			 Version="$(var.ProductVersion)"
+			 Manufacturer="Docsvision"
+			 UpgradeCode="$(var.UpgradeCode)">
+
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" Platform="x64"/>
+		<MediaTemplate EmbedCab="yes"/>
+
+		<MajorUpgrade DowngradeErrorMessage="Более новая версия продукта [ProductName] уже установлена." />
+		<Upgrade Id="$(var.UpgradeCode)">
+			<UpgradeVersion Minimum="$(var.ProductVersion)"
+							IncludeMinimum="no"
+							OnlyDetect="yes"
+							Language="1049"
+							Property="NEWPRODUCTFOUND" />
+			<UpgradeVersion Minimum="$(var.RTMProductVersion)"
+							IncludeMinimum="yes"
+							Maximum="$(var.ProductVersion)"
+							IncludeMaximum="no"
+							Language="1049"
+							Property="UPGRADEFOUND" />
+		</Upgrade>
+
+
+		<!-- Создание покаталога решения и размещение необходимых компонетов  -->
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="DVFolder" Name="Docsvision">
+
+					<Directory Id="COMMONFOLDER" Name="Common">
+						<Component Id="SnapinComponent" Guid="177735FE-6984-4EEB-8306-DD818D118990" Win64="yes">
+							<File Id="Snapin" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolution.ObjectModel.dll"/>
+						</Component>
+					</Directory>
+
+					<Directory Id="WEBCLIENTFOLDER" Name="WebClient">
+						<Directory Id="EXTENSIONSFOLDER" Name="Extensions">
+							<Directory Id="SERVEREXTENSIONFOLDER" Name="NetStatSolutionServerExtension">
+								<Component Id="ServerExtension" Guid="31970895-1578-4055-88C3-9E574D22EE47" Win64="yes">
+									<File Id="NetStatSolutionServerExtension.dll" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetStatSolutionServerExtension\NetStatSolutionServerExtension.dll"/>
+								</Component>
+							</Directory>
+						</Directory>
+						<Directory Id="RU" Name="ru">
+							<Component Id="ResourceFiles" Guid="B7816555-3ED9-4A52-B5C4-CBF6CF716CEC" Win64="yes">
+								<File Id="NetStatSolutionServerExtension.resources.dll" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetStatSolutionServerExtension\ru\NetStatSolutionServerExtension.resources.dll"/>
+							</Component>
+						</Directory>
+						
+						<Directory Id="CONTENTFOLDER" Name="Content">
+							<Directory Id="MODULESFOLDER" Name="Modules">
+								<Directory Id="WEBEXTENSIONFOLDER" Name="NetStatSolutionWebExtension">
+									<Component Id="WebExtension" Guid="EA1F2B92-7F95-4990-9CE5-54C31BDDE148" Win64="yes">
+										<File Id="extension.css" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetStatSolutionWebExtension\extension.css"/>
+										<File Id="extension.css.map" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetStatSolutionWebExtension\extension.css.map"/>
+										<File Id="extension.js" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetStatSolutionWebExtension\extension.js"/>
+										<File Id="extension.js.map" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetStatSolutionWebExtension\extension.js.map"/>
+									</Component>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+
+					<Directory Id="PlatformFolder" Name="Platform">
+						<Directory Id="WwwRootFolder" Name="wwwroot">
+							<Directory Id="SetupFolder" Name="Setup">
+								<Directory Id="NetstatSolutionSetupFolder" Name="NetstatSolutionClient">
+									<Component Id="ClientMsiComponent" Guid="8674D202-CB1D-4407-A427-842729905E1E" Win64="yes">
+										<File Id="NetstatSolutionClient.msi" Source="$(var.SolutionDir)Others\NetStatSolution\Installers\ru-ru\NetstatSolutionClient.msi"/>
+									</Component>
+								</Directory>
+							</Directory>
+						</Directory>
+					</Directory>
+
+					<Directory Id="SolutionsFolder" Name="Solutions">
+						<Directory Id="CardPackageRootFolder" Name="CardPackage">
+							<Directory Id="CardPackageFolder" Name="NetstatSolution">
+								<Component Id="CardPackage" Guid="FFC8066C-08C0-4BBC-9BF9-1F1234D72205" Win64="yes">
+									<File Id='CardPackage.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\CardPackage.xml'/>
+									<File Id='RefStates.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\RefStates.xml'/>
+									<File Id='RefRoleModel0.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\RefRoleModel0.xml'/>
+									<File Id='RefRoleModel.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\RefRoleModel.xml'/>
+									<File Id='RefLayouts.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\RefLayouts.xml'/>
+									<File Id='RefKinds.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\RefKinds.xml'/>
+									<File Id='SampleCard.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\SampleCard.xml'/>
+									<File Id='NetstatSolutionBusinessProcess.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardPackage\NetstatSolutionBusinessProcess.xml'/>
+								</Component>
+							</Directory>
+						</Directory>
+					</Directory>
+
+					<Directory Id="DatabaseRootFolder" Name="Database">
+						<Directory Id="DatabaseFolder" Name="NetstatSolution">
+
+							<Component Id="NetstatSolutionInstall" Guid="2A9B91B5-D80D-44A2-BF6D-6080451C6633" Win64="yes">
+								<File Id='NetstatSolutionInstall.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardDefs\Install.xml'/>
+							</Component>
+
+							<Component Id="NetstatSolutionCardlib" Guid="88606F06-B520-48C7-B1D9-D0B4D752055F" Win64="yes">
+								<File Id='NetstatSolutionCardLib.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardDefs\NetstatSolutionCardLib.xml'/>
+								<File Id='NetstatSolutionCard.xml' Source='$(var.SolutionDir)Others\NetStatSolution\CardDefs\NetstatSolutionCard.xml'/>
+							</Component>
+
+							<Directory Id="NetstatSolutionCardlibIconsFolder" Name="Icons">
+								<Component Id="NetstatSolutionCardlibIcons" Guid="7684DD11-CEB1-4930-8D68-D34B17C19656" Win64="yes">
+									<File Id='NetstatSolutionCard.ico' Source='$(var.SolutionDir)Others\NetStatSolution\CardDefs\Icons\NetstatSolutionCard.ico'/>
+									<File Id='NetstatSolutionCardLib.ico' Source='$(var.SolutionDir)Others\NetStatSolution\CardDefs\Icons\NetstatSolutionCardLib.ico'/>
+								</Component>
+							</Directory>
+						</Directory>
+					</Directory>
+					
+				</Directory>
+			</Directory>
+		</Directory>
+
+		<Feature Id="ProductFeature" Title="Установка" Level="1">
+			<ComponentRef Id="SnapinComponent"/>
+			<ComponentRef Id="ClientMsiComponent"/>
+			<ComponentRef Id="CardPackage"/>
+			<ComponentRef Id="NetstatSolutionInstall"/>
+			<ComponentRef Id="NetstatSolutionCardlib"/>
+			<ComponentRef Id="NetstatSolutionCardlibIcons"/>
+			<ComponentRef Id="ServerExtension"/>
+			<ComponentRef Id="ResourceFiles"/>
+			<ComponentRef Id="WebExtension"/>
+		</Feature>
+	</Product>
+</Wix>

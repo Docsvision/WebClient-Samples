@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Layout RowID="04E12827-41C0-420A-B6EF-76F4AF81BB44" OwnServerID="00000000-0000-0000-0000-000000000000" LayoutID="21265598-F6FD-4432-84E7-D16B413D6BD5" Name="Карточка учёта сетевого оборудования (Просмотр)" LayoutFileID="D4545B6C-B184-4453-8266-A46AEA57241C" LocationID="ccca40c0-5fa4-4878-b0da-34e67e167bea" LayoutType="0">
+  <File FileID="D4545B6C-B184-4453-8266-A46AEA57241C" OwnerCardID="3200C1F1-6CAA-4C73-A169-78F3A12D155C" Name="Карточка учёта сетевого оборудования (Просмотр)" StandardAttribs="0" ExtendedAttribs="0">
+    <Element Id="b467e5c0-87dd-4348-a98d-1e75214909c9" Type="Layout">
+  <Properties>
+    <Property Name="Name" Value="root" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardOpening" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardOpened" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardSaving" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="PrepareCardSaving" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="BeforeCardSaving" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardSaved" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardStateChanging" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardLayoutSwitching" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardDeleting" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="CardDeleted" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="AllControlsLoaded" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+    <Property Name="BackgroundType" Value="0" Type="System.Int32, System.Private.CoreLib" IsAvailable="false" />
+    <Property Name="BackgroundStyle" Value="0" Type="System.Int32, System.Private.CoreLib" IsAvailable="false" />
+  </Properties>
+  <Bindings>
+    <Binding PropertyName="bb15af12-bd6f-41da-a1a1-3149d845211c" BindingMode="0" Path="v1|@00000000-0000-0000-0000-000000000000/a1bb8aeb-d7a4-4a1b-9ac5-171c61752120/Name" EditOperation="00000000-0000-0000-0000-000000000000" IsInheritedEditOperation="true" IsAsync="false" />
+    <Binding PropertyName="6c512a99-f2a8-4921-820c-063386cdf807" BindingMode="0" Path="v1|@00000000-0000-0000-0000-000000000000/a1bb8aeb-d7a4-4a1b-9ac5-171c61752120/Address" EditOperation="00000000-0000-0000-0000-000000000000" IsInheritedEditOperation="true" IsAsync="false" />
+    <Binding PropertyName="86f735ec-68d1-4fbf-a870-ef5c05d1a7c2" BindingMode="0" Path="v1|@00000000-0000-0000-0000-000000000000/a1bb8aeb-d7a4-4a1b-9ac5-171c61752120/Type" ResolverType="ElementBinding" EditOperation="00000000-0000-0000-0000-000000000000" IsInheritedEditOperation="true" IsAsync="false" />
+    <Binding PropertyName="360ba2bb-a561-4c07-9a7d-a0559880287e" BindingMode="0" ConverterType="Elements" EditOperation="00000000-0000-0000-0000-000000000000" IsAsync="false">
+      <Items>
+        <Item Value="" />
+      </Items>
+    </Binding>
+    <Binding PropertyName="6d97f4e2-2e73-4490-ba8b-b68a5c9a066c" BindingMode="0" Path="v1|@00000000-0000-0000-0000-000000000000/a1bb8aeb-d7a4-4a1b-9ac5-171c61752120/IsChecked" EditOperation="00000000-0000-0000-0000-000000000000" IsInheritedEditOperation="true" IsAsync="false" />
+    <Binding PropertyName="0ea474d0-e1df-47e1-8fb9-3231ef819476" BindingMode="0" Path="v1|@00000000-0000-0000-0000-000000000000/a1bb8aeb-d7a4-4a1b-9ac5-171c61752120/LastResult" EditOperation="00000000-0000-0000-0000-000000000000" IsInheritedEditOperation="true" IsAsync="false" />
+  </Bindings>
+  <Elements>
+    <Element Id="22e5306d-0f59-43fc-b029-55b74b968bcf" Type="Block">
+      <Properties>
+        <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Name" Value="DataBlock" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Visibility" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Desktop>true</Desktop>
+            <Tablet>true</Tablet>
+            <Smartphone>true</Smartphone>
+            <CanChange>true</CanChange>
+          </DeviceDependentPropertyOfBoolean>
+        </Property>
+        <Property Name="StandardCssClass" Value="system-block" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Collapsible" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="IsCollapsed" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Desktop>false</Desktop>
+            <Tablet>false</Tablet>
+            <Smartphone>false</Smartphone>
+            <CanChange>false</CanChange>
+          </DeviceDependentPropertyOfBoolean>
+        </Property>
+        <Property Name="MinWidth" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+          <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Desktop>10</Desktop>
+            <Tablet>10</Tablet>
+            <Smartphone>10</Smartphone>
+            <CanChange>true</CanChange>
+          </DeviceDependentPropertyOfDouble>
+        </Property>
+        <Property Name="Width" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+          <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Desktop>100</Desktop>
+            <Tablet>100</Tablet>
+            <Smartphone>100</Smartphone>
+            <CanChange>true</CanChange>
+          </DeviceDependentPropertyOfDouble>
+        </Property>
+        <Property Name="LabelWidth" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+          <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Desktop>0</Desktop>
+            <Tablet>0</Tablet>
+            <Smartphone>0</Smartphone>
+            <CanChange>true</CanChange>
+          </DeviceDependentPropertyOfDouble>
+        </Property>
+        <Property Name="Order" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+          <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Desktop>0</Desktop>
+            <Tablet>0</Tablet>
+            <Smartphone>0</Smartphone>
+            <CanChange>true</CanChange>
+          </DeviceDependentPropertyOfInt32>
+        </Property>
+        <Property Name="Alignment" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+          <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <Desktop>true</Desktop>
+            <Tablet>true</Tablet>
+            <Smartphone>true</Smartphone>
+            <CanChange>true</CanChange>
+          </DeviceDependentPropertyOfBoolean>
+        </Property>
+        <Property Name="IsInheritedEditOperation" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Paddings" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="MaxHeight" Value="0" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="DisplayIcon" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Collapsed" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Collapsing" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Expanded" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+        <Property Name="Expanding" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+      </Properties>
+      <Elements>
+        <Element Id="00eeef43-c91a-46cb-88a8-bf3ec42907ee" Type="TextBox">
+          <Properties>
+            <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Name" Value="NameTextBox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="LabelText" Value="173d8635-9cc6-4339-aa94-22a0b729fa76" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+            <Property Name="ShowEmptyLabel" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Visibility" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>true</Desktop>
+                <Tablet>true</Tablet>
+                <Smartphone>true</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="StandardCssClass" Value="system-textbox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="TabStop" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="false" />
+            <Property Name="Required" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="EditMode" Value="1" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="ExtendedDataSource" Value="00000000-0000-0000-0000-000000000000" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataSource" Value="a1bb8aeb-d7a4-4a1b-9ac5-171c61752120" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataField" Value="Name" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Binding" Value="bb15af12-bd6f-41da-a1a1-3149d845211c" Type="System.String, System.Private.CoreLib" ResolverType="Binding" IsAvailable="true" />
+            <Property Name="IsInheritedEditOperation" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Disabled" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>false</Desktop>
+                <Tablet>false</Tablet>
+                <Smartphone>false</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="TrimValue" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Focus" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Blur" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataChanged" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditOpeninig" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditOpened" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditClosinig" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditClosed" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+          </Properties>
+        </Element>
+        <Element Id="ce06aa65-71c7-442f-bbcf-a5c6c5a3fd1c" Type="TextBox">
+          <Properties>
+            <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Name" Value="IpAddressTextBox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="LabelText" Value="e4f557e4-20f4-4463-95f4-b5c2f049b16e" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+            <Property Name="ShowEmptyLabel" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Visibility" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>true</Desktop>
+                <Tablet>true</Tablet>
+                <Smartphone>true</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="StandardCssClass" Value="system-textbox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="TabStop" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="false" />
+            <Property Name="Required" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="EditMode" Value="1" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="ExtendedDataSource" Value="00000000-0000-0000-0000-000000000000" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataSource" Value="a1bb8aeb-d7a4-4a1b-9ac5-171c61752120" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataField" Value="Address" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Binding" Value="6c512a99-f2a8-4921-820c-063386cdf807" Type="System.String, System.Private.CoreLib" ResolverType="Binding" IsAvailable="true" />
+            <Property Name="IsInheritedEditOperation" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Disabled" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>false</Desktop>
+                <Tablet>false</Tablet>
+                <Smartphone>false</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="TrimValue" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Focus" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Blur" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataChanged" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditOpeninig" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditOpened" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditClosinig" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditClosed" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+          </Properties>
+        </Element>
+        <Element Id="0a80c2d9-db08-482d-85d9-eabc9509c77c" Type="Dropdown">
+          <Properties>
+            <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Name" Value="NodeTypeDropDown" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="ShowEmptyLabel" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Tip" Value="196f6e4b-3202-4180-8615-680420dfaaec" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+            <Property Name="LabelText" Value="" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+            <Property Name="ExtendedDataSource" Value="00000000-0000-0000-0000-000000000000" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataSource" Value="a1bb8aeb-d7a4-4a1b-9ac5-171c61752120" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataField" Value="Type" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Binding" Value="86f735ec-68d1-4fbf-a870-ef5c05d1a7c2" Type="System.String, System.Private.CoreLib" ResolverType="Binding" IsAvailable="true" />
+            <Property Name="Elements" Value="360ba2bb-a561-4c07-9a7d-a0559880287e" Type="System.String, System.Private.CoreLib" ResolverType="Binding" IsAvailable="true" />
+            <Property Name="IsInheritedEditOperation" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Disabled" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>false</Desktop>
+                <Tablet>false</Tablet>
+                <Smartphone>false</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="Visibility" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>true</Desktop>
+                <Tablet>true</Tablet>
+                <Smartphone>true</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="StandardCssClass" Value="system-dropdown" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="TabStop" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="false" />
+            <Property Name="Required" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="EditMode" Value="1" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Focus" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Blur" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DataChanged" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditOpeninig" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditOpened" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditClosinig" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="InPlaceEditClosed" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Collapsed" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Collapsing" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Expanded" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Expanding" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+          </Properties>
+        </Element>
+        <Element Id="085c6ac8-d2b1-4d16-9c3f-7c5d18d541a8" Type="Block">
+          <Properties>
+            <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Name" Value="StateBlock" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Header" Value="" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+            <Property Name="Visibility" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>true</Desktop>
+                <Tablet>true</Tablet>
+                <Smartphone>true</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="StandardCssClass" Value="system-block" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Collapsible" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="IsCollapsed" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>false</Desktop>
+                <Tablet>false</Tablet>
+                <Smartphone>false</Smartphone>
+                <CanChange>false</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="MinWidth" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>10</Desktop>
+                <Tablet>10</Tablet>
+                <Smartphone>10</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfDouble>
+            </Property>
+            <Property Name="Width" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>100</Desktop>
+                <Tablet>100</Tablet>
+                <Smartphone>100</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfDouble>
+            </Property>
+            <Property Name="LabelWidth" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfDouble xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>0</Desktop>
+                <Tablet>0</Tablet>
+                <Smartphone>0</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfDouble>
+            </Property>
+            <Property Name="Order" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfInt32 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>0</Desktop>
+                <Tablet>0</Tablet>
+                <Smartphone>0</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfInt32>
+            </Property>
+            <Property Name="Alignment" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+              <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                <Desktop>true</Desktop>
+                <Tablet>true</Tablet>
+                <Smartphone>true</Smartphone>
+                <CanChange>true</CanChange>
+              </DeviceDependentPropertyOfBoolean>
+            </Property>
+            <Property Name="IsInheritedEditOperation" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Paddings" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MaxHeight" Value="0" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="DisplayIcon" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Collapsed" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Collapsing" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Expanded" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+            <Property Name="Expanding" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+          </Properties>
+          <Elements>
+            <Element Id="348ea68b-6ec5-4c8c-8555-634d5e49886c" Type="CheckBox">
+              <Properties>
+                <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Name" Value="CheckRequiredCheckBox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Visibility" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>true</Desktop>
+                    <Tablet>true</Tablet>
+                    <Smartphone>true</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfBoolean>
+                </Property>
+                <Property Name="StandardCssClass" Value="system-checkbox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="EditMode" Value="1" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="ExtendedDataSource" Value="00000000-0000-0000-0000-000000000000" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="DataSource" Value="a1bb8aeb-d7a4-4a1b-9ac5-171c61752120" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="DataField" Value="IsChecked" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Binding" Value="6d97f4e2-2e73-4490-ba8b-b68a5c9a066c" Type="System.String, System.Private.CoreLib" ResolverType="Binding" IsAvailable="true" />
+                <Property Name="IsInheritedEditOperation" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Disabled" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>false</Desktop>
+                    <Tablet>false</Tablet>
+                    <Smartphone>false</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfBoolean>
+                </Property>
+                <Property Name="YesText" Value="35d7e499-0316-4ddc-b404-430afd93710d" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+                <Property Name="NoText" Value="" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+                <Property Name="HideMode" Value="2" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="CheckboxDefault" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="false" RepresentsDefaultBindingValue="true" />
+                <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="DataChanged" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+              </Properties>
+            </Element>
+            <Element Id="93548d1b-929c-4041-9048-7ca9eb642e5b" Type="CheckBox">
+              <Properties>
+                <Property Name="Tag" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Name" Value="LastCheckResultCheckBox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Visibility" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>true</Desktop>
+                    <Tablet>true</Tablet>
+                    <Smartphone>true</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfBoolean>
+                </Property>
+                <Property Name="StandardCssClass" Value="system-checkbox" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="LabelText" Value="" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+                <Property Name="EditMode" Value="1" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="ExtendedDataSource" Value="00000000-0000-0000-0000-000000000000" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="DataSource" Value="a1bb8aeb-d7a4-4a1b-9ac5-171c61752120" Type="System.Guid, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="DataField" Value="LastResult" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Binding" Value="0ea474d0-e1df-47e1-8fb9-3231ef819476" Type="System.String, System.Private.CoreLib" ResolverType="Binding" IsAvailable="true" />
+                <Property Name="IsInheritedEditOperation" Value="true" Type="System.Boolean, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="Disabled" Type="System.String, System.Private.CoreLib" ResolverType="DeviceDependent" IsAvailable="true">
+                  <DeviceDependentPropertyOfBoolean xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+                    <Desktop>false</Desktop>
+                    <Tablet>false</Tablet>
+                    <Smartphone>false</Smartphone>
+                    <CanChange>true</CanChange>
+                  </DeviceDependentPropertyOfBoolean>
+                </Property>
+                <Property Name="YesText" Value="302c7773-203d-4120-bd19-d5715a6b9960" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+                <Property Name="NoText" Value="0005361a-f151-48ae-aec1-13e38d83de29" Type="System.String, System.Private.CoreLib" ResolverType="Localized" IsAvailable="true" />
+                <Property Name="HideMode" Value="0" Type="System.Int32, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="CheckboxDefault" Value="false" Type="System.Boolean, System.Private.CoreLib" IsAvailable="false" RepresentsDefaultBindingValue="true" />
+                <Property Name="Click" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="MouseOver" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="MouseOut" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+                <Property Name="DataChanged" Value="" Type="System.String, System.Private.CoreLib" IsAvailable="true" />
+              </Properties>
+            </Element>
+          </Elements>
+        </Element>
+      </Elements>
+    </Element>
+  </Elements>
+</Element>
+  </File>
+</Layout>

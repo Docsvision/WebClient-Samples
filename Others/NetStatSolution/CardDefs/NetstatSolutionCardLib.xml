@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CardLibrary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6" Alias="NetstatSolution" ControlInfo="clsid:{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}" IconFile="Icons\NetstatSolutionCardLib.ico" Version="2026" MsiProductCode="" MsiPackageName="">
+	<Definitions>
+		<RefCardDefinition>NetstatSolutionCard.xml</RefCardDefinition>
+	</Definitions>
+	<Name>
+		<LocalizedString Language="en">The accounting module of the network devices</LocalizedString>
+		<LocalizedString Language="ru-RU">Модуль учета сетевых устройств</LocalizedString>
+	</Name>
+	<Installers>
+		<Installer PackageID="E98E531F-D34C-41D6-9BCA-9972F46EB6DF" MsiPackageCode="22CE4047-0BA8-4014-9BBE-7D8C43FDE904" MsiPackageName="NetstatSolutionClient/NetstatSolutionClient.msi" Order="0" AllUsers="false" Version="0"/>
+	</Installers>
+	<Log>
+		<Name/>
+	</Log>
+</CardLibrary>

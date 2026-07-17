@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Locales>
+  <Locale RowID="9B5D40F7-7644-4853-A122-21B7C22965C5" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" LocaleFileID="5508B8ED-8A4F-45FC-93EB-7A04677A1C3F" LocaleID="1049">
+    <File FileID="5508B8ED-8A4F-45FC-93EB-7A04677A1C3F" OwnerCardID="98FBB99A-C359-4685-92D8-71EB93FAE56B" Name="Localization File" StandardAttribs="0" ExtendedAttribs="0">
+      <LayoutLocalization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.docsvision.com/Platform/2015-07-01/Metadata/">
+  <Property Key="f33317b4-f757-451e-b7df-85b92509de3c" PropertyValue="Название" />
+  <Property Key="e4f557e4-20f4-4463-95f4-b5c2f049b16e" PropertyValue="IP адрес" />
+  <Property Key="35d7e499-0316-4ddc-b404-430afd93710d" PropertyValue="Требуется проверка" />
+  <Property Key="808b0815-53fc-4099-85a1-778ae4348e4e" PropertyValue="Результат последней проверки" />
+  <Property Key="be6da567-b207-418b-b7fe-22d7226377e3" PropertyValue="Типа узла" />
+  <Property Key="2292bc59-dd69-4270-baa7-edc36a4a258d" PropertyValue="Сохранить" />
+  <Property Key="742e00bf-b27c-40a6-b74a-dfcdd158e13e" PropertyValue="Отмена" />
+  <Property Key="173d8635-9cc6-4339-aa94-22a0b729fa76" PropertyValue="Название узла" />
+  <Property Key="196f6e4b-3202-4180-8615-680420dfaaec" PropertyValue="Тип узла" />
+  <Property Key="302c7773-203d-4120-bd19-d5715a6b9960" PropertyValue="Последняя проверка успешна" />
+  <Property Key="0005361a-f151-48ae-aec1-13e38d83de29" PropertyValue="Последняя проверка выявила ошибки" />
+</LayoutLocalization>
+    </File>
+  </Locale>
+  <Locale RowID="696DC1C5-E8F4-4730-B0EB-82BE271112E3" OwnServerID="00000000-0000-0000-0000-000000000000" ChangeServerID="00000000-0000-0000-0000-000000000000" LocaleFileID="6B712B62-C6D5-49E2-A163-D4169E73D45E" LocaleID="1033">
+    <File FileID="6B712B62-C6D5-49E2-A163-D4169E73D45E" OwnerCardID="98FBB99A-C359-4685-92D8-71EB93FAE56B" Name="Localization File" StandardAttribs="0" ExtendedAttribs="0">
+      <LayoutLocalization xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.docsvision.com/Platform/2015-07-01/Metadata/">
+  <Property Key="f33317b4-f757-451e-b7df-85b92509de3c" PropertyValue="Название" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="e4f557e4-20f4-4463-95f4-b5c2f049b16e" PropertyValue="IP адрес" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="35d7e499-0316-4ddc-b404-430afd93710d" PropertyValue="Требуется проверка" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="808b0815-53fc-4099-85a1-778ae4348e4e" PropertyValue="Результат последней проверки" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="be6da567-b207-418b-b7fe-22d7226377e3" PropertyValue="Типа узла" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="2292bc59-dd69-4270-baa7-edc36a4a258d" PropertyValue="Сохранить" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="742e00bf-b27c-40a6-b74a-dfcdd158e13e" PropertyValue="Отмена" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="173d8635-9cc6-4339-aa94-22a0b729fa76" PropertyValue="Название узла" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="196f6e4b-3202-4180-8615-680420dfaaec" PropertyValue="Тип узла" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="302c7773-203d-4120-bd19-d5715a6b9960" PropertyValue="Последняя проверка успешна" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+  <Property Key="0005361a-f151-48ae-aec1-13e38d83de29" PropertyValue="Последняя проверка выявила ошибки" SolutionId="8f1a708d-f42b-4ed9-b6e5-c6b1075f738d" />
+</LayoutLocalization>
+    </File>
+  </Locale>
+</Locales>

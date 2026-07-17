@@ -1,0 +1,26 @@
+// CardLib.idl : IDL source for Sample card lib
+import "oaidl.idl";
+import "ocidl.idl";
+
+#include "dvver.h"
+
+[
+	uuid(2A629DC9-1645-4E03-9F15-5870BC6D2A5F), // Идентификатор типа библиотеки
+	version(TYPELIB_VERSION),
+	helpstring("NetstatSolution card lib") // Заголовок библиотеки
+]
+library NetstatSolution
+{
+	importlib("stdole2.tlb");
+	importlib("ObjectManager.tlb");
+
+	[
+		uuid(F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092), // Идентификатор компонента библиотеки
+		helpstring("NetstatSolution card lib")
+	]
+	coclass CardLib
+	{
+		[default] interface ICardLibraryInfo;
+		interface ICardLibraryInfo2;
+	}
+}

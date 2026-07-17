@@ -1,0 +1,26 @@
+HKCR
+{
+	NetstatSolution.CardLib.5.0 = s 'NetstatSolution card lib'
+	{
+		CLSID = s '{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}'
+	}
+	NetstatSolution.CardLib = s 'NetstatSolution card lib'
+	{
+		CLSID = s '{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}'
+		CurVer = s 'NetstatSolution.CardLib.5.0'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092} = s 'NetstatSolution card lib'
+		{
+			ProgID = s 'NetstatSolution.CardLib.5.0'
+			VersionIndependentProgID = s 'NetstatSolution.CardLib'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Both'
+			}
+			'TypeLib' = s '{2A629DC9-1645-4E03-9F15-5870BC6D2A5F}'
+		}
+	}
+}

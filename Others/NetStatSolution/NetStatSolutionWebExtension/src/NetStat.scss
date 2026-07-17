@@ -1,0 +1,43 @@
+﻿$approvalStageColorDark: #417;
+$approvalStageColor: #639;
+$approvalStageColorLight: #85b;
+$approvalStageColorLightest: #b8e;
+
+body[data-folder-color='NetStatSolutionCard'] {
+    .column-header,
+    nav, #row-sidebar.row-sidebar, .system-web-frame-header-container {
+        background-color: $approvalStageColor;
+    }
+
+    .card-type-background-color {
+        background-color: $approvalStageColor;
+    }
+
+    .card-type-background-color-hover:hover {
+        background-color: $approvalStageColor;
+    }
+
+    .card-type-background-color-light {
+        background-color: $approvalStageColorLight;
+    }
+
+    .card-type-background-color-light-hover:hover {
+        background-color: $approvalStageColorLight;
+    }
+
+    .card-type-background-color-disabled {
+        background-color: $approvalStageColorLightest;
+    }
+
+    .card-type-foreground-color {
+        color: $approvalStageColor;
+    }
+
+    .sidebar-open {
+        background: $approvalStageColor;
+    }
+}
+
+.netstat-color {
+    background-color: $approvalStageColor;
+}

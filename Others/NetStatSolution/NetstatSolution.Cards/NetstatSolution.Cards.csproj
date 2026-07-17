@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0-windows</TargetFramework>
+		<RootNamespace>NetstatSolution.Cards</RootNamespace>
+		<AssemblyName>NetstatSolution.Cards</AssemblyName>
+		<AssemblyTitle>NetstatSolution.Cards</AssemblyTitle>
+		<Description>Netstat solution card</Description>
+		<PackageId>NetstatSolution.Cards</PackageId>
+		<ProjectGuid>{92F2E1FA-006C-4C96-97B6-A4D1948E99C4}</ProjectGuid>
+
+		<UseWindowsForms>true</UseWindowsForms>
+		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+		<EnableComHosting>true</EnableComHosting>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Remove="Properties\**" />
+		<EmbeddedResource Remove="Properties\**" />
+		<None Remove="Properties\**" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="MainControl.cs">
+			<SubType>Component</SubType>
+		</Compile>
+		<Compile Update="MainControl.Designer.cs">
+			<DependentUpon>MainControl.cs</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="*" />
+		<PackageReference Include="DocsVision.BackOffice.WinForms" Version="*" />
+		<PackageReference Include="DocsVision.Platform.CardHost" Version="*" />
+		<PackageReference Include="DocsVision.Platform.ObjectModel" Version="*" />
+		<PackageReference Include="DocsVision.Platform.WinForms" Version="*" />
+		<PackageReference Include="DevExpress.Win.Grid" Version="*" PrivateAssets="All" />
+		<PackageReference Include="DevExpress.Win.TreeList" Version="*" PrivateAssets="All" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\NetStatSolution.ObjectModel\NetStatSolution.ObjectModel.csproj" />
+	</ItemGroup>
+
+	<PropertyGroup>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<OutputPath>..\Binaries</OutputPath>
+		<AssemblyVersion>6.1.0</AssemblyVersion>
+		<FileVersion>6.1.0</FileVersion>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>Sign.snk</AssemblyOriginatorKeyFile>
+	</PropertyGroup>
+
+</Project>

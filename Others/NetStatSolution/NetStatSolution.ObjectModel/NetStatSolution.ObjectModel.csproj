@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+
+		<AssemblyVersion>6.1.0</AssemblyVersion>
+		<FileVersion>6.1.0</FileVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="*" />
+		<PackageReference Include="DocsVision.Platform.ObjectModel" Version="*" />
+	</ItemGroup>
+
+</Project>
