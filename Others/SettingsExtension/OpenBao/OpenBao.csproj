@@ -6,6 +6,7 @@
         <Description>Implementation of Settings Service extension, providing access to OpenBao secret store</Description>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     </PropertyGroup>
 
     <ItemGroup>
