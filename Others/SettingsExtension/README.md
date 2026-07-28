@@ -24,7 +24,7 @@
 1. Откройте решение `/Samples.sln`.
 2. Соберите проект Others > SettingsExtension > OpenBao.
 
-В результате в папке `Others\SettingsExtension\OpenBao\bin\Debug\net8.0` (или `Release`) появятся файлы `OpenBao.dll` и `VaultSharp.dll` (зависимость коннектора, используемая для обращений к OpenBao).
+В результате в папке `Others\SettingsExtension\OpenBao\bin\Debug\` (или `Release`) появятся файлы `OpenBao.dll` и `VaultSharp.dll` (зависимость коннектора, используемая для обращений к OpenBao).
 
 ## Проверка коннектора автономно (без Сервиса настроек)
 
