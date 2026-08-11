@@ -62,6 +62,26 @@ namespace NetstatSolutionCardLib {
         
         /// <summary>
         ///   Ищет локализованную строку, похожую на &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
+        ///&lt;CardDefinition xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; ID=&quot;CCCA40C0-5FA4-4878-B0DA-34E67E167BEA&quot; Alias=&quot;NetstatSolutionCard&quot; Version=&quot;26&quot; LibraryID=&quot;F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6&quot; ProgID=&quot;clsid:{053B0CA1-95FD-4DDA-95FA-6043AFACCC1F}&quot; IconFile=&quot;Icons\NetstatSolutionCard.ico&quot; NoLockOnOpen=&quot;true&quot; AlwaysRead=&quot;true&quot; FetchMode=&quot;1&quot; DefaultSecurity=&quot;&quot; TypeName=&quot;NetstatSolution.Cards.MainControl, NetstatSolutio [остаток строки не уместился]&quot;;.
+        /// </summary>
+        internal static string NetstatSolutionCard {
+            get {
+                return ResourceManager.GetString("NetstatSolutionCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] NetstatSolutionCardIcon {
+            get {
+                object obj = ResourceManager.GetObject("NetstatSolutionCardIcon", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;
         ///&lt;CardLibrary xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; ID=&quot;F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6&quot; Alias=&quot;NetstatSolution&quot; ControlInfo=&quot;clsid:{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}&quot; IconFile=&quot;Icons\NetstatSolutionCardLib.ico&quot; Version=&quot;2030&quot; MsiProductCode=&quot;&quot; MsiPackageName=&quot;&quot;&gt;
         ///	&lt;Definitions&gt;
         ///		&lt;RefCardDefinition&gt;NetstatSolutionCard.xml&lt;/RefCardDefinition&gt;
@@ -72,6 +92,16 @@ namespace NetstatSolutionCardLib {
         internal static string NetstatSolutionCardLib {
             get {
                 return ResourceManager.GetString("NetstatSolutionCardLib", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
+        internal static byte[] NetstatSolutionCardLibIcon {
+            get {
+                object obj = ResourceManager.GetObject("NetstatSolutionCardLibIcon", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

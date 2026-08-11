@@ -121,4 +121,13 @@
   <data name="NetstatSolutionCardLib" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\CardDefs\NetstatSolutionCardLib.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="NetstatSolutionCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CardDefs\NetstatSolutionCard.xml;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="NetstatSolutionCardIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CardDefs\Icons\NetstatSolutionCard.ico;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NetstatSolutionCardLibIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\CardDefs\Icons\NetstatSolutionCardLib.ico;System.Byte[], mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
