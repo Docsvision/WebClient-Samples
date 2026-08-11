@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<CardDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="CCCA40C0-5FA4-4878-B0DA-34E67E167BEA" Alias="NetstatSolutionCard" Version="26" LibraryID="F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6" ProgID="clsid:{053B0CA1-95FD-4DDA-95FA-6043AFACCC1F}" IconFile="Icons\NetstatSolutionCard.ico" NoLockOnOpen="true" AlwaysRead="true" FetchMode="1" DefaultSecurity="" TypeName="NetstatSolution.Cards.MainControl, NetstatSolution.Cards, Version=6.1.0.0, Culture=neutral, PublicKeyToken=b07c44a4ac2626ec">
+<CardDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="CCCA40C0-5FA4-4878-B0DA-34E67E167BEA" Alias="NetstatSolutionCard" Version="26" LibraryID="F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6" ProgID="clsid:{053B0CA1-95FD-4DDA-95FA-6043AFACCC1F}" IconFile="Icons\NetstatSolutionCard.ico" NoLockOnOpen="true" AlwaysRead="true" FetchMode="1" DefaultSecurity="" TypeName="NetstatSolution.Cards.MainControl, NetstatSolution.Cards, Version=6.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29">
 	<Name>
 		<LocalizedString Language="en">Card accounting network equipment</LocalizedString>
 		<LocalizedString Language="ru-RU">Карточка учета сетевого оборудования</LocalizedString>

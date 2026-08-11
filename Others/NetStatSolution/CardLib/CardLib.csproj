@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<RootNamespace>NetstatSolutionCardLib</RootNamespace>
+		<AssemblyName>NetstatSolutionCardLib</AssemblyName>
+		<AssemblyTitle>Netstat Solution Card Library</AssemblyTitle>
+		<Description>Netstat Solution Card Library</Description>
+		<OutputPath>..\Binaries</OutputPath>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<EnableComHosting>true</EnableComHosting>
+		<NETCoreSdkRuntimeIdentifier>win-x86</NETCoreSdkRuntimeIdentifier>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Update="CardLibraryInfo.cs" />
+		<PackageReference Include="DocsVision.Platform.ObjectManager" Version="6.1.546" />
+		<Compile Update="Resources.Designer.cs">
+			<AutoGen>True</AutoGen>
+			<DesignTime>True</DesignTime>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+	<ItemGroup>
+		<EmbeddedResource Update="Resources.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+</Project>

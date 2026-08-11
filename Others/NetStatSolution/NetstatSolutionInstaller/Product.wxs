@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
 	<?define UpgradeCode="{DA6EF640-6580-4322-8BAB-1E49A224B822}"?>
-	<?define ProductVersion="!(bind.FileVersion.Snapin)"?>
+	<?define ProductVersion="!(bind.FileVersion.NetstatSolution.ObjectModel.dll)"?>
 	<?define RTMProductVersion="6.0.0" ?>
 
 	<Product Id="*"
@@ -36,8 +36,8 @@
 				<Directory Id="DVFolder" Name="Docsvision">
 
 					<Directory Id="COMMONFOLDER" Name="Common">
-						<Component Id="SnapinComponent" Guid="177735FE-6984-4EEB-8306-DD818D118990" Win64="yes">
-							<File Id="Snapin" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolution.ObjectModel.dll"/>
+						<Component Id="ObjectModel" Guid="177735FE-6984-4EEB-8306-DD818D118990" Win64="yes">
+							<File Id="NetstatSolution.ObjectModel.dll" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolution.ObjectModel.dll"/>
 						</Component>
 					</Directory>
 
@@ -124,7 +124,7 @@
 		</Directory>
 
 		<Feature Id="ProductFeature" Title="Установка" Level="1">
-			<ComponentRef Id="SnapinComponent"/>
+			<ComponentRef Id="ObjectModel"/>
 			<ComponentRef Id="ClientMsiComponent"/>
 			<ComponentRef Id="CardPackage"/>
 			<ComponentRef Id="NetstatSolutionInstall"/>

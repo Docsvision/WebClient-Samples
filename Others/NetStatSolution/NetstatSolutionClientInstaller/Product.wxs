@@ -51,14 +51,12 @@
 								<RemoveFolder Id="INSTALLFOLDER" On="uninstall"/>
 								<CreateFolder />
 
-								<File Id='NetstatSolutionCardLib.dll' Source='$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolutionCardLib.dll' KeyPath="yes">
-									<!-- регистрация com dll -->
-									<TypeLib Id="{2A629DC9-1645-4E03-9F15-5870BC6D2A5F}" Language="0" MajorVersion="5" MinorVersion="0"
-											 Description="NetstatSolution card lib" HelpDirectory="INSTALLFOLDER" />
-									<Class Id="{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}" Context="InprocServer32" ThreadingModel="both" Description="NetstatSolution card lib">
-										<ProgId Id="NetstatSolution.CardLib.5.0" Description="NetstatSolution card lib">
-											<ProgId Id="NetstatSolution.CardLib" />
-										</ProgId>
+								<File Id='NetstatSolutionCardLib.dll' Source='$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolutionCardLib.dll'/>
+								<File Id='NetstatSolutionCardLib.runtimeconfig.json' Source='$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolutionCardLib.runtimeconfig.json'/>
+								<File Id="NetstatSolutionCardLib.comhost.dll" KeyPath="yes" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolutionCardLib.comhost.dll">
+									<!-- регистрация comhost dll -->
+									<Class Id="{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}" Context="InprocServer32" Description="NetstatSolutionCardLib.CardLibraryInfo" ThreadingModel="both">
+										<ProgId Id="NetstatSolutionCardLib.CardLibraryInfo" Description="NetstatSolutionCardLib.CardLibraryInfo" />
 									</Class>
 								</File>
 

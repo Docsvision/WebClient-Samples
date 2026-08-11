@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<CardLibrary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6" Alias="NetstatSolution" ControlInfo="clsid:{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}" IconFile="Icons\NetstatSolutionCardLib.ico" Version="2026" MsiProductCode="" MsiPackageName="">
+<CardLibrary xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6" Alias="NetstatSolution" ControlInfo="clsid:{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}" IconFile="Icons\NetstatSolutionCardLib.ico" Version="2030" MsiProductCode="" MsiPackageName="">
 	<Definitions>
 		<RefCardDefinition>NetstatSolutionCard.xml</RefCardDefinition>
 	</Definitions>

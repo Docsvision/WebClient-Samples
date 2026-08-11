@@ -11,10 +11,14 @@
 		<UseWindowsForms>true</UseWindowsForms>
 		<ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
 		<EnableComHosting>true</EnableComHosting>
+		<OutputPath>..\Binaries</OutputPath>
 	</PropertyGroup>
 	<ItemGroup>
+		<Compile Remove="Binaries\**" />
 		<Compile Remove="Properties\**" />
+		<EmbeddedResource Remove="Binaries\**" />
 		<EmbeddedResource Remove="Properties\**" />
+		<None Remove="Binaries\**" />
 		<None Remove="Properties\**" />
 	</ItemGroup>
 
@@ -28,26 +32,14 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="*" />
-		<PackageReference Include="DocsVision.BackOffice.WinForms" Version="*" />
-		<PackageReference Include="DocsVision.Platform.CardHost" Version="*" />
-		<PackageReference Include="DocsVision.Platform.ObjectModel" Version="*" />
-		<PackageReference Include="DocsVision.Platform.WinForms" Version="*" />
-		<PackageReference Include="DevExpress.Win.Grid" Version="*" PrivateAssets="All" />
-		<PackageReference Include="DevExpress.Win.TreeList" Version="*" PrivateAssets="All" />
+		<PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.274" />
+		<PackageReference Include="DocsVision.BackOffice.WinForms" Version="6.1.274" />
+		<PackageReference Include="DocsVision.Platform.CardHost" Version="6.1.546" />
+		<PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.546" />
+		<PackageReference Include="DocsVision.Platform.WinForms" Version="6.1.546" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\NetStatSolution.ObjectModel\NetStatSolution.ObjectModel.csproj" />
 	</ItemGroup>
-
-	<PropertyGroup>
-		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-		<OutputPath>..\Binaries</OutputPath>
-		<AssemblyVersion>6.1.0</AssemblyVersion>
-		<FileVersion>6.1.0</FileVersion>
-		<SignAssembly>True</SignAssembly>
-		<AssemblyOriginatorKeyFile>Sign.snk</AssemblyOriginatorKeyFile>
-	</PropertyGroup>
-
 </Project>
