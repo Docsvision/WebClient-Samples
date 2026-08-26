@@ -34,7 +34,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocsVision.Layout.WebClient" Version="6.1.1110" />
+    <PackageReference Include="DocsVision.Layout.WebClient" Version="6.1.1444" />
   </ItemGroup>
 
 </Project>

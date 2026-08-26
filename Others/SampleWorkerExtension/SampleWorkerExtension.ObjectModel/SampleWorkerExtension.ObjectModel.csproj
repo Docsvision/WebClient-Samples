@@ -22,7 +22,7 @@
     <None Include="..\..\..\StrongNameKey.snk" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.546" />
+    <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.927" />
     <PackageReference Include="Docsvision.WorkerService.Interfaces" Version="6.1.114" />
   </ItemGroup>
 </Project>

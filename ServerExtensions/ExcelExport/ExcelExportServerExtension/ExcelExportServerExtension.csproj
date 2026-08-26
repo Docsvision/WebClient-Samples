@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DocsVision.WebClient" Version="6.1.716" />
+    <PackageReference Include="DocsVision.WebClient" Version="6.1.1444" />
   </ItemGroup>
 
 </Project>

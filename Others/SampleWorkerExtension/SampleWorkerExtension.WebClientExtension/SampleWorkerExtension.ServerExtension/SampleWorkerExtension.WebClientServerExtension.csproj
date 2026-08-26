@@ -22,10 +22,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Autofac" Version="8.2.0" />
-    <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.546" />
-    <PackageReference Include="DocsVision.Platform.WebClient" Version="6.1.1110" />
-    <PackageReference Include="DocsVision.WebClient" Version="6.1.716" />
-    <PackageReference Include="DocsVision.WebClient.Extensibility" Version="6.1.1110" />
+    <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.927" />
+    <PackageReference Include="DocsVision.Platform.WebClient" Version="6.1.1444" />
+    <PackageReference Include="DocsVision.WebClient" Version="6.1.1444" />
+    <PackageReference Include="DocsVision.WebClient.Extensibility" Version="6.1.1444" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
   </ItemGroup>
 

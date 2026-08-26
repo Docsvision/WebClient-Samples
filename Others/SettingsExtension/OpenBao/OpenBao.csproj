@@ -10,7 +10,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="DocsVision.Settings.Client" Version="6.1.225-g8e7f192ab8" />
+      <PackageReference Include="DocsVision.Settings.Client" Version="6.1.234" />
       <PackageReference Include="VaultSharp" Version="1.17.5.1" />
     </ItemGroup>
     

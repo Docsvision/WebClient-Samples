@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac.Extras.Ordering" Version="4.0.0" />
-    <PackageReference Include="DocsVision.WebClient.Extensibility" Version="6.1.1110" />
+    <PackageReference Include="DocsVision.WebClient.Extensibility" Version="6.1.1444" />
   </ItemGroup>
 
 </Project>

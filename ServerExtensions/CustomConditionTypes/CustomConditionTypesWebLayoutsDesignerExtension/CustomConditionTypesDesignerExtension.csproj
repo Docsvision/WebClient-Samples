@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="WebLayoutsDesigner" Version="6.1.1110" />
+    <PackageReference Include="WebLayoutsDesigner" Version="6.1.1444" />
   </ItemGroup>
 
 </Project>

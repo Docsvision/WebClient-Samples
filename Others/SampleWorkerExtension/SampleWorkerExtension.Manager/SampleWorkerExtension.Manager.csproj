@@ -29,9 +29,9 @@
     <None Include="..\..\..\StrongNameKey.snk" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.274" />
-    <PackageReference Include="DocsVision.Platform.CardLib" Version="6.1.546" />
-    <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.546" />
-    <PackageReference Include="DocsVision.Platform.Settings.ObjectModel" Version="6.1.110" />
+    <PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.311" />
+    <PackageReference Include="DocsVision.Platform.CardLib" Version="6.1.927" />
+    <PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.927" />
+    <PackageReference Include="DocsVision.Platform.Settings.ObjectModel" Version="6.1.135" />
   </ItemGroup>
 </Project>
