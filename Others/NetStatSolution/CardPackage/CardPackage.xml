@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CardPackage xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Card Path="RefKinds.xml" ID="8f704e7d-a123-4917-94b4-f3b851f193b2" Replace="0" />
+  <Card Path="RefStates.xml" ID="443f55f0-c8ab-4dd3-bcbd-5328c7c9d385" Replace="0" />
+  <Card Path="RefRoleModel0.xml" ID="7984f2ce-9345-4c59-b66b-7125dd9195a1" Replace="0" />
+  <Card Path="RefRoleModel.xml" ID="7984f2ce-9345-4c59-b66b-7125dd9195a1" Replace="0" />
+  <Card Path="RefLayouts.xml" ID="b87b6fec-e092-4d37-abb2-c13e2000b6e3" Replace="0" />
+  <Card Path="NetstatSolutionBusinessProcess.xml" ID="15DD38E8-4CD3-4E0F-8526-34B876ACAFF2" Replace="0"/>
+  <Card Path="SampleCard.xml" ID="37FE68AD-CEBE-4894-9606-C518625B5443" Replace="0"/>
+</CardPackage>

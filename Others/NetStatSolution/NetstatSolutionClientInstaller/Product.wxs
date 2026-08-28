@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+	<?define UpgradeCode="{95eb72db-b14c-4425-a1ec-12b22431ab2c}"?>
+	<?define ProductManufacturer="Docsvision"?>
+	<?define ProductVersion="!(bind.FileVersion.NetstatSolution.Cards.dll)"?>
+	<?define RTMProductVersion="1.0.0" ?>
+	
+	<!-- идентификатор Id должен соотвествовать Код продукта, использованного при разработке схемы библиотеки карточек  -->
+	<!-- 22CE4047-0BA8-4014-9BBE-7D8C43FDE907 -->
+	<Product Id="22CE4047-0BA8-4014-9BBE-7D8C43FDE904"
+			  Name="NetstatSolutionClient"
+			  Language="1049"
+			  Version="$(var.ProductVersion)"
+			  Manufacturer="Docsvision"
+			  UpgradeCode="$(var.UpgradeCode)">
+
+		<Package InstallerVersion="200" Compressed="yes" InstallPrivileges="elevated"/>
+		<MediaTemplate EmbedCab="yes"/>
+
+		<MajorUpgrade DowngradeErrorMessage="Более новая версия продукта [ProductName] уже установлена." />
+
+		<Upgrade Id="$(var.UpgradeCode)">
+			<UpgradeVersion Minimum="$(var.ProductVersion)"
+							IncludeMinimum="no"
+							OnlyDetect="yes"
+							Language="1049"
+							Property="NEWPRODUCTFOUND" />
+			<UpgradeVersion Minimum="$(var.RTMProductVersion)"
+							IncludeMinimum="yes"
+							Maximum="$(var.ProductVersion)"
+							IncludeMaximum="no"
+							Language="1049"
+							Property="UPGRADEFOUND" />
+		</Upgrade>
+
+
+		<Property Id="APPLICATIONFOLDER">
+			<RegistrySearch Id="PlatformInstallFolderPerMachine" Root="HKLM" Key="Software\DocsVision\Platform\Client" Type="raw" Name="PlatformPath"/>
+			<RegistrySearch Id="PlatformInstallFolderPerUser" Root="HKCU" Key="Software\DocsVision\Platform\Client" Type="raw" Name="PlatformPath"/>
+		</Property>
+		<SetProperty Id="ARPINSTALLLOCATION" Value="[APPLICATIONFOLDER]" After="CostFinalize"/>
+
+		<!-- создание подкаталога решения и выгрузка в него компонентов карточки и библиотеки-->
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="APPLICATIONFOLDER" Name="$(var.ProductManufacturer)" >
+					<Directory Id="Client" Name="Client">
+						<Directory Id="INSTALLFOLDER" Name="NetstatSolution">
+							<Component Id="ClientComponent" Guid="E5938D44-5315-43D4-94EC-313F6CDB290B" NeverOverwrite="no" Permanent="no" >
+								
+								<RemoveFolder Id="INSTALLFOLDER" On="uninstall"/>
+								<CreateFolder />
+
+								<File Id='NetstatSolutionCardLib.dll' Source='$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolutionCardLib.dll'/>
+								<File Id='NetstatSolutionCardLib.runtimeconfig.json' Source='$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolutionCardLib.runtimeconfig.json'/>
+								<File Id="NetstatSolutionCardLib.comhost.dll" KeyPath="yes" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolutionCardLib.comhost.dll">
+									<!-- регистрация comhost dll -->
+									<Class Id="{F0BA1E06-78DC-433C-ADE0-0A1F4BBF0092}" Context="InprocServer32" Description="NetstatSolutionCardLib.CardLibraryInfo" ThreadingModel="both">
+										<ProgId Id="NetstatSolutionCardLib.CardLibraryInfo" Description="NetstatSolutionCardLib.CardLibraryInfo" />
+									</Class>
+								</File>
+
+								<File Id="NetstatSolution.Cards.comhost.dll" Source="$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolution.Cards.comhost.dll">
+									<!-- регистрация comhost dll -->
+									<Class Id="{053B0CA1-95FD-4DDA-95FA-6043AFACCC1F}" Context="InprocServer32" ThreadingModel="both" Description="CoreCLR COMHost Server">
+										<ProgId Id="NetstatSolution.Card.MainControl" Description="NetstatSolution.Card.MainControl"/>
+									</Class>
+								</File>
+								
+								<File Id='NetstatSolution.Cards.dll' Source='$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolution.Cards.dll'/>
+								<File Id='NetstatSolution.ObjectModel.dll' Source='$(var.SolutionDir)Others\NetStatSolution\Binaries\NetstatSolution.ObjectModel.dll'/>
+							</Component>
+						</Directory>
+					</Directory>
+				</Directory>
+			</Directory>
+
+			<!-- регистрация пути для поиска Навигатором компонетов карточек -->
+			<Component Id="RegistryEntriesComponents" Guid="76563983-1339-469A-9144-2C7C0D6C7F45">
+				<RegistryKey Root="HKCU" Key="Software\DocsVision\Platform\Client\Applications" ForceCreateOnInstall="yes" ForceDeleteOnUninstall="no">
+					<RegistryValue Type="string" Name="NetstatSolution" Value="NetstatSolution" KeyPath="yes" />
+				</RegistryKey>
+			</Component>
+
+			
+		</Directory>
+
+		<Feature Id="ProductFeature" Title="Установка" Level="1">
+			<ComponentRef Id="ClientComponent" />
+			<ComponentRef Id="RegistryEntriesComponents" />
+		</Feature>
+
+		<Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER"></Property>
+		<UIRef Id="WixUI_DV" />
+	</Product>
+</Wix>

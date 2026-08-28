@@ -427,3 +427,5 @@ FodyWeavers.xsd
 # Others/ExternalWebService/WebService/App_Data
 # Others/Watermark/WatermarkDebPackage/WatermarkExtension
 ProjectTemplates/TemplateWebExtension/Dist
+Others/NetStatSolution/Binaries
+Others/NetStatSolution/Installers

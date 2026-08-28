@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CardDefinition xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="CCCA40C0-5FA4-4878-B0DA-34E67E167BEA" Alias="NetstatSolutionCard" Version="26" LibraryID="F729F178-15DA-4BDE-82B8-DD0B2F0C0BC6" ProgID="clsid:{053B0CA1-95FD-4DDA-95FA-6043AFACCC1F}" IconFile="Icons\NetstatSolutionCard.ico" NoLockOnOpen="true" AlwaysRead="true" FetchMode="1" DefaultSecurity="" TypeName="NetstatSolution.Cards.MainControl, NetstatSolution.Cards, Version=6.0.0.0, Culture=neutral, PublicKeyToken=4a2caa47aa5b6b29">
+	<Name>
+		<LocalizedString Language="en">Card accounting network equipment</LocalizedString>
+		<LocalizedString Language="ru-RU">Карточка учета сетевого оборудования</LocalizedString>
+	</Name>
+	<Sections>
+		<Section Alias="MainInfo" RowAlias="" Type="struct" ID="A1BB8AEB-D7A4-4A1B-9AC5-171C61752120">
+			<Name>
+				<LocalizedString Language="en">MainInfo</LocalizedString>
+				<LocalizedString Language="ru">Основная информация</LocalizedString>
+			</Name>
+			<Field Alias="Name" ID="A953BF37-56F2-45A5-806B-52296C7A8AB3" Type="unitext" NotNull="true" DefaultValue="" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">The name of the node</LocalizedString>
+					<LocalizedString Language="ru">Название узла</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<Field Alias="Address" ID="207701FE-DA28-493F-89EB-F770E06ACEE0" Type="text" Max="15" NotNull="true" DefaultValue="" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">Node's IP address</LocalizedString>
+					<LocalizedString Language="ru">IP адрес узла</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<Field Alias="Type" ID="9D9F8856-40EC-4508-9D7C-502CE89C2179" Type="enum" NotNull="true" DefaultValue="1" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">The type of the node</LocalizedString>
+					<LocalizedString Language="ru">Тип узла</LocalizedString>
+				</Name>
+				<Description/>
+				<Enum Alias="Server" Value="0">
+					<Name>
+						<LocalizedString Language="en">Server</LocalizedString>
+						<LocalizedString Language="ru">Сервер</LocalizedString>
+					</Name>
+				</Enum>
+				<Enum Alias="PC" Value="1">
+					<Name>
+						<LocalizedString Language="en">PC</LocalizedString>
+						<LocalizedString Language="ru">Персональный компьютер</LocalizedString>
+					</Name>
+				</Enum>
+				<Enum Alias="Networking" Value="2">
+					<Name>
+						<LocalizedString Language="en">Networking</LocalizedString>
+						<LocalizedString Language="ru">Сетевое оборудование</LocalizedString>
+					</Name>
+				</Enum>
+			</Field>
+			<Field Alias="IsChecked" ID="FBA644C5-2A49-4F02-A105-5E3BE3897C84" Type="bool" DefaultValue="1" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">Verification is required</LocalizedString>
+					<LocalizedString Language="ru">Требуется проверка</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<Field Alias="LastResult" ID="88E26F2F-58FE-43B9-A641-F42DDE004073" Type="bool" DefaultValue="0" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">The result of the last check</LocalizedString>
+					<LocalizedString Language="ru">Результат последней проверки</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<DisplayFields FormatString=""/>
+		</Section>
+		<Section Alias="System" RowAlias="" Type="struct" ID="931CA94B-251F-45AF-8C98-4477A50B03DE" SimpleSecurity="true">
+			<Name>
+				<LocalizedString Language="en">System properties</LocalizedString>
+				<LocalizedString Language="ru">Системные свойства</LocalizedString>
+			</Name>
+			<Field Alias="State" ID="504E0A0E-7F30-4D19-9C92-5FD25FB3786B" Type="refid" RefType="443F55F0-C8AB-4DD3-BCBD-5328C7C9D385" RefSection="521B4477-DD10-4F57-A453-09C70ADB7799" DefaultValue="" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">State</LocalizedString>
+					<LocalizedString Language="ru">Состояние</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<Field Alias="Kind" ID="2AD18EE3-87E5-4221-B038-DFE6B8E92966" Type="refid" RefType="8F704E7D-A123-4917-94B4-F3B851F193B2" RefSection="C7BA000C-6203-4D7F-8C6B-5CB6F1E6F851" DefaultValue="" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">Type</LocalizedString>
+					<LocalizedString Language="ru">Вид</LocalizedString>
+				</Name>
+				<Description/>
+				<RefFields>
+					<RefField Alias="Kind_Name" SysField="false">Name</RefField>
+				</RefFields>
+			</Field>
+			<DisplayFields FormatString=""/>
+		</Section>
+		<Section Alias="Numbers" RowAlias="" Type="coll" ID="8DBE1400-36A8-449B-9853-1191E3FDEE51" SimpleSecurity="true">
+			<Name>
+				<LocalizedString Language="en">Numbers</LocalizedString>
+				<LocalizedString Language="ru">Номера</LocalizedString>
+			</Name>
+			<Field Alias="NumericPart" ID="A2E1F688-6F94-43D1-84BD-605DD83D4BEA" Type="refid" RefType="959FF5E2-7E47-4F6F-9CF6-E1E477CD01CF" RefSection="D47F2C38-6553-4864-BAFF-0BC4D3A85290" DeleteLinkedOnValueChange="true" DefaultValue="" CopyBehavior="Null">
+				<Name>
+					<LocalizedString Language="en">Numeric part</LocalizedString>
+					<LocalizedString Language="ru">Числовая часть</LocalizedString>
+				</Name>
+			</Field>
+			<Field Alias="Number" ID="043392DC-1C70-4E9C-ABDF-9BB923639FDD" Type="string" DefaultValue="" CopyBehavior="Null">
+				<Name>
+					<LocalizedString Language="en">Number</LocalizedString>
+					<LocalizedString Language="ru">Номер</LocalizedString>
+				</Name>
+			</Field>
+			<DisplayFields FormatString="">
+				<DisplayField>Number</DisplayField>
+			</DisplayFields>
+		</Section>
+		<Section Alias="Processes" RowAlias="" Type="coll" ID="954B8DA5-348A-48A5-A726-163A710CDA24" SimpleSecurity="true">
+			<Name>
+				<LocalizedString Language="en">Business processes</LocalizedString>
+				<LocalizedString Language="ru">Бизнес-процессы</LocalizedString>
+				<LocalizedString Language="lv">Biznesa procesi</LocalizedString>
+			</Name>
+			<Field Alias="ProcessId" ID="A22C16F9-1D56-4F84-9DF0-2FBADB5F700D" Type="refcardid" RefType="AE82DD57-348C-4407-A50A-9F2C7D694DA8" RefSection="0EF6BCCA-7A09-4027-A3A2-D2EEECA1BF4D" DefaultValue="" RefKind="Hard" CopyBehavior="Null">
+				<Name>
+					<LocalizedString Language="en">Link to process</LocalizedString>
+					<LocalizedString Language="ru">Ссылка на процесс</LocalizedString>
+					<LocalizedString Language="lv">Saite ar procesu</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<Field Alias="ProcessKind" ID="55267415-48A1-47CF-831B-8316FD940893" Type="refid" RefType="8F704E7D-A123-4917-94B4-F3B851F193B2" RefSection="FF977158-5035-4494-AAD2-9FD0C708A7EC" DefaultValue="" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">Type of process</LocalizedString>
+					<LocalizedString Language="ru">Вид процесса</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<DisplayFields FormatString=""/>
+		</Section>
+		<Section Alias="Journal" RowAlias="" Type="coll" ID="76C13C39-89CA-454D-92C2-FB959B78E943">
+			<Name>
+				<LocalizedString Language="en">Test log</LocalizedString>
+				<LocalizedString Language="ru">Журнал проверки</LocalizedString>
+			</Name>
+			<Field Alias="Date" ID="F4E6ED1C-AF1A-48D6-BCA6-04020768E16B" Type="datetime" DefaultValue="" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">Scan time</LocalizedString>
+					<LocalizedString Language="ru">Время проверки</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<Field Alias="Result" ID="8EEB2278-CAE0-43B2-B7BA-4E6FDB208B29" Type="bool" DefaultValue="" CopyBehavior="Copy">
+				<Name>
+					<LocalizedString Language="en">The result of the validation</LocalizedString>
+					<LocalizedString Language="ru">Результат проверки</LocalizedString>
+				</Name>
+				<Description/>
+			</Field>
+			<DisplayFields FormatString=""/>
+		</Section>
+	</Sections>
+</CardDefinition>
