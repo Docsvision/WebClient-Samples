@@ -32,11 +32,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.274" />
-		<PackageReference Include="DocsVision.BackOffice.WinForms" Version="6.1.274" />
-		<PackageReference Include="DocsVision.Platform.CardHost" Version="6.1.546" />
-		<PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.546" />
-		<PackageReference Include="DocsVision.Platform.WinForms" Version="6.1.546" />
+		<PackageReference Include="DocsVision.BackOffice.ObjectModel" Version="6.1.311" />
+		<PackageReference Include="DocsVision.BackOffice.WinForms" Version="6.1.311" />
+		<PackageReference Include="DocsVision.Platform.CardHost" Version="6.1.927" />
+		<PackageReference Include="DocsVision.Platform.ObjectModel" Version="6.1.927" />
+		<PackageReference Include="DocsVision.Platform.WinForms" Version="6.1.927" />
 	</ItemGroup>
 
 	<ItemGroup>

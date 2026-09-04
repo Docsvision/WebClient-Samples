@@ -15,7 +15,7 @@
 
 	<ItemGroup>
 		<Compile Update="CardLibraryInfo.cs" />
-		<PackageReference Include="DocsVision.Platform.ObjectManager" Version="6.1.546" />
+		<PackageReference Include="DocsVision.Platform.ObjectManager" Version="6.1.927" />
 		<Compile Update="Resources.Designer.cs">
 			<AutoGen>True</AutoGen>
 			<DesignTime>True</DesignTime>
